@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Slide 58-59</title>
+  </head>
+  <body>
+    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">PHP Basics</h2>
+        <p><code>unset()</code> digunakan untuk menghapus variabel</p>
+        <div class="mockup-code">
+          <pre><code>$name = “Fred”;</code></pre>
+          <pre><code>unset($name);</code></pre>
+          <pre><code>echo $name;     //muncul error</code></pre>
+        </div>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Ini tombol</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">PHP Basics</h2>
+        <p><code>isset()</code> digunakan untuk mengetahui apakah variabel sudah dibuat atau belum</p>
+        <div class="mockup-code">
+          <pre><code>$s1 = isset($name); // $s1 bernilai false</code></pre>
+          <pre><code>$name = “Freddy”;</code></pre>
+          <pre><code>$s2 = isset($name); // $s2 berniali true</code></pre>
+        </div>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Ini tombol</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
