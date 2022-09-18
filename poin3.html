@@ -180,7 +180,85 @@
   </div>
 
   <!--  ARRAY -->
+  <div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">Array</h2>
+      <p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p>
+      <p>Jenis Array
+        <ol>
+          <li> Index Array        : menggunakan index </li>
+          <li> Associative Array  : menggunakan nama sebagai key </li>
+        </ol>
+      </p>
+      <br>
 
+      <div class="mockup-code">
+      
+          <pre><code>Index Array </code></pre>
+          <pre><code>Contoh : </code></pre>
+            <pre><code>$nama[0] = "Attar";
+              $nama[1] = "Zidan";
+              $nama[2] = "Jerry"
+              print_r($nama);
+              Output : Array ([0] => Attar [1] => Zidan [2] => Jerry)
+            </code></pre>
+          
+          <pre><code>Associative Array </code></pre>
+          <pre><code>Contoh : </code></pre>
+            <pre><code>$creator['Light bulb'] = 'Edison';
+              $creator['Rotary Engine'] = 'Wankel';
+            print_r($creator);
+            Output : Array ([Light bulb] => Edison [Rotary Engine] => Wankel)</code></pre>
+          <br>
+          
+          <pre><code>Sorting Array </code></pre>
+          <pre><code>Contoh : </code></pre>
+            <pre><code>sort($nama);
+              Output : ["Attar", "Jerry", "Zidan"]
+            </code></pre>
+          
+          <pre><code>Menambahkan value pada Array</code></pre>
+          <pre><code>Contoh : </code></pre>
+            <pre><code>$family = ["Wawan", "Diah"];
+              $family[] = "Rizal";
+              $family[] = "Rara";
+              echo $family[3]; // Rara
+            </code></pre>
+          
+          <pre><code>Range </code></pre>
+          <pre><code>Contoh : </code></pre> 
+            <pre><code>$numbers = range(1,5); // [1,2,3,4,5] </code></pre>
+
+          <br>
+
+          <pre><code>Count</code></pre> 
+          <pre><code>Contoh : </code></pre> 
+            <pre><code>$size = count($family); // $size = 4 </code></pre>
+          <br>
+
+          <pre><code>Swapping value </code></pre> 
+          <pre><code>Contoh : </code></pre> 
+              <pre><code>$one = 'Fred';
+                $two = 'Wilma';
+                [$one, $two] = [$two, $one];
+                echo $one, $two; // 'Wilma', 'Fred'</code></pre>
+          <br>
+
+          <pre><code>Destructuring Array </code></pre>
+          <pre><code>Contoh : </code></pre>
+            <pre><code>$arr = [10, 20, 30];
+              [$a, $b, $c] = $arr;
+              echo $a; // 10
+              echo $b; // 20
+              echo $c; // 30 </code></pre>
+      </div>
+      
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Ini tombol</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 
