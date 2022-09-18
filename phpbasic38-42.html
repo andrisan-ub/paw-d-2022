@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Basic Slide 38-42</title>
 </head>
+
 <body>
         <!--  Ini card slide 38  -->
         <div class="card card-compact w-96 bg-base-100 shadow-xl">
@@ -77,5 +78,40 @@
               </div>
             </div>
           </div>
+
+<!--  Ini card slide 41  -->
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Pada PHP 7 juga memperkenalkan null coalescing operator. Operator ini mengembalikan nilai $x. Nilai $x adalah expr1 jika expr1 ada, dan bukan NULL. Jika expr1 tidak ada, atau NULL, nilai $x adalah expr2.</p>
+
+      <div class="mockup-code">
+        <pre><code>$uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';
+        var_dump($uname); 
+        // variable ($_GET['uname']) adalah null, 
+        sehingga nilai $username adalah "guest".
+        </code></pre>
+        <br>
+
+        <pre><code>$uname = $_GET['uname'] ?? 'guest';
+        var_dump($uname); 
+        // variable ($_GET['uname']) adalah null, 
+        sehingga nilai $username adalah "guest". </code></pre> <br>
+
+        <pre><code>$_GET['uname'] = 'admin';
+        $uname = $_GET['uname'] ?? 'guest';
+        var_dump($uname); 
+        // variable ($_GET['uname']) adalah admin, 
+        sehingga nilai $username adalah "admin".</code></pre> <br>
+   
+
+      </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Ini tombol</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
