@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Basic</title>
+</head>
+<body>
+    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">PHP Operator</h2>
+          <p>Operator arithmetic digunakan untuk nilai numerik sehingga menghasilkan suatu value berupa numerik juga.</p>
+          <br>
+
+          <div class="mockup-code">
+            <pre><code>$a = 10;</code></pre>
+            <pre><code>$b = 3;</code></pre>
+
+            <pre><code>var_dump($a + $b); // 13         --> pertambahan </code></pre> 
+            <pre><code>var_dump($a - $b); // 7          --> pengurangan </code></pre>
+            <pre><code>var_dump($a * $b); // 30         --> perkalian </code></pre>
+            <pre><code>var_dump($a / $b); // 3.33333... --> pembagian </code></pre>
+            <pre><code>var_dump($a % $b); // 1          --> modulus </code></pre>
+            <pre><code>var_dump($ ** $b); // 1000       --> eksponen </code></pre>
+            <pre><code>var_dump(-$a); // -10            --> negatif </code></pre>
+            
+            <pre><code>$c = 3 + 4 + 5 * 2; // 17 </code></pre>
+            <pre><code>$d = 13; </code></pre>
+            <pre><code>$d += 1; // 14   --> value akan masuk pada variabel yang kiri</code></pre>
+            <pre><code>$d -= 2; // 12 </code></pre>
+            <pre><code>$d *= 4; // 48 </code></pre>
+
+            <p>Harus diingatt!!</p>
+            <pre><code>$a = '1'; </code></pre>
+            <pre><code>$b = 2; </code></pre>
+            <pre><code>$c = $a + b; // error </code></pre>
+            <pre><code>$d = $a . $b // 12   --> digunakan pada string </code></pre>
+          </div>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Ini tombol</button>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
