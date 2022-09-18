@@ -13,9 +13,14 @@
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">PHP Basics</h2>
-          <p>PHP Comparison Operators digunakan untuk membandingkan dua nilai (angka atau string).</p>
-          <h2>PHP Comparison mirip dengan operator di bawah ini.</h2>
+          <h2 class="card-title">PHP Basics page 52</h2>
+          <p>Fungsi strlen() menghitung panjang string yang diberikan. </p>
+          <p>Fungsi strlen() mengambil string sebagai argumen dan mengembalikan panjangnya. </p>
+          <p>Nilai yang dikembalikan adalah tipe size_t (tipe integer yang tidak ditandatangani). </p>
+          <p>Itu didefinisikan dalam string.</p>
+          <h2>Example : </h2>
+          <p>$s = ‘FILKOM UB’; </p>
+          <p>echo strlen($s); // 9 </p>
 
           <div class="mockup-code">
           
@@ -38,8 +43,14 @@
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">PHP Basics</h2>
-          <p>Begitu juga dengan logical operator seperti di bawah ini.</p>
+          <h2 class="card-title">PHP Basics page 53</h2>
+          <p>Fungsi strtolower() digunakan untuk mengubah string menjadi huruf kecil.</p>
+          <p>Fungsi ini mengambil string sebagai parameter dan mengubah semua huruf besar abjad yang ada dalam string menjadi huruf kecil.</p>
+          <p>Semua karakter numerik atau karakter khusus lainnya dalam string tetap tidak berubah.</p>
+          <h2>Example : </h2>
+          <p>$s = ‘FILKOM UB’;</p>
+          <p>echo strtolower($s);</p>
+          <p>// filkom ub</p>
 
           <div class="mockup-code">
           
@@ -60,8 +71,14 @@
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">PHP Basics</h2>
-          <p>Pada PHP 7, terdapat operator baru, yaitu "spaceship" operator. Spaceship operator mengembalikan bilangan bulat yang kurang dari, sama dengan, atau lebih besar dari nol, bergantung pada apakah $x lebih kecil dari, sama dengan, atau lebih besar dari $y.</p>
+          <h2 class="card-title">PHP Basics page 54</h2>
+          <p>Fungsi strtoupper() digunakan untuk mengubah string menjadi huruf besar.</p>
+          <p>Fungsi ini mengambil string sebagai parameter dan mengubah semua huruf kecil yang ada dalam string menjadi huruf besar.</p>
+          <p>Semua karakter numerik atau karakter khusus lainnya dalam string tetap tidak berubah.</p>
+          <h2>Example : </h2>
+          <p>$s = ‘filkom ub’;</p>
+          <p>echo strtoupper($s);</p>
+          <p>// FILKOM UB</p>
 
           <div class="mockup-code">
             <pre><code>var_dump($x <=> $y);</code></pre>
@@ -82,8 +99,13 @@
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
 <div class="card-body">
-  <h2 class="card-title">PHP Basics</h2>
-  <p>Pada PHP 7 juga memperkenalkan null coalescing operator. Operator ini mengembalikan nilai $x. Nilai $x adalah expr1 jika expr1 ada, dan bukan NULL. Jika expr1 tidak ada, atau NULL, nilai $x adalah expr2.</p>
+  <h2 class="card-title">PHP Basics page 55</h2>
+  <p>Metode trim() menghapus spasi dari kedua ujung string dan mengembalikan string baru, tanpa mengubah string asli.</p>
+  <p>Spasi dalam konteks ini adalah semua karakter white space (space, tab, no-break space, dll.) dan semua karakter terminator baris (LF, CR, dll.).</p>
+  <h2>Example :</h2>
+  <p>$s = ‘ FILKOM UB ’;</p>
+  <p>echo trim($s);</p>
+  <p>// FILKOM UB</p>
 
   <div class="mockup-code">
     <pre><code>$uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';
@@ -117,8 +139,14 @@
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
 <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
 <div class="card-body">
-  <h2 class="card-title">PHP Basics</h2>
-  <p>Saat membandingkan nilai, kita harus berhati-hati dengan type jugggling. Jenis variabel ditentukan oleh nilai yang disimpannya. Artinya, jika sebuah string dimasukkan ke dalam variabel $var, maka $var bertipe string. Jika setelah itu nilai int ditetapkan ke $var, itu akan bertipe int.</p>
+  <h2 class="card-title">PHP Basics page 56</h2>
+  <p>Operator dot adalah operator gabungan PHP.</p>
+  <p>Dua operan string digabungkan bersama (karakter string tangan kanan ditambahkan ke string tangan kiri) dan mengembalikan string baru.</p>
+  <h2>Example :</h2>
+  <p>$s1 = ‘FILKOM ’;</p>
+  <p>$s2 = ‘UB’;</p>
+  <p>$s3 = $s1 . $s2;</p>
+  <p>// FILKOM UB</p>
 
   <div class="mockup-code">
     <pre><code>$a = 3;</code></pre>
