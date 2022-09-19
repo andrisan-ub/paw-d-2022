@@ -18,19 +18,11 @@
           <p>Fungsi strlen() mengambil string sebagai argumen dan mengembalikan panjangnya. </p>
           <p>Nilai yang dikembalikan adalah tipe size_t (tipe integer yang tidak ditandatangani). </p>
           <p>Itu didefinisikan dalam string.</p>
-          <h2>Example : </h2>
-          <p>$s = ‘FILKOM UB’; </p>
-          <p>echo strlen($s); // 9 </p>
 
           <div class="mockup-code">
           
-            <pre><code>var_dump(2 < 3); // true</code></pre>
-            <pre><code>var_dump(3 < 3); // false</code></pre>
-            <pre><code>var_dump(3 <= 3); // true</code></pre>
-            <pre><code>var_dump(4 <= 3); // false</code></pre>
-            <pre><code>var_dump(2 > 3); // false</code></pre>
-            <pre><code>var_dump(3 >= 3); // true</code></pre>
-            <pre><code>var_dump(3 > 3); // false</code></pre>
+            <pre><code>$s = ‘FILKOM UB’;
+            <pre><code>echo strlen($s); // 9 </code></pre>
 
           </div>
           <div class="card-actions justify-end">
@@ -47,19 +39,13 @@
           <p>Fungsi strtolower() digunakan untuk mengubah string menjadi huruf kecil.</p>
           <p>Fungsi ini mengambil string sebagai parameter dan mengubah semua huruf besar abjad yang ada dalam string menjadi huruf kecil.</p>
           <p>Semua karakter numerik atau karakter khusus lainnya dalam string tetap tidak berubah.</p>
-          <h2>Example : </h2>
-          <p>$s = ‘FILKOM UB’;</p>
-          <p>echo strtolower($s);</p>
-          <p>// filkom ub</p>
 
           <div class="mockup-code">
           
-            <pre><code>var_dump(true && true); // true </code></pre>
-            <pre><code>var_dump(true && false); // false</code></pre>
-            <pre><code>var_dump(true || false); // true</code></pre>
-            <pre><code>var_dump(false || false); // false</code></pre>
-            <pre><code>var_dump(!false); // true </code></pre>
-
+            <pre><code>$s = ‘FILKOM UB’; </code></pre>
+            <pre><code>echo strtolower($s);</code></pre>
+            <pre><code>// filkom ub</code></pre>
+           
           </div>
           <div class="card-actions justify-end">
             <button class="btn btn-primary">Ini tombol</button>
@@ -75,17 +61,12 @@
           <p>Fungsi strtoupper() digunakan untuk mengubah string menjadi huruf besar.</p>
           <p>Fungsi ini mengambil string sebagai parameter dan mengubah semua huruf kecil yang ada dalam string menjadi huruf besar.</p>
           <p>Semua karakter numerik atau karakter khusus lainnya dalam string tetap tidak berubah.</p>
-          <h2>Example : </h2>
-          <p>$s = ‘filkom ub’;</p>
-          <p>echo strtoupper($s);</p>
-          <p>// FILKOM UB</p>
 
           <div class="mockup-code">
-            <pre><code>var_dump($x <=> $y);</code></pre>
+            <pre><code>$s = ‘filkom ub’;</code></pre>
             <br>
-            <pre><code>var_dump(1 <=> 5); // -1, karena $x < $y </code></pre>
-            <pre><code>var_dump(1 <=> 1); // 0, karena $x = $y</code></pre>
-            <pre><code>var_dump(5 <=> 2); // 1, karena $x > $y</code></pre>
+            <pre><code>echo strtoupper($s);</code></pre>
+            <pre><code>// FILKOM UB</code></pre>
        
 
           </div>
@@ -102,29 +83,14 @@
   <h2 class="card-title">PHP Basics page 55</h2>
   <p>Metode trim() menghapus spasi dari kedua ujung string dan mengembalikan string baru, tanpa mengubah string asli.</p>
   <p>Spasi dalam konteks ini adalah semua karakter white space (space, tab, no-break space, dll.) dan semua karakter terminator baris (LF, CR, dll.).</p>
-  <h2>Example :</h2>
-  <p>$s = ‘ FILKOM UB ’;</p>
-  <p>echo trim($s);</p>
-  <p>// FILKOM UB</p>
 
   <div class="mockup-code">
-    <pre><code>$uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';
-    var_dump($uname); 
-    // variable ($_GET['uname']) adalah null, 
-    sehingga nilai $username adalah "guest".
-    </code></pre>
+    <pre><code>$s = ‘ FILKOM UB ’;</code></pre>
     <br>
 
-    <pre><code>$uname = $_GET['uname'] ?? 'guest';
-    var_dump($uname); 
-    // variable ($_GET['uname']) adalah null, 
-    sehingga nilai $username adalah "guest". </code></pre> <br>
+    <pre><code>echo trim($s);</code></pre> <br>
 
-    <pre><code>$_GET['uname'] = 'admin';
-    $uname = $_GET['uname'] ?? 'guest';
-    var_dump($uname); 
-    // variable ($_GET['uname']) adalah admin, 
-    sehingga nilai $username adalah "admin".</code></pre> <br>
+    <pre><code>// FILKOM UB</code></pre> <br>
 
 
   </div>
@@ -142,27 +108,14 @@
   <h2 class="card-title">PHP Basics page 56</h2>
   <p>Operator dot adalah operator gabungan PHP.</p>
   <p>Dua operan string digabungkan bersama (karakter string tangan kanan ditambahkan ke string tangan kiri) dan mengembalikan string baru.</p>
-  <h2>Example :</h2>
-  <p>$s1 = ‘FILKOM ’;</p>
-  <p>$s2 = ‘UB’;</p>
-  <p>$s3 = $s1 . $s2;</p>
-  <p>// FILKOM UB</p>
 
   <div class="mockup-code">
-    <pre><code>$a = 3;</code></pre>
-    <pre><code>$b = '3';</code></pre>
-    <pre><code>$c = 5;</code></pre>
+    <pre><code>$s1 = ‘FILKOM ’;</code></pre>
+    <pre><code>$s2 = ‘UB’;</code></pre>
+    <pre><code>$s3 = $s1 . $s2;</code></pre>
+    <pre><code>// FILKOM UB</code></pre>
 
     <br>
-
-    <pre><code>var_dump($a == $b); // true, karena bernilai sama </code></pre> 
-    <pre><code>var_dump($a === $b); // false, karena tipe data tidak sama </code></pre> 
-    <pre><code>var_dump($a != $b); // false, karena bernilai sama</code></pre> 
-    <pre><code>var_dump($a !== $b); // true, karena tipe data tidak sama </code></pre> 
-    <pre><code>var_dump($a == $c); // false, karena tidak bernilai sama  </code></pre> 
-    <pre><code>var_dump($a <> $c); // true, karena tidak bernilai sama</code></pre> 
-
-
   </div>
   <div class="card-actions justify-end">
     <button class="btn btn-primary">Ini tombol</button>
