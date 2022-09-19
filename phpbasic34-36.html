@@ -9,10 +9,11 @@
     <title>PHP Basic</title>
 </head>
 <body>
+  <div class="h-100 grid grid-cols-3 gap-4 content-start ">
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">PHP Operator</h2>
+          <h2 class="card-title">Operator Arithmetic</h2>
           <p>Operator arithmetic digunakan untuk nilai numerik sehingga menghasilkan suatu value berupa numerik juga.</p>
           <br>
 
@@ -28,22 +29,53 @@
             <pre><code>var_dump($ ** $b); // 1000       --> eksponen </code></pre>
             <pre><code>var_dump(-$a); // -10            --> negatif </code></pre>
             
-            <pre><code>$c = 3 + 4 + 5 * 2; // 17 </code></pre>
-            <pre><code>$d = 13; </code></pre>
-            <pre><code>$d += 1; // 14   --> value akan masuk pada variabel yang kiri</code></pre>
-            <pre><code>$d -= 2; // 12 </code></pre>
-            <pre><code>$d *= 4; // 48 </code></pre>
-
-            <p>Harus diingatt!!</p>
-            <pre><code>$a = '1'; </code></pre>
-            <pre><code>$b = 2; </code></pre>
-            <pre><code>$c = $a + b; // error </code></pre>
-            <pre><code>$d = $a . $b // 12   --> digunakan pada string </code></pre>
           </div>
           <div class="card-actions justify-end">
             <button class="btn btn-primary">Ini tombol</button>
           </div>
         </div>
+      </div>
+
+      <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Operator Assignment</h2>
+          <p>Operator assignment digunakan untuk nilai numerik yang ditambahkan pada variabelnya, variabel yang mendapatkan value adalah variabel sebelah kiri.</p>
+          <br>
+
+          <div class="mockup-code">            
+            <pre><code>$c = 3 + 4 + 5 * 2; // 17 </code></pre>
+            <pre><code>$d = 13; </code></pre>
+            <pre><code>$d += 1; // 14   --> value akan masuk pada variabel yang kiri</code></pre>
+            <pre><code>$d -= 2; // 12 </code></pre>
+            <pre><code>$d *= 4; // 48 </code></pre>
+            
+          </div>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Ini tombol</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Hal Penting!!!</h2>
+          <p>Hal-hal yang harus diperhatikan ketikan menggunakan operator di PHP</p>
+          <br>
+
+          <div class="mockup-code">         
+            <pre><code>$a = '1'; </code></pre>
+            <pre><code>$b = 2; </code></pre>
+            <pre><code>$c = $a + b; // error  --> hanya digunakan untuk operator arithmetic</code></pre>
+            <pre><code>$d = $a . $b // 12     --> digunakan pada string </code></pre>
+          </div>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Ini tombol</button>
+          </div>
+        </div>
+      </div>
       </div>
 </body>
 </html>
