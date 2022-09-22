@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Client-Server Slide 43</title>
+  </head>
+  <body>
+    <div class="slide flex pt-5 flex-wrap gap-14 justify-center mx-5">
+
+    <!--  Card Client-Server slide 47  -->
+    <div class="card card-compact w-96 bg-base-300 shadow-xl">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <div class="card-body text-justify">
+        <h1 class="card-title">PHP Basics</h1>
+        <p>Script Server-side akan dijalankan pada server,
+          sementara script Client-side akan dijalankan pada client (browser)</p>
+        <div class="mockup-code">
+          <pre><code>&lt!DOCTYPE html></code></pre>
+          <pre><code>&lt!html>&ltbody></code></pre>
+          <pre><code>  &lt?php</code></pre>
+          <pre><code>    $var1 = 10;</code></pre>
+          <pre><code>    $var2 = 20;</code></pre>
+          <pre><code>    echo "Server output: ", $var1 * $var2;</code></pre>
+          <pre><code>  ?></code></pre>
+          <pre><code></code></pre>
+          <pre><code>  &ltdiv id="client">&lt/div></code></pre>
+          <pre><code></code></pre>
+          <pre><code>  &ltscript></code></pre>
+          <pre><code>    var var1 = 10;</code></pre>
+          <pre><code>    var var2 = 30;</code></pre>
+          <pre><code>    var hasil = "Client output: " + var1 * var2;</code></pre>
+          <pre><code></code></pre>
+          <pre><code>    document.querySelector("#client").innerHTML =</code></pre>
+          <pre><code>    hasil;</code></pre>
+          <pre><code>  ?>/script></code></pre>
+          <pre><code>&lt/body>&lt/html></code></pre>
+
+        </div>
+        <div class="card-actions justify-end">
+          <button class="bg-violet-900 btn btn-primary">Back</button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>
