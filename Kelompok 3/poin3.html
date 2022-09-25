@@ -198,74 +198,119 @@
     <div class="card-body">
       <h2 class="card-title">Array</h2>
       <p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p>
-      <p>Jenis Array
-      <ol>
-        <li> Index Array : menggunakan index </li>
-        <li> Associative Array : menggunakan nama sebagai key </li>
-      </ol>
-      </p>
+      <br>
+      
+      <h4> Index Array </h4>
+      <p> Untuk mendefinisikan variabel array dapat menggunakan index yang dimulai dari 0</p>
       <br>
 
       <div class="mockup-code">
-
-        <pre><code>Index Array </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$nama[0] = "Attar";
-              $nama[1] = "Zidan";
-              $nama[2] = "Jerry"
-              print_r($nama);
-              Output : Array ([0] => Attar [1] => Zidan [2] => Jerry)
-            </code></pre>
-
-        <pre><code>Associative Array </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$creator['Light bulb'] = 'Edison';
-              $creator['Rotary Engine'] = 'Wankel';
-            print_r($creator);
-            Output : Array ([Light bulb] => Edison [Rotary Engine] => Wankel)</code></pre>
-        <br>
-
-        <pre><code>Sorting Array </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>sort($nama);
-              Output : ["Attar", "Jerry", "Zidan"]
-            </code></pre>
-
-        <pre><code>Menambahkan value pada Array</code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$family = ["Wawan", "Diah"];
-              $family[] = "Rizal";
-              $family[] = "Rara";
-              echo $family[3]; // Rara
-            </code></pre>
-
-        <pre><code>Range </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$numbers = range(1,5); // [1,2,3,4,5] </code></pre>
-
-        <br>
-
-        <pre><code>Count</code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$size = count($family); // $size = 4 </code></pre>
-        <br>
-
-        <pre><code>Swapping value </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$one = 'Fred';
-                $two = 'Wilma';
-                [$one, $two] = [$two, $one];
-                echo $one, $two; // 'Wilma', 'Fred'</code></pre>
-        <br>
-
-        <pre><code>Destructuring Array </code></pre>
-        <pre><code>Contoh : </code></pre>
-        <pre><code>$arr = [10, 20, 30];
-              [$a, $b, $c] = $arr;
-              echo $a; // 10
-              echo $b; // 20
-              echo $c; // 30 </code></pre>
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$nama[0] = "Attar";</code></pre>
+        <pre><code>$nama[1] = "Zidan";</code></pre>
+        <pre><code>$nama[2] = "Jerry";</code></pre>
+        <pre><code>print_r($nama);</code></pre>
+        <pre><code>?&gt;</code></pre>
       </div>
+
+      <h4> Associative Array </h4>
+      <p> Untuk mendefinisikan variabel array dapat menggunakan nama sebagai key</p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>&$creator['Light bulb'] = 'Edison';</code></pre>
+        <pre><code>&$creator['Rotary Engine'] = 'Wankel';</code></pre>
+        <pre><code>&print_r($creator);</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+
+      <h4> Count </h4>
+      <p> Digunakan untuk mengetahui jumlah value pada suatu array</p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$family = ["Wawan", "Diah", "Rizal", "Rara"];</code></pre>
+        <pre><code>$$size = count($family);</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+
+      <h4> Sorting Array </h4>
+      <p> sort()    : mengurutkan secara ascending <br> 
+      rsort()   : mengurutkan secara descending <br> 
+      asort()   : mengurutkan associative array secara ascending berdasar value <br> 
+      ksort()   : mengurutkan associative array secara ascending berdasar key <br> 
+      arsort()  : mengurutkan associative array secara descending berdasar value <br> 
+      krsort()  : mengurutkan associative array secara descending berdasar key </p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$nama[0] = "Attar";</code></pre>
+        <pre><code>$nama[1] = "Zidan";</code></pre>
+        <pre><code>$nama[2] = "Jerry";</code></pre>
+        <pre><code>sort($nama);</code></pre>
+        <pre><code>$nlength = count($nama);</code></pre>
+        <pre><code>for($i = 0; $i &lt; $nlength; $i++) {</code></pre>
+        <pre><code>echo $nama[$i];</code></pre>
+        <pre><code>echo "&lt;br&gt;";};</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+
+      <h4> Menambahkan Value Pada Array </h4>
+      <p> Array pada bahasa php dapat ditambahkan</p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$family = ["Wawan", "Diah"];</code></pre>
+        <pre><code>$family[] = "Rizal";</code></pre>
+        <pre><code>$family[] = "Rara";</code></pre>
+        <pre><code>echo $family[3];</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+
+      <h4> Range </h4>
+      <p> Menggunakan range dapat mengisi value pada array sesuai dengan kisaran yang dituliskan</p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$numbers = range(1,5);</code></pre>
+        <pre><code>$numlength = count($numbers);</code></pre>
+        <pre><code>for($i = 0; $i &lt; $numlength; $i++) {</code></pre>
+        <pre><code>echo $numbers[$i];</code></pre>
+        <pre><code>echo ", ";}; </code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+      
+      <h4> Swapping Value </h4>
+      <p> Array pada php dapat saling bertukar value</p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$one = 'Fred';</code></pre>
+        <pre><code>$two = 'Wilma';</code></pre>
+        <pre><code>[$one, $two] = [$two, $one];</code></pre>
+        <pre><code>echo "$one, $two";</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+
+      <h4> Destructuring Array </h4>
+      <p> Array pada php dapat didestructuring yaitu setiap value pada array dapat menjadi value dari sebuah variabel </p>
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$arr = [10, 20, 30];</code></pre>
+        <pre><code>[$a, $b, $c] = $arr;</code></pre>
+        <pre><code>echo "$a, $b, $c";</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+      
+
 
       <div class="card-actions justify-end">
         <button class="btn btn-primary">Ini tombol</button>
