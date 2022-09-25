@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SLIDE 14</title>
+</head>
+
+<body>
+    <div class="grid md:grid-cols-3">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Semicolon berfungsi untuk mengakhiri sebuah statement. Semicolon merupakan salah satu elemen penting,
+                    karena kode akan mengalami error jika lupa menyisipkan semicolon<br>
+                </p>
+                <div class="mockup-code">
+                    <pre><code>  echo “Good Morning!”;
+    myFunction(30, “Cinderella”);
+    $x = 5;
+    $name = “Kazuha”;
+    $b = $a / 25.0;
+    if ($a == $b) {
+        echo “Rhyme? And Reason?”;
+    }</code></pre>
+                </div>
+
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Ini tombol</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Dalam pemberian nama variabel pada PHP, ada beberapa peraturan yang harus diperhatikan, yaitu : <br>
+                    1. diawali tanda $ <br>
+                    2. diawali huruf atau underscore (_) <br>
+                    3. case sensitive (membedakan huruf besar dan kecil) <br>
+                    4. hanya berupa huruf dan angka <br>
+                    5. inisiasi variabel menggunakan tanda sama dengan (=)
+                </p>
+                <div class="mockup-code">
+                    <pre><code>  $paw
+    $IniSeptember
+    $I_LOVE_PHP
+    $_filkom
+    $nama = "jang wonyoung";</code></pre>
+                </div>
+
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Ini tombol</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Pada source code di bawah ini, variabel yang mengandung 100 adalah variabel <code>$world</code></p>
+                <div class="mockup-code">
+                    <pre><code>$foo = 'bar';</code></pre>
+                    <pre><code>$$foo = 'world';</code></pre>
+                    <pre><code>$$$foo = 100;</code></pre>
+                </div>
+                <p>Variabel <code>$foo</code> diatas berisi string 'bar', sehingga <code>$$foo</code> adalah variabel
+                    <code>$bar</code>, yang berisi string 'world'.
+                </p>
+                <p>Karena variabel <code>$$foo</code> berisi 'world', maka variabel <code>$$$foo</code> adalah variabel
+                    <code>$world</code>, yang berisi 100.
+                </p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Ini tombol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
