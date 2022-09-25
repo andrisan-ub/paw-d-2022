@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">Form register</h2>
+      <p>File register.html</p>
+      <div class="mockup-code">
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Register&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Register&lt;/h1&gt;
+&lt;form action="register_process.php" method="post"&gt;
+
+&lt;label&gt;Username:
+
+&lt;input type="text" name="username"&gt;
+&lt;label&gt;Password:
+
+&lt;input type="password" name="password"&gt;
+
+&lt;/label&gt;
+&lt;button type="submit" value="Register"&gt;Register&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+      </div>
+      <p>File register_process.php</p>
+      <div class="mockup-code">
+        <pre><code>
+&lt;/?php
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+echo "Registering $username with password $password";
+
+?&gt;
+        </code></pre>
+      </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Ini tombol</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
