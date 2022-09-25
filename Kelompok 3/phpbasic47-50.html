@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Basic Slide 47-50</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Basic Slide 47-50</title>
 </head>
 
 <body>
 </body>
 <!--  Ini card slide 47  -->
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics</h2>
-      <p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut. 
-        Untuk menginterpolasi, variabel berada didalam tanda kutip ganda. 
-        Cara lain dai itu adalah dengan mengurung variabel dengan kurung kurawal</p>
+  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">PHP Basics</h2>
+    <p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut.
+      Untuk menginterpolasi, variabel berada didalam tanda kutip ganda.
+      Cara lain dai itu adalah dengan mengurung variabel dengan kurung kurawal</p>
 
-      <div class="mockup-code">
-        <pre><code>$n = 12;</code></pre>
-        <pre><code>echo “You are the $nth person”; // You are the 12th person</code></pre>
-        <pre><code>echo “You are the {$n}th person”; // You are the 12th person</code></pre>
-      </div>
+    <div class="mockup-code">
+      <pre><code>$n = 12;</code></pre>
+      <pre><code>echo “You are the $nth person”; // You are the 12th person</code></pre>
+      <pre><code>echo “You are the {$n}th person”; // You are the 12th person</code></pre>
+    </div>
 
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
-      </div>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Ini tombol</button>
     </div>
   </div>
+</div>
 
-  <!--  Ini card slide 48  -->
+<!--  Ini card slide 48  -->
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics</h2>
-      <p>untuk mengambil variabel terdapat cara lain juga yaitu dengan tanda petik tunggal ('') atau petik ganda ("")</p>
-      <p>double dollar ($$x, di mana x adalah nama variabel) dalah variabel referensi yang digunakan untuk menyimpan nilai variabel dolar tunggal ($x) di dalamnya. </p>
+  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">PHP Basics</h2>
+    <p>untuk mengambil variabel terdapat cara lain juga yaitu dengan tanda petik tunggal ('') atau petik ganda ("")</p>
+    <p>double dollar ($$x, di mana x adalah nama variabel) dalah variabel referensi yang digunakan untuk menyimpan nilai
+      variabel dolar tunggal ($x) di dalamnya. </p>
 
-      <div class="mockup-code">
-        <pre><code>$var = 'world';</code></pre>
-        <pre><code>$$var = 100;</code></pre>
-        <pre><code>echo 'Hello $var'; // Hello</code></pre>
-        <pre><code>echo "Hello $var""; // $var</code></pre>
-        <pre><code>echo 'Hello $world'; // Hello world</code></pre>
-        <pre><code>echo "Hello $world""; // Hello 100</code></pre>
+    <div class="mockup-code">
+      <pre><code>$var = 'world';</code></pre>
+      <pre><code>$$var = 100;</code></pre>
+      <pre><code>echo 'Hello $var'; // Hello</code></pre>
+      <pre><code>echo "Hello $var""; // $var</code></pre>
+      <pre><code>echo 'Hello $world'; // Hello world</code></pre>
+      <pre><code>echo "Hello $world""; // Hello 100</code></pre>
     </div>
-      
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
-      </div>
+
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Ini tombol</button>
     </div>
   </div>
+</div>
 
-  <!--  Ini card slide 49  -->
+<!--  Ini card slide 49  -->
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics</h2>
-      <p>String memiliki index pada setiap karakter seperti array</p>
-      <p>digunakan untuk mengambil index dari variable</p>
+  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">PHP Basics</h2>
+    <p>String memiliki index pada setiap karakter seperti array</p>
+    <p>digunakan untuk mengambil index dari variable</p>
 
-      <div class="mockup-code">
-        <pre><code>$s = 'Hello';</code></pre>
-        <pre><code>echo $s[0]; // H</code></pre>
-        <pre><code>echo $s[-1]; // o</code></pre>
+    <div class="mockup-code">
+      <pre><code>$s = 'Hello';</code></pre>
+      <pre><code>echo $s[0]; // H</code></pre>
+      <pre><code>echo $s[-1]; // o</code></pre>
     </div>
-      
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
-      </div>
+
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Ini tombol</button>
     </div>
   </div>
+</div>
 
-  <!--  Ini card slide 50  -->
-  <div class="card card-compact w-96 bg-base-100 shadow-xl">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics</h2>
-      <p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p>
+<!--  Ini card slide 50  -->
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">PHP Basics</h2>
+    <p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p>
 
-      <div class="mockup-code">
-        <pre><code>if ($a == $b) {</code></pre>
-        <pre><code>    echo “a and b are equal”</code></pre>
-        <pre><code>}</code></pre>
+    <div class="mockup-code">
+      <pre><code>if ($a == $b) {</code></pre>
+      <pre><code>    echo “a and b are equal”</code></pre>
+      <pre><code>}</code></pre>
     </div>
-      
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
-      </div>
+
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Ini tombol</button>
     </div>
   </div>
+</div>
+
 </html>

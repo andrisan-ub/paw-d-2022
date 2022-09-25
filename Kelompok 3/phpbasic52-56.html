@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="grid md:grid-cols-2">
+  <div class="grid md:grid-cols-3">
     <!--  Ini card slide 52  -->
     <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
       <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
@@ -21,12 +21,10 @@
         <p>Fungsi strlen() mengambil string sebagai argumen dan mengembalikan panjangnya. </p>
         <p>Nilai yang dikembalikan adalah tipe size_t (tipe integer yang tidak ditandatangani). </p>
         <p>Itu didefinisikan dalam string.</p>
-
         <div class="mockup-code">
-
           <pre><code>$s = ‘FILKOM UB’;
-            <pre><code>echo strlen($s); // 9 </code></pre>
-
+            echo strlen($s); // 9 
+          </code></pre>
         </div>
         <div class="card-actions justify-end">
           <button class="btn btn-primary">Ini tombol</button>
@@ -56,9 +54,7 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="grid md:grid-cols-2">
     <!--  Ini card slide 54  -->
     <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
       <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
@@ -71,11 +67,8 @@
 
         <div class="mockup-code">
           <pre><code>$s = ‘filkom ub’;</code></pre>
-          <br>
           <pre><code>echo strtoupper($s);</code></pre>
           <pre><code>// FILKOM UB</code></pre>
-
-
         </div>
         <div class="card-actions justify-end">
           <button class="btn btn-primary">Ini tombol</button>
@@ -84,53 +77,49 @@
     </div>
   </div>
 
+  <div class="grid md:grid-cols-2 mt-10">
+    <!--  Ini card slide 55  -->
+    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">PHP Basics page 55</h2>
+        <p>Metode trim() menghapus spasi dari kedua ujung string dan mengembalikan string baru, tanpa mengubah string
+          asli.</p>
+        <p>Spasi dalam konteks ini adalah semua karakter white space (space, tab, no-break space, dll.) dan semua
+          karakter terminator baris (LF, CR, dll.).</p>
 
-  <!--  Ini card slide 55  -->
-  <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics page 55</h2>
-      <p>Metode trim() menghapus spasi dari kedua ujung string dan mengembalikan string baru, tanpa mengubah string
-        asli.</p>
-      <p>Spasi dalam konteks ini adalah semua karakter white space (space, tab, no-break space, dll.) dan semua
-        karakter terminator baris (LF, CR, dll.).</p>
+        <div class="mockup-code">
+          <pre><code>$s = ‘ FILKOM UB ’;</code></pre>
+          <pre><code>echo trim($s);</code></pre>
+          <pre><code>// FILKOM UB</code></pre>
 
-      <div class="mockup-code">
-        <pre><code>$s = ‘ FILKOM UB ’;</code></pre>
-        <br>
-
-        <pre><code>echo trim($s);</code></pre> <br>
-
-        <pre><code>// FILKOM UB</code></pre> <br>
-
-
-      </div>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
+        </div>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Ini tombol</button>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!--  Ini card slide 56  -->
+    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">PHP Basics page 56</h2>
+        <p>Operator dot adalah operator gabungan PHP.</p>
+        <p>Dua operan string digabungkan bersama (karakter string tangan kanan ditambahkan ke string tangan kiri) dan
+          mengembalikan string baru.</p>
 
-  <!--  Ini card slide 56  -->
-  <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">PHP Basics page 56</h2>
-      <p>Operator dot adalah operator gabungan PHP.</p>
-      <p>Dua operan string digabungkan bersama (karakter string tangan kanan ditambahkan ke string tangan kiri) dan
-        mengembalikan string baru.</p>
+        <div class="mockup-code">
+          <pre><code>$s1 = ‘FILKOM ’;</code></pre>
+          <pre><code>$s2 = ‘UB’;</code></pre>
+          <pre><code>$s3 = $s1 . $s2;</code></pre>
+          <pre><code>// FILKOM UB</code></pre>
 
-      <div class="mockup-code">
-        <pre><code>$s1 = ‘FILKOM ’;</code></pre>
-        <pre><code>$s2 = ‘UB’;</code></pre>
-        <pre><code>$s3 = $s1 . $s2;</code></pre>
-        <pre><code>// FILKOM UB</code></pre>
-
-        <br>
-      </div>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Ini tombol</button>
+          <br>
+        </div>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Ini tombol</button>
+        </div>
       </div>
     </div>
   </div>
