@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Client-Server</title>
+</head>
+<body>
+    <div class="container p-10">
+        <div class="container text-center p-8 text-xl border-slate-600 border-b-4 text-white">
+            <div class="grid-rows" data-aos="fade-down">
+                <h1 class="text-3xl">Client-Server</h1>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <div class="grid-rows-1">
+                <div class="flex flex-wrap mx-auto justify-content-center">
+                    <div class="card w-200 bg-base-300 shadow-xl" data-aos="fade-up">
+                        <br>
+                        <figure><img src="./src/assets/server.png" style="height: 400px;"/></figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Server and Client-side Scripting</h2>
+                            <p>Maksud dari Server-side Scripting adalah bahasa pemrograman web yang pengelolaan datanya dilakukan oleh server. 
+                            Jadi, setiap web dibuka maka server akan mengirimkan data yang dibutuhkan dari database untuk ditampilkan di web. 
+                            Sedangkan pada Client-side Scripting pengelolaan datanya dilakukan oleh komputer pengguna. Jadi, ketika web dibuka, 
+                            komputer milik pengguna akan mendownload script yang bersifat client-side di web tersebut.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <br>
+        
+        <div class="container">
+                <div class="flex flex-wrap mx-auto justify-around">
+                    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box" data-aos="fade-right" >
+                        <div class="collapse-title text-xl font-medium">
+                          Halaman 43
+                        </div>
+                        <div class="collapse-content"> 
+                            <div class="card w-100 bg-base-300 shadow-xl my-8">
+                                <div class="mockup-code m-4">
+                                    <pre data-prefix="$">
+                                        <code>
+                                            &lt!DOCTYPE html>
+                                            &lthtml>&ltbody>
+                                                    &lth1>&l?php
+                                                        $hello = "Hello ";
+                                                        $world = "world!";
+                                                        echo $hello, $world;
+                                                    ?>&lt/h1>
+                                            &lt/body>&lt/html>
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title">Halaman 43</h2>
+                                    <p>Sourcecode diatas merupakan html yang terdapat script php di dalamnya. Penulisan script php harus diawali dengan 
+                                        "&lt?php" dan ditutup dengan "?&gt". Menulis variabel dalam php harus diawali dengan tanda $ seperti pada baris ke 4 dan 5, 
+                                        jika tidak diawali dengan tanda $ maka variabel tidak valid. Setelah variabel selesai diinisialisasi kita akan mengambil 
+                                        nilai dari variabel tadi dengan cara menulis perintah “echo” untuk menampilkan nilai variabel pada output, seperti pada 
+                                        baris ke 6 yang tertulis “echo $hello, $world” yang bertujuan untuk menampilkan nilai dari variabel $hello dan $world. 
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <br>
+                
+                <div class="flex flex-wrap mx-auto justify-around">
+                    <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box" data-aos="fade-left" >
+                        <div class="collapse-title text-xl font-medium">
+                          Halaman 47
+                        </div>
+                        <div class="collapse-content"> 
+                            <div class="card w-100 bg-base-300 shadow-xl my-8">
+                                <div class="mockup-code m-4">
+                                    <pre data-prefix="$">
+                                        <code>
+                                            &lt!DOCTYPE html>
+                                            &lthtml>&ltbody>
+                                                &lt?php
+                                                    $var1 = 10;
+                                                    $var2 = 20;
+                                                    echo “Server output: “, $var1 * $var2;
+                                                ?>
+                                                &ltdiv id=“client”>&lt/div>
+                                                &ltscript>
+                                                    var var1 = 10;
+                                                    var var2 = 30;
+                                                    var hasil = “Client output: ” + var1 * var2;
+                                                    document.querySelector(“#client”).innerHTML = hasil;
+                                                &lt/script>
+                                            &lt/body>&lt/html>
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title">Halaman 47</h2>
+                                    <p>Pada sourcecode di atas terdiri dari dua bagian, yang pertama menggunakan Server-side Script dan yang kedua menggunakan 
+                                        Client-side Script. Pada bagian pertama, yaitu baris ke 3 sampai dengan 7 merupakan Server-side script,  yang diawali 
+                                        dengan menginisialisasi $var1 dan $var2. Kemudian menampilkan nilai dari variabel tersebut dengan memberikan perintah 
+                                        echo “Server output: “, $var1 * $var2;, perkalian variabel ini akan dikerjakan pada server sehingga akan menampilkan 
+                                        output “Server output: 200” ketika program dijalankan. Selanjutnya  pada bagian kedua, yaitu pada baris ke 8 sampai 
+                                        14 merupakan Client-side Script. Pada penulisannya diawali dengan &ltscript>, lalu menginisialisasi kedua variabel var. 
+                                        Lalu untuk mengambil nilai dari variabel menggunakan syntax "var hasil = "Client output: " + var1 * var2;". 
+                                        Lalu pada baris selanjutnya diberi "document.querySelector(“#client”).innerHTML = hasil;" yang berguna untuk mengambil 
+                                        elemen dari HTML dengan id client yaitu hasil. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <br>
+        </div>
+        
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init(
+                window.addEventListener('load', AOS.refresh())
+            )
+          </script>
+    </div>
+</body>
+</html>
