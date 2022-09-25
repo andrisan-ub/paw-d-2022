@@ -7,14 +7,14 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>SELEKSI KONDISI, LOOPING, DAN ARRAY</title>
 </head>
 
 <body>
   <div class="grid md:grid-cols-2">
     <!--  IF ELSE  -->
     <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <figure><img src="img/if.PNG" alt="Shoes" /></figure>
       <div class="card-body">
         <h2 class="card-title">IF ELSE</h2>
         <p>IF ELSE adalah suatu struktur logika untuk membuat pencabangan alur program.</p>
@@ -88,7 +88,7 @@
   <div class="grid md:grid-cols-3 gap-2 mt-10">
     <!--  FOR LOOP  -->
     <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <figure><img src="img/for.PNG" alt="Shoes" /></figure>
       <div class="card-body">
         <h2 class="card-title">FOR</h2>
         <p>Perulangan menggunakan for digunakan ketika mengetahui banyaknya pengulangan akan dilakukan</p>
@@ -116,7 +116,7 @@
 
     <!--  WHILE LOOP -->
     <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+      <figure><img src="img/while.PNG" alt="While" /></figure>
       <div class="card-body">
         <h2 class="card-title">WHILE</h2>
         <p>Perulangan While termasuk jenis perulangan uncounted loop atau perulangan yang belum jelas jumlah
@@ -133,19 +133,13 @@
         </p>
         <div class="mockup-code">
 
-          <pre><code>$x = 1; 
- 
-  while($x <= 5) {
-    echo "Angka $x < br>";
+          <pre><code>&lt;?php
+  $x = 1; 
+             
+    while($x &lt;= 5) {
+    echo "Angka $x &lt;br&gt;";
     $x++;
-  } 
-  
-  Output :
-    Angka 1
-    Angka 2
-    Angka 3
-    Angka 4
-    Angka 5
+    } 
         </code></pre>
 
         </div>
@@ -169,19 +163,12 @@
           dengan 5:</p>
         <div class="mockup-code">
 
-          <pre><code>$x = 1;
-        do {
-            echo "The number is: $x < br>";
-            $x++;
-         } while ($x <= 5); </code></pre> <br>
-
-          <pre><code>Output:</code></pre>
-          <pre><code>
-        The number is: 1
-        The number is: 2
-        The number is: 3
-        The number is: 4
-        The number is: 5</code></pre>
+          <pre><code>&lt;?php
+  $x = 1;
+    do {
+    echo "The number is: $x < br>";
+      $x++;
+    } while ($x <= 5); </code></pre>
 
         </div>
         <div class="card-actions justify-end">
@@ -199,7 +186,7 @@
       <h2 class="card-title">Array</h2>
       <p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p>
       <br>
-      
+
       <h4> Index Array </h4>
       <p> Untuk mendefinisikan variabel array dapat menggunakan index yang dimulai dari 0</p>
       <br>
@@ -238,12 +225,12 @@
       </div>
 
       <h4> Sorting Array </h4>
-      <p> sort()    : mengurutkan secara ascending <br> 
-      rsort()   : mengurutkan secara descending <br> 
-      asort()   : mengurutkan associative array secara ascending berdasar value <br> 
-      ksort()   : mengurutkan associative array secara ascending berdasar key <br> 
-      arsort()  : mengurutkan associative array secara descending berdasar value <br> 
-      krsort()  : mengurutkan associative array secara descending berdasar key </p>
+      <p> sort() : mengurutkan secara ascending <br>
+        rsort() : mengurutkan secara descending <br>
+        asort() : mengurutkan associative array secara ascending berdasar value <br>
+        ksort() : mengurutkan associative array secara ascending berdasar key <br>
+        arsort() : mengurutkan associative array secara descending berdasar value <br>
+        krsort() : mengurutkan associative array secara descending berdasar key </p>
       <br>
 
       <div class="mockup-code">
@@ -285,7 +272,7 @@
         <pre><code>echo ", ";}; </code></pre>
         <pre><code>?&gt;</code></pre>
       </div>
-      
+
       <h4> Swapping Value </h4>
       <p> Array pada php dapat saling bertukar value</p>
       <br>
@@ -302,7 +289,8 @@
       </div>
 
       <h4> Destructuring Array </h4>
-      <p> Array pada php dapat didestructuring yaitu setiap value pada array dapat menjadi value dari sebuah variabel </p>
+      <p> Array pada php dapat didestructuring yaitu setiap value pada array dapat menjadi value dari sebuah variabel
+      </p>
       <br>
 
       <div class="mockup-code">
@@ -312,7 +300,7 @@
         <pre><code>echo "$a, $b, $c";</code></pre>
         <pre><code>?&gt;</code></pre>
       </div>
-      
+
       <div class="card-actions justify-end">
         <button class="btn btn-primary">Ini tombol</button>
       </div>
