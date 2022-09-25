@@ -12,86 +12,120 @@
 
 <body>
 </body>
+<!--navbar-->
+<!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Client-Server</a></li>
+              <li><a>PHP-Basic</a></li>
+              <li><a>Penerapan</a></li>
+              <li><a>Nilai Konverensi Mahasiswa</a></li>
+              <li><a>Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+      </button>
+  </div>
+</div>
+
 <!--  Ini card slide 47  -->
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">PHP Basics</h2>
-    <p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut.
-      Untuk menginterpolasi, variabel berada didalam tanda kutip ganda.
-      Cara lain dai itu adalah dengan mengurung variabel dengan kurung kurawal</p>
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut.
+        Untuk menginterpolasi, variabel berada didalam tanda kutip ganda.
+        Cara lain dai itu adalah dengan mengurung variabel dengan kurung kurawal</p>
 
-    <div class="mockup-code">
-      <pre><code>$n = 12;</code></pre>
-      <pre><code>echo “You are the $nth person”; // You are the 12th person</code></pre>
-      <pre><code>echo “You are the {$n}th person”; // You are the 12th person</code></pre>
-    </div>
-
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Ini tombol</button>
+      <div class="mockup-code">
+        <pre><code>$n = 12;</code></pre>
+        <pre><code>echo “You are the $nth person”; // You are the 12th person</code></pre>
+        <pre><code>echo “You are the {$n}th person”; // You are the 12th person</code></pre>
+      </div>
     </div>
   </div>
 </div>
+
+<br>
 
 <!--  Ini card slide 48  -->
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">PHP Basics</h2>
-    <p>untuk mengambil variabel terdapat cara lain juga yaitu dengan tanda petik tunggal ('') atau petik ganda ("")</p>
-    <p>double dollar ($$x, di mana x adalah nama variabel) dalah variabel referensi yang digunakan untuk menyimpan nilai
-      variabel dolar tunggal ($x) di dalamnya. </p>
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>untuk mengambil variabel terdapat cara lain juga yaitu dengan tanda petik tunggal ('') atau petik ganda ("")</p>
+      <p>double dollar ($$x, di mana x adalah nama variabel) dalah variabel referensi yang digunakan untuk menyimpan nilai
+        variabel dolar tunggal ($x) di dalamnya. </p>
 
-    <div class="mockup-code">
-      <pre><code>$var = 'world';</code></pre>
-      <pre><code>$$var = 100;</code></pre>
-      <pre><code>echo 'Hello $var'; // Hello</code></pre>
-      <pre><code>echo "Hello $var""; // $var</code></pre>
-      <pre><code>echo 'Hello $world'; // Hello world</code></pre>
-      <pre><code>echo "Hello $world""; // Hello 100</code></pre>
-    </div>
-
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Ini tombol</button>
+      <div class="mockup-code">
+        <pre><code>$var = 'world';</code></pre>
+        <pre><code>$$var = 100;</code></pre>
+        <pre><code>echo 'Hello $var'; // Hello</code></pre>
+        <pre><code>echo "Hello $var""; // $var</code></pre>
+        <pre><code>echo 'Hello $world'; // Hello world</code></pre>
+        <pre><code>echo "Hello $world""; // Hello 100</code></pre>
+      </div>
     </div>
   </div>
 </div>
+
+<br>
 
 <!--  Ini card slide 49  -->
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">PHP Basics</h2>
-    <p>String memiliki index pada setiap karakter seperti array</p>
-    <p>digunakan untuk mengambil index dari variable</p>
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>String memiliki index pada setiap karakter seperti array</p>
+      <p>digunakan untuk mengambil index dari variable</p>
 
-    <div class="mockup-code">
-      <pre><code>$s = 'Hello';</code></pre>
-      <pre><code>echo $s[0]; // H</code></pre>
-      <pre><code>echo $s[-1]; // o</code></pre>
-    </div>
-
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Ini tombol</button>
+      <div class="mockup-code">
+        <pre><code>$s = 'Hello';</code></pre>
+        <pre><code>echo $s[0]; // H</code></pre>
+        <pre><code>echo $s[-1]; // o</code></pre>
+      </div>
     </div>
   </div>
 </div>
 
+<br>
+
 <!--  Ini card slide 50  -->
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">PHP Basics</h2>
-    <p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p>
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p>
 
-    <div class="mockup-code">
-      <pre><code>if ($a == $b) {</code></pre>
-      <pre><code>    echo “a and b are equal”</code></pre>
-      <pre><code>}</code></pre>
-    </div>
-
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Ini tombol</button>
+      <div class="mockup-code">
+        <pre><code>if ($a == $b) {</code></pre>
+        <pre><code>    echo “a and b are equal”</code></pre>
+        <pre><code>}</code></pre>
+      </div>
     </div>
   </div>
 </div>
