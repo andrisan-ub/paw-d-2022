@@ -35,7 +35,7 @@
       <div class="mockup-code">
         <pre><code>&lt;?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST'):
-    if (!isset($_POST['nilai0'])):
+    if (isset($_POST['jumlah'])):
       $jumlah = $_POST['jumlah'];
         
       for ($i=0; $i&lt;$jumlah; $i++):
