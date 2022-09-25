@@ -11,7 +11,43 @@
 </head>
 
 <body>
-    
+    <h1 class="p-7 mt-7 mx-4 font-bold text-xl text-black text-center bg-info rounded-3xl">Basic PHP Introduction</h1>
+    <br />
+    <div class="grid gap-5 justify-items-center">
+        <div class="card w-150 bg-base-200 shadow-x1 card-bordered text-center">
+          <div class="card-body">
+            <h3 class="card-title pb-4 justify-center">Variabel Mana yang Bernilai 100?</h3>
+            <div class="mockup-code p-6 justify-items-auto">              
+              <pre data-prefix=">"><code>$foo = 'bar'; </code></pre>
+              <pre data-prefix=">"><code>$$foo='world';</code></pre>
+              <pre data-prefix=">"><code>$$$foo = 100; </code></pre>
+              <code class="text-error">echo?</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Konsep Dasar</h3>
+          <div class="mockup-code p-6 justify-center">              
+            <p><code>$foo = 'dollar'; </code></p>
+            <p><code>$$foo='duaDollar';</code></p>
+            <p class="text-warning"><code>//maka $dollar = 'duaDollar'; </code></p>
+          </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Jawaban</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$foo = 'bar'; </code></p>
+                    <p><code>$$foo='world';</code></p>
+                    <p><code>$$$foo = 100; </code></p>
+                    <p class="text-success"><code>echo $world;</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
 </body>
 
 </html>
