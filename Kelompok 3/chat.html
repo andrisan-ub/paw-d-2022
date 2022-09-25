@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <figure><img src="img/register.png" alt="Form register" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">AJAX Chat App</h2>
+            <p>chat.html</p>
+            <div class="mockup-code">
+                <pre><code>
+                    &lt;<!DOCTYPE html>&gt;
+                    &lt;<html>&gt;
+                    &lt;<head>&gt;
+                    &lt;<title>AJAX Chat App</title>&gt;
+                    &lt;</head>&gt;
+                    &lt;<body>&gt;
+                    &lt;<textarea id="chat" rows="20" cols="31"></textarea><br>&gt;
+                    &lt;<label>&gt;
+                    &lt;Message: <input type="text" id="message">&gt;
+                    &lt;</label>&gt;
+                    &lt;<script src="chat.js"></script>&gt;
+                    &lt;</body>&gt;
+                    &lt;</html>&gt;
+        </code></pre>
+            </div>
+            <p>chat.js</p>
+            <div class="mockup-code">
+                <pre><code>
+                    &lt;const chat = document.querySelector("#chat");&gt;
+                    &lt;const message = document.querySelector("#message");&gt;
+                    &lt;const baseUrl ="http://localhost/htdocs/chat";&gt;
+                    &lt;function readChat() {&gt;
+                    &lt;fetch(`${baseUrl}/chat-read.php`)&gt;
+                    &lt;.then(res => res.text())&gt;
+                    &lt;.then(res => {&gt;
+                    &lt;chat.value = res;&gt;
+                    &lt;});&gt;
+                    &lt;setTimeout(readChat, 1000);&gt;
+                    &lt;};&gt;
+                    &lt;readChat();&gt;
+                    &lt;message.addEventListener("keyup", e => {&gt;
+                    &lt;if (e.keyCode === 13) {&gt;
+                    &lt;fetch(`${baseUrl}/chat-write.php`, {&gt;
+                    &lt;method: "post",&gt;
+                    &lt;headers: {&gt;
+                    &lt;"Content-Type": "application/x-www-form-urlencoded",&gt;
+                    &lt;},&gt;
+                    &lt;body: `text=${message.value}`&gt;
+                    &lt;});&gt;
+                    &lt;message.value = "";&gt;
+                    &lt;}&gt;
+                    &lt;});&gt;
+    </code></pre>
+            </div>
+            <p>chat-read.php</p>
+            <div class="mockup-code">
+                <pre><code>
+                    &lt;<?php&gt;
+                    &lt;echo file_get_contents("chat.txt");&gt;
+
+    </code></pre>
+            </div>
+            <p>chat-write.php</p>
+            <div class="mockup-code">
+                <pre><code>
+                    &lt;<?php&gt;
+                    &lt;$message = $_POST["message"];&gt;
+                    &lt;file_put_contents("chat.txt", "message \n", FILE_APPEND);&gt;
+    </code></pre>
+            </div>
+            <p>chat.txt</p>
+            <div class="mockup-code">
+                <pre><code>
+                    &lt;&gt;
+    </code></pre>
+            </div>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary">Ini tombol</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
