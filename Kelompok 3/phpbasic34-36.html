@@ -51,11 +51,18 @@
 
           <div class="mockup-code">            
             <pre><code>&lt;?php</code></pre>
-            <pre><code>$c = 3 + 4 + 5 * 2;</code></pre>
+            <pre><code>$c = 3 + 4 + 5 - 2;</code></pre>
             <pre><code>echo "c = $c";</code></pre>
             <pre><code>print("&lt;br&gt;");</code></pre>
-            <pre><code>echo "c -= 2, c = ", $c -= 2;</code></pre>
+            <pre><code>$c = 13;</code></pre>
+            <pre><code>$c += 14;</code></pre>
+            <pre><code>echo "c += 14 maka c = $c";</code></pre> 
             <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>$c -= 2;</code></pre>
+            <pre><code>echo "c -=2 maka c =  $c";</code></pre> 
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>$c *= 4;</code></pre>
+            <pre><code>echo "c *= 4 maka c = $c";</code></pre> 
             <pre><code>?&gt;</code></pre>
 
           </div>
@@ -81,7 +88,7 @@
             <pre><code>print("&lt;br&gt;");</code></pre>
             <pre><code>echo "e = $e ---&gt; Integer";</code></pre>
             <pre><code>print("&lt;br&gt;");</code></pre>
-            <pre><code>echo "d + e = ", $d + b; </code></pre>
+            <pre><code>echo "d + e = ", $d + b; // error</code></pre>
             <pre><code>print("&lt;br&gt;");</code></pre>
             <pre><code>echo "d + e = ", $d . $e; </code></pre>
             <pre><code>?&gt;</code></pre>
