@@ -8,16 +8,16 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="slide flex pt-5 flex-wrap gap-14 justify-center mx-5">
+  <div class="card card-compact w-96 bg-base-100 shadow-xl">
     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="card-title">Client-Server</h2>
-      <p>ini isinya materi</p>
+      <h2 class="card-title">Konversi nilai mahasiswa</h2>
+      <p>File konversinilai.html</p>
       <div class="mockup-code">
         <pre><code>&lt;!DOCTYPE html&gt;
   &lt;html&gt;
     &lt;head&gt;
-      &lt;title&gt;Coba konversi nilai&lt;/title&gt;
+      &lt;title&gt;Konversi nilai mahasiswa&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
       &lt;h1&gt;Konversi nilai mahasiswa&lt;/h1&gt;
@@ -39,10 +39,11 @@
       $jumlah = $_POST['jumlah'];
         
       for ($i=0; $i&lt;$jumlah; $i++):
-        echo '&lt;form method="POST"&gt;
-                Nilai ke-'.($i+1).':
-                &lt;input type="number" name="'."nilai$i".'" min="0" max="4" step="0.01" required&gt;&lt;br&gt;
-              ';
+        echo
+          '&lt;form method="POST"&gt;
+            Nilai ke-'.($i+1).':
+            &lt;input type="number" name="'."nilai$i".'" min="0" max="4" step="0.01" required&gt;&lt;br&gt;
+          ';
       endfor;
       echo '&lt;input type="submit" value="Konversi nilai"&gt;&lt;/form&gt;';
     else:
