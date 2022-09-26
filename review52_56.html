@@ -7,11 +7,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Review Materi Slide 52-56</title>
 </head>
 
 <body>
-    
+    <h1 class="p-7 mt-7 mx-4 font-bold text-xl text-black text-center bg-info rounded-3xl">Basic PHP Introduction</h1>
+    </br>
+    <!--Fungsi PHP strlen()-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+          <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
+      <!--Fungsi PHP strtolower()-->
+      <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Fungsi strtolower()</h3>
+          <p>Fungsi ini digunakan untuk mengubah seluruh karakter pada sebuah variabel
+            menjadi huruf kecil (lowercase).  
+          </p>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'HELLO'; </code></p>
+                    <p><code>echo strtolower($kata);</code></p>
+                    <p class="text-success"><code>//hello</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
+      <!--Fungsi PHP strtoupper()-->
+      <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Fungsi strtoupper()</h3>
+          <p>Fungsi ini digunakan untuk mengubah seluruh karakter pada sebuah variabel
+            menjadi huruf besar (uppercase).  
+          </p>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'besar'; </code></p>
+                    <p><code>echo strtoupper($kata);</code></p>
+                    <p class="text-success"><code>//BESAR</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
+      <!--Fungsi PHP trim()-->
+      <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Fungsi trim()</h3>
+          <p>Fungsi trim() berfungsi untuk menghapus spasi yang berada di depan dan belakang 
+            string (spasi yang ada diantara string tidak termasuk). 
+          </p>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = '  Tanpa spasi  '; </code></p>
+                    <p><code>echo strtolower($kata);</code></p>
+                    <p class="text-success"><code>//Tanpa spasi</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
+      <!--Operator dot(".")-->
+      <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Operator dot(".")</h3>
+          <p>Operator ini digunakan untuk menggabungkan dua variabel yang berupa string.</p>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata1 = 'satu '; </code></p>
+                    <p><code>$kata2 ='dua';</code></p>
+                    <p><code>$gabung = $kata1.$kata2; </code></p>
+                    <p class="text-success"><code>//satu dua</code></p>
+                </div>
+            </div>    
+        </div>
+      </div>
 </body>
 
 </html>
