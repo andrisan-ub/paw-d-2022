@@ -9,18 +9,41 @@
 </head>
 
 <body>
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
         <div class="card-body">
             <h2 class="card-title">Client-Server</h2>
             <p>Server-side scripts merupakan bahasa pemrograman yang pengolahannya berada langsung di server yang telah
                 terintegrasi dengan web engine. Sedangkan,
                 client-side scripts merupakan bahasa pemrograman yang proses pengolahannya hanya terdapat di browser
                 yang berperan sebagai client.</p>
+
+            <p>*server-side scripts</p>
+            <figure><img src="img/cs2.PNG" alt="Shoes" /></figure>
             <div class="mockup-code">
                 <pre><code>
+ &lt;?php
+ $var1 = 10;
+ $var2 = 20;
+   echo “Server output: “, $var1 * $var2;
+ ?&gt;
+
     </code ></pre>
             </div>
+            <p>*client-side scripts</p>
+            <figure><img src="img/cs3.PNG" alt="Shoes" /></figure>
+            <div class="mockup-code">
+                <pre><code>        
+ &lt;div id=“client”&gt;
+ &lt;script&gt;
+    var var1 = 10;
+    var var2 = 30;
+    var hasil = “Client output: ” + var1 * var2;
+    document.querySelector(“#client”).innerHTML = hasil;
+ &lt;/script&gt; 
+
+    </code ></pre>
+            </div>
+
 
             <div class="card-actions justify-end">
                 <button class="btn btn-primary">Ini tombol</button>

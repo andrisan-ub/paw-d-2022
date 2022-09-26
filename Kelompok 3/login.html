@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
 </head>
+
 <body>
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">Form Login</h2>
-          <p>File login.html</p>
-          <div class="mockup-code">
-            <pre><code>       
+  <div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">Form Login</h2>
+      <h2>File login.html</h2>
+      <p> Ketika user melakukan login, data akan disesuaikan dengan yang ada di "login_process.php"
+        apabila sesuai maka outputnya "Login succeeds" sedangkan jika tidak sesuai maka "Login fails".
+      </p>
+      <br>
+      <div class="mockup-code">
+        <pre><code>       
                 &lt;form action="login_process.php" method="post"&gt;
                 
                 &lt;label&gt;
@@ -38,28 +44,36 @@
                 &lt;/form&gt;
             </code></pre>
 
-          </div>
-          <p>File login_process.php</p>
-          <div class="mockup-code">
-            <pre><code>                     
-                &lt;label&gt;
-                Password:
-
-                &lt;input type="password" name="password"&gt;&lt;br&gt;
-
-                &lt;/label&gt;
-                &lt;br&gt;
-                &lt;input type="submit" value="Login"&gt;
-
-                &lt;/form&gt;
-            </code></pre>
-            
-          </div>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Ini tombol</button>
-          </div>
-        </div>
       </div>
-    
+      <br>
+      <h2>File login_process.php</h2>
+      <p>Untuk menampilkan data yang dikirimkan, bisa dilakukan echo pada file "login_process.php".</p>
+      <br>
+      <div class="mockup-code">
+        <pre><code>&lt;?php
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+          
+          if ($username == 'admin' &amp;&amp; $password == '123456') {
+          
+          echo '&lt;h1&gt;Login succeeds&lt;/h1&gt;';
+          
+          } else {
+          
+          echo '&lt;h1&gt;Login fails&lt;/h1&gt;';
+          
+          }
+          
+          ?&gt;
+            </code></pre>
+
+      </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Ini tombol</button>
+      </div>
+    </div>
+  </div>
+
 </body>
+
 </html>
