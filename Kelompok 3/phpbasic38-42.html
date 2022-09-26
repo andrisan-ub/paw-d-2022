@@ -12,137 +12,156 @@
 
 <body>
 
-  <div class="h-100 grid grid-cols-3 gap-4 content-start">
-    <!--  Ini card slide 38  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="img/38.png" alt="Slide 38" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">PHP Basics</h2>
-        <p>PHP Comparison Operators digunakan untuk membandingkan dua nilai (angka atau string).</p>
-        <h2>PHP Comparison mirip dengan operator di bawah ini.</h2>
+<div class="flex justify-center">
 
-        <div class="mockup-code">
+   <!--  Ini card slide 38  -->
+   <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="img/38.png" alt="Slide 38" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>PHP Comparison Operators digunakan untuk membandingkan dua nilai (angka atau string).</p>
+      <h2>PHP Comparison mirip dengan operator di bawah ini.</h2>
 
-          <pre><code>var_dump(2 < 3); // true</code></pre>
-          <pre><code>var_dump(3 < 3); // false</code></pre>
-          <pre><code>var_dump(3 <= 3); // true</code></pre>
-          <pre><code>var_dump(4 <= 3); // false</code></pre>
-          <pre><code>var_dump(2 > 3); // false</code></pre>
-          <pre><code>var_dump(3 >= 3); // true</code></pre>
-          <pre><code>var_dump(3 > 3); // false</code></pre>
+      <div class="mockup-code">
 
-        </div>
-
-      </div>
-    </div>
-
-    <!--  Ini card slide 39  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="img/39.png" alt="Slide 39" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">PHP Basics</h2>
-        <p>Begitu juga dengan logical operator seperti di bawah ini.</p>
-
-        <div class="mockup-code">
-
-          <pre><code>var_dump(true && true); // true </code></pre>
-          <pre><code>var_dump(true && false); // false</code></pre>
-          <pre><code>var_dump(true || false); // true</code></pre>
-          <pre><code>var_dump(false || false); // false</code></pre>
-          <pre><code>var_dump(!false); // true </code></pre>
-
-        </div>
+        <pre><code>var_dump(2 < 3); // true</code></pre>
+        <pre><code>var_dump(3 < 3); // false</code></pre>
+        <pre><code>var_dump(3 <= 3); // true</code></pre>
+        <pre><code>var_dump(4 <= 3); // false</code></pre>
+        <pre><code>var_dump(2 > 3); // false</code></pre>
+        <pre><code>var_dump(3 >= 3); // true</code></pre>
+        <pre><code>var_dump(3 > 3); // false</code></pre>
 
       </div>
+
     </div>
-
-    <!--  Ini card slide 40  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="img/41.png" alt="Slide 41" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">PHP Basics</h2>
-        <p>Pada PHP 7, terdapat operator baru, yaitu "spaceship" operator. Spaceship operator mengembalikan bilangan
-          bulat yang kurang dari, sama dengan, atau lebih besar dari nol, bergantung pada apakah $x lebih kecil dari,
-          sama dengan, atau lebih besar dari $y.</p>
-
-        <div class="mockup-code">
-          <pre><code>var_dump($x <=> $y);</code></pre>
-          <br>
-          <pre><code>var_dump(1 <=> 5); // -1, karena $x < $y </code></pre>
-          <pre><code>var_dump(1 <=> 1); // 0, karena $x = $y</code></pre>
-          <pre><code>var_dump(5 <=> 2); // 1, karena $x > $y</code></pre>
-
-
-        </div>
-
-      </div>
-    </div>
-
-    <!--  Ini card slide 41  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="img/41.png" alt="Slide 41" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">PHP Basics</h2>
-        <p>Pada PHP 7 juga memperkenalkan null coalescing operator. Operator ini mengembalikan nilai $x. Nilai $x adalah
-          expr1 jika expr1 ada, dan bukan NULL. Jika expr1 tidak ada, atau NULL, nilai $x adalah expr2.</p>
-
-        <div class="mockup-code">
-          <pre><code>$uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';
-var_dump($uname); 
-// variable ($_GET['uname']) adalah null, 
-sehingga nilai $username adalah "guest".
-</code></pre>
-          <br>
-
-          <pre><code>$uname = $_GET['uname'] ?? 'guest';
-var_dump($uname); 
-// variable ($_GET['uname']) adalah null, 
-sehingga nilai $username adalah "guest". </code></pre> <br>
-
-          <pre><code>$_GET['uname'] = 'admin';
-$uname = $_GET['uname'] ?? 'guest';
-var_dump($uname); 
-// variable ($_GET['uname']) adalah admin, 
-sehingga nilai $username adalah "admin".</code></pre> <br>
-
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <!--  Ini card slide 42  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure><img src="img/42.png" alt="Slide 42" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">PHP Basics</h2>
-        <p>Saat membandingkan nilai, kita harus berhati-hati dengan type jugggling. Jenis variabel ditentukan oleh nilai
-          yang disimpannya. Artinya, jika sebuah string dimasukkan ke dalam variabel $var, maka $var bertipe string.
-          Jika setelah itu nilai int ditetapkan ke $var, itu akan bertipe int.</p>
-
-        <div class="mockup-code">
-          <pre><code>$a = 3;</code></pre>
-          <pre><code>$b = '3';</code></pre>
-          <pre><code>$c = 5;</code></pre>
-
-          <br>
-
-          <pre><code>var_dump($a == $b); // true, karena bernilai sama </code></pre>
-          <pre><code>var_dump($a === $b); // false, karena tipe data tidak sama </code></pre>
-          <pre><code>var_dump($a != $b); // false, karena bernilai sama</code></pre>
-          <pre><code>var_dump($a !== $b); // true, karena tipe data tidak sama </code></pre>
-          <pre><code>var_dump($a == $c); // false, karena tidak bernilai sama  </code></pre>
-          <pre><code>var_dump($a <> $c); // true, karena tidak bernilai sama</code></pre>
-
-
-        </div>
-
-      </div>
-    </div>
-
   </div>
+</div>
 
+  <div class="flex justify-center">
+
+   <!--  Ini card slide 39  -->
+   <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="img/39.png" alt="Slide 39" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Begitu juga dengan logical operator seperti di bawah ini.</p>
+
+      <div class="mockup-code">
+
+        <pre><code>var_dump(true && true); // true </code></pre>
+        <pre><code>var_dump(true && false); // false</code></pre>
+        <pre><code>var_dump(true || false); // true</code></pre>
+        <pre><code>var_dump(false || false); // false</code></pre>
+        <pre><code>var_dump(!false); // true </code></pre>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center">
+
+  <!--  Ini card slide 40  -->
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="img/40.png" alt="Slide 40" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Pada PHP 7, terdapat operator baru, yaitu "spaceship" operator. Spaceship operator mengembalikan bilangan
+        bulat yang kurang dari, sama dengan, atau lebih besar dari nol, bergantung pada apakah $x lebih kecil dari,
+        sama dengan, atau lebih besar dari $y.</p>
+
+      <div class="mockup-code">
+        <pre><code>var_dump($x <=> $y);</code></pre>
+        <br>
+        <pre><code>var_dump(1 <=> 5); // -1, karena $x < $y </code></pre>
+        <pre><code>var_dump(1 <=> 1); // 0, karena $x = $y</code></pre>
+        <pre><code>var_dump(5 <=> 2); // 1, karena $x > $y</code></pre>
+
+
+      </div>
+
+    </div>
+ </div>
+</div>
+
+
+<div class="flex justify-center">
+
+  <!--  Ini card slide 41  -->
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="img/41.png" alt="Slide 41" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Pada PHP 7 juga memperkenalkan null coalescing operator. Operator ini mengembalikan nilai $x. Nilai $x adalah
+        expr1 jika expr1 ada, dan bukan NULL. Jika expr1 tidak ada, atau NULL, nilai $x adalah expr2.</p>
+
+      <div class="mockup-code">
+        <pre><code>
+        $uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';
+         var_dump($uname); 
+        // variable ($_GET['uname']) adalah null, sehingga nilai $username adalah "guest".
+</code></pre>
+        <br>
+
+        <pre><code>
+        $uname = $_GET['uname'] ?? 'guest';
+        var_dump($uname); 
+        // variable ($_GET['uname']) adalah null, sehingga nilai $username adalah "guest". </code></pre> <br>
+
+        <pre><code>
+        $_GET['uname'] = 'admin';
+        $uname = $_GET['uname'] ?? 'guest';
+        var_dump($uname); 
+        // variable ($_GET['uname']) adalah admin, sehingga nilai $username adalah "admin".</code></pre> <br>
+
+
+      </div>
+
+    </div>
+</div>
+</div>
+
+
+<div class="flex justify-center">
+
+  <!--  Ini card slide 42  -->
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+    <figure><img src="img/42.png" alt="Slide 42" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Saat membandingkan nilai, kita harus berhati-hati dengan type jugggling. Jenis variabel ditentukan oleh nilai
+        yang disimpannya. Artinya, jika sebuah string dimasukkan ke dalam variabel $var, maka $var bertipe string.
+        Jika setelah itu nilai int ditetapkan ke $var, itu akan bertipe int.</p>
+
+      <div class="mockup-code">
+                <pre><code>$a = 3;</code></pre>
+                <pre><code>$b = '3';</code></pre>
+                <pre><code>$c = 5;</code></pre>
+
+        <br>
+
+        <pre><code>var_dump($a == $b); // true, karena bernilai sama </code></pre>
+        <pre><code>var_dump($a === $b); // false, karena tipe data tidak sama </code></pre>
+        <pre><code>var_dump($a != $b); // false, karena bernilai sama</code></pre>
+        <pre><code>var_dump($a !== $b); // true, karena tipe data tidak sama </code></pre>
+        <pre><code>var_dump($a == $c); // false, karena tidak bernilai sama  </code></pre>
+        <pre><code>var_dump($a <> $c); // true, karena tidak bernilai sama</code></pre>
+
+
+      </div>
+
+    </div>
+ </div>
+</div>
+
+
+
+</div>
+   
+
+  
 
 </body>
 
