@@ -14,80 +14,91 @@
         <figure><img src="img/chat.png" alt="chat" /></figure>
         <div class="card-body">
             <h2 class="card-title">AJAX Chat App</h2>
+
             <p>chat.html</p>
             <div class="mockup-code">
                 <pre><code>
-                    &lt;<!DOCTYPE html>&gt;
-                    &lt;<html>&gt;
-                    &lt;<head>&gt;
-                    &lt;<title>AJAX Chat App</title>&gt;
-                    &lt;</head>&gt;
-                    &lt;<body>&gt;
-                    &lt;<textarea id="chat" rows="20" cols="31"></textarea><br>&gt;
-                    &lt;<label>&gt;
-                    &lt;Message: <input type="text" id="message">&gt;
-                    &lt;</label>&gt;
-                    &lt;<script src="chat.js"></script>&gt;
-                    &lt;</body>&gt;
-                    &lt;</html>&gt;
+                    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;AJAX Chat App&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;textarea id="chat" rows="20" cols="31"&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;label&gt;
+    Message: &lt;input type="text" id="message"&gt;
+    &lt;/label&gt;
+    &lt;script src="chat.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
         </code></pre>
             </div>
+
+
             <p>chat.js</p>
             <div class="mockup-code">
                 <pre><code>
-                    &lt;const chat = document.querySelector("#chat");&gt;
-                    &lt;const message = document.querySelector("#message");&gt;
-                    &lt;const baseUrl ="http://localhost/htdocs/chat";&gt;
-                    &lt;function readChat() {&gt;
-                    &lt;fetch(`${baseUrl}/chat-read.php`)&gt;
-                    &lt;.then(res => res.text())&gt;
-                    &lt;.then(res => {&gt;
-                    &lt;chat.value = res;&gt;
-                    &lt;});&gt;
-                    &lt;setTimeout(readChat, 1000);&gt;
-                    &lt;};&gt;
-                    &lt;readChat();&gt;
-                    &lt;message.addEventListener("keyup", e => {&gt;
-                    &lt;if (e.keyCode === 13) {&gt;
-                    &lt;fetch(`${baseUrl}/chat-write.php`, {&gt;
-                    &lt;method: "post",&gt;
-                    &lt;headers: {&gt;
-                    &lt;"Content-Type": "application/x-www-form-urlencoded",&gt;
-                    &lt;},&gt;
-                    &lt;body: `text=${message.value}`&gt;
-                    &lt;});&gt;
-                    &lt;message.value = "";&gt;
-                    &lt;}&gt;
-                    &lt;});&gt;
+    const chat = document.querySelector("#chat");
+    const message = document.querySelector("#message");
+    const baseUrl ="http://localhost/htdocs/chat";
+    function readChat() {
+        fetch(`${baseUrl}/chat-read.php`)
+        .then(res => res.text())
+        .then(res => {
+        chat.value = res;
+        });
+    setTimeout(readChat, 1000);
+    };
+    readChat();
+    message.addEventListener("keyup", e => {
+    if (e.keyCode === 13) {
+        fetch(`${baseUrl}/chat-write.php`, {
+        method: "post",
+        headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `text=${message.value}`
+        });
+        message.value = "";
+        }
+        });
     </code></pre>
             </div>
+
+
             <p>chat-read.php</p>
             <div class="mockup-code">
                 <pre><code>
-                    &lt;<?php&gt;
-                    &lt;echo file_get_contents("chat.txt");&gt;
+    &lt;?php
+    echo file_get_contents("chat.txt");
 
     </code></pre>
             </div>
+
+
             <p>chat-write.php</p>
             <div class="mockup-code">
                 <pre><code>
-                    &lt;<?php&gt;
-                    &lt;$message = $_POST["message"];&gt;
-                    &lt;file_put_contents("chat.txt", "message \n", FILE_APPEND);&gt;
+    &lt;?php
+    $message = $_POST["message"];
+    file_put_contents("chat.txt", "message \n", FILE_APPEND);
     </code></pre>
             </div>
+
+
             <p>chat.txt</p>
             <div class="mockup-code">
                 <pre><code>
-                    &lt;&gt;
-    </code></pre>
+
+                </code></pre>
             </div>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Ini tombol</button>
+
+
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Ini tombol</button>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
