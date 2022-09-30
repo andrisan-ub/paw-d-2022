@@ -1,237 +1,261 @@
 <!DOCTYPE html>
 <html data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <title>PHP Basic Hal. 47-50</title>
-  </head>
-  <body>
-    <!-- Awal Navbar -->
-    <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
-      <div class="navbar bg-teal-500">
-        <div class="flex-1">
-          <a href="index.html" class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100">Kelompok 1</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <title>PHP Basic Hal. 47-50</title>
+</head>
+
+<body>
+  <!-- Awal Navbar -->
+  <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
+    <div class="navbar bg-teal-500">
+      <div class="flex-1">
+        <a href="index.html" class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100">Kelompok 1</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li>
+            <a href="index.html" class="text-slate-100 font-medium active:bg-teal-500">Home</a>
+          </li>
+          <li tabindex="0">
+            <a class="text-slate-100 font-medium active:bg-teal-500">
+              Soal
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+              </svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="resume-client-server.html" class="active:bg-teal-500">Client Server</a></li>
+              <li><a href="resume-14-22-26.html" class="active:bg-teal-500">PHP Basics</a></li>
+              <li><a class="active:bg-teal-500">Soal 3</a></li>
+              <li><a class="active:bg-teal-500">Soal 4</a></li>
+              <li><a class="active:bg-teal-500">Soal 5</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="text-slate-100 font-medium active:bg-teal-500">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Akhir Navbar -->
+
+  <div class="container p-10 mt-10">
+    <!-- Judul -->
+    <div class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500">
+      <h1 class="font-bold">PHP Basics Hal. 47-50</h1>
+    </div>
+    <!-- Akhir judul -->
+
+    <!-- Isi konten -->
+    <div class="container">
+      <div class="flex flex-wrap justify-around">
+        <!-- Konten1 -->
+        <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="1000"
+          class="card w-96 bg-base-300 shadow-xl my-8">
+          <div class="mockup-code m-4">
+            <pre data-prefix="1"><code>&lt?php</code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre data-prefix="3"><code>$n = 12;</code></pre>
+            <pre data-prefix="4"><code></code></pre>
+            <pre
+              data-prefix="5"><code>echo "You are the $nth person &ltbr&gt"; <span class="text-warning">error </span></code></pre>
+            <pre data-prefix="6"><code>echo "You are the {$n}th person &ltbr&gt";</code></pre>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title text-black">Mengelilingi Variable dengan kurung kurawal untuk interpolasi</h2>
+            <p>
+              Error di baris ke 3 code tsb dikarenakan jika tidak menggunakan kurung kurawal maka sistem akan mencari
+              variable “nth”. Jadi fungsi kurung kurawal tersebut untuk memisahkan variable yang kita cari dengan String
+              yang lain.
+            </p>
+            <div class="showPopUp card-actions justify-end">
+              <button class="btn bg-teal-500 border-none">Output</button>
+            </div>
+          </div>
         </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal p-0">
-            <li>
-              <a href="index.html" class="text-slate-100 font-medium active:bg-teal-500">Home</a>
-            </li>
-            <li tabindex="0">
-              <a class="text-slate-100 font-medium active:bg-teal-500">
-                Soal
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </a>
-              <ul class="p-2 bg-base-100">
-                <li><a href="resume-client-server.html" class="active:bg-teal-500">Client Server</a></li>
-                <li><a href="resume-14-22-26.html" class="active:bg-teal-500">PHP Basics</a></li>
-                <li><a class="active:bg-teal-500">Soal 3</a></li>
-                <li><a class="active:bg-teal-500">Soal 4</a></li>
-                <li><a class="active:bg-teal-500">Soal 5</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="text-slate-100 font-medium active:bg-teal-500">About</a>
-            </li>
-          </ul>
+
+        <!-- Konten2 -->
+        <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="1500"
+          class="card w-96 bg-base-300 shadow-xl my-8">
+          <div class="mockup-code m-4">
+            <pre data-prefix="1"><code>&lt?php</code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre data-prefix="3"><code>$var = 'world';</code></pre>
+            <pre data-prefix="4"><code>$$var = '100';</code></pre>
+            <pre data-prefix="5"><code></code></pre>
+            <pre data-prefix="6"><code>echo 'Hello $var &ltbr&gt';</code></pre>
+            <pre data-prefix="7"><code>echo "Hello $var &ltbr&gt";</code></pre>
+            <pre data-prefix="8"><code>echo 'Hello $world &ltbr&gt';</code></pre>
+            <pre data-prefix="9"><code>echo "Hello $world &ltbr&gt";</code></pre>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title text-black">What’s the output?</h2>
+            <p>
+              Untuk code baris ke 4 dan 6 variable tidak akan di eksekusi sesuai dengan nilai yang sudah dideklarasikan
+              di awal karena echo menggunakan petik satu (‘). Untuk baris ke-5 variable $var akan menampilkan “world”
+              sesuai dengan
+              yang dideklarasikan di awal. Dan untuk baris ke-7 variable $world akan berisi 100 dikarenakan di awal
+              sudah dilakukannya deklarasi nilai world menjadi 100 dengan menggunakan $$(nama_variable)
+            </p>
+            <div class="showPopUp2 card-actions justify-end">
+              <button class="btn bg-teal-500 border-none">Output</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Konten3 -->
+        <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="2000"
+          class="card w-96 bg-base-300 shadow-xl my-8">
+          <div class="mockup-code m-4">
+            <pre data-prefix="1"><code>&lt?php</code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre data-prefix="3"><code>$s = 'Hello';</code></pre>
+            <pre data-prefix="4"><code>echo $s[0]."&ltbr&gt";</code></pre>
+            <pre data-prefix="5"><code>echo $s[-1]."&ltbr&gt";</code></pre>
+            <pre data-prefix="6"><code></code></pre>
+            <pre data-prefix="7"><code>$a = "hello";</code></pre>
+            <pre data-prefix="8"><code>$b = "hello";</code></pre>
+            <pre data-prefix="9"><code>if ($a == $b) {</code></pre>
+            <pre data-prefix="10"><code>   echo "a and b are equal";</code></pre>
+            <pre data-prefix="11"><code>}</code></pre>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title text-black">Pengolahan String</h2>
+            <p>
+              1. String di PHP seperti array, setiap karakter/huruf memiliki index <br />
+              2. Untuk menguji dua String sama atau tidak bisa menggunakan operator “==”
+            </p>
+            <div class="showPopUp3 card-actions justify-end">
+              <button class="btn bg-teal-500 border-none">Output</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Akhir Navbar -->
+    <!-- Akhir Konten -->
 
-    <div class="container p-10 mt-10">
-      <!-- Judul -->
-      <div class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500">
-        <h1 class="font-bold">PHP Basics Hal. 47-50</h1>
-      </div>
-      <!-- Akhir judul -->
+    <!-- Pagination -->
+    <div class="btn-group flex flex-wrap justify-between pt-8">
+      <a class="btn btn-outline" href="Halaman 38-42.html">&lt&lt Back</a>
+      <a class="btn btn-outline" href="halaman52-59.html">Next &gt&gt</a>
+    </div>
+    <!-- Akhir Pagination -->
 
-      <!-- Isi konten -->
-      <div class="container">
-        <div class="flex flex-wrap justify-around">
-          <!-- Konten1 -->
-          <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="1000" class="card w-96 bg-base-300 shadow-xl my-8">
-            <div class="mockup-code m-4">
-              <pre data-prefix="1"><code>&lt?php</code></pre>
-              <pre data-prefix="2"><code></code></pre>
-              <pre data-prefix="3"><code>$n = 12;</code></pre>
-              <pre data-prefix="4"><code></code></pre>
-              <pre data-prefix="5"><code>echo "You are the $nth person &ltbr&gt"; <span class="text-warning">error </span></code></pre>
-              <pre data-prefix="6"><code>echo "You are the {$n}th person &ltbr&gt";</code></pre>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title text-black">Mengelilingi Variable dengan kurung kurawal untuk interpolasi</h2>
-              <p>
-                Error di baris ke 3 code tsb dikarenakan jika tidak menggunakan kurung kurawal maka sistem akan mencari variable “nth”. Jadi fungsi kurung kurawal tersebut untuk memisahkan variable yang kita cari dengan String yang lain.
-              </p>
-              <div class="showPopUp card-actions justify-end">
-                <button class="btn bg-teal-500 border-none">Output</button>
-              </div>
-            </div>
+    <!-- Pop Up -->
+    <div
+      class="popUp h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+      <!-- Model -->
+      <div class="card w-2/4 bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="card-actions justify-end closePopUp">
+            <button class="btn btn-square btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
-
-          <!-- Konten2 -->
-          <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="1500" class="card w-96 bg-base-300 shadow-xl my-8">
-            <div class="mockup-code m-4">
-              <pre data-prefix="1"><code>&lt?php</code></pre>
-              <pre data-prefix="2"><code></code></pre>
-              <pre data-prefix="3"><code>$var = 'world';</code></pre>
-              <pre data-prefix="4"><code>$$var = '100';</code></pre>
-              <pre data-prefix="5"><code></code></pre>
-              <pre data-prefix="6"><code>echo 'Hello $var &ltbr&gt';</code></pre>
-              <pre data-prefix="7"><code>echo "Hello $var &ltbr&gt";</code></pre>
-              <pre data-prefix="8"><code>echo 'Hello $world &ltbr&gt';</code></pre>
-              <pre data-prefix="9"><code>echo "Hello $world &ltbr&gt";</code></pre>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title text-black">What’s the output?</h2>
-              <p>
-                Untuk code baris ke 4 dan 6 variable tidak akan di eksekusi sesuai dengan nilai yang sudah dideklarasikan di awal karena echo menggunakan petik satu (‘). Untuk baris ke-5 variable $var akan menampilkan “world” sesuai dengan
-                yang dideklarasikan di awal. Dan untuk baris ke-7 variable $world akan berisi 100 dikarenakan di awal sudah dilakukannya deklarasi nilai world menjadi 100 dengan menggunakan $$(nama_variable)
-              </p>
-              <div class="showPopUp2 card-actions justify-end">
-                <button class="btn bg-teal-500 border-none">Output</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Konten3 -->
-          <div data-aos="flip-left" data-aos-anchor=".other-element" data-aos-duration="2000" class="card w-96 bg-base-300 shadow-xl my-8">
-            <div class="mockup-code m-4">
-              <pre data-prefix="1"><code>&lt?php</code></pre>
-              <pre data-prefix="2"><code></code></pre>
-              <pre data-prefix="3"><code>$s = 'Hello';</code></pre>
-              <pre data-prefix="4"><code>echo $s[0]."&ltbr&gt";</code></pre>
-              <pre data-prefix="5"><code>echo $s[-1]."&ltbr&gt";</code></pre>
-              <pre data-prefix="6"><code></code></pre>
-              <pre data-prefix="7"><code>$a = "hello";</code></pre>
-              <pre data-prefix="8"><code>$b = "hello";</code></pre>
-              <pre data-prefix="9"><code>if ($a == $b) {</code></pre>
-              <pre data-prefix="10"><code>   echo "a and b are equal";</code></pre>
-              <pre data-prefix="11"><code>}</code></pre>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title text-black">Pengolahan String</h2>
-              <p>
-                1. String di PHP seperti array, setiap karakter/huruf memiliki index <br />
-                2. Untuk menguji dua String sama atau tidak bisa menggunakan operator “==”
-              </p>
-              <div class="showPopUp3 card-actions justify-end">
-                <button class="btn bg-teal-500 border-none">Output</button>
-              </div>
-            </div>
-          </div>
+          <img src="./src/assets/resume47.png" alt="resume47.png" />
+          <p>Output</p>
         </div>
       </div>
-      <!-- Akhir Konten -->
-
-      <!-- Pagination -->
-      <div class="btn-group flex flex-wrap justify-between pt-8">
-        <a class="btn btn-outline" href="Halaman 38-42.html">&lt&lt Back</a>
-        <a class="btn btn-outline">Next &gt&gt</a>
-      </div>
-      <!-- Akhir Pagination -->
-
-      <!-- Pop Up -->
-      <div class="popUp h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
-        <!-- Model -->
-        <div class="card w-2/4 bg-base-100 shadow-xl">
-          <div class="card-body">
-            <div class="card-actions justify-end closePopUp">
-              <button class="btn btn-square btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-            </div>
-            <img src="./src/assets/resume47.png" alt="resume47.png" />
-            <p>Output</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="popUp2 h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
-        <!-- Model -->
-        <div class="card w-2/4 bg-base-100 shadow-xl">
-          <div class="card-body">
-            <div class="card-actions justify-end closePopUp2">
-              <button class="btn btn-square btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-            </div>
-            <img src="./src/assets/resume48.png" alt="resume47.png" />
-            <p>Output</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="popUp3 h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
-        <!-- Model -->
-        <div class="card w-2/4 bg-base-100 shadow-xl">
-          <div class="card-body">
-            <div class="card-actions justify-end closePopUp3">
-              <button class="btn btn-square btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-            </div>
-            <img src="./src/assets/resume49-50.png" alt="resume49-50.png" />
-            <p>Output</p>
-          </div>
-        </div>
-      </div>
-      <!-- close Pop Up -->
     </div>
 
-    <!-- Footer -->
-    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
-      <div>
-        <p class="text-slate-100 font-medium tracking-wider">Copyright © 2022 - Kelompok 1 PAW</p>
+    <div
+      class="popUp2 h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+      <!-- Model -->
+      <div class="card w-2/4 bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="card-actions justify-end closePopUp2">
+            <button class="btn btn-square btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <img src="./src/assets/resume48.png" alt="resume47.png" />
+          <p>Output</p>
+        </div>
       </div>
-    </footer>
-    <!-- Akhir Footer -->
+    </div>
 
-    <script>
-      AOS.init();
+    <div
+      class="popUp3 h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+      <!-- Model -->
+      <div class="card w-2/4 bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="card-actions justify-end closePopUp3">
+            <button class="btn btn-square btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <img src="./src/assets/resume49-50.png" alt="resume49-50.png" />
+          <p>Output</p>
+        </div>
+      </div>
+    </div>
+    <!-- close Pop Up -->
+  </div>
 
-      const popUp = document.querySelector(".popUp");
-      const popUp2 = document.querySelector(".popUp2");
-      const popUp3 = document.querySelector(".popUp3");
+  <!-- Footer -->
+  <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+    <div>
+      <p class="text-slate-100 font-medium tracking-wider">Copyright © 2022 - Kelompok 1 PAW</p>
+    </div>
+  </footer>
+  <!-- Akhir Footer -->
 
-      const showPopUp = document.querySelector(".showPopUp");
-      const showPopUp2 = document.querySelector(".showPopUp2");
-      const showPopUp3 = document.querySelector(".showPopUp3");
+  <script>
+    AOS.init();
 
-      const closePopUp = document.querySelector(".closePopUp");
-      const closePopUp2 = document.querySelector(".closePopUp2");
-      const closePopUp3 = document.querySelector(".closePopUp3");
+    const popUp = document.querySelector(".popUp");
+    const popUp2 = document.querySelector(".popUp2");
+    const popUp3 = document.querySelector(".popUp3");
 
-      showPopUp.addEventListener("click", function () {
-        popUp.classList.remove("hidden");
-      });
+    const showPopUp = document.querySelector(".showPopUp");
+    const showPopUp2 = document.querySelector(".showPopUp2");
+    const showPopUp3 = document.querySelector(".showPopUp3");
 
-      showPopUp2.addEventListener("click", function () {
-        popUp2.classList.remove("hidden");
-      });
+    const closePopUp = document.querySelector(".closePopUp");
+    const closePopUp2 = document.querySelector(".closePopUp2");
+    const closePopUp3 = document.querySelector(".closePopUp3");
 
-      showPopUp3.addEventListener("click", function () {
-        popUp3.classList.remove("hidden");
-      });
+    showPopUp.addEventListener("click", function () {
+      popUp.classList.remove("hidden");
+    });
 
-      closePopUp.addEventListener("click", function () {
-        popUp.classList.add("hidden");
-      });
+    showPopUp2.addEventListener("click", function () {
+      popUp2.classList.remove("hidden");
+    });
 
-      closePopUp2.addEventListener("click", function () {
-        popUp2.classList.add("hidden");
-      });
+    showPopUp3.addEventListener("click", function () {
+      popUp3.classList.remove("hidden");
+    });
 
-      closePopUp3.addEventListener("click", function () {
-        popUp3.classList.add("hidden");
-      });
-    </script>
-  </body>
+    closePopUp.addEventListener("click", function () {
+      popUp.classList.add("hidden");
+    });
+
+    closePopUp2.addEventListener("click", function () {
+      popUp2.classList.add("hidden");
+    });
+
+    closePopUp3.addEventListener("click", function () {
+      popUp3.classList.add("hidden");
+    });
+  </script>
+</body>
+
 </html>
