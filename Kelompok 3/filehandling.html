@@ -45,6 +45,138 @@
   </div>
 </div>
 
+    <!-- File handling slide 2-11 -->
+    <div class="flex justify-center">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+        
+        <div class="card-body">
+          <h2 class="card-title">Fungsi fopen( )</h2>
+          <p>Fungsi fopen( ) dapat digunakan untuk membaca suatu file dan juga dapat membuat sebuah file</p>
+          <br>
+
+          <figure><img src="img/file_handling_mode_r.png" alt="fopen() mode r" /></figure>
+          <h2 class ="card-title">Mode r</h2>
+          <p> fopen( ) mode r digunakan hanya untuk di read dan pointer berada di awal</p>
+          <br>
+            <div class="mockup-code">
+              <pre><code>&lt;?php</code></pre>
+              <pre><code>$myfile = fopen("filehandling.html", "r") or die("Unable to open file!");</code></pre>
+              <pre><code>echo fread($myfile,filesize("filehandling.html"));</code></pre>
+              <pre><code>fclose($myfile);</code></pre>
+              <pre><code>?&gt;</code></pre>
+            </div>
+          <br>
+
+          <figure><img src="img/mode_w.png" alt="fopen() mode w" /></figure>
+          <h2 class ="card-title">Mode w</h2>
+          <p> fopen( ) mode w digunakan hanya untuk melakukan write, ketika file sudah ada maka dapat menghapus file tersebut.
+            Sedangkan jika file tidak ada maka dapat membuat file baru dan pointer dimulai di awal file</p>
+          <br>
+            <div class="mockup-code">
+              <pre><code>&lt;?php</code></pre>
+              <pre><code>$myfile = fopen("fileBaru.txt", "w") or die("Unable to open file!");</code></pre>
+              <pre><code>$text = "Kelompok 6";</code></pre>
+              <pre><code>fwrite($myfile, $text);</code></pre>
+              <pre><code>fclose($myfile);</code></pre>
+              <pre><code>?&gt;</code></pre>
+            </div>
+            <br>
+
+          <figure><img src="img/mode_a.png" alt="fopen() mode a" /></figure>
+          <h2 class ="card-title">Mode a</h2>
+          <p> fopen( ) mode a digunakan hanya untuk melakukan write, data pada file yang sudah ada ini akan dipertahankan
+            dan jika file tidak ada maka dapat membuat file baru dan pointer dimulai di akhir file</p>
+          <br>
+            <div class="mockup-code">
+              <pre><code>&lt;?php</code></pre>
+              <pre><code>$myfile = fopen("fileBaru.txt", "a") or die("Unable to open file!");</code></pre>
+              <pre><code>$txt = "\nKelas PAW-D\n";</code></pre>
+              <pre><code>fwrite($myfile, $txt);</code></pre>
+              <pre><code>fclose($myfile);</code></pre>
+              <pre><code>?&gt;</code></pre>
+            </div>
+            <br>
+
+          <figure><img src="img/mode_x.png" alt="fopen() mode x" /></figure>
+          <h2 class ="card-title">Mode x</h2>
+          <p> fopen( ) mode x digunakan hanya untuk melakukan write, jika file sudah ada maka returnsnya akan FALSE atau error</p>
+          <br>
+            <div class="mockup-code">
+              <pre><code>&lt;?php</code></pre>
+              <pre><code>$myfile = fopen("newFile.txt", "x") or die("Unable to open file!");</code></pre>
+              <pre><code>$text = "Review file handling\n";</code></pre>
+              <pre><code>fwrite($myfile, $text);</code></pre>
+              <pre><code>fclose($myfile);</code></pre>
+              <pre><code>?&gt;</code></pre>
+            </div>
+            <br>
+
+          <figure><img src="img/mode_r+.png" alt="fopen() mode r+" /></figure>
+          <h2 class ="card-title">Mode r+</h2>
+          <p> fopen( ) mode r+ digunakan untuk dapat melakukan read atau write, pointer berada di awal file</p>
+          <br>
+            <div class="mockup-code">
+              <pre><code>&lt;?php</code></pre>
+              <pre><code>$myfile = fopen("fileBaru.txt", "r+") or die("Unable to open file!");</code></pre>
+              <pre><code>$text = "Fairuz Nandhita\n";</code></pre>
+              <pre><code>fwrite($myfile, $text);</code></pre>
+              <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+              <pre><code>fclose($myfile);</code></pre>
+              <pre><code>?&gt;</code></pre>
+            </div>
+            <br>
+
+            <figure><img src="img/mode_w+.png" alt="fopen() mode w+" /></figure>
+            <h2 class ="card-title">Mode w+</h2>
+            <p> fopen( ) mode w+ digunakan untuk dapat melakukan read atau write, ketika file sudah ada dapat menghapus file tersebut jika file tidak ada 
+              maka dibuat file baru dan pointer dimulai di awal file</p>
+            <br>
+              <div class="mockup-code">
+                <pre><code>&lt;?php</code></pre>
+                <pre><code>$myfile = fopen("fileBaru.txt", "w+") or die("Unable to open file!");</code></pre>
+                <pre><code>$text = "Teknologi Informasi\n";</code></pre>
+                <pre><code>fwrite($myfile, $text);</code></pre>
+                <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+                <pre><code>fclose($myfile);</code></pre>
+                <pre><code>?&gt;</code></pre>
+              </div>
+              <br>
+
+            <figure><img src="img/mode_a+.png" alt="fopen() mode a+" /></figure>
+            <h2 class ="card-title">Mode a+</h2>
+            <p> fopen( ) mode a+ digunakan untuk dapat melakukan read atau write, data pada file yang sudah ada ini akan dipertahankan
+              dan jika file tidak ada maka dibuat file baru dan pointer dimulai di akhir file</p>
+            <br>
+              <div class="mockup-code">
+                <pre><code>&lt;?php</code></pre>
+                <pre><code>$myfile = fopen("fileBaru.txt", "a+") or die("Unable to open file!");</code></pre>
+                <pre><code>$txt = "Universitas Brawijaya\n";</code></pre>
+                <pre><code>fwrite($myfile, $txt);</code></pre>
+                <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+                <pre><code>fclose($myfile);</code></pre>
+                <pre><code>?&gt;</code></pre>
+              </div>
+              <br>
+
+              <figure><img src="img/mode_x+.png" alt="fopen() mode x+" /></figure>
+              <h2 class ="card-title">Mode x+</h2>
+              <p> fopen( ) mode x+ digunakan untuk dapat melakukan read atau write, jika file sudah ada maka returnnya akan FALSE atau error</p>
+              <br>
+                <div class="mockup-code">
+                  <pre><code>&lt;?php</code></pre>
+                  <pre><code>$myfile = fopen("xFile.txt", "x+") or die("Unable to open file!");</code></pre>
+                  <pre><code>$text = "Review file handling\n";</code></pre>
+                  <pre><code>fwrite($myfile, $text);</code></pre>
+                  <pre><code>fclose($myfile);</code></pre>
+                  <pre><code>?&gt;</code></pre>
+                </div>
+                <br>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
     <!--  Ini card slide 12-14 -->
     <div class="flex justify-center">
       <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
@@ -85,6 +217,35 @@
         </div>
      </div>
     </div>
+    <br>
+    <br>
+
+    <!-- file handling slide 17-18 -->
+    <div class="flex justify-center">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+        <figure><img src="img/file_exist.png" alt="file_exists()" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">file_exists( )</h2>
+          <p>Fungsi file_exists( ) untuk melakukan pengecekan apakah file tersebut ada atau mengecek apakah file tersebut berada pada direktori </p>
+          <br>
+          <div class="mockup-code">
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$file_name = 'article.txt';</code></pre>
+            <pre><code>if (file_exists($file_name)) {</code></pre>
+            <pre><code>$file_handle = fopen($file_name, 'r');</code></pre>
+            <pre><code>$file_size = filesize($file_name);</code></pre>
+            <pre><code>$contents = fread($file_handle, $file_size);</code></pre>
+            <pre><code>echo $contents;</code></pre>
+            <pre><code> } else {</code></pre>
+            <pre><code> echo 'File not found';</code></pre>
+            <pre><code> }</code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
+        </div>
+     </div>
+    </div>
+    <br>
+    <br>
 
     <!--  Ini card slide 21-26 -->
     <div class="flex justify-center">
