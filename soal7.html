@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Konversi Nilai Tabel</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a>
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--Content-->
+    <h1 class="font-bold text-slate-700 text-3xl text-center tracking-wider pt-10">
+        Konversi Nilai Mahasiswa
+    </h1>
+    <br>
+    <!--Card-->
+    <div class="flex justify-center">
+        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+          <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+            <img class="rounded-t-lg" src="img/TabelKonversi.jpeg" alt="Tabel Konversi"/>
+          </a>
+          <div class="p-6">
+            <h4 class="text-gray-900 text-xl font-medium mb-2">Tabel Konversi Nilai Mahasiswa</h4>
+            <p class="text-gray-700 text-base mb-4">
+                Halaman ini akan berisi halaman testing konversi nilai Mahasiswa. 
+            </p>
+            <button type="button" class=" inline-block px-6 py-2.5 bg-green-600 text-2xl font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 active:bg-green-800 transition duration-150 ease-in-out">
+                <a href="TestKonversi/TestKonversi.html">Testing</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    <!--Card container kiri-->
+    <div class="p-10 grid grid-cols-2 grid-flow-row gap-5 justify-items-auto">
+        <div class="row-start-1 row-span 2">
+            <div class="card card-body col-span-1 px-8 py-6 bg-base-300 shadow-xl card bordered items-center">
+            <h3 class="card-title pb-5 justify-items-auto">Konversi Nilai Mahasiswa</h3>
+            <p>Dibawah ini merupakan hasil testing konversi nilai Mahasiswa menggunakan HTML dan PHP.
+                Pertama-tama, kita harus menginput banyaknya data yang ingin kita konversi. Setelah itu,
+                barulah kita dapat menginput nilai pada kolom yang muncul pada halaman berikutnya. Nilai
+                dalam kolom tersebut kemudian akan dikonversi menjadi angka dan huruf mutu.
+            </p>
+            <div>
+                <h3></h3>
+                <figure class="border-solid border-3 border-gray ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/KonversiNilai1.jpeg" alt="strlen" /></figure>
+                <figure class="border-solid border-3 border-gray ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/KonversiNilai2.jpeg" alt="strlen" /></figure>
+                <figure class="border-solid border-3 border-gray ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/KonversiNilai3.jpeg" alt="strlen" /></figure>
+            </div>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Kode HTML:</h3>
+                <div class="mockup-code px-2">
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Konversi Nilai&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Konversi Nilai&lt;/h1&gt;
+    &lt;form action="Konversi.php" method="post"&gt;
+        &lt;label for="nilai"&gt;Masukkan Banyak Data:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="number" id="jumlah" name="jumlah" min="0" max="100" required&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;&lt;br&gt;
+    &lt;button&gt;&lt;a href="../soal7.html"&gt;Kembali&lt;/a&gt;&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            </div>
+            <br>
+            <h3 class="card-title pb-5 justify-items-auto">Kode PHP:</h3>
+                <div class="mockup-code px-2">
+                <pre><code>
+    &lt;?php
+    //mengecek jumlah data
+    if (!empty($_POST['jumlah'])) {
+        $jumlah = $_POST['jumlah'];
+        echo "&lt;h1&gt;Hasil Konversi&lt;/h1&gt;";
+        //melakukan looping
+        for ($i = 1;$i &lt;= $jumlah;$i++) { 
+            echo '&lt;form method="post"&gt;
+            Nilai ke-'.($i).':
+            &lt;input type="number" name="'."nilai$i".'"
+            min="0" max="100" required&gt;&lt;br&gt;';
+        }
+        echo '&lt;input type="submit" value="Konversi"&gt;&lt;/form&gt;';
+    }else{
+        //mulai looping    
+        foreach ($_POST as $value) {
+            $print = "Nilai $value dikonversikan menjadi: ";
+            switch ($value) {
+                case $value&gt; 80 && $value &lt;= 100:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (A)&lt;br&gt;";
+                    break;              
+                case $value &gt; 75:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (B+)&lt;br&gt;";
+                    break;
+                case $value &gt; 69:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (B)&lt;br&gt;";
+                    break;
+                case $value &gt; 60:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (C+)&lt;br&gt;";
+                    break;
+                case $value &gt; 55:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (C)&lt;br&gt;";
+                    break;
+                case $value &gt; 50:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (D+)&lt;br&gt;";    
+                    break;
+                case $value &gt; 44:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (D)&lt;br&gt;";    
+                    break;
+                case $value &gt; 0:
+                    $angka_mutu = $value / 25;
+                    $print .= "$angka_mutu (E)&lt;br&gt;"; 
+                    break;
+                default:
+                    echo "Maaf, input Anda salah.";
+                    break;
+            }
+            echo "$print";
+        }
+    }
+    echo '
+        &lt;button&gt;&lt;a href="TestKonversi.html"&gt;
+        Kembali&lt;/a&gt;&lt;/button&gt;';   
+    ?&gt;
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--awal footer-->
+    <footer>
+        <div>
+            <a href="soal6.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+        </div>
+    </footer>    
+    <!--akhir footer-->
+  </body>
+</html>
