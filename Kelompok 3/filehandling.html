@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--  Ini card slide 29-30 -->
+    <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+       
+          <div class="card-body">
+            <h2 class="card-title">fclose()</h2>
+            <p>fclose() function digunakan untuk menutup pointer file yang terbuka. Untuk menggunakan fclose(), file harus sudah dibuka oleh fungsi fopen() atau fsockopen(). </p>
+      
+            <div class="mockup-code">
+                      <pre><code>Syntax:</code></pre>
+                      <pre><code>fclose(filepointer);</code></pre>
+                      <br>
+                      <pre><code>Parameter filepointer dibutuhkan untuk menentukan file yang ingin ditutup. </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+
+     <!--  Ini card slide 33 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+          <figure><img src="img/filemtime.png" alt="File handling filemtime()" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">filemtime()</h2>
+            <p>Fungsi filemtime() mengembalikan terakhir kali konten file diubah.
+
+            Catatan: Hasil dari fungsi ini di-cache. Gunakan clearstatcache() untuk menghapus cache.
+        <br> 
+        <br>
+                
+        Syntax: filemtime(filename). Parameter filemtime dibutuhkan untuk menentukan jalur ke file yang akan diperiksa. 
+    
+    </p>
+      
+            <div class="mockup-code">
+                      <pre><code>
+
+    &lt;?php
+        echo filemtime("webdictionary.txt");
+        echo "&lt;br&gt;";
+        echo "Content last changed: ".date("F d Y H:i:s.", filemtime("webdictionary.txt"));
+        ?&gt;
+
+        Output: 
+        1540211788
+        Content last changed: October 22 2018 12:36:28.
+
+                      </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+<!--  Ini card slide 34 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+          <figure><img src="img/fileowner.png" alt="File handling fileowner()" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">fileowner()</h2>
+            <p>Syntax: fileowner(filename) <br>
+                fungsi fileowner() mengembalikan ID pengguna (pemilik) dari file yang ditentukan.
+            Tip: Gunakan posix_getpwuid() untuk mengonversi ID pengguna menjadi nama pengguna.</p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        echo fileowner("test.txt");
+        ?&gt;
+
+        Output: 0
+                         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+
+        <!--  Ini card slide 35 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+          <figure><img src="img/filesperms.png" alt="File handling fileperms()" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">fileperms()</h2>
+            <p> Syntax: fileperms(filename) <br>
+                Fungsi fileperms() mengembalikan informasi izin untuk file.</p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        echo fileperms("test.txt");
+        ?&gt;
+
+        Output: 33188
+                         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+        <!--  Ini card slide 36 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+          <figure><img src="img/filetype.png" alt="File handling filetype()" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">filetype()</h2>
+            <p> Syntax: filetype(filename) <br>
+                Fungsi filetype() mengembalikan tipe file dari sebuah file.
+
+                Nilai pengembalian yang mungkin:
+<br> <br>
+                fifo <br> 
+                char <br>
+                dir <br>
+                block <br>
+                link <br>
+                file <br>
+                socket <br>
+                unknown 
+            </p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        echo filetype("test.txt");
+        ?&gt;
+
+        Output: file
+                         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+
+          <!--  Ini card slide 37 -->
+          <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+       
+          <div class="card-body">
+            <h2 class="card-title">unlink()</h2>
+            <p> Syntax: unlink(filename, context) <br>
+                Fungsi unlink() mberguna unutk menghapus sebuah file. Parameter context berdifat opsional. Context menentukan file handle secara spesifik.
+            </p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        $file = fopen("test.txt","w");
+        echo fwrite($file,"Hello World. Testing!");
+        fclose($file);
+                
+        unlink("test.txt");
+        ?&gt;
+
+         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+
+   <!--  Ini card slide 38 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+       
+          <div class="card-body">
+            <h2 class="card-title">rename()</h2>
+            <p> Syntax: rename(sting_old, string_new). <br>
+                Fungsi rename() yaitu untuk mengubah sebuah nama file atau directory.
+            </p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        rename("images","pictures");
+        rename("/test/file1.txt","/home/docs/my_file.txt");
+        ?&gt;
+
+         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+   <!--  Ini card slide 39 -->
+      <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+       
+          <div class="card-body">
+            <h2 class="card-title">copy()</h2>
+            <p> Syntax: copy(from_file, to_file). <br>
+                Fungsi copy() yaitu untuk melakukan copy pada sebuah file.
+            </p>
+      
+            <div class="mockup-code">
+                   
+            <pre><code> &lt;?php
+        rename("images","pictures");
+        rename("/test/file1.txt","/home/docs/my_file.txt");
+        ?&gt;
+
+         </code></pre>
+      
+            </div>
+      
+          </div>
+       </div>
+      </div>
+
+</body>
+</html>
