@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Materi CLIENT SERVER</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a>
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Client Server 2</h1>
+    <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+      <div class="card card-compact w-96 bg-base-100 shadow-xl place-content-center m-10 justify-center">
+        <div class="card-body">
+          <h2 class="card-title">Server- and Client-side Scripting</h2>
+          <p>
+            Dalam bahasa pemrograman PHP, istilah Server-side digunakan dalam penerapan eksekusi script/code program yang dilakukan oleh web server pengguna. Folder directory yang ditetapkan untuk menyimpan script dari program adalah htdocs
+            atau www dengan tipe file .php. Untuk membuka atau melihat output hasil eksekusi program, maka pengguna perlu membuka browser dan mengetikkan localhost/namafolder/namafile pada search bar broser. Pengguna juga dapat menjalankan
+            script program pada software yang digunakan untuk membuat program dalam bahasa PHP.
+          </p>
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+            <pre><code><span class="text-yellow-100"><</span>!DOCTYPE html<a class="text-yellow-100">></a></code></pre>
+            <pre data-prefix=" "><code><span class="text-yellow-100"><</span>html<a class="text-yellow-100">></a><span class="text-yellow-100"><</span>body<a class="text-yellow-100">></a>
+            </code></pre>
+            <pre><code><span class="text-yellow-100"><</span>h1<a class="text-yellow-100">></a><span class="text-yellow-100"><</span>?php</code></pre>
+            <pre data-prefix=" "><code>$hello = "Hello";</code></pre>
+            <pre data-prefix=" "><code>$world = "world";</code></pre>
+            <pre data-prefix=" "><code>echo $hello, $world;</code></pre>
+            <pre><code>?<a class="text-yellow-100">></a><span class="text-yellow-100"><</span>h1<a class="text-yellow-100">></a></code></pre>
+            <pre data-prefix=" "><code><span class="text-yellow-100"><</span>html<a class="text-yellow-100">></a><span class="text-yellow-100"><</span>body<a class="text-yellow-100">></a></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-compact w-96 bg-base-100 shadow-xl place-content-center m-10 justify-center">
+        <figure class="transition duration-300 ease-in-out"><img src="img/ya.png" alt="contoh penggunaan Server-side" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Contoh Penggunaan Server-side pada PHP</h2>
+          <p>
+            Pada gambar diatas, terlihat bahwa program yang digunakan untuk menjalankan code PHP dapat dieksekusi dan menampilkan output pada halaman browser pengguna dengan kode URL sesuai nama folder dan nama file dari script yang ingin
+            dieksekusi.
+          </p>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="csreview47.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </footer>
+  </body>
+</html>
