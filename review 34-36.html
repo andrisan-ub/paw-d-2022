@@ -52,9 +52,9 @@
 
       <h1>Code Slide 34</h1>
       <div class="mockup-code bg-primary text-primary-content m-32">
-        <pre><code>can be any color! <br><?php
-            <br>$a = 10;
-
+        <pre><code> 
+          <?php <br>
+            $a = 10;
             $b = 3;
             var_dump($a + $b);
             var_dump($a - $b);
@@ -64,15 +64,14 @@
             var_dump($a ** $b);
             var_dump(-$a);
     
-            ?>
+            
         </code></pre>
       </div>
 
       <h1>Explanation</h1>
       <div class="mockup-window border bg-base-300 m-16">
         <div class="flex justify-center px-4 py-16 bg-base-200">var_dump merupakan fungsi yang digunakan untuk mencetak output pada browser, namun
-          bedanya dengan print maupun echo adalah var_dump akan menampilkan output berupa hasil beserta dengan tipe data hasilnya. Sehingga jika terlihat pada
-        gambar terlihat nilai variable a adalah int 10 dan b int 3. Jika digunakan fungsi var_dump maka akan menampilkan tipe data hasil pada outputnya. </div>
+          bedanya dengan print maupun echo adalah var_dump akan menampilkan output berupa hasil beserta dengan tipe data hasilnya. Sehingga jika nilai $a adalah int 10 dan $b int 3. Jika digunakan fungsi var_dump maka akan menampilkan tipe data hasil pada outputnya. </div>
       </div>
 
 
@@ -92,16 +91,14 @@
     
     <h1>Code Slide 35</h1>
     <div class="mockup-code bg-primary text-primary-content m-32">
-      <pre><code>can be any color! 
-        <br><?php
-          <br>
+      <pre><code> 
+          
           $a = 3 + 4 + 5 - 2;
           $a = 13;
           $a += 14;
           $a -= 2;
           $a *= 4;
 
-          ?>
       </code></pre>
     </div>
 
@@ -131,20 +128,19 @@
     <h1>Code Slide 36</h1>
     <div class="mockup-code bg-primary text-primary-content m-32">
       <pre><code> 
-        <br><?php
-          <br>
           $a = '1';
           $b = 2;
           $c = $a + $b;
           $d = $a . $b;
-
-          ?>
       </code></pre>
     </div>
 
     <h1>Explanation</h1>
     <div class="mockup-window border bg-base-300 m-16">
-      <div class="flex justify-center px-4 py-16 bg-base-200"> PHP merupakan bahasa yang </div>
+      <div class="flex justify-center px-4 py-16 bg-base-200">Pada $a merupakan inisialisasi variable berupa String yang dapat dituliskan dengan single quotes ataupun double quotes.
+        Pada $b merupakan inisialisasi varibale tipe int. Pada $c merupakan contoh operasi penjumlahan dari $a bertipe String dengan $b bertipe int dimana $a akan dianggap sebagai int dan 
+        dijumlahkan dengan $b sehingga outputnya adalah 3. Pada $d merupakan contoh operasi penggabungan/concat dimana outputnya adalah 12.
+      </div>
     </div>
 
 
