@@ -11,31 +11,71 @@
 </head>
 
 <body>
-  <div class="grid md:grid-cols-3">
-    <!--  Ini card slide 52  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/page52.png" alt="Fungsi strlen" /></figure>
+
+<!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Client-Server</a></li>
+              <li><a>PHP-Basic</a></li>
+              <li><a>Penerapan</a></li>
+              <li><a>Nilai Konverensi Mahasiswa</a></li>
+              <li><a>Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+      </button>
+  </div>
+</div>
+
+<!--  Ini card slide 52  -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/page52.png" alt="Fungsi strlen" /></figure>
       <div class="card-body">
         <h2 class="card-title">PHP Basics page 52</h2>
         <p>Fungsi strlen() menghitung panjang string yang diberikan. </p>
         <p>Fungsi strlen() mengambil string sebagai argumen dan mengembalikan panjangnya. </p>
         <p>Nilai yang dikembalikan adalah tipe size_t (tipe integer yang tidak ditandatangani). </p>
         <p>Itu didefinisikan dalam string.</p>
+
         <div class="mockup-code">
           <pre><code>
             $s = ‘FILKOM UB’;
             echo strlen($s); // 9 
           </code></pre>
         </div>
-        <div class="card-actions justify-end">
-          
-        </div>
+        
       </div>
     </div>
+  </div>
 
-    <!--  Ini card slide 53  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/page53.png" alt="Fungsi strtolower" /></figure>
+<br>
+<br>
+  
+<!--  Ini card slide 53  -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/page53.png" alt="Fungsi strtolower" /></figure>
       <div class="card-body">
         <h2 class="card-title">PHP Basics page 53</h2>
         <p>Fungsi strtolower() digunakan untuk mengubah string menjadi huruf kecil.</p>
@@ -44,21 +84,22 @@
         <p>Semua karakter numerik atau karakter khusus lainnya dalam string tetap tidak berubah.</p>
 
         <div class="mockup-code">
-
           <pre><code>$s = ‘FILKOM UB’; </code></pre>
           <pre><code>echo strtolower($s);</code></pre>
           <pre><code>// filkom ub</code></pre>
-
         </div>
-        <div class="card-actions justify-end">
-          
-        </div>
+        
       </div>
     </div>
+  </div>
 
-    <!--  Ini card slide 54  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/page54.png" alt=" Fungsi strtoupper" /></figure>
+<br>
+<br>
+  
+<!--  Ini card slide 54  -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/page54.png" alt=" Fungsi strtoupper" /></figure>
       <div class="card-body">
         <h2 class="card-title">PHP Basics page 54</h2>
         <p>Fungsi strtoupper() digunakan untuk mengubah string menjadi huruf besar.</p>
@@ -71,17 +112,18 @@
           <pre><code>echo strtoupper($s);</code></pre>
           <pre><code>// FILKOM UB</code></pre>
         </div>
-        <div class="card-actions justify-end">
-          
-        </div>
+        
       </div>
     </div>
   </div>
 
-  <div class="grid md:grid-cols-2 mt-10">
-    <!--  Ini card slide 55  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/page55.png" alt="Fungsi Metode Trim" /></figure>
+<br>
+<br>  
+
+<!--  Ini card slide 55  -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/page55.png" alt="Fungsi Metode Trim" /></figure>
       <div class="card-body">
         <h2 class="card-title">PHP Basics page 55</h2>
         <p>Metode trim() menghapus spasi dari kedua ujung string dan mengembalikan string baru, tanpa mengubah string
@@ -93,17 +135,19 @@
           <pre><code>$s = ‘ FILKOM UB ’;</code></pre>
           <pre><code>echo trim($s);</code></pre>
           <pre><code>// FILKOM UB</code></pre>
+        </div>
 
-        </div>
-        <div class="card-actions justify-end">
-          
-        </div>
       </div>
     </div>
+  </div>
 
-    <!--  Ini card slide 56  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/page56.png" alt="Operator Dot" /></figure>
+<br>
+<br>
+
+<!--  Ini card slide 56  -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/page56.png" alt="Operator Dot" /></figure>
       <div class="card-body">
         <h2 class="card-title">PHP Basics page 56</h2>
         <p>Operator dot adalah operator gabungan PHP.</p>
@@ -114,16 +158,15 @@
           <pre><code>$s1 = ‘FILKOM ’;</code></pre>
           <pre><code>$s2 = ‘UB’;</code></pre>
           <pre><code>$s3 = $s1 . $s2;</code></pre>
-          <pre><code>// FILKOM UB</code></pre>
+          <pre><code>// FILKOM UB</code></pre><br>
+        </div>
 
-          <br>
-        </div>
-        <div class="card-actions justify-end">
-          
-        </div>
       </div>
     </div>
   </div>
+
+<br>
+<br>
 
 </body>
 
