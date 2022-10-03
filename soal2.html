@@ -20,7 +20,9 @@
           <li tabindex="0">
             <a href="menu.html">
               Materials
-              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+              </svg>
             </a>
             <ul class="p-2 bg-base-100">
               <li><a href="menu.html#cs">Client-server</a></li>
@@ -36,7 +38,51 @@
     <!--content-->
     <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider p-10">Looping</h1>
     <!--codemu dibawah ini-->
+    <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+      <div class="card card-compact w-96 bg-base-100 shadow-xl place-content-center m-10 justify-center">
+        <div class="card-body">
+          <h2 class="card-title">Looping PHP</h2>
+          <p>
+            Looping adalah suatu perintah pada PHP yang digunakan untuk mengeksekusi kode yang sama berulang kali selama kondisi tertentu terpenuhi.
+            Terdapat 4 jenis loop berbeda pada PHP, yaitu <span class="font-mono lowercase text-amber-300">while, do-while, for, foreach.</span>
+          </p>
+          <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+            <pre><code class="text-green-900">//syntax while loop</code></pre>
+            <pre><code>while (condition is true)<a class="text-amber-500">{</a></code></pre>
+            <pre data-prefix=" "><code>code to be executed;</code></pre>
+            <pre><code class="text-amber-500">}</code></pre>
 
+            <pre><code class="text-green-900">//syntax do-while loop</code></pre>
+            <pre><code>do<a class="text-amber-500"> {</a></code></pre>
+            <pre data-prefix=" "><code>code to be executed;</code></pre>
+            <pre><code><a class="text-amber-500">}</a> while (condition is true);</code></pre>
+
+            <pre><code class="text-green-900">//syntax for loop</code></pre>
+            <pre><code>for (start; condition; increment)<a class="text-amber-500"> {</a></code></pre>
+            <pre data-prefix=" "><code>code to be executed;</code></pre>
+            <pre><code><a class="text-amber-500">}</a></code></pre>
+
+            <pre><code class="text-green-900">//syntax foreach loop</code></pre>
+            <pre><code>foreach ($array as $value)<a class="text-amber-500"> {</a></code></pre>
+            <pre data-prefix=" "><code>code to be executed;</code></pre>
+            <pre><code><a class="text-amber-500">}</a></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-compact w-96 bg-base-100 shadow-xl place-content-center m-10 justify-center">
+        <figure class="transition duration-300 ease-in-out"><img src="tes.png" alt="contoh penggunaan semicolon" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Contoh Penggunaan While Loop</h2>
+          <div class="card-actions justify-end"></div>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">
+              <a href="while/TesLoop.html">Testing</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--end-->
     <div class="grid grid-cols-2 pt-10">
       <a href="soal1.html"><button class="btn btn-block btn-success">Soal 1</button></a>
