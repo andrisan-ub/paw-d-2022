@@ -193,10 +193,8 @@
           untuk dibaca.</p>
 
         <div class="mockup-code">
-          <pre><code>Syntax:</code></pre>
-          <br>
           <pre><code>$file_handle = fopen('article.txt', 'r');</code></pre>
-          <pre><code>$contents = fread($file_handle, 1024)</code></pre>
+          <pre><code>$contents = fread($file_handle, 1024);</code></pre>
         </div>
 
       </div>
@@ -278,10 +276,11 @@
         <p>Fungsi fwrite() dapat digunakan juga untuk menulis ke file yang terbuka</p>
 
         <div class="mockup-code">
-          <pre><code>Syntax:</code></pre>
-          <br>
           <pre><code>$file_handle = fopen(‘article.txt’, ‘r+’);</code></pre>
           <pre><code>fwrite($file_handle, ‘Enam’);</code></pre>
+        </div>
+
+        <div class="mockup-code">
           <pre><code>$file_handle = fopen(‘article.txt’, ‘a’);</code></pre>
           <pre><code>fwrite($file_handle, ‘, satu jiwa’);</code></pre>
         </div>
