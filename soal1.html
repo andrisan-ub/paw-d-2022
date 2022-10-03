@@ -36,41 +36,86 @@
     <!-- IF ELSE-->
     <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">IF ELSE</h1>
     <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-      <figure><img src="img/n38.png" alt="Shoes" /></figure>
+      <figure><img src="img/ifelse.png" alt="gambarpenjelasan" /></figure>
       <div class="card-body">
-        <h2 class="card-title">If else</h2>
+        <h2 class="card-title">
+          if (condition) { <br>
+            code to be executed if this condition is true; <br>
+          } elseif (condition) { <br>
+            code to be executed if first condition is false and this condition is true; <br>
+          } else { <br>
+            code to be executed if all conditions are false; <br>
+          }
+        </h2>
         <div class="card-actions justify-end"></div>
       </div>
     </div>
 
     <div class="mockup-code bg-primary text-primary-content m-32">
       <pre><code>
-            ..
+        $hewan = 'Kucing';
+        $suara_hewan = 'Meow';
+        
+            if($hewan=='Anjing' && $suara_hewan=='Gukguk'){
+                echo "Ini adalah anjing gukguk";
+            }elseif($hewan=='Ayam' && $suara_hewan=='kukuruyuk'){
+                echo "Ini adalah Ayam jago";
+            }else{
+                echo 'Ini adalah kucing, meow..';
+            }
         </code></pre>
     </div>
 
     <div class="mockup-window border bg-base-300 m-16">
-      <div class="flex justify-center px-4 py-16 bg-base-200">PENJELASAN</div>
+      <div class="flex justify-center px-4 py-16 bg-base-200">
+        $hewan bernilai String Kucing dan $suara_hewan bernilai Meow. <br>
+        pada line 6, jika hewan bernilai Anjing dan saura_hewan berniali Gukguk maka cetak Ini adalah anjing gukguk. <br>
+        Pada line 8, jika hewan bernilai Ayam dan suara_hewan bernilai kukuruyuk maka cetak Ini adalah Ayam jago. <br>
+        Pada line 10, jika tidak memenuhi semua kondisi maka cetak Ini adalah kucing, meow.
+      </div>
     </div>
 
     <!-- SWITCH-->
     <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">SWITCH</h1>
     <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-      <figure><img src="img/n38.png" alt="Shoes" /></figure>
+      <figure><img src="img/switch.png" alt="Switch" /></figure>
       <div class="card-body">
-        <h2 class="card-title">If else</h2>
+        <h2 class="card-title">
+          switch (n) { <br>
+            case label1: <br>
+              code to be executed if n=label1; <br>
+            case label2: <br>
+              code to be executed if n=label2; <br>
+              ... <br>
+            default: <br>
+              code to be executed if n is different from all labels;
+          }
+        </h2>
         <div class="card-actions justify-end"></div>
       </div>
     </div>
 
     <div class="mockup-code bg-primary text-primary-content m-32">
       <pre><code>
-            ...
+        $hewan = 'Kucing';
+        
+            switch($hewan){
+                case 'Anjing':
+                    echo 'Ini adalah anjing';
+                    case 'Ayam':
+                        echo 'Ini adalah ayam';
+                        default:
+                            echo 'Ini adalah kucing';
+            }
         </code></pre>
     </div>
 
     <div class="mockup-window border bg-base-300 m-16">
-      <div class="flex justify-center px-4 py-16 bg-base-200">PENJELASAN</div>
+      <div class="flex justify-center px-4 py-16 bg-base-200">
+        $hewan bernilai Kucing.Masuk pada seleksi kondisi switch dengan kondisi hewan, pada line 5 jika nilai hewan <br>
+        adalah Anjing maka cetak Ini adalah anjing. <br> Pada line 8 jika nilai hewan adalah Ayam maka cetak Ini adalah ayam. <br>
+        Pada line 10 jika tidak memenuhi kondisi semuanya maka cetak Ini adalah kucing.
+      </div>
     </div>
     <footer>
       <a href="soal2.html"><button class="btn btn-block btn-success">soal 2</button></a>
