@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SLIDE 38-42</title>
+</head>
+
+<body>
+    <div class="h-100 flex justify-center grid-cols-1	">
+
+        <div class="card card-compact w-96 bg-base-300 shadow-xl mx-5">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div class="card-body text-justify">
+                <h2 class="card-title">Operator Comparison</h2>
+                <p>Operator Comparison merupakan operator yang digunakan untuk membandingkan dua buah value (nomor atau
+                    string)</p>
+                <p>Macam-macam Operator Pembanding
+                <ul>
+                    <li>
+                        < (lebih kecil dari)</li>
+                    <li>> (lebih besar dari)</li>
+                    <li>
+                        <= (lebih besar sama dengan)</li>
+                    <li>>= (lebih kecil sama dengan)</li>
+                    <li>== (sama dengan)</li>
+                    <li>!= (tidak sama dengan)</li>
+                </ul>
+                </p>
+                </br>
+                <div class="mockup-code">
+
+                    <pre><code>var_dump(2 < 3); // true</code></pre>
+                    <pre><code>var_dump(3 < 3); // false</code></pre>
+                    <pre><code>var_dump(3 <= 3); // true</code></pre>
+                    <pre><code>var_dump(4 <= 3); // false</code></pre>
+                    <pre><code>var_dump(2 > 3); // false</code></pre>
+                    <pre><code>var_dump(3 >= 3); // true</code></pre>
+                    <pre><code>var_dump(3 > 3); // false</code></pre>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-compact w-96 bg-base-300 shadow-xl mx-5">
+            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div class="card-body text-justify">
+                <h2 class="card-title">Operator Logical</h2>
+                <p>Operator logika merupakan operator untuk melakukan operasi logika seperti AND, OR, dan NOT.</p>
+                <br>
+                <div class="mockup-code">
+
+                    <pre><code>var_dump(true && true);</code></pre>
+                    <pre><code>var_dump(true && false);</code></pre>
+                    <pre><code>var_dump(true || false);</code></pre>
+                    <pre><code>var_dump(false || false);</code></pre>
+                    <pre><code>var_dump(!false);</code></pre>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="h-100 flex justify-center grid-cols-1	">
+            <div class="card card-compact w-96 bg-base-300 shadow-xl mx-5">
+                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <div class="card-body text-justify">
+                    <h2 class="card-title">Spaceship Operator</h2>
+                    <p>Spaceship Operator atau Three Way Comparison Operator operator Perbandingan yang memiliki 3
+                        kemungkinan
+                        return value, yakni:
+
+                    <ul>
+                        <li>0 jika perbandingan setara</li>
+                        <li>-1 jika nilai di sebelah kiri lebih kecil</li>
+                        <li>1 jika nilai di sebelah kiri lebih besar</li>
+                    </ul>
+                    </p>
+                    <br>
+                    <div class="mockup-code">
+
+                        <pre><code>var_dump(1 <=> 5);</code></pre>
+                        <pre><code>var_dump(1 <=> 1);</code></pre>
+                        <pre><code>var_dump(5 <=> 2);</code></pre>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="h-100 flex justify-center grid-cols-1	">
+    <div class="card card-compact w-96 bg-base-300 shadow-xl mx-5">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body text-justify">
+            <h2 class="card-title">Null Coalescing Operator (??) </h2>
+            <p>Operator ini akan mereturn value disebelah kiri jika tidak bernilai null, jika null maka mereturn sebelah kanan. Sistem tidak akan mengeluarkan output Null<br>
+            </p>
+            <div class="mockup-code">
+
+                <pre><code>$uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';</code></pre>
+                <pre><code>var_dump($uname);</code></pre>
+                <pre><code> </code></pre>
+                <pre><code>$uname = $_GET['uname'] ?? 'guest';</code></pre>
+                <pre><code> </code></pre>
+                <pre><code>$_GET['uname'] = 'admin';</code></pre>
+                <pre><code>$uname = $_GET['uname'] ?? 'guest';</code></pre>
+                <pre><code>var_dump($uname);</code></pre>
+
+            </div>
+        </div>
+    </div>
+    <div class="card card-compact w-96 bg-base-300 shadow-xl mx-5">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body text-justify">
+            <h2 class="card-title">Operator Comparison setara (equal) dan identik (Identical)</h2>
+            <p>Operator ini digunakan untuk membandingkan kesamaan dua buah nilai. Perbedaan perbandingan identical
+                menganggap tipe data dari nilai yang dibandingkannya penting, maka pada perbandingan equal tidak.
+
+            <ul>
+                <li>== (equal)</li>
+                <li>=== (identical)</li>
+                <li>!= (not equal)</li>
+                <li>
+                    <> (not equal)
+                </li>
+                <li>!== (not identical)</li>
+            </ul>
+            </p>
+            <br>
+            <div class="mockup-code">
+
+                <pre><code>$a = 3;</code></pre>
+                <pre><code>$b = '3';</code></pre>
+                <pre><code>$c = 5;</code></pre>
+                <pre><code>var_dump($a == $b);</code></pre>
+                <pre><code>var_dump($a === $b);</code></pre>
+                <pre><code>var_dump($a != $b);</code></pre>
+                <pre><code>var_dump($a !== $b);</code></pre>
+                <pre><code>var_dump($a == $c);</code></pre>
+                <pre><code>var_dump($a <> $c);</code></pre>
+
+            </div>
+            <div class="card-actions justify-end">
+                <button class=" bg-violet-900 btn btn-primary">Back</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
