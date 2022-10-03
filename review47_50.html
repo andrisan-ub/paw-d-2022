@@ -1,110 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Review materi slide 47-50</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
 
     <!--Content-->
-    <div class="mockup-code text-center  p-7 mt-7 mx-4 my-4">
-        <div class="text-xl text-error ">
-        <code>PHP-BASIC</code>
-      </div>
-    </div>
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Interpolation</h1>
 
-     <!--Pengertian PHP Interpolation-->
-<div class="flex justify-center text-error">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">INTERPOLATION</h2>
-        <code><p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut.
-          Untuk menginterpolasi, variabel berada didalam tanda kutip ganda.
-          Cara lain adalah dengan mengurung variabel dengan {}. </p></code>
+    <!--Pengertian PHP Interpolation-->
+    <div class="flex justify-center text-error pt-10">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">INTERPOLATION</h2>
+          <code
+            ><p>
+              Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut. Untuk menginterpolasi, variabel berada didalam tanda kutip ganda. Cara lain adalah dengan mengurung variabel dengan
+              {}.
+            </p></code
+          >
 
-    <!--Contoh PHP Interpolation-->
-        <div class="mockup-code">
+          <!--Contoh PHP Interpolation-->
+          <div class="mockup-code">
             <h3 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h3>
-          <pre><code>$n = 12;</code></pre>
-          <pre><code class="text-success">echo “You are the $nth person”; // You are the 12th person</code></pre>
-          <pre><code class="text-success">echo “You are the {$n}th person”; // You are the 12th person</code></pre>
-            </div>
+            <pre><code>$n = 12;</code></pre>
+            <pre><code class="text-success">echo “You are the $nth person”; // You are the 12th person</code></pre>
+            <pre><code class="text-success">echo “You are the {$n}th person”; // You are the 12th person</code></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <br>
-  
+
+    <br />
     <!--Slide 47-->
-  <div class="flex justify-center text-error">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title"></h2>
-        <code><p>Untuk mengambil variabel terdapat cara lain yaitu dengan menggunakan tanda petik tunggal ('') atau petik ganda ("")</p>
-        <p>double dollar ($$x, di mana x adalah nama variabel) adalah variabel referensi yang digunakan untuk menyimpan nilai
-          variabel dolar tunggal ($x) di dalamnya. </p></code>
-    
-    <!--Contoh PHP Interpolation slide 47-->
-        <div class="mockup-code">
+    <div class="flex justify-center text-error">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title"></h2>
+          <code
+            ><p>Untuk mengambil variabel terdapat cara lain yaitu dengan menggunakan tanda petik tunggal ('') atau petik ganda ("")</p>
+            <p>double dollar ($$x, di mana x adalah nama variabel) adalah variabel referensi yang digunakan untuk menyimpan nilai variabel dolar tunggal ($x) di dalamnya.</p></code
+          >
+
+          <!--Contoh PHP Interpolation slide 47-->
+          <div class="mockup-code">
             <h3 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h3>
-          <pre><code>$var = 'world';</code></pre>
-          <pre><code>$$var = 100;</code></pre>
-          <pre><code class="text-success">echo 'Hello $var'; // Hello</code></pre>
-          <pre><code class="text-success">echo "Hello $var""; // $var</code></pre>
-          <pre><code class="text-success">echo 'Hello $world'; // Hello world</code></pre>
-          <pre><code class="text-success">echo "Hello $world""; // Hello 100</code></pre>
+            <pre><code>$var = 'world';</code></pre>
+            <pre><code>$$var = 100;</code></pre>
+            <pre><code class="text-success">echo 'Hello $var'; // Hello</code></pre>
+            <pre><code class="text-success">echo "Hello $var""; // $var</code></pre>
+            <pre><code class="text-success">echo 'Hello $world'; // Hello world</code></pre>
+            <pre><code class="text-success">echo "Hello $world""; // Hello 100</code></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <br>
 
-    <!--Slide 49-->  
-  <div class="flex justify-center text-error">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title"></h2>
-       <code><p>String memiliki index pada setiap karakter seperti array</p>
-        <p>digunakan untuk mengambil index dari variabel</p></code>
+    <br />
 
-    <!--contoh PHP Interpolation slide 49-->    
-  
-        <div class="mockup-code">
+    <!--Slide 49-->
+    <div class="flex justify-center text-error">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title"></h2>
+          <code
+            ><p>String memiliki index pada setiap karakter seperti array</p>
+            <p>digunakan untuk mengambil index dari variabel</p></code
+          >
+
+          <!--contoh PHP Interpolation slide 49-->
+
+          <div class="mockup-code">
             <h3 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h3>
-          <pre><code>$s = 'Hello';</code></pre>
-          <pre><code class="text-success">echo $s[0]; // H</code></pre>
-          <pre><code class="text-success">echo $s[-1]; // o</code></pre>
+            <pre><code>$s = 'Hello';</code></pre>
+            <pre><code class="text-success">echo $s[0]; // H</code></pre>
+            <pre><code class="text-success">echo $s[-1]; // o</code></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <br>
 
-  <!--Slide 50-->
-  <div class="flex justify-center text-error">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title"></h2>
-       <code><p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p></code>
+    <br />
 
-  <!--contoh PHP Interpolation slide 50-->
-        <div class="mockup-code">
+    <!--Slide 50-->
+    <div class="flex justify-center text-error">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title"></h2>
+          <code><p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p></code>
+
+          <!--contoh PHP Interpolation slide 50-->
+          <div class="mockup-code">
             <h3 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h3>
-          <pre><code class="text-success">if ($a == $b) {</code></pre>
-          <pre><code class="text-success">    echo “a and b are equal”</code></pre>
-          <pre><code class="text-success">}</code></pre>
+            <pre><code class="text-success">if ($a == $b) {</code></pre>
+            <pre><code class="text-success">    echo “a and b are equal”</code></pre>
+            <pre><code class="text-success">}</code></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-</body>
+    <br />
+    <div class="grid grid-cols-2">
+      <a href="review38_42.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+      <a href="review52_56.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </div>
+  </body>
 </html>

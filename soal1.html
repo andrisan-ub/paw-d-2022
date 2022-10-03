@@ -1,81 +1,124 @@
-<link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Seleksi Kondisi</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!--Navbar-->
     <div class="navbar bg-success">
-        <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">Seleksi Kondisi</a>
-        </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal p-0">
-            <li class="font-semibold"><a href="Landing.html">Home</a></li>
-            <li tabindex="0">
-              <a>
-                Materials
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-              </a>
-              <ul class="p-2 bg-base-100">
-                <li><a href="menu.html#cs">Client-server</a></li>
-                <li><a href="menu.html#php">PHP Basic</a></li>
-                <li><a href="menu.html#latsol">Latihan soal</a></li>
-              </ul>
-            </li>
-            <li><a href="bio.html">About Us</a></li>
-          </ul>
-        </div>
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">Seleksi Kondisi</a>
       </div>
-
-      <!-- IF ELSE-->
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">IF ELSE</h1>
-        <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-        <figure><img src="img/n38.png" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">If else</h2>
-          <div class="card-actions justify-end">
-          </div>
-        </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
       </div>
-
-      <div class="mockup-code bg-primary text-primary-content m-32">
-        <pre><code>
-            ...
-        </code></pre>
-      </div>
-
-    <div class="mockup-window border bg-base-300 m-16">
-      <div class="flex justify-center px-4 py-16 bg-base-200">...
     </div>
 
-      <!-- SWITCH-->
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">SWITCH</h1>
-        <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-        <figure><img src="img/n38.png" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">Switch</h2>
-          <div class="card-actions justify-end">
-          </div>
-        </div>
+    <!-- IF ELSE-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">IF ELSE</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/ifelse.png" alt="gambarpenjelasan" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">
+          if (condition) { <br>
+            code to be executed if this condition is true; <br>
+          } elseif (condition) { <br>
+            code to be executed if first condition is false and this condition is true; <br>
+          } else { <br>
+            code to be executed if all conditions are false; <br>
+          }
+        </h2>
+        <div class="card-actions justify-end"></div>
       </div>
-
-      <div class="mockup-code bg-primary text-primary-content m-32">
-        <pre><code>
-            ...
-        </code></pre>
-      </div>
-
-    <div class="mockup-window border bg-base-300 m-16">
-      <div class="flex justify-center px-4 py-16 bg-base-200">...
     </div>
 
-</body>
+    <div class="mockup-code bg-primary text-primary-content m-32">
+      <pre><code>
+        $hewan = 'Kucing';
+        $suara_hewan = 'Meow';
+        
+            if($hewan=='Anjing' && $suara_hewan=='Gukguk'){
+                echo "Ini adalah anjing gukguk";
+            }elseif($hewan=='Ayam' && $suara_hewan=='kukuruyuk'){
+                echo "Ini adalah Ayam jago";
+            }else{
+                echo 'Ini adalah kucing, meow..';
+            }
+        </code></pre>
+    </div>
+
+    <div class="mockup-window border bg-base-300 m-16">
+      <div class="flex justify-center px-4 py-16 bg-base-200">
+        $hewan bernilai String Kucing dan $suara_hewan bernilai Meow. <br>
+        pada line 6, jika hewan bernilai Anjing dan saura_hewan berniali Gukguk maka cetak Ini adalah anjing gukguk. <br>
+        Pada line 8, jika hewan bernilai Ayam dan suara_hewan bernilai kukuruyuk maka cetak Ini adalah Ayam jago. <br>
+        Pada line 10, jika tidak memenuhi semua kondisi maka cetak Ini adalah kucing, meow.
+      </div>
+    </div>
+
+    <!-- SWITCH-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">SWITCH</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/switch.png" alt="Switch" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">
+          switch (n) { <br>
+            case label1: <br>
+              code to be executed if n=label1; <br>
+            case label2: <br>
+              code to be executed if n=label2; <br>
+              ... <br>
+            default: <br>
+              code to be executed if n is different from all labels;
+          }
+        </h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+    <div class="mockup-code bg-primary text-primary-content m-32">
+      <pre><code>
+        $hewan = 'Kucing';
+        
+            switch($hewan){
+                case 'Anjing':
+                    echo 'Ini adalah anjing';
+                    case 'Ayam':
+                        echo 'Ini adalah ayam';
+                        default:
+                            echo 'Ini adalah kucing';
+            }
+        </code></pre>
+    </div>
+
+    <div class="mockup-window border bg-base-300 m-16">
+      <div class="flex justify-center px-4 py-16 bg-base-200">
+        $hewan bernilai Kucing.Masuk pada seleksi kondisi switch dengan kondisi hewan, pada line 5 jika nilai hewan <br>
+        adalah Anjing maka cetak Ini adalah anjing. <br> Pada line 8 jika nilai hewan adalah Ayam maka cetak Ini adalah ayam. <br>
+        Pada line 10 jika tidak memenuhi kondisi semuanya maka cetak Ini adalah kucing.
+      </div>
+    </div>
+    <footer>
+      <a href="soal2.html"><button class="btn btn-block btn-success">soal 2</button></a>
+    </footer>
+  </body>
 </html>

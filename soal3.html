@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Array</title>
-</head>
-<body>
-   <!--Navbar-->
-   <div class="navbar bg-success">
-    <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">Array</a>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basic</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal p-0">
-        <li class="font-semibold"><a href="Landing.html">Home</a></li>
-        <li tabindex="0">
-          <a>
-            Materials
-            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-          </a>
-          <ul class="p-2 bg-base-100">
-            <li><a href="menu.html#cs">Client-server</a></li>
-            <li><a href="menu.html#php">PHP Basic</a></li>
-            <li><a href="menu.html#latsol">Latihan soal</a></li>
-          </ul>
-        </li>
-        <li><a href="bio.html">About Us</a></li>
-      </ul>
-    </div>
-  </div>
 
     <!--Content-->
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center"> Definisi Array</h2>
-        <code><p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p></code>
-        <h2 class="card-title text-center">Index Array</h2>
-        <code><p>Untuk mendefinisikan variabel array dapat menggunakan index yang dimulai dari 0</p></code>
-  
-        <div class="mockup-code">
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider p-10">Array</h1>
+    <div class="flex justify-center text-error">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Definisi Array</h2>
+          <code><p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p></code>
+          <h2 class="card-title text-center">Index Array</h2>
+          <code><p>Untuk mendefinisikan variabel array dapat menggunakan index yang dimulai dari 0</p></code>
+
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
             <pre><code>&lt;?php</code></pre>
             <pre><code>$nama[0] = "Edinson";</code></pre>
@@ -52,22 +53,22 @@
             <pre><code>print_r($nama);</code></pre>
             <pre><code>?&gt;</code></pre>
 
-          <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
-          <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array1.png" alt="Shoes" /></figure>
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
+            <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+              <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array1.png" alt="Shoes" /></figure>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center"> Associative Array</h2>
-        <code><p>Untuk mendefinisikan variabel array dapat menggunakan nama sebagai key.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Associative Array</h2>
+          <code><p>Untuk mendefinisikan variabel array dapat menggunakan nama sebagai key.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
             <pre><code>&lt;?php</code></pre>
             <pre><code>$creator['Light bulb'] = 'Edison';</code></pre>
@@ -76,50 +77,54 @@
             <pre><code>print_r($creator);</code></pre>
             <pre><code>?&gt;</code></pre>
 
-          <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
-          <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array2.png" alt="Shoes" /></figure>
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
+            <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+              <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array2.png" alt="Shoes" /></figure>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Count</h2>
-        <code><p>Digunakan untuk mengetahui jumlah value pada suatu array.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Count</h2>
+          <code><p>Digunakan untuk mengetahui jumlah value pada suatu array.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
             <pre><code>&lt;?php</code></pre>
-        <pre><code>$family = ["Alvianta", "Rama", "Fika", "Fathiyah"];</code></pre>
-        <pre><code>$$size = count($family);</code></pre>
-        <pre><code>echo "size = $size";</code></pre>
-        <pre><code>?&gt;</code></pre>
+            <pre><code>$family = ["Alvianta", "Rama", "Fika", "Fathiyah"];</code></pre>
+            <pre><code>$$size = count($family);</code></pre>
+            <pre><code>echo "size = $size";</code></pre>
+            <pre><code>?&gt;</code></pre>
 
-          <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
-          <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array3.png" alt="Shoes" /></figure>
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
+            <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+              <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array3.png" alt="Shoes" /></figure>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Sorting Array</h2>
-        <code><p> sort() : mengurutkan secara ascending <br>
-            rsort() : mengurutkan secara descending <br>
-            asort() : mengurutkan associative array secara ascending berdasar value <br>
-            ksort() : mengurutkan associative array secara ascending berdasar key <br>
-            arsort() : mengurutkan associative array secara descending berdasar value <br>
-            krsort() : mengurutkan associative array secara descending berdasar key </p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Sorting Array</h2>
+          <code
+            ><p>
+              sort() : mengurutkan secara ascending <br />
+              rsort() : mengurutkan secara descending <br />
+              asort() : mengurutkan associative array secara ascending berdasar value <br />
+              ksort() : mengurutkan associative array secara ascending berdasar key <br />
+              arsort() : mengurutkan associative array secara descending berdasar value <br />
+              krsort() : mengurutkan associative array secara descending berdasar key
+            </p></code
+          >
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
             <pre><code>&lt;?php</code></pre>
             <pre><code>$nama[0] = "Edinson";</code></pre>
@@ -132,118 +137,115 @@
             <pre><code>echo "&lt;br&gt;";};</code></pre>
             <pre><code>?&gt;</code></pre>
 
-          <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
-          <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array4.png" alt="Shoes" /></figure>
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
+            <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+              <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array4.png" alt="Shoes" /></figure>
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Menambahkan Value Pada Array </h2>
-        <code><p>Dalam bahas PHP, Array dapat ditambahkan.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Menambahkan Value Pada Array</h2>
+          <code><p>Dalam bahas PHP, Array dapat ditambahkan.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
-                <pre><code>&lt;?php</code></pre>
-                <pre><code>$family = ["Alvianta", "Rama"];</code></pre>
-                <pre><code>$family[] = "Fika";</code></pre>
-                <pre><code>$family[] = "Fathiyah";</code></pre>
-                <pre><code>echo $family[3];</code></pre>
-                <pre><code>?&gt;</code></pre>
-            </div>
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$family = ["Alvianta", "Rama"];</code></pre>
+            <pre><code>$family[] = "Fika";</code></pre>
+            <pre><code>$family[] = "Fathiyah";</code></pre>
+            <pre><code>echo $family[3];</code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
 
           <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
           <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array5.png" alt="Shoes" /></figure>
-            </div>
+            <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array5.png" alt="Shoes" /></figure>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Range</h2>
-        <code><p>Range dapat digunakan untuk mengisi value pada array yang sesuai dengan kisaran yang dituliskan.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Range</h2>
+          <code><p>Range dapat digunakan untuk mengisi value pada array yang sesuai dengan kisaran yang dituliskan.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
-                <pre><code>&lt;?php</code></pre>
-                <pre><code>$numbers = range(1,10);</code></pre>
-                <pre><code>$numlength = count($numbers);</code></pre>
-                <pre><code>for($i = 0; $i &lt; $numlength; $i++) {</code></pre>
-                <pre><code>echo $numbers[$i];</code></pre>
-                <pre><code>echo ", ";}; </code></pre>
-                <pre><code>?&gt;</code></pre>
-            </div>
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$numbers = range(1,10);</code></pre>
+            <pre><code>$numlength = count($numbers);</code></pre>
+            <pre><code>for($i = 0; $i &lt; $numlength; $i++) {</code></pre>
+            <pre><code>echo $numbers[$i];</code></pre>
+            <pre><code>echo ", ";}; </code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
 
           <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
           <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array6.png" alt="Shoes" /></figure>
-            </div>
+            <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array6.png" alt="Shoes" /></figure>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Swapping Value</h2>
-        <code><p>Array dapat saling bertukar value antar satu sama lain.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Swapping Value</h2>
+          <code><p>Array dapat saling bertukar value antar satu sama lain.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
-                <pre><code>&lt;?php</code></pre>
-                <pre><code>$one = 'Alvianta';</code></pre>
-                <pre><code>$two = 'Rama';</code></pre>
-                <pre><code>[$one, $two] = [$two, $one];</code></pre>
-                <pre><code>echo "one = $one";</code></pre>
-                <pre><code>print("&lt;br&gt;");</code></pre>
-                <pre><code>echo "two = $two"; </code></pre>
-                <pre><code>?&gt;</code></pre>
-            </div>
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$one = 'Alvianta';</code></pre>
+            <pre><code>$two = 'Rama';</code></pre>
+            <pre><code>[$one, $two] = [$two, $one];</code></pre>
+            <pre><code>echo "one = $one";</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "two = $two"; </code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
 
           <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
           <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array7.png" alt="Shoes" /></figure>
-            </div>
+            <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array7.png" alt="Shoes" /></figure>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex justify-center text-error mt-36">
-    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
-      <div class="card-body">
-        <h2 class="card-title text-center">Destructuring Array</h2>
-        <code><p>Array dapat men-destructuring yaitu setiap nilai value pada array dapat menjadi value dari sebuah variabel.</p></code>
+    <div class="flex justify-center text-error mt-36">
+      <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <div class="card-body">
+          <h2 class="card-title text-center">Destructuring Array</h2>
+          <code><p>Array dapat men-destructuring yaitu setiap nilai value pada array dapat menjadi value dari sebuah variabel.</p></code>
 
-        <div class="mockup-code">
+          <div class="mockup-code">
             <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Contoh</h4>
-                <pre><code>&lt;?php</code></pre>
-                <pre><code>$arr = [1, 2, 3];</code></pre>
-                <pre><code>[$a, $b, $c] = $arr;</code></pre>
-                <pre><code>echo "$a, $b, $c";</code></pre>
-                <pre><code>?&gt;</code></pre>
-            </div>
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$arr = [1, 2, 3];</code></pre>
+            <pre><code>[$a, $b, $c] = $arr;</code></pre>
+            <pre><code>echo "$a, $b, $c";</code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
 
           <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">Output</h4>
           <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
-          <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array8.png" alt="Shoes" /></figure>
-            </div>
+            <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/Array8.png" alt="Shoes" /></figure>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-
-</body>
+    <div class="grid grid-cols-2 pt-10">
+      <a href="soal2.html"><button class="btn btn-block btn-success">Soal 2</button></a>
+      <a href="soal4.html"><button class="btn btn-block btn-success">soal 4</button></a>
+    </div>
+  </body>
 </html>
