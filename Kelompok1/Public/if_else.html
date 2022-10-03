@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow Control</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Awal Navbar -->
+    <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
+                  >
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500"
+                    >Array, Flow Control, <br />
+                    Looping
+                  </a>
+                </li>
+                <li><a class="active:bg-teal-500">Soal 4</a></li>
+                <li><a class="active:bg-teal-500">Soal 5</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="../index.html#aboutUs"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >About</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+    <!-- Judul -->
+    <div
+      class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500 pt-24"
+    >
+      <h1 class="font-bold text-5xl text-slate-700">Flow Control</h1>
+    </div>
+    <!-- Akhir judul -->
+    <!-- Awal Konten1-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center bg- text-teal-500 uppercase"
+      >
+        Penggunaan if-else
+      </h2>
+      <div class="flex flex-wrap justify-around gap-4">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 text-sm bg-slate-500 sm:h-[360px] sm:text-base"
+          >
+            <pre data-prefix="1"><code>$nilai = 90;</code></pre>
+            <pre data-prefix="2"><code>if ($nilai >= 90) {</code></pre>
+            <pre data-prefix="3"><code>	echo 'Sangat Baik';</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>} else if ($nilai < 90 && $nilai >= 70) {</code></pre>
+            <pre data-prefix="5"><code>	echo 'Baik';</code></pre>
+            <pre
+              data-prefix="6"
+            ><code>} else if ($nilai < 70 && $nilai >= 50) {</code></pre>
+            <pre data-prefix="7"><code>	echo 'Sedang';</code></pre>
+            <pre data-prefix="8"><code>	echo 'Kurang';</code></pre>
+            <pre data-prefix="9"><code>}</code></pre>
+            <pre data-prefix="10"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              If else menggunakan kurung kurawal { }
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat pengecekan kondisi terhadap suatu nilai. Jenis if else ini
+              menggunakan kurung kurawal {} dalam mendeklarasikannya
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-15"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-15" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-15"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img
+                    src="../src/assets/if_else1.jpg"
+                    alt="if-else kurung kurawal"
+                  />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 text-sm bg-slate-500 sm:h-[360px] sm:text-base"
+          >
+            <pre data-prefix="1"><code>$nilai = 60;</code></pre>
+            <pre data-prefix="2"><code>if ($nilai >= 90):</code></pre>
+            <pre data-prefix="3"><code>	echo 'Sangat Baik';</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>elseif ($nilai < 90 && $nilai >= 70):</code></pre>
+            <pre data-prefix="5"><code>	echo 'Baik';</code></pre>
+            <pre
+              data-prefix="6"
+            ><code>elseif ($nilai < 70 && $nilai >= 50):</code></pre>
+            <pre data-prefix="7"><code>	echo 'Sedang';</code></pre>
+            <pre data-prefix="8"><code>else:</code></pre>
+            <pre data-prefix="9"><code>	echo 'Kurang';</code></pre>
+            <pre data-prefix="10"><code>endif;</code></pre>
+            <pre data-prefix="11"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              If else menggunakan colon ( : )
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat percabangan alur program untuk mengecek suatu nilai. jenis
+              if else ini menggunakan kolon (:) dalam membuatnya
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-16"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-16" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-16"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/if_else2.jpg" alt="if else colon" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+        <!-- Awal Materi3 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 text-sm bg-slate-500 sm:h-[360px] sm:text-base"
+          >
+            <pre data-prefix="1"><code>$nilai = 80;</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>echo ($nilai >= 60) ? "Lulus" : "Gagal";</code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl text-sm">
+              Operator ternary
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat operator ternary sebagai metode singkat if else yang
+              memiliki tiga operan, yaitu kondisi awal lalu kondisi benar yang
+              dipisahkan ? dan kondisi salah yang dipisahkan :
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-17"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-17" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-17"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img
+                    src="../src/assets/if_else3.jpg"
+                    alt="operator ternary"
+                  />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi3 -->
+      </div>
+    </div>
+    <!-- Akhir Konten1 -->
+    <!-- Awal Konten1-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center text-teal-500 uppercase"
+      >
+        Penggunaan switch()
+      </h2>
+      <div class="flex flex-wrap justify-around gap-4">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-[540px] hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 text-sm bg-slate-500 sm:h-[420px] sm:text-base"
+          >
+            <pre data-prefix="1"><code>$nama = "Toni";</code></pre>
+            <pre data-prefix="2"><code>switch ($nama) {</code></pre>
+            <pre data-prefix="3"><code>	case "Toni":</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>		echo "Saya Berasal dari Malang";</code></pre>
+            <pre data-prefix="5"><code>		break;</code></pre>
+            <pre data-prefix="6"><code>	case "Rezky":</code></pre>
+            <pre
+              data-prefix="7"
+            ><code>		echo "Saya berasal dari Bekasi";</code></pre>
+            <pre data-prefix="8"><code>		break;</code></pre>
+            <pre data-prefix="9"><code>	case "Ajun" :</code></pre>
+            <pre
+              data-prefix="10"
+            ><code>		echo "Saya berasal dari Palembang";</code></pre>
+            <pre data-prefix="11"><code>		break;</code></pre>
+            <pre data-prefix="12"><code>	default : </code></pre>
+            <pre
+              data-prefix="13"
+            ><code>		echo "Saya berasal dari Indonesia";</code></pre>
+            <pre data-prefix="14"><code>}</code></pre>
+            <pre data-prefix="15"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan Switch Case
+            </h2>
+            <p class="text-sm sm:text-base">
+              Switch digunakan untuk melakukan tindakan yang berbeda berdasarkan
+              kondisi yang berbeda. Switch ini cocok digunakan untuk banyak
+              seleksi kondisi.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-18"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-18" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-18"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/if_else4.jpg" alt="switch" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+      </div>
+    </div>
+    <!-- Akhir Konten1 -->
+    <!-- Pagination -->
+    <div class="btn-group mb-10 mx-10 flex flex-wrap justify-between pt-8">
+      <a class="btn btn-outline" href="array.html">&lt&lt Back</a>
+      <a class="btn btn-outline" href="#">Next &gt&gt</a>
+    </div>
+    <!-- Akhir Pagination -->
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+  </body>
+</html>
