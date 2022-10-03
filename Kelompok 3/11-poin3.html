@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"data-theme="luxury">
 
 <head>
   <meta charset="UTF-8">
@@ -11,13 +11,53 @@
 </head>
 
 <body>
-  <div class="grid md:grid-cols-2 mt-10">
-    <!--  IF ELSE  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/IF ELSE.png" alt="IF ELSE" /></figure>
+
+  <!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="2-buttonpage.html">Client-Server</a></li>
+              <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+              <li><a href="2-buttonpage.html">Penerapan</a></li>
+              <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+              <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+    <a href="landingpage.html">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+      </button>
+    </a>
+  </div>
+</div>
+
+<br>
+
+<!--  IF ELSE  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/IF ELSE.png" alt="IF ELSE" /></figure>
       <div class="card-body">
         <h2 class="card-title">IF ELSE</h2>
         <p>IF ELSE adalah suatu struktur logika untuk membuat pencabangan alur program.</p>
+        
         <br>
 
         <div class="mockup-code">
@@ -31,21 +71,25 @@
           ?>
           </code></pre>
         </div>
+
         <p><br>Hasil tersebut didapat dari kondisi jika input favoritedrink adalah milshake maka akan muncul output It's
           my favorite drink, tetapi jika input favoritedrink selain milshake maka akan muncul It's not my favorite
           drink.<br>
+
         <p><br>Kondisi IF ELSE menggambarkan jika pengecekan kondisi 1 dengan IF tidak terpenuhi maka akan lanjut ke
           pengecekan kondisi 2 dengan ELSE.</br></p>
         </p>
-        <div class="card-actions justify-end">
-
-        </div>
       </div>
-    </div>
+  </div>
+</div>
 
-    <!--  SWITCH CASE  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/switch.png" alt="Shoes" /></figure>
+<br>
+<br>
+
+<!--  SWITCH CASE  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/switch.png" alt="Shoes" /></figure>
       <div class="card-body">
         <h2 class="card-title">Switch</h2>
         <p>Switch adalah alternatif dari if-else untuk menyatakan lebih dari satu kondisi.</p>
@@ -78,90 +122,100 @@
           bernilai 'C', maka akan dijalankan perintah <code>echo 'Nilai anda cukup'</code>, dan jika bernilai 'D', maka
           akan dijalankan perintah <code>echo 'Nilai anda kurang'</code>.</p>
 
-        <div class="card-actions justify-end">
-
-        </div>
       </div>
-    </div>
   </div>
+</div>
 
-  <div class="grid md:grid-cols-3 gap-2 mt-10">
-    <!--  FOR LOOP  -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/for loop.png" alt="Shoes" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">FOR</h2>
-        <p>Perulangan menggunakan for digunakan ketika mengetahui banyaknya pengulangan akan dilakukan</p>
-        <br>
+<br>
+<br>
 
-        <div class="mockup-code">
-          <pre><code>&lt;?php</code></pre>
-          <pre><code>$total = 0;</code></pre>
-          <pre><code>for ($i = 1; $i &lt;= 10; $i++){</code></pre>
-          <pre><code>$total += $i;};</code></pre>
-          <pre><code>echo "Total = $total";</code></pre>
-          <pre><code>?&gt;</code></pre>
-        </div>
-        <p><br>Hasil tersebut didapat dari perulangan sebanyak 10 kali yang dideklarasikan nilai awalnya dengan i = 0,
+<!--  FOR LOOP  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/for loop.png" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">FOR</h2>
+      <p>Perulangan menggunakan for digunakan ketika mengetahui banyaknya pengulangan akan dilakukan</p>
+      
+      <br>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$total = 0;</code></pre>
+        <pre><code>for ($i = 1; $i &lt;= 10; $i++){</code></pre>
+        <pre><code>$total += $i;};</code></pre>
+        <pre><code>echo "Total = $total";</code></pre>
+        <pre><code>?&gt;</code></pre>
+      </div>
+      
+      <p><br>Hasil tersebut didapat dari perulangan sebanyak 10 kali yang dideklarasikan nilai awalnya dengan i = 0,
           jika i <= 10 maka akan terus dilakukan perulangan hingga i> 10. Setiap dilakukan perulangan nilai i akan
             melakukan increment dan variabel
             total akan terus ditambah dengan nilai i, total = 1 + 2 + 3 + 4 + ....dst. Sehingga output hasilnya adalah
-            55.<br>
-        </p>
-        <div class="card-actions justify-end">
+            55.<br></p>
 
-        </div>
-      </div>
     </div>
+  </div>
+</div>
 
-    <!--  WHILE LOOP -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/while.PNG" alt="While" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">WHILE</h2>
-        <p>Perulangan While termasuk jenis perulangan uncounted loop atau perulangan yang belum jelas jumlah
-          pengulangannya.
-          Meskipun jumlah perulangan tidak dapat dipastikan, perulangan while tetap dapat dibatasi.
-          Namun, jika ada kesalahan dalam penulisan kode, program akan terus mengulang tanpa henti
-          dan menyebabkan komputer menjadi error.</p>
-        <br>
-        <p>Contoh, Pertama, kita menentukan variabel $x sama dengan 1. Lalu pada kondisi While, diberikan batasan bahwa
-          variabel x lebih kecil sama dengan 5. Perintah ++ memiliki arti increment atau perulangan akan terus bertambah
-          hingga
-          batas yang telah ditentukan. <br>
+<br>
+<br>
 
-        </p>
-        <div class="mockup-code">
+<!--  WHILE LOOP -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/while.PNG" alt="While" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">WHILE</h2>
+      <p>Perulangan While termasuk jenis perulangan uncounted loop atau perulangan yang belum jelas jumlah
+        pengulangannya.
+        Meskipun jumlah perulangan tidak dapat dipastikan, perulangan while tetap dapat dibatasi.
+        Namun, jika ada kesalahan dalam penulisan kode, program akan terus mengulang tanpa henti
+        dan menyebabkan komputer menjadi error.</p>
+    
+      <br>
+    
+      <p>Contoh, Pertama, kita menentukan variabel $x sama dengan 1. Lalu pada kondisi While, diberikan batasan bahwa
+        variabel x lebih kecil sama dengan 5. Perintah ++ memiliki arti increment atau perulangan akan terus bertambah
+        hingga
+        batas yang telah ditentukan. <br>
+      </p>
 
-          <pre><code>&lt;?php
-  $x = 1; 
+      <div class="mockup-code">
+        <pre><code>&lt;?php
+          $x = 1; 
              
-    while($x &lt;= 5) {
-    echo "Angka $x &lt;br&gt;";
-    $x++;
-    } 
+          while($x &lt;= 5) {
+          echo "Angka $x &lt;br&gt;";
+          $x++;
+          } 
         </code></pre>
-
-        </div>
-        <div class="card-actions justify-end">
-
-        </div>
       </div>
+      
     </div>
+  </div>
+</div>
 
-    <!--  DO WHILE LOOP -->
-    <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
-      <figure><img src="img/dowhile.png" alt="Do while" /></figure>
-      <div class="card-body">
-        <h2 class="card-title">DO WHILE</h2>
-        <p>Perulangan do... while akan selalu mengeksekusi blok kode satu kali, kemudian akan memeriksa kondisi, dan
-          mengulangi perulangan saat kondisi yang ditentukan benar.</p>
-        <br>
-        <p>Contoh di bawah ini, pertama-tama menetapkan variabel $x dengan 1 ($x = 1). Kemudian, loop do while akan
-          menulis beberapa output, dan kemudian menambah variabel $x dengan 1 (increment). Kemudian kondisi diperiksa
-          (apakah $x kurang dari, atau sama dengan 5?), dan loop akan terus berjalan selama $x kurang dari, atau sama
-          dengan 5:</p>
-        <div class="mockup-code">
+<br>
+<br>
+
+<!--  DO WHILE LOOP -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/dowhile.png" alt="Do while" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">DO WHILE</h2>
+      <p>Perulangan do... while akan selalu mengeksekusi blok kode satu kali, kemudian akan memeriksa kondisi, dan
+        mengulangi perulangan saat kondisi yang ditentukan benar.</p>
+    
+      <br>
+    
+      <p>Contoh di bawah ini, pertama-tama menetapkan variabel $x dengan 1 ($x = 1). Kemudian, loop do while akan
+        menulis beberapa output, dan kemudian menambah variabel $x dengan 1 (increment). Kemudian kondisi diperiksa
+        (apakah $x kurang dari, atau sama dengan 5?), dan loop akan terus berjalan selama $x kurang dari, atau sama
+        dengan 5:</p>
+    
+      <div class="mockup-code">
 
           <pre><code>&lt;?php
   $x = 1;
@@ -178,10 +232,13 @@
     </div>
 
   </div>
-
+  <br>
+  <br>
   <!--  ARRAY -->
-  <div class="card card-compact w-96 bg-base-100 shadow-xl mt-10 mx-auto">
-    <figure><img src="img/index array.png" alt="Shoes" /></figure>
+  <div class="flex justify-center">
+
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/index array.png" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="card-title">Array</h2>
       <p>Array digunakan untuk menyimpan banyak value dalam satu variabel.</p>
@@ -203,7 +260,7 @@
       <h4> Associative Array </h4>
       <p> Untuk mendefinisikan variabel array dapat menggunakan nama sebagai key</p>
       <br>
-      <figure><img src="img/associative array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/associative array.png" alt="Shoes" /></figure>
       <br>
       <div class="mockup-code">
         <pre><code>&lt;?php</code></pre>
@@ -216,7 +273,7 @@
       <h4> Count </h4>
       <p> Digunakan untuk mengetahui jumlah value pada suatu array</p>
       <br>
-      <figure><img src="img/count array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4"src="img/count array.png" alt="Shoes" /></figure>
       <br>
       <div class="mockup-code">
         <pre><code>&lt;?php</code></pre>
@@ -234,7 +291,7 @@
         arsort() : mengurutkan associative array secara descending berdasar value <br>
         krsort() : mengurutkan associative array secara descending berdasar key </p>
       <br>
-      <figure><img src="img/sorting array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/sorting array.png" alt="Shoes" /></figure>
       <br>
 
       <div class="mockup-code">
@@ -253,7 +310,7 @@
       <h4> Menambahkan Value Pada Array </h4>
       <p> Array pada bahasa php dapat ditambahkan</p>
       <br>
-      <figure><img src="img/manambah value array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/manambah value array.png" alt="Shoes" /></figure>
       <br>
 
       <div class="mockup-code">
@@ -268,7 +325,7 @@
       <h4> Range </h4>
       <p> Menggunakan range dapat mengisi value pada array sesuai dengan kisaran yang dituliskan</p>
       <br>
-      <figure><img src="img/range array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4"src="img/range array.png" alt="Shoes" /></figure>
       <br>
 
       <div class="mockup-code">
@@ -284,7 +341,7 @@
       <h4> Swapping Value </h4>
       <p> Array pada php dapat saling bertukar value</p>
       <br>
-      <figure><img src="img/swapping value.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/swapping value.png" alt="Shoes" /></figure>
       <br>
 
       <div class="mockup-code">
@@ -302,7 +359,7 @@
       <p> Array pada php dapat didestructuring yaitu setiap value pada array dapat menjadi value dari sebuah variabel
       </p>
       <br>
-      <figure><img src="img/destructuring array.png" alt="Shoes" /></figure>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/destructuring array.png" alt="Shoes" /></figure>
       <br>
 
       <div class="mockup-code">
@@ -318,8 +375,10 @@
       </div>
     </div>
   </div>
+</div>
 
-
+  <br>
+  <br>
 
 
 </body>
