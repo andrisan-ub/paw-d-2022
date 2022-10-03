@@ -555,6 +555,55 @@
     </div>
   </div>
 
+  <!--  Ini card slide 58-60 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">$_FILES</h2>
+        <p>Variable <code>$_FILES</code> adalah array asosiatif. <br>
+          Digunakan untuk menghandle file upload</p>
+
+        <div class="mockup-code">
+          <pre><code>&lt;form enctype="multipart/form-data" action="upload.php" method="post"&gt;
+    File name: &lt;input name="file" type="file"&gt;
+    &lt;input type="submit" value="Upload"&gt;
+  &lt;/form&gt;</code></pre>
+        </div>
+
+        <div class="mockup-code">
+          <pre><code>&lt;?php
+    echo $_FILES['file']['name']; // nama file
+    echo $_FILES['file']['type']; // jenis file
+    echo $_FILES['file']['size']; // ukuran file dalam bytes
+    echo $_FILES['file']['tmp_name']; // nama file temporary di server
+  ?&gt;</code></pre>
+        </div>
+
+        <figure><img src="img/filesvar.png" alt="$_FILES"></figure>
+      </div>
+    </div>
+  </div>
+
+  <!--  Ini card slide 61 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">move_uploaded_file()</h2>
+        <p> Syntax: <code>move_uploaded_file($_FILES['file']['tmp_name'], "direktori/baru/{$variable_nama_file}");</code></p>
+        <p>Digunkaan untuk memindah file ke direktori baru</p>
+        <div class="mockup-code">
+          <pre><code>$file = $_FILES['file']['name'];
+
+  move_uploaded_file(
+    $_FILES['file']['tmp_name'], "uploads/{$file}"
+  );</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
