@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PHP Basics</title>
+  </head>
+  <body>
+    <!--navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--content-->
+    <div class="grid grid-cols-4 grid-rows-7 pt-20">
+      <img src="img/Pict3.jpg" alt="illustrations" class="row-span-2 row-start-1" />
+      <h1 class="font-bold text-slate-700 text-7xl text-center tracking-widest">Materials</h1>
+      <div tabindex="0" class="collapse group col-start-2 row-start-2 col-span-2 row-span-5 content-start pt-5">
+        <!--CS-->
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box shadow-md" id="cs">
+          <input type="checkbox" />
+          <div class="collapse-title text-xl font-bold text-center">Client - Server</div>
+          <div class="collapse-content">
+            <div class="flex pt-5 justify-evenly">
+              <div class="flex flex-col w-52 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 43</h2>
+                <p class="text-center pb-3">Server and Client side Scripting 1</p>
+                <a href="csreview43.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-52 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 47</h2>
+                <p class="text-center pb-3">Server and Client side Scripting 2</p>
+                <a href="csreview47.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <!--PHP-->
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box shadow-md" id="php">
+          <input type="checkbox" />
+          <div class="collapse-title text-xl font-bold text-center">PHP Basics</div>
+          <div class="collapse-content">
+            <div class="grid pt-5 grid-cols-3 justify-items-center">
+              <!--row pertama-->
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 14</h2>
+                <p class="text-center pb-3">Semicolons ;</p>
+                <a href="review14.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 22</h2>
+                <p class="text-center pb-3">Variable</p>
+                <a href="review22.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 26</h2>
+                <p class="text-center pb-3">Reference</p>
+                <a href="review26.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+            <!--row kedua-->
+            <div class="grid pt-5 grid-cols-3 justify-items-center">
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 34-36</h2>
+                <p class="text-center pb-3">Arithmetic, Assignment operators, Alert</p>
+                <a href="review34_36.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 38-42</h2>
+                <p class="text-center pb-3">Comparison, Logical, Spaceship, Null coalescing operators</p>
+                <a href="review38_42.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 47-50</h2>
+                <p class="text-center pb-3">Interpolation</p>
+                <a href="review47_50.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+            <!--row ketiga-->
+            <div class="flex justify-center col-span-3 gap-8 p-5 justify-items-center">
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 52-56</h2>
+                <p class="text-center pb-3">strlen(), strtolower(), strtoupper(), trim(), concatenate</p>
+                <a href="review52_56.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Slide 58-59</h2>
+                <p class="text-center pb-3">unset(), isset()</p>
+                <a href="review58_59.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <!--Latihan soal-->
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box shadow-md" id="latsol">
+          <input type="checkbox" />
+          <div class="collapse-title text-xl font-bold text-center">Latihan Soal</div>
+          <div class="collapse-content">
+            <!--row pertama-->
+            <div class="grid pt-5 grid-cols-3 justify-items-center">
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 1</h2>
+                <p class="text-center pb-3">Seleksi kondisi</p>
+                <a href="soal1.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 2</h2>
+                <p class="text-center pb-3">Looping</p>
+                <a href="soal2.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 3</h2>
+                <p class="text-center pb-3">Array</p>
+                <a href="soal3.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+            <!--row kedua-->
+            <div class="grid pt-5 grid-cols-3 justify-items-center">
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 4</h2>
+                <p class="text-center pb-3">Uji File handling</p>
+                <a href="soal4.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 5</h2>
+                <p class="text-center pb-3">Uji Form Registrasi & Login</p>
+                <a href="soal5.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 6</h2>
+                <p class="text-center pb-3">Uji Ajax chat</p>
+                <a href="soal6.html"><button class="btn btn-error font-bold">Unavailable</button></a>
+              </div>
+            </div>
+            <!--row -->
+            <div class="flex justify-center pt-5">
+              <div class="flex flex-col w-48 border-2 rounded-2xl bg-gray-200 p-2 items-center justify-around">
+                <h2 class="text-xl font-semibold text-center">Soal 7</h2>
+                <p class="text-center pb-3">Konversi Nilai</p>
+                <a href="soal7.html"><button class="btn btn-accent-focus">READ MORE</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="img/Pict2.jpg" alt="illustrations" class="col-start-4 row-start-6 row-span-2" />
+      <!--footer-->
+      <div class="col-start-1 row-start-7 col-span-4 grid gap-4 content-end ...">
+        <footer class="footer footer-center p-4 bg-success text-base-content mt-10">
+          <p class="tracking-wider font-bold">Pengembangan Aplikasi Web - Kelompok 4</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
