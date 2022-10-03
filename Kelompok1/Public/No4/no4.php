@@ -32,13 +32,13 @@
                 <li>
                   <a href="../resume-14-22-26.html" class="active:bg-teal-500">PHP Basics</a>
                 </li>
-                <li><a class="active:bg-teal-500">Soal 3</a></li>
+                <li><a href="../array.html" class="active:bg-teal-500">Array, Flow Control, <br />Looping</a></li>
                 <li><a href="no4.php" class="active:bg-teal-500">Nilai Mahasiswa</a></li>
                 <li><a class="active:bg-teal-500">Soal 5</a></li>
               </ul>
             </li>
             <li>
-              <a class="text-slate-100 font-medium active:bg-teal-500">About</a>
+              <a href="../../index.html#ourTeam" class="text-slate-100 font-medium active:bg-teal-500">Our Team</a>
             </li>
           </ul>
         </div>
