@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uji File Handling</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="Landing.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Uji File Handling</h1>
+
+    <!--uji handling-->
+    <div class="flex justify-center pt-10">
+      <!--html-->
+      <div class="mockup-code w-fit">
+        <pre class="bg-warning text-black font-bold text-xl"><code>ujihandling.html</code></pre>
+        <pre><code>
+        &lt;body&gt;
+        &lt;h1&gt;Uji File Handling&lt;/h1&gt;
+        &lt;form enctype="multipart/form-data" action="ujihandling.php" method="post"&gt;
+            Pilih file untuk diupload:
+            &lt;input type="file" name="uploadedfile"&gt; &lt;br&gt;
+            &lt;input type="submit" value="Upload File"&gt;
+        &lt;/form&gt;
+        &lt;/body&gt;
+        </code></pre>
+        <pre class="bg-info text-black font-bold text-xl text-center"><code>Output</code></pre>
+        <figure class="flex pt-5 justify-center"><img class="rounded-2xl border-dashed border-2" src="img/ujihandling1.jpeg" alt="Upload test" /></figure>
+        <br />
+        <pre class="bg-success text-black font-bold text-xl text-center pt"><code>Output setelah file dipilih</code></pre>
+        <figure class="flex pt-5 justify-center"><img class="rounded-2xl border-dashed border-2" src="img/ujihandling2.jpeg" alt="Upload test" /></figure>
+      </div>
+    </div>
+
+    <!--php-->
+    <div class="flex justify-center pt-10">
+      <div class="mockup-code w-fit">
+        <pre class="bg-warning text-black font-bold text-xl"><code>ujihandling.php</code></pre>
+        <pre><code>
+            &lt;/?php
+            $target_path = "uploaded/";
+            $target_path = $target_path . basename($_FILES['uploadedfile']['name']);
+            if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'],$target_path)) {
+              echo '&lt;h1&gt;Upload Success&lt;/h1&gt;;
+              echo "The file ". basename( $_FILES['uploadedfile']['name']). "has been uploaded";
+            }
+            else {
+                echo "There was an error uploading the file, please try again!";
+            }
+            ?&gt;
+        </code></pre>
+        <pre class="bg-success text-black font-bold text-xl text-center"><code>Output ketika file berhasil dihandle</code></pre>
+        <figure class="flex pt-5 justify-center"><img class="rounded-2xl border-dashed border-2" src="img/ujihandling3.jpeg" alt="Upload test" /></figure>
+      </div>
+    </div>
+
+    <!--hasil-->
+    <div class="flex justify-center pt-10">
+      <div class="mockup-code w-fit">
+        <pre class="bg-accent text-black font-bold text-xl"><code>Hasil akhir</code></pre>
+        <figure class="flex pt-5 justify-center"><img class="rounded-2xl border-dashed border-2" src="img/ujihandling4.jpeg" alt="Upload test" /></figure>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 pt-10">
+      <a href="soal3.html"><button class="btn btn-block btn-success">Soal 3</button></a>
+      <a href="soal5.html"><button class="btn btn-block btn-success">soal 5</button></a>
+    </div>
+  </body>
+</html>
