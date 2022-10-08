@@ -76,25 +76,24 @@
     <div class="flex flex-col justify-content-center items-center">
         <div class="card w-96 bg-base-100 shadow-xl">
             <div class="card-body justify-content-center items-center">
+              <form action="prosesSignup.php" method="post">
                 <h2 class="font-bold text-4xl">Sign Up</h2>
                 <div class="pt-8" style="width: 80%;">
-                    <input type="email" placeholder="Email" class="input input-bordered w-full max-w-xs" required>   
+                    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" name="unameDaftar" required/>   
                 </div>
                 <div class="pt-4" style="width: 80%;">
-                    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" required/>   
-                </div>
-                <div class="pt-4" style="width: 80%;">
-                    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" required/>  
+                    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" name="passDaftar" required/>  
                 </div>
                 <div class="pt-8 flex">
-                    <button class="btn">Sign up</button>
+                    <button class="btn" name="signup">Sign up</button>
                 </div>
                 <div class="mt-4">
                     <div class="flex">
-                        <div>Sudah punya akun? </div>
-                        <a href="">Sign in</a>
+                        <p>Sudah punya akun?</p>
+                        <a href="signin.html">Sign in</a>
                     </div>
                 </div>
+              </form>
             </div>
         </div>
     </div>
