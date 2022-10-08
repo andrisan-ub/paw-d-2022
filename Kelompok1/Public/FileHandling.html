@@ -1,430 +1,802 @@
 <!DOCTYPE html>
 <html data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Uji Coba File Handling</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Awal Navbar -->
     <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
-        <div class="navbar bg-teal-500">
-          <div class="flex-1">
-            <a
-              href=" ../index.html"
-              class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
-              >Kelompok 1</a
-            >
-          </div>
-          <div class="flex-none">
-            <ul class="menu menu-horizontal p-0">
-              <li>
-                <a
-                  href=" ../index.html"
-                  class="text-slate-100 font-medium active:bg-teal-500"
-                  >Home</a
-                >
-              </li>
-              <li tabindex="0">
-                <a class="text-slate-100 font-medium active:bg-teal-500">
-                  Soal
-                  <svg
-                    class="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
                   >
-                    <path
-                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                    />
-                  </svg>
-                </a>
-                <ul class="p-2 bg-base-100">
-                  <li>
-                    <a href="resume-client-server.html" class="active:bg-teal-500"
-                      >Client Server</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="resume-14-22-26.html"
-                      class="active:bg-teal-500"
-                      >PHP Basics</a
-                    >
-                  </li>
-                  <li>
-                    <a href="array.html" class="active:bg-teal-500 text-base"
-                      >Array, Flow Control, <br />Looping</a
-                    >
-                  </li>
-                  <li>
-                    <a href="No4/no4.php" class="active:bg-teal-500"
-                      >Nilai Mahasiswa</a
-                    >
-                  </li>
-                  <li><a href="FileHandling.html" class="active:bg-teal-500">Login, AJAX Chat, <br />File Handling</a></li>
-                </ul>
-              </li>
-              <li>
-                <a
-                  href=" ../index.html#ourTeam"
-                  class="text-slate-100 font-medium active:bg-teal-500"
-                  >Our Team</a
-                >
-              </li>
-            </ul>
-          </div>
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li>
+                  <a href="FileHandling.html" class="active:bg-teal-500"
+                    >Login, AJAX Chat, <br />File Handling</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
     <!-- Akhir Navbar -->
 
     <!-- Judul -->
-    <div class="text-center p-6 text-5xl border-slate-600 border-b-4 text-black font-mono font-bold m-16" data-aos="fade-down" data-aos-duration="500" data-aos-delay="100">
-        <h1>File Handling</h1>
+    <div
+      class="text-center p-6 text-5xl border-slate-600 border-b-4 text-black font-mono font-bold m-16"
+      data-aos="fade-down"
+      data-aos-duration="500"
+      data-aos-delay="100">
+      <h1>File Handling</h1>
     </div>
 
     <div class="flex-container p-10">
-        <div class="flex flex-wrap justify-around">
-            <!-- fopen explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-6" src="../src/assets/fopen.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fopen function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>fopen() hampir sama seperti readfile(), hanya saja method ini memberikan lebih banyak pilihan/opsi dibandingkan dengan method readfile. Jika kita ingin menggunakan method fopen, terdapat 2 parameter yang harus diisi, yaitu :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 m-2">fopen (nama file yang dituju, mode file);</p>
-                    <p>Dalam kasus ini, fopen() memiliki mode 'w', artinya file ini akan dibuka untuk ditulis, jika file yang dituju tidak tersedia, maka file tersebut akan secara otomatis dibuat.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-3" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fopen.png" alt="user1">
-                    </div>
-                </div>
-
-                <!-- The button to open many kinds of mode-->
-                <label for="my-modal-4" class="btn modal-button relative bottom-0.5 left-96 ml-36 px-7">Modes</label>
-                <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Modes</h3>
-                        <img class="scale-100" src="../src/assets/Modes.png" alt="user1">
-                    </div>
-                </div>
+      <div class="flex flex-wrap justify-around">
+        <!-- fopen explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-6"
+              src="../src/assets/fopen.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fopen function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                fopen() hampir sama seperti readfile(), hanya saja method ini
+                memberikan lebih banyak pilihan/opsi dibandingkan dengan method
+                readfile. Jika kita ingin menggunakan method fopen, terdapat 2
+                parameter yang harus diisi, yaitu :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 m-2">
+                fopen (nama file yang dituju, mode file);
+              </p>
+              <p>
+                Dalam kasus ini, fopen() memiliki mode 'w', artinya file ini
+                akan dibuka untuk ditulis, jika file yang dituju tidak tersedia,
+                maka file tersebut akan secara otomatis dibuat.
+              </p>
             </div>
+          </div>
 
-            <!-- readfile explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/readfile.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">readfile function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi dari readfile() adalah untuk membaca sebuah file dan menuliskannya dalam sebuah output. Perlu diingat bahwa readfile() akan mengembalikan jumlah baris yang terbaca oleh sistem. Jika ingin menggunakan readfile(), kita hanya membutuhkan parameter file yang ingin dibaca, contohnya :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">readfile(nama file yang dituju);</p>
-                    <p>Dalam kasus ini, readfile() membaca sebuah file yang bernama files.txt. Di dalam file ini belum diberi isi apapun alias kosong. Angka 0 di output tersebut menandakan jumlah baris yang terisi pada file tersebut karena readfile() tidak hanya mencetak output yang kita tulis, tetapi juga mencetak banyaknya baris yang kita tulis.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-2" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-2" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code readfile.png" alt="user1">
-                    </div>
-                </div>
+          <!-- The button to open source code modal -->
+          <label for="my-modal-3" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-3"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fopen.png" alt="user1" />
             </div>
+          </div>
 
-            <!-- fread explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fread.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fread function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi dari fread hampir sama seperti readfile, fungsi ini akan membaca sebuah file dan mencetaknya dalam sebuah output. Yang membedakan fread() dengan readfile() adalah fread() tidak akan mengembalikan jumlah baris dari isinya. fread juga memiliki 2 parameter yang harus diisi, yaitu :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fread (variabel "fopen", filesize(nama file));</p>
-                    <p>Dalam kasus ini, fread akan membaca sebuah file yang telah diisi sebelumnya. Dapat dilihat dalam output tersebut, perbedaan antara fread dan readfile terletak pada output tersebut dimana dalam gambar diatas, fread tidak ikut mengembalikan banyaknya baris yang ada pada isinya, hanya mencetak isi dari file tersebut.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-1" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-1" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-1" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fread.png" alt="user1">
-                    </div>
-                </div>
+          <!-- The button to open many kinds of mode-->
+          <label
+            for="my-modal-4"
+            class="btn modal-button relative bottom-0.5 left-96 ml-36 px-7"
+            >Modes</label
+          >
+          <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-4"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Modes</h3>
+              <img
+                class="scale-100"
+                src="../src/assets/Modes.png"
+                alt="user1" />
             </div>
-
-            <!-- fclose explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fclose.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fclose function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi fclose() adalah untuk menutup file yang sudah tidak diproses lagi. Fungsi ini biasanya digunakan jika kita telah menyelesaikan semua hal dalam file tersebut agar tidak memakan resources dengan berlebihan di dalam server. fclose() memiliki 1 parameter yang harus diisi, yaitu :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fclose(nama file yang dituju);</p>
-                    <p>Dalam kasus ini, fclose bertujuan untuk menutup file "files.txt" yang sebelumnya sudah dibuka dan diisi nilainya. Output yang dikeluarkan dari fclose ini tidak ada karena file yang dituju telah ditutup dan jika kita ingin tetap mencetaknya setelah ditutup, maka akan terjadi error.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-5" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-5" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fclose.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- file_get_contents explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/file_get_contents.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">file_get_contents function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi dari file_get_contents tidak jauh beda dengan fread dan readfile, sama-sama untuk mencetak output. Yang membedakan adalah method ini hanya membutuhkan parameter file yang dituju dan beberapa pilihan lainnya seperti max_length, start, context, dan include_path. fclose() memiliki beberapa parameter yang harus diisi, yaitu :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fclose(path, include_path, context, start, max_length);</p>
-                    <p>Dalam kasus ini, file_get_contents bertujuan untuk membuka file "files.txt" agar dapat mengakses dan membaca isi dari file tersebut menjadi string. Penggunaan function ini biasanya digunakan jika kita ingin menspesifikan konten file karena menggunakan teknik pemetaan memori untuk meningkatkan kinerja. </p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-6" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-6" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code file_get_contents.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- fwrite explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fwrite.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fwrite function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi fwrite adalah untuk menuliskan isi dari file yang dibuka. Fungsi fwrite() berhenti di akhir file atau ketika mencapai panjang yang ditentukan yang diteruskan sebagai parameter, mana saja yang lebih dulu. File, string, dan panjang yang harus ditulis dikirim sebagai parameter ke fungsi fwrite() dan mengembalikan jumlah byte yang ditulis saat berhasil, atau FALSE saat gagal. Adapun syntax dari fwrite sendiri, yaitu:</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fwrite(file, string, panjang);</p>
-                    <p>Dalam kasus ini, file fwrite akan menuliskan ulang isi dari file yang dibuka yaitu "files.txt". Lalu setelah "files.txt" berhasil diisi oleh string, selanjutnya dapat dicetak dengan menggunakan fread/readfile untuk mencetak output. </p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-7" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-7" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-7" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fwrite.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- file_put_contents explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/file_put_contents.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">file_put_contents function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi file_put_contents adalah memeriksa file di mana pengguna ingin menulis dan jika file tidak ada, itu membuat file baru. Jalur file di mana pengguna ingin menulis dan data yang harus ditulis dikirim sebagai parameter ke fungsi dan mengembalikan jumlah byte yang ditulis pada file pada keberhasilan dan FALSE pada kegagalan. Syntax untuk file_put_contents adalah :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">file_put_contents($file, $data, $mode, $konteks);</p>
-                    <p>Dalam kasus ini, file_put_contents berfungsi untuk mencetak output yang berada di "files.txt". Isi dari parameter tersebut adalah file yang dibuka dan isinya. Tetapi, yang dicetak adalah panjang string dari isi "files.txt".</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-8" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-8" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-8" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code file_put_contents.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- fileatime explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fileatime.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fileatime function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi fileatime() dalam PHP adalah fungsi bawaan yang digunakan untuk mengembalikan waktu akses terakhir dari file tertentu. Fungsi fileatime() mengembalikan waktu akses terakhir file sebagai Unix Timestamp jika berhasil dan False jika gagal. Nama file dilewatkan sebagai parameter ke fungsi fileatime(). Syntax untuk fileatime adalah :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fileatime($filename);</p>
-                    <p>Dalam kasus ini, fileatime akan memberi info waktu akses terakhir dari file "files.txt". Fungsi fileatime() di PHP hanya menerima satu parameter $filename . Ini menentukan file yang waktu akses terakhirnya ingin diperiksa.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-9" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-9" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-9" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fileatime.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- filemtime explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/filemtime.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">filemtime function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi filemtime() dalam PHP adalah fungsi bawaan yang digunakan untuk mengembalikan waktu terakhir file tertentu saat kontennya dimodifikasi. Fungsi filemtime() mengembalikan terakhir kali file diubah sebagai Unix Timestamp jika berhasil dan False jika gagal. Hasil dari fungsi filemtime() di-cache dan fungsi yang disebut clearstatcache() digunakan untuk mengosongkan cache. Syntax dari filemtime adalah : </p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">filemtime($filename);</p>
-                    <p>Dalam kasus ini, filemtime akan memberikan info mengenai kapan file "files.txt" terakhir dimodifikasi.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-10" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-10" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-10" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code filemtime.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- fileowner explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fileowner.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fileowner function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi dari fileowner() adalah mengembalikan ID pengguna (pemilik) dari file yang ditentukan. Kita juga bisa menggunakan syntax "posix_getpwuid()" untuk mengonversi ID pengguna menjadi nama pengguna. Hasil dari fungsi fileowner() di-cache dan fungsi yang disebut clearstatcache() digunakan untuk mengosongkan cache. Syntax dari fileowner adalah :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fileowner($filename);</p>
-                    <p>Dalam kasus ini, fileowner akan memberikan info mengenai ID owner dari file "files.txt". </p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-11" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-11" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-11" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fileowner.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- fileperms explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/fileperms.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">fileperms function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi fileperms() dalam PHP adalah fungsi bawaan yang digunakan untuk mengembalikan izin yang diberikan ke file atau direktori. Nama file dari file yang izinnya harus diperiksa dikirim sebagai parameter ke fungsi dan mengembalikan izin yang diberikan ke file dalam bentuk angka jika berhasil dan Salah jika gagal. Syntax dari fileperms adalah :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">fileperms($filename);</p>
-                    <p>Dalam kasus ini, fileperms akan mengembalikan izin dengan kode "33206". Fungsi fileperms() di PHP menerima satu parameter $filename . Ini menentukan nama file dari file yang izinnya ingin Anda periksa.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-12" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-12" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-12" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code fileperms.png" alt="user1">
-                    </div>
-                </div>
-            </div>
-
-            <!-- filetype explanation -->
-            <div class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-                <div class="p-8 mt-4 shadow-xl">
-                    <img class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5" src="../src/assets/filetype.png" alt="user1">
-                    <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">filetype function</p>
-                <!-- sub text -->
-                <div class="text-white text-base max-w-3xl">
-                    <p>Fungsi filetype() dalam PHP adalah fungsi bawaan yang digunakan untuk mengembalikan tipe file dari file atau direktori tertentu. Fungsi filetype() menerima nama file sebagai parameter dan mengembalikan salah satu dari tujuh tipe file jika berhasil dan False jika gagal. Untuk tipe filenya sendiri terdapat 7 tipe file yang berkemungkinan keluar. Syntax dari filetype adalah :</p>
-                    <p class="font-bold font-mono text-lg text-center text-yellow-300 my-8">filetype($filename);</p>
-                    <p>Dalam kasus ini, filetype akan mengembalikan tipe file berupa "file" yang berarti itu merupakan file biasa. Ini mengembalikan jenis file pada keberhasilan dan False pada kegagalan.</p>
-                </div>
-                </div>
-
-                <!-- The button to open source code modal -->
-                <label for="my-modal-13" class="btn modal-button m-6">Source Code</label>
-                <input type="checkbox" id="my-modal-13" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                    <label for="my-modal-13" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-lg font-bold mb-2">Source Code</h3>
-                        <img src="../src/assets/Code filetype.png" alt="user1">
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- readfile explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/readfile.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              readfile function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi dari readfile() adalah untuk membaca sebuah file dan
+                menuliskannya dalam sebuah output. Perlu diingat bahwa
+                readfile() akan mengembalikan jumlah baris yang terbaca oleh
+                sistem. Jika ingin menggunakan readfile(), kita hanya
+                membutuhkan parameter file yang ingin dibaca, contohnya :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                readfile(nama file yang dituju);
+              </p>
+              <p>
+                Dalam kasus ini, readfile() membaca sebuah file yang bernama
+                files.txt. Di dalam file ini belum diberi isi apapun alias
+                kosong. Angka 0 di output tersebut menandakan jumlah baris yang
+                terisi pada file tersebut karena readfile() tidak hanya mencetak
+                output yang kita tulis, tetapi juga mencetak banyaknya baris
+                yang kita tulis.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-2" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-2" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-2"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code readfile.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fread explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fread.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fread function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi dari fread hampir sama seperti readfile, fungsi ini akan
+                membaca sebuah file dan mencetaknya dalam sebuah output. Yang
+                membedakan fread() dengan readfile() adalah fread() tidak akan
+                mengembalikan jumlah baris dari isinya. fread juga memiliki 2
+                parameter yang harus diisi, yaitu :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fread (variabel "fopen", filesize(nama file));
+              </p>
+              <p>
+                Dalam kasus ini, fread akan membaca sebuah file yang telah diisi
+                sebelumnya. Dapat dilihat dalam output tersebut, perbedaan
+                antara fread dan readfile terletak pada output tersebut dimana
+                dalam gambar diatas, fread tidak ikut mengembalikan banyaknya
+                baris yang ada pada isinya, hanya mencetak isi dari file
+                tersebut.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-1" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-1" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-1"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fread.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fclose explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fclose.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fclose function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi fclose() adalah untuk menutup file yang sudah tidak
+                diproses lagi. Fungsi ini biasanya digunakan jika kita telah
+                menyelesaikan semua hal dalam file tersebut agar tidak memakan
+                resources dengan berlebihan di dalam server. fclose() memiliki 1
+                parameter yang harus diisi, yaitu :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fclose(nama file yang dituju);
+              </p>
+              <p>
+                Dalam kasus ini, fclose bertujuan untuk menutup file "files.txt"
+                yang sebelumnya sudah dibuka dan diisi nilainya. Output yang
+                dikeluarkan dari fclose ini tidak ada karena file yang dituju
+                telah ditutup dan jika kita ingin tetap mencetaknya setelah
+                ditutup, maka akan terjadi error.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-5" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-5"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fclose.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- file_get_contents explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/file_get_contents.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              file_get_contents function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi dari file_get_contents tidak jauh beda dengan fread dan
+                readfile, sama-sama untuk mencetak output. Yang membedakan
+                adalah method ini hanya membutuhkan parameter file yang dituju
+                dan beberapa pilihan lainnya seperti max_length, start, context,
+                dan include_path. fclose() memiliki beberapa parameter yang
+                harus diisi, yaitu :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fclose(path, include_path, context, start, max_length);
+              </p>
+              <p>
+                Dalam kasus ini, file_get_contents bertujuan untuk membuka file
+                "files.txt" agar dapat mengakses dan membaca isi dari file
+                tersebut menjadi string. Penggunaan function ini biasanya
+                digunakan jika kita ingin menspesifikan konten file karena
+                menggunakan teknik pemetaan memori untuk meningkatkan kinerja.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-6" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-6"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code file_get_contents.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fwrite explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fwrite.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fwrite function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi fwrite adalah untuk menuliskan isi dari file yang dibuka.
+                Fungsi fwrite() berhenti di akhir file atau ketika mencapai
+                panjang yang ditentukan yang diteruskan sebagai parameter, mana
+                saja yang lebih dulu. File, string, dan panjang yang harus
+                ditulis dikirim sebagai parameter ke fungsi fwrite() dan
+                mengembalikan jumlah byte yang ditulis saat berhasil, atau FALSE
+                saat gagal. Adapun syntax dari fwrite sendiri, yaitu:
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fwrite(file, string, panjang);
+              </p>
+              <p>
+                Dalam kasus ini, file fwrite akan menuliskan ulang isi dari file
+                yang dibuka yaitu "files.txt". Lalu setelah "files.txt" berhasil
+                diisi oleh string, selanjutnya dapat dicetak dengan menggunakan
+                fread/readfile untuk mencetak output.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-7" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-7" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-7"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fwrite.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- file_put_contents explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/file_put_contents.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              file_put_contents function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi file_put_contents adalah memeriksa file di mana pengguna
+                ingin menulis dan jika file tidak ada, itu membuat file baru.
+                Jalur file di mana pengguna ingin menulis dan data yang harus
+                ditulis dikirim sebagai parameter ke fungsi dan mengembalikan
+                jumlah byte yang ditulis pada file pada keberhasilan dan FALSE
+                pada kegagalan. Syntax untuk file_put_contents adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                file_put_contents($file, $data, $mode, $konteks);
+              </p>
+              <p>
+                Dalam kasus ini, file_put_contents berfungsi untuk mencetak
+                output yang berada di "files.txt". Isi dari parameter tersebut
+                adalah file yang dibuka dan isinya. Tetapi, yang dicetak adalah
+                panjang string dari isi "files.txt".
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-8" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-8" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-8"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code file_put_contents.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fileatime explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fileatime.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fileatime function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi fileatime() dalam PHP adalah fungsi bawaan yang digunakan
+                untuk mengembalikan waktu akses terakhir dari file tertentu.
+                Fungsi fileatime() mengembalikan waktu akses terakhir file
+                sebagai Unix Timestamp jika berhasil dan False jika gagal. Nama
+                file dilewatkan sebagai parameter ke fungsi fileatime(). Syntax
+                untuk fileatime adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fileatime($filename);
+              </p>
+              <p>
+                Dalam kasus ini, fileatime akan memberi info waktu akses
+                terakhir dari file "files.txt". Fungsi fileatime() di PHP hanya
+                menerima satu parameter $filename . Ini menentukan file yang
+                waktu akses terakhirnya ingin diperiksa.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-9" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-9" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-9"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fileatime.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- filemtime explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/filemtime.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              filemtime function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi filemtime() dalam PHP adalah fungsi bawaan yang digunakan
+                untuk mengembalikan waktu terakhir file tertentu saat kontennya
+                dimodifikasi. Fungsi filemtime() mengembalikan terakhir kali
+                file diubah sebagai Unix Timestamp jika berhasil dan False jika
+                gagal. Hasil dari fungsi filemtime() di-cache dan fungsi yang
+                disebut clearstatcache() digunakan untuk mengosongkan cache.
+                Syntax dari filemtime adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                filemtime($filename);
+              </p>
+              <p>
+                Dalam kasus ini, filemtime akan memberikan info mengenai kapan
+                file "files.txt" terakhir dimodifikasi.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-10" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-10" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-10"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code filemtime.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fileowner explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fileowner.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fileowner function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi dari fileowner() adalah mengembalikan ID pengguna
+                (pemilik) dari file yang ditentukan. Kita juga bisa menggunakan
+                syntax "posix_getpwuid()" untuk mengonversi ID pengguna menjadi
+                nama pengguna. Hasil dari fungsi fileowner() di-cache dan fungsi
+                yang disebut clearstatcache() digunakan untuk mengosongkan
+                cache. Syntax dari fileowner adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fileowner($filename);
+              </p>
+              <p>
+                Dalam kasus ini, fileowner akan memberikan info mengenai ID
+                owner dari file "files.txt".
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-11" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-11" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-11"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fileowner.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- fileperms explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/fileperms.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              fileperms function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi fileperms() dalam PHP adalah fungsi bawaan yang digunakan
+                untuk mengembalikan izin yang diberikan ke file atau direktori.
+                Nama file dari file yang izinnya harus diperiksa dikirim sebagai
+                parameter ke fungsi dan mengembalikan izin yang diberikan ke
+                file dalam bentuk angka jika berhasil dan Salah jika gagal.
+                Syntax dari fileperms adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                fileperms($filename);
+              </p>
+              <p>
+                Dalam kasus ini, fileperms akan mengembalikan izin dengan kode
+                "33206". Fungsi fileperms() di PHP menerima satu parameter
+                $filename . Ini menentukan nama file dari file yang izinnya
+                ingin Anda periksa.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-12" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-12" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-12"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code fileperms.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+
+        <!-- filetype explanation -->
+        <div
+          class="max-w-none rounded-xl overflow-hidden shadow-xl bg-gray-800 mt-8"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="100">
+          <div class="p-8 mt-4 shadow-xl">
+            <img
+              class="max-w-3xl rounded-xl border-solid border-2 border-red-300 ml-12 my-5"
+              src="../src/assets/filetype.png"
+              alt="user1" />
+            <p class="font-bold text-xl mb-2 mt-4 text-yellow-300">
+              filetype function
+            </p>
+            <!-- sub text -->
+            <div class="text-white text-base max-w-3xl">
+              <p>
+                Fungsi filetype() dalam PHP adalah fungsi bawaan yang digunakan
+                untuk mengembalikan tipe file dari file atau direktori tertentu.
+                Fungsi filetype() menerima nama file sebagai parameter dan
+                mengembalikan salah satu dari tujuh tipe file jika berhasil dan
+                False jika gagal. Untuk tipe filenya sendiri terdapat 7 tipe
+                file yang berkemungkinan keluar. Syntax dari filetype adalah :
+              </p>
+              <p
+                class="font-bold font-mono text-lg text-center text-yellow-300 my-8">
+                filetype($filename);
+              </p>
+              <p>
+                Dalam kasus ini, filetype akan mengembalikan tipe file berupa
+                "file" yang berarti itu merupakan file biasa. Ini mengembalikan
+                jenis file pada keberhasilan dan False pada kegagalan.
+              </p>
+            </div>
+          </div>
+
+          <!-- The button to open source code modal -->
+          <label for="my-modal-13" class="btn modal-button m-6"
+            >Source Code</label
+          >
+          <input type="checkbox" id="my-modal-13" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box relative">
+              <label
+                for="my-modal-13"
+                class="btn btn-sm btn-circle absolute right-2 top-2"
+                >✕</label
+              >
+              <h3 class="text-lg font-bold mb-2">Source Code</h3>
+              <img src="../src/assets/Code filetype.png" alt="user1" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Pagination -->
     <div class="btn-group flex flex-wrap justify-between pt-8 mx-10 mb-12">
-        <a class="btn btn-outline" href="">&lt&lt Back</a>
-        <a class="btn btn-outline" href="">Next &gt&gt</a>
+      <a class="btn btn-outline" href="ajaxRangkuman.html">&lt&lt Back</a>
+      <a class="btn btn-outline" href="">Next &gt&gt</a>
     </div>
     <!-- Akhir Pagination -->
 
     <!-- Footer -->
     <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
-        <div>
-            <p class="text-slate-100 font-medium tracking-wider">
-                Copyright © 2022 - Kelompok 1 PAW
-            </p>
-        </div>
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(
-            window.addEventListener('load', AOS.refresh())
-        );
+      AOS.init(window.addEventListener("load", AOS.refresh()));
     </script>
-</body>
+  </body>
 </html>
