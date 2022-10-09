@@ -1,240 +1,312 @@
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Looping</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Awal Navbar -->
     <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
-        <div class="navbar bg-teal-500">
-            <div class="flex-1">
-                <a href=" ../index.html"
-                    class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100">Kelompok 1</a>
-            </div>
-            <div class="flex-none">
-                <ul class="menu menu-horizontal p-0">
-                    <li>
-                        <a href=" ../index.html" class="text-slate-100 font-medium active:bg-teal-500">Home</a>
-                    </li>
-                    <li tabindex="0">
-                        <a class="text-slate-100 font-medium active:bg-teal-500">
-                            Soal
-                            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24">
-                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                            </svg>
-                        </a>
-                        <ul class="p-2 bg-base-100">
-                            <li>
-                                <a href="resume-client-server.html" class="active:bg-teal-500">Client Server</a>
-                            </li>
-                            <li>
-                                <a href="resume-14-22-26.html" class="active:bg-teal-500">PHP Basics</a>
-                            </li>
-                            <li>
-                                <a href="array.html" class="active:bg-teal-500 text-base">Array, Flow Control,
-                                    <br />Looping</a>
-                            </li>
-                            <li>
-                                <a href="No4/no4.php" class="active:bg-teal-500">Nilai Mahasiswa</a>
-                            </li>
-                            <li><a href="FileHandling.html" class="active:bg-teal-500">Login, AJAX Chat, <br />File
-                                    Handling</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href=" ../index.html#ourTeam" class="text-slate-100 font-medium active:bg-teal-500">Our
-                            Team</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
         </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
+                  >
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li>
+                  <a href="FileHandling.html" class="active:bg-teal-500"
+                    >Login, AJAX Chat, <br />File Handling</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <!-- Akhir Navbar -->
 
     <div class="container p-10 mt-10">
-        <!-- Judul -->
-        <div class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500">
-            <h1 class="font-bold text-3xl">Looping</h1>
-        </div>
+      <!-- Judul -->
+      <div
+        class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500"
+      >
+        <h1 class="font-bold text-3xl">Looping</h1>
+      </div>
 
-        <!-- Isi konten -->
-        <div class="container">
-            <div class="flex flex-wrap justify-around">
-                <div class="card w-96 bg-base-300 shadow-xl my-8" data-aos="zoom-in-up">
-                    <figure class="px-25 pt-25 m-4">
-                        <img src="../src/assets/for1.png" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">Loop For</h2>
-                        <p>
-                            loop biasanya digunakan untuk melakukan sesuatu berulang kali. Misalnya, Anda ingin mencetak
-                            angka dari 1
-                            hingga 10. Dengan menggunakan loop, Anda dapat mengurangi code panjang dan berulang menjadi
-                            hanya beberapa baris seperti yang ditunjukkan pada contoh di atas.
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <div class="my-modal-1 card-actions justify-end">
+      <!-- Isi konten -->
+      <div class="container">
+        <div class="flex flex-wrap justify-around">
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-25 pt-25 m-4">
+              <img
+                src="../src/assets/for1.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Loop For</h2>
+              <p>
+                loop biasanya digunakan untuk melakukan sesuatu berulang kali.
+                Misalnya, Anda ingin mencetak angka dari 1 hingga 10. Dengan
+                menggunakan loop, Anda dapat mengurangi code panjang dan
+                berulang menjadi hanya beberapa baris seperti yang ditunjukkan
+                pada contoh di atas.
+              </p>
+              <p></p>
+              <p></p>
+              <div class="my-modal-1 card-actions justify-end">
+                <label for="my-modal-1" class="btn modal-button">Output</label>
 
-                            <label for="my-modal-1" class="btn modal-button">Output</label>
-
-                            <input type="checkbox" id="my-modal-1" class="modal-toggle" />
-                            <label for="my-modal-1" class="modal cursor-pointer">
-                                <label class="modal-box relative" for="">
-                                    <h3 class="text-lg font-bold">Output dari looping</h3>
-                                    <p class="py-1"><br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</p>
-                                </label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card w-96 bg-base-300 shadow-xl my-8" data-aos="zoom-in-up">
-                    <figure class="px-25 pt-25 m-4">
-                        <img src="../src/assets/for2.png" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">Loop While</h2>
-                        <p>
-                            Loop while memungkinkan Anda untuk mengulang code seperti loop for. Ketika sebuah kondisi
-                            ditentukan, code dalam loop akan dijalankan berulang kali selama nilainya adalah true.
-                            Berbeda dari loop for, code untuk yang menaikkan variable, $i++;, harus ditulis dalam loop.
-                            Ini adalah perbedaan penting antara loop while dan for.
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <div class="my-modal-2 card-actions justify-end">
-
-                            <label for="my-modal-2" class="btn modal-button">Output</label>
-
-                            <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-                            <label for="my-modal-2" class="modal cursor-pointer">
-                                <label class="modal-box relative" for="">
-                                    <h3 class="text-lg font-bold">Output dari looping</h3>
-                                    <p class="py-2">2<br>4<br>6<br>8<br>10</p>
-                                </label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card w-96 bg-base-300 shadow-xl my-8" data-aos="zoom-in-up">
-                    <figure class="px-25 pt-25 m-4">
-                        <img src="../src/assets/for3.png" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">Break</h2>
-                        <p>
-                            Statement break secara paksa akan mengakhiri loop dan digunakan dalam statement berulang
-                            seperti loop (for, while, foreach, dll). Statement break umumnya digunakan dalam kombinasi
-                            dengan statement conditional seperti statement if.
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <div class="my-modal-3 card-actions justify-end">
-
-                            <label for="my-modal-3" class="btn modal-button">Output</label>
-
-                            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-                            <label for="my-modal-3" class="modal cursor-pointer">
-                                <label class="modal-box relative" for="">
-                                    <h3 class="text-lg font-bold">Output dari looping</h3>
-                                    <p class="py-3">1<br>2<br>3<br>4<br>5</p>
-                                </label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card w-96 bg-base-300 shadow-xl my-8" data-aos="zoom-in-up">
-                    <figure class="px-25 pt-25 m-4">
-                        <img src="../src/assets/for4.png" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">Continue</h2>
-                        <p>
-                            Ketika statement break mengeluarkan kita dari loop, statement continue hanya melewatkan
-                            iterasi saat ini tetapi tetap melanjutkan loop. Statement continue juga bisa digunakan dalam
-                            statement iteratif seperti for, while,foreach, dll.
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <div class="my-modal-4 card-actions justify-end">
-
-                            <label for="my-modal-4" class="btn modal-button">Output</label>
-
-                            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-                            <label for="my-modal-4" class="modal cursor-pointer">
-                                <label class="modal-box relative" for="">
-                                    <h3 class="text-lg font-bold">Output dari looping</h3>
-                                    <p class="py-4">1<br>2<br>4<br>5<br>7<br>8<br>10<br></p>
-                                </label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card w-96 bg-base-300 shadow-xl my-8" data-aos="zoom-in-up">
-                    <figure class="px-25 pt-25 m-4">
-                        <img src="../src/assets/for5.png" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                        <h2 class="card-title">Loop Foreach</h2>
-                        <p>
-                            Loop foreach melakukan iterasi pada array dengan index atau array associative secara
-                            berurutan dari nilai pertama. Anda dapat mengambil nilai dalam array satu per satu. Nilai
-                            ditentukan secara berurutan ke variable setelah kata
-                            kunci as pada awal setiap loop. Nama variable setelah as dapat berupa apa saja yang Anda
-                            inginkan.
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <div class="my-modal-5 card-actions justify-end">
-
-                            <label for="my-modal-5" class="btn modal-button">Output</label>
-
-                            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-                            <label for="my-modal-5" class="modal cursor-pointer">
-                                <label class="modal-box relative" for="">
-                                    <h3 class="text-lg font-bold">Output dari looping</h3>
-                                    <p class="py-5">Matematika: 70 Bahasa: 90 Sains: 80</p>
-                                </label>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                <input type="checkbox" id="my-modal-1" class="modal-toggle" />
+                <label for="my-modal-1" class="modal cursor-pointer">
+                  <label class="modal-box relative" for="">
+                    <h3 class="text-lg font-bold">Output dari looping</h3>
+                    <p class="py-1">
+                      <br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10
+                    </p>
+                  </label>
+                </label>
+              </div>
             </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-25 pt-25 m-4">
+              <img
+                src="../src/assets/for2.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Loop While</h2>
+              <p>
+                Loop while memungkinkan Anda untuk mengulang code seperti loop
+                for. Ketika sebuah kondisi ditentukan, code dalam loop akan
+                dijalankan berulang kali selama nilainya adalah true. Berbeda
+                dari loop for, code untuk yang menaikkan variable, $i++;, harus
+                ditulis dalam loop. Ini adalah perbedaan penting antara loop
+                while dan for.
+              </p>
+              <p></p>
+              <p></p>
+              <div class="my-modal-2 card-actions justify-end">
+                <label for="my-modal-2" class="btn modal-button">Output</label>
+
+                <input type="checkbox" id="my-modal-2" class="modal-toggle" />
+                <label for="my-modal-2" class="modal cursor-pointer">
+                  <label class="modal-box relative" for="">
+                    <h3 class="text-lg font-bold">Output dari looping</h3>
+                    <p class="py-2">2<br />4<br />6<br />8<br />10</p>
+                  </label>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-25 pt-25 m-4">
+              <img
+                src="../src/assets/for3.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Break</h2>
+              <p>
+                Statement break secara paksa akan mengakhiri loop dan digunakan
+                dalam statement berulang seperti loop (for, while, foreach,
+                dll). Statement break umumnya digunakan dalam kombinasi dengan
+                statement conditional seperti statement if.
+              </p>
+              <p></p>
+              <p></p>
+              <div class="my-modal-3 card-actions justify-end">
+                <label for="my-modal-3" class="btn modal-button">Output</label>
+
+                <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+                <label for="my-modal-3" class="modal cursor-pointer">
+                  <label class="modal-box relative" for="">
+                    <h3 class="text-lg font-bold">Output dari looping</h3>
+                    <p class="py-3">1<br />2<br />3<br />4<br />5</p>
+                  </label>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-25 pt-25 m-4">
+              <img
+                src="../src/assets/for4.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Continue</h2>
+              <p>
+                Ketika statement break mengeluarkan kita dari loop, statement
+                continue hanya melewatkan iterasi saat ini tetapi tetap
+                melanjutkan loop. Statement continue juga bisa digunakan dalam
+                statement iteratif seperti for, while,foreach, dll.
+              </p>
+              <p></p>
+              <p></p>
+              <div class="my-modal-4 card-actions justify-end">
+                <label for="my-modal-4" class="btn modal-button">Output</label>
+
+                <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+                <label for="my-modal-4" class="modal cursor-pointer">
+                  <label class="modal-box relative" for="">
+                    <h3 class="text-lg font-bold">Output dari looping</h3>
+                    <p class="py-4">
+                      1<br />2<br />4<br />5<br />7<br />8<br />10<br />
+                    </p>
+                  </label>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-25 pt-25 m-4">
+              <img
+                src="../src/assets/for5.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Loop Foreach</h2>
+              <p>
+                Loop foreach melakukan iterasi pada array dengan index atau
+                array associative secara berurutan dari nilai pertama. Anda
+                dapat mengambil nilai dalam array satu per satu. Nilai
+                ditentukan secara berurutan ke variable setelah kata kunci as
+                pada awal setiap loop. Nama variable setelah as dapat berupa apa
+                saja yang Anda inginkan.
+              </p>
+              <p></p>
+              <p></p>
+              <div class="my-modal-5 card-actions justify-end">
+                <label for="my-modal-5" class="btn modal-button">Output</label>
+
+                <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+                <label for="my-modal-5" class="modal cursor-pointer">
+                  <label class="modal-box relative" for="">
+                    <h3 class="text-lg font-bold">Output dari looping</h3>
+                    <p class="py-5">Matematika: 70 Bahasa: 90 Sains: 80</p>
+                  </label>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Pagination -->
     <div class="btn-group flex flex-wrap justify-between pt-8 mx-10 mb-12">
-        <a class="btn btn-outline" href="if_else.html">&lt&lt Back</a>
+      <a class="btn btn-outline" href="if_else.html">&lt&lt Flow Control</a>
+      <a class="btn btn-outline" href="No4/no4.php">Nilai Mahasiswa &gt&gt</a>
     </div>
     <!-- Akhir Pagination -->
 
     <!-- Footer -->
     <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
-        <div>
-            <p class="text-slate-100 font-medium tracking-wider">
-                Copyright © 2022 - Kelompok 1 PAW
-            </p>
-        </div>
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
     </footer>
     <!-- Akhir Footer -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
-
+  </body>
 </html>
