@@ -102,7 +102,7 @@
                 </li>
                 <li><a href="../array.html" class="active:bg-teal-500">Array, Flow Control, <br />Looping</a></li>
                 <li><a href="no4.php" class="active:bg-teal-500">Nilai Mahasiswa</a></li>
-                <li><a class="active:bg-teal-500">Soal 5</a></li>
+                <li><a href="../FileHandling.html" class="active:bg-teal-500">Login, AJAX Chat, <br />File Handling</a></li>
               </ul>
             </li>
             <li>
@@ -114,7 +114,7 @@
     </div>
     <!-- Akhir Navbar -->
 
-    <div class="container p-10 mt-10">
+    <div class="container p-10 mt-10 min-h-screen">
         <!-- Judul -->
         <div class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500">
             <h1 class="font-bold">Hasil Konversi Nilai Mahasiswa</h1>
@@ -159,7 +159,8 @@
             
             <!-- Pagination -->
             <div class="btn-group flex flex-wrap justify-between pt-8 bg">
-                <a class="btn bg-teal-500 border-none" href="no4.php">&lt&lt Back</a>
+                <a class="btn btn-outline" href="no4.php">&lt&lt Back</a>
+                <a class="btn btn-outline" href="../FileHandling.html">Next &gt&gt</a>
             </div>
             <!-- Akhir Pagination -->
 
@@ -168,6 +169,15 @@
         
     </div>
 
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
 
 </body>
 </html>
