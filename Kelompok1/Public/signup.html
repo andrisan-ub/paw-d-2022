@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Sign up</title>
-</head>
-<body>
-<!-- Awal Navbar -->
+  </head>
+  <body>
+    <!-- Awal Navbar -->
     <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
       <div class="navbar bg-teal-500">
         <div class="flex-1">
           <a
-            href="index.html"
+            href=" ../index.html"
             class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
             >Kelompok 1</a
           >
@@ -24,7 +28,7 @@
           <ul class="menu menu-horizontal p-0">
             <li>
               <a
-                href="/Kelompok1/index.html"
+                href=" ../index.html"
                 class="text-slate-100 font-medium active:bg-teal-500"
                 >Home</a
               >
@@ -37,9 +41,11 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <path
-                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  />
                 </svg>
               </a>
               <ul class="p-2 bg-base-100">
@@ -53,13 +59,29 @@
                     >PHP Basics</a
                   >
                 </li>
-                <li><a class="active:bg-teal-500">Soal 3</a></li>
-                <li><a class="active:bg-teal-500">Soal 4</a></li>
-                <li><a class="active:bg-teal-500">Soal 5</a></li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li>
+                  <a href="FileHandling.html" class="active:bg-teal-500"
+                    >Login, AJAX Chat, <br />File Handling</a
+                  >
+                </li>
               </ul>
             </li>
             <li>
-              <a class="text-slate-100 font-medium active:bg-teal-500">About</a>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
             </li>
           </ul>
         </div>
@@ -67,49 +89,66 @@
     </div>
     <!-- Akhir Navbar -->
 
-    <br>
-
-    <div class="container p-10 mt-10">
-    </div>
-
-    <!-- Card -->
-    <div class="flex flex-col justify-content-center items-center">
+    <div class="container p-10 mt-40 min-h-screen">
+      <!-- Card -->
+      <div class="flex flex-col justify-content-center items-center">
         <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body justify-content-center items-center">
-              <form action="prosesSignup.php" method="post">
-                <h2 class="font-bold text-4xl">Sign Up</h2>
-                <div class="pt-8" style="width: 80%;">
-                    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" name="unameDaftar" required/>   
-                </div>
-                <div class="pt-4" style="width: 80%;">
-                    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" name="passDaftar" required/>  
-                </div>
-                <div class="pt-8 flex">
-                    <button class="btn" name="signup">Sign up</button>
-                </div>
-                <div class="mt-4">
-                    <div class="flex">
-                        <p>Sudah punya akun?</p>
-                        <a href="signin.html">Sign in</a>
-                    </div>
-                </div>
-              </form>
-            </div>
+          <div class="card-body justify-content-center items-center">
+            <form action="prosesSignup.php" method="post">
+              <h2 class="font-bold text-4xl text-slate-700">Sign Up</h2>
+              <div class="pt-8" style="width: 80%">
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="input input-bordered w-full max-w-xs"
+                  name="unameDaftar"
+                  required
+                />
+              </div>
+              <div class="pt-4" style="width: 80%">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="input input-bordered w-full max-w-xs"
+                  name="passDaftar"
+                  required
+                />
+              </div>
+              <div class="pt-8 flex">
+                <button
+                  class="btn bg-teal-400 border-none hover:bg-teal-300"
+                  name="signup"
+                >
+                  Sign up
+                </button>
+              </div>
+              <div class="mt-4">
+                <p>
+                  Sudah punya akun?
+                  <a
+                    href="signin.html"
+                    class="font-semibold hover:text-teal-300 transition duration-200"
+                    >Sign in</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+      <!-- Akhir Card -->
     </div>
-    <!-- Akhir Card -->
 
-    <br>   
-    
     <!-- Footer -->
-    <footer class="footer footer-center p-4 mt-10 bg-slate-600 text-base-content">
-        <div>
-          <p class="text-slate-100 font-medium tracking-wider">
-            Copyright © 2022 - Kelompok 1 PAW
-          </p>
-        </div>
+    <footer
+      class="footer footer-center p-4 mt-10 bg-slate-600 text-base-content"
+    >
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
     </footer>
     <!-- Akhir Footer -->
-  
-</body>
+  </body>
 </html>
