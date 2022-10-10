@@ -29,23 +29,58 @@
             <div class="card-body items-center text-center">
               <h2 class="card-title">Form Registrasi</h2>
               <p>Membuat form registrasi dengan syntax berikut:
-
+              </div>
+            </div>
+            <div class="mockup-code">
+                <pre><code></code></pre>
+                <pre><code>&lt;html&gt;</code></pre>
+                <pre><code>&lt;h1&gt;Register&lt;/h1&gt;</code></pre>
+                <pre data-prefix="$"><code>&lt;form&nbsp;action=&quot;register_process.php&quot;&nbsp;method=&quot;post&quot;&gt;</code></pre> 
+                <pre data-prefix="$"><code>&lt;label&gt;Username:</code></pre> 
+                <pre data-prefix="$"><code>&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;username&quot;&gt;&lt;/label&gt;</code></pre> 
+                <pre><code>&lt;label&gt;Password:
+                <br>&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;password&quot;&gt;</code></pre>
+                <pre><code>&lt;/label&gt;</code></pre>
+                <pre><code>&lt;label&gt;Password:
+                <br>&lt;input&nbsp;type=&quot;password&quot;&nbsp;name=&quot;password&quot;&gt;</code></pre>
+                <pre><code>&lt;/label&gt;</code></pre>
+                <pre><code>&lt;input&nbsp;type=&quot;submit&quot;&nbsp;value=&quot;Register&quot;&gt;</code></pre>
+                <pre><code></code>&lt;/form&gt;</code></pre>
+                <pre><code>&lt;/html&gt;</code></pre>
+                <br>
+                <pre><code>Syntax di atas disimpan dengan nama "register.php"</code></pre>
+                </div>
+              </div>
               </p>
             </div>
           </div>
-
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <figure class="px-10 pt-10">
-              <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
-            </figure>
-            <div class="card-body items-center text-center">
-              <h2 class="card-title">Form Login</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div class="card-actions">
-                <button class="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div>
+          <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                  <h2 class="card-title">Langkah selanjutnya</h2>
+                  <p>Membuat file "register_process.php" dengan isi seperti berikut:
+                  </div>
+                </div>
+                <div class="mockup-code">
+                    <pre><code></code></pre>
+                    <pre><code>&lt;?php</code></pre>
+                    <pre><code>&sect;username&nbsp;=&nbsp;&sect;_POST[&#39;username&#39;];</code></pre>
+                    <pre data-prefix="$"><code>&sect;password&nbsp;=&nbsp;&sect;_POST[&#39;password&#39;];</code></pre> 
+                    <pre data-prefix="$"><code>echo&nbsp;&quot;Registering&nbsp;&sect;username&nbsp;with&nbsp;password&nbsp;&sect;</code></pre> 
+                    <pre data-prefix="$"><code>password&quot;;</code></pre> 
+                    <pre><code>?&gt;</code></pre>
+                    <br>
+                    <pre><code>Web browser akan menampilkan form registrasi dari file "register.php" dengan 2 field yaitu
+                    <br>Username dan Password. Ketika sudah mengisi kedua field tersebut dan memencet tombol "register", 
+                    <br>maka kita akan diarahkan ke tampilan file "register_process.php" dan diperlihatkan pesan jika berhasil register. 
+                    <br>Peralihan halaman dapat terjadi karena terdapat atribut "action" dengan nilai "register_process.php" yang akan berfungsi 
+                    <br>ketika pengguna memencet tombol "register" dan nilai-nilai yang diinputkan di halaman sebelumnya akan ikut ditampilkan di halaman 
+                    <br>baru berkat adanya variabel $username = $_POST['username']; $password = $_POST['password'];</code></pre>
+                    <br>
+                    </div>
     </div>
     <!-- selesai clara-->
 
