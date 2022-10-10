@@ -4,8 +4,17 @@
 <head>
   <meta charset="utf-8">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rell="stylesheet" type="text/css" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Review Materi</title>
+  <style>
+    figure img {
+    width: 18rem;
+    height: 10rem;
+    max-height: 10rem;
+    object-fit: contain;
+  }
+  </style>
 </head>
 
 <body>
@@ -116,7 +125,7 @@
           </div>
         </div>
       </div>
-      <!--  Card PHP Basic slide 58-59  -->
+      <!--  Card PHP Basic slide 47-50  -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
@@ -128,6 +137,7 @@
           </div>
         </div>
       </div>
+      <!--  Card PHP Basic slide 52-56  -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
@@ -139,6 +149,7 @@
           </div>
         </div>
       </div>
+      <!--  Card PHP Basic slide 58-59  -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
@@ -154,14 +165,14 @@
 
     <!-- Page 3 -->
     <div id="item3" class="carousel-item w-full">
-      <!--  Card Client-Server slide 43  -->
+      <!--  Card   -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
           <div class="absolute inset-x-0 bottom-0 p-5">
-            <h1 class="card-title">Client Server slide 43</h1>
+            <h1 class="card-title"></h1>
             <div class="card-actions justify-end">
-              <button class="bg-green-800 btn btn-primary"><a href="Client-Server-47.html">Open</a></button>
+              <button class="bg-green-800 btn btn-primary"><a href="">Open</a></button>
             </div>
           </div>
         </div>
@@ -178,36 +189,38 @@
           </div>
         </div>
       </div>
-      <!--  Card PHP Basic slide 14  -->
+      <!--  Card  -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
           <div class="absolute inset-x-0 bottom-0 p-5">
-            <h1 class="card-title">PHP Basics slide 14</h1>
+            <h1 class="card-title"></h1>
             <div class="card-actions justify-end">
-              <button class="bg-green-800 btn btn-primary"><a href="PHP-Basics14.html">Open</a></button>
+              <button class="bg-green-800 btn btn-primary"><a href="">Open</a></button>
             </div>
           </div>
         </div>
       </div>
+      <!--  Card   -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
           <div class="absolute inset-x-0 bottom-0 p-5">
-            <h1 class="card-title">PHP Basics slide 22</h1>
+            <h1 class="card-title"></h1>
             <div class="card-actions justify-end">
-              <button class="bg-green-800 btn btn-primary"><a href="PHP Basics22.html">Open</a></button>
+              <button class="bg-green-800 btn btn-primary"><a href="">Open</a></button>
             </div>
           </div>
         </div>
       </div>
+      <!--  Card  -->
       <div class="card card-compact w-72 bg-base-300 shadow-xl mx-2">
         <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
         <div class="card-body text-justify relative h-32">
           <div class="absolute inset-x-0 bottom-0 p-5">
-            <h1 class="card-title">PHP Basics slide xx</h1>
+            <h1 class="card-title"></h1>
             <div class="card-actions justify-end">
-              <button class="bg-green-800 btn btn-primary"><a href="PHP Basics22.html">Open</a></button>
+              <button class="bg-green-800 btn btn-primary"><a href="">Open</a></button>
             </div>
           </div>
         </div>
@@ -218,12 +231,32 @@
     </div>
   </div>
   <div class="flex justify-center w-full py-2 gap-2">
-    <a href="#item1" class="btn btn-xs">1</a>
-    <a href="#item2" class="btn btn-xs">2</a>
-    <a href="#item3" class="btn btn-xs">3</a>
+    <a href="#item1" id="btn1" class="btn btn-accent btn-xs" onclick="button1()">1</a>
+    <a href="#item2" id="btn2" class="btn btn-xs" onclick="button2()">2</a>
+    <a href="#item3" id="btn3" class="btn btn-xs" onclick="button3()">3</a>
   </div>
 
-  <!-- NOTE PAGE 2 dan PAGE 3 BELUM KAKA :) -->
+  <script>
+    
+    function button1() {
+      document.getElementById("btn1").classList.add('btn-accent');
+      document.getElementById("btn2").classList.remove('btn-accent');
+      document.getElementById("btn3").classList.remove('btn-accent');
+    }
+
+    function button2() {
+      document.getElementById("btn1").classList.remove('btn-accent');
+      document.getElementById("btn2").classList.add('btn-accent');
+      document.getElementById("btn3").classList.remove('btn-accent');
+    }
+    
+    function button3() {
+      document.getElementById("btn1").classList.remove('btn-accent');
+      document.getElementById("btn2").classList.remove('btn-accent');
+      document.getElementById("btn3").classList.add('btn-accent');
+    }
+
+  </script>
 </body>
 
 </html>
