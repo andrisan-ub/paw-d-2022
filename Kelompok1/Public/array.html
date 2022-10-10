@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Awal Navbar -->
+    <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
+                  >
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li><a href="FileHandling.html" class="active:bg-teal-500">Login, AJAX Chat, <br />File Handling</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+    <!-- Judul -->
+    <div
+      class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500 pt-24"
+    >
+      <h1 class="font-bold text-4xl text-slate-700">Array</h1>
+    </div>
+    <!-- Akhir judul -->
+    <!-- Awal Konten1-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center bg- text-teal-500 uppercase"
+      >
+        Mendeklarasikan dan Membuat Array
+      </h2>
+      <div class="flex flex-wrap justify-around gap-4">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-44 text-sm bg-slate-500 sm:h-64 sm:text-base"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$anggota[0] = 'Razzaq';<span class="text-slate-300">//membuat masing" index  </span></code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre
+              data-prefix="3"
+            ><code>$anggota = array('Bagas', 'Rezky', 'Radit');<span class="text-slate-300">//menggunakan array()   </span></code></pre>
+            <pre data-prefix="4"><code></code></pre>
+            <pre
+              data-prefix="5"
+            ><code>$anggota = ['Zulkahfi', 'Ahmad', 'Dafa'];<span class="text-slate-300">//shorter way</span></code></pre>
+            <pre data-prefix="6"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Membuat Indexed Array
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat Indexed Array dapat melalui 3 cara, yaitu menambahkan di
+              setiap indexnya, menggunakan array(), dan menggunakan shorter way
+            </p>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-52 text-sm bg-slate-500 sm:h-64 sm:text-base"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$mahasiswa['Nama'] = 'Bagas Mahda';<span class="text-slate-500">membuat berdasarkan nama  </span></code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre
+              data-prefix="3"
+            ><code>$mahasiswa = array('Nama' => 'Bagas Mahda',</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>                   'NIM' => 215150700111038,); <span class="text-slate-500">menggunakan array()</span></code></pre>
+            <pre data-prefix="5"><code></code></pre>
+            <pre
+              data-prefix="6"
+            ><code>$mahasiswa = ['Nama' => 'Bagas Mahda',</code></pre>
+            <pre
+              data-prefix="7"
+            ><code>              'Prodi' => 'Teknologi Informasi'];<span class="text-slate-500">//shorter way</span></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Membuat Associative Array
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat Associative Array dapat melalui 3 cara, yaitu menambahkan
+              di setiap indexnya, menggunakan array(), dan menggunakan shorter
+              way
+            </p>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+        <!-- Awal Materi3 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-40 text-sm bg-slate-500 sm:h-64 sm:text-base"
+          >
+            <pre data-prefix="1"><code>$angka = range(1, 10);</code></pre>
+            <pre data-prefix="2"><code></code></pre>
+            <pre data-prefix="3"><code>$alfabet = range('a','z');</code></pre>
+            <pre data-prefix="4"><code></code></pre>
+            <pre
+              data-prefix="5"
+            ><code>$urutan_terbalik = range('k','b');</code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Membuat Array menggunakan function range()
+            </h2>
+            <p class="text-sm sm:text-base">
+              Membuat array dapat menggunakan function range() yang nilainya
+              dapat berupa angka atau alfabet. function range() akan membuat
+              array dari nilai kecil ke besar atau sebaliknya.
+            </p>
+          </div>
+        </div>
+        <!-- Akhir Materi3 -->
+      </div>
+    </div>
+    <!-- Akhir Konten1 -->
+    <!-- Awal Konten2-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center text-teal-500 uppercase"
+      >
+        Menampilkan Array
+      </h2>
+      <div class="flex flex-wrap justify-around gap-4">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-36 text-sm bg-slate-500 sm:h-64 sm:text-base"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>echo $kelompok1;<span class="text-slate-300">//eror</span></code></pre>
+            <pre data-prefix="3"><code>echo $kelompok1[0];</code></pre>
+            <pre data-prefix="4"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Menampilkan array menggunakan "echo"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menampilkan array menggunakan "echo" harus disertai indexnya, jika
+              tidak, maka keluaran tampilan webnya akan ada keterangan eror
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-3"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-3"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr1.jpg" alt="echo" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-56 sm:h-64 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>$mahasiswa = ['Nama' => 'Bagas Mahda',</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>              'NIM' => 215150700111038,</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>              'Prodi' => 'Teknologi Informasi'];</code></pre>
+            <pre data-prefix="5"><code></code></pre>
+            <pre data-prefix="6"><code>print_r($kelompok1);</code></pre>
+            <pre data-prefix="7"><code>print_r($mahasiswa);</code></pre>
+            <pre data-prefix="8"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Menampilkan array menggunakan "print_r()"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menampilkan array menggunakan "print_r" akan menampilkan
+              kesuluruhan isi dari array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-4"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-4"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr2.jpg" alt="print_r" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+        <!-- Awal Materi3 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 h-56 sm:h-64 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>$mahasiswa = ['Nama' => 'Bagas Mahda',</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>              'NIM' => 215150700111038,</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>              'Prodi' => 'Teknologi Informasi'];</code></pre>
+            <pre data-prefix="5"><code></code></pre>
+            <pre data-prefix="6"><code>var_dump($kelompok1);</code></pre>
+            <pre data-prefix="7"><code>var_dump($mahasiswa);</code></pre>
+            <pre data-prefix="8"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Menampilkan array menggunakan "var_dump"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menampilkan array menggunakan "var_dump" akan menampilkan
+              kesuluruhan isi array disertai dengan jenis tipe data dan
+              ukurannya.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-5"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-5"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr3.jpg" alt="var_dump" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi3 -->
+      </div>
+    </div>
+    <!-- Akhir Konten2 -->
+    <!-- Awal Konten3-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center text-teal-500 uppercase md:text-xl"
+      >
+        Menambahkan, Mengkonstruksi, dan Menukar nilai Array
+      </h2>
+      <div class="flex flex-wrap justify-around gap-4">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-80 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni'];</code></pre>
+            <pre data-prefix="2"><code>$kelompok1[] = 'Rezky';</code></pre>
+            <pre data-prefix="3"><code>print_r($kelompok1);</code></pre>
+            <pre
+              data-prefix="4"
+            ><code><span class="text-slate-300">['Razzaq', 'Toni', 'Rezky']</span></code></pre>
+            <pre data-prefix="5"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Menambahkan nilai pada Array
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menambahkan nilai pada array menggunakan Syntax []. Nilai yang
+              ditambahkan akan berada diakhir index. Penambahan index ini hanya
+              untuk Indexing array
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-6"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-6"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr4.jpg" alt="insert array" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-80 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code><span class="text-slate-300">Indexing Array</span></code></pre>
+            <pre
+              data-prefix="2"
+            ><code>$kelompok1 = ['Adam', 'Toni' ,'Bagas'];</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>[$anggota1, $anggota2] = $kelompok1;</code></pre>
+            <pre
+              data-prefix="4"
+            ><code>echo $anggota1;echo $anggota2;</code></pre>
+            <pre data-prefix="5"><code></code></pre>
+            <pre
+              data-prefix="6"
+            ><code><span class="text-slate-300">Associative Array</span></code></pre>
+            <pre
+              data-prefix="7"
+            ><code>$mahasiswa = ['Nama' => 'Bagas Mahda',</code></pre>
+            <pre
+              data-prefix="8"
+            ><code>              'NIM' => 215150700111038];</code></pre>
+            <pre
+              data-prefix="9"
+            ><code>['Nama' => $Nama, 'NIM' => $NIM] = $mahasiswa;</code></pre>
+            <pre data-prefix="10"><code>echo $Nama; echo $NIM;</code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Mengkonstruksi nilai array
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menkonstruki nilai array adalah memasukan nilai dari array pada
+              masing-masing variabel. Mengkonstruksi nilai array dapat di
+              Indexing array maupun Associative array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-7"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-7" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-7"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img
+                    src="../src/assets/arr5.jpg"
+                    alt="Mengkonstruksi array"
+                  />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+        <!-- Awal Materi3 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-80 text-sm sm:text-base bg-slate-500"
+          >
+            <pre data-prefix="1"><code>$anggota4 = 'Razzaq';</code></pre>
+            <pre data-prefix="2"><code>$anggota5 = 'Rezky';</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>[$anggota4, $anggota5] = [$anggota5, $anggota4];</code></pre>
+            <pre data-prefix="4"><code>echo $anggota4;</code></pre>
+            <pre data-prefix="5"><code>echo $anggota5;</code></pre>
+            <pre data-prefix="6"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Menukar nilai menggunakan Array
+            </h2>
+            <p class="text-sm sm:text-base">
+              Menukar nilai pada beberapa variabel dapat menggunakan Array yaitu
+              dengan memasukan variabel pada array. lalu, ditukar menggunakan
+              assignment(=) dengan array yang isinya nilai variabel yang
+              ditukar.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-8"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-8" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-8"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr6.jpg" alt="swaping array" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi3 -->
+      </div>
+    </div>
+    <!-- Akhir Konten3 -->
+    <!-- Awal Konten4-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center text-teal-500 uppercase md:text-xl"
+      >
+        Penggunaan count(), sizeof(), dan foreach
+      </h2>
+      <div class="flex flex-wrap justify-center gap-20">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-80 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>$countKelompok1 = count($kelompok1);</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>$sizeofKelompok1 = sizeof($kelompok1);</code></pre>
+            <pre data-prefix="4"><code>echo $countKelompok1</code></pre>
+            <pre data-prefix="5"><code>echo $sizeofKelompok1;</code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan count() dan sizeof()
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan count() dan sizeof() untuk mengembalikan panjang dari
+              suatu array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-9"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-9" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-9"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img
+                    src="../src/assets/arr7.jpg"
+                    alt="count() dan sizeof()"
+                  />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-96 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-80 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>foreach ($kelompok1 as $anggota) {</code></pre>
+            <pre
+              data-prefix="3"
+            ><code>    echo "Hallo rek, saya $anggota";</code></pre>
+            <pre data-prefix="4"><code>}</code></pre>
+            <pre
+              data-prefix="5"
+            >$mahasiswa = ['Rezky' => 215150700111000,'Radit' => 215150700111001];<code></code></pre>
+            <pre
+              data-prefix="6"
+            ><code>foreach ($mahasiswa as $nama => $nim){</code></pre>
+            <pre
+              data-prefix="7"
+            ><code>    echo "Saya $nama dengan NIM $nim";</code></pre>
+            <pre data-prefix="8"><code>}</code></pre>
+            <pre data-prefix="9"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan foreach
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan foreach ini untuk menampilkan seluruh isi dari Array,
+              baik Indexing Array maupun Associative Array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-10"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-10" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-10"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr8.jpg" alt="foreach" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+      </div>
+    </div>
+    <!-- Akhir Konten4 -->
+    <!-- Awal Konten5-->
+    <div class="container mx-auto mb-10">
+      <!-- Materi -->
+      <h2
+        class="w-full font-bold pt-8 text-xl lg:text-2xl text-center text-teal-500 uppercase md:text-xl"
+      >
+        Mengurutkan nilai pada array
+      </h2>
+      <div class="flex flex-wrap justify-center gap-14">
+        <!-- Awal Materi1 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-80 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-60 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre data-prefix="2"><code>sort($kelompok1);</code></pre>
+            <pre data-prefix="3"><code>print_r($kelompok1);</code></pre>
+            <pre data-prefix="4"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan "sort()"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan "sort()" untuk mengurutkan nilai dari atas ke bawah.
+              Penggunaan "sort()" untuk Indexing Array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-11"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-11" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-11"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr9.jpg" alt="sort()" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi1 -->
+        <!-- Awal Materi2 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-80 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-60 text-sm bg-slate-500 sm:text-base"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['Razzaq', 'Toni', 'Rezky', 'Adam', 'Bagas', 'Radit'];</code></pre>
+            <pre data-prefix="2"><code>asort($kelompok1);</code></pre>
+            <pre data-prefix="3"><code>print_r($kelompok1);</code></pre>
+            <pre data-prefix="4"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan "rsort()"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan "rsort()" untuk mengurutkan nilai dari bawah ke atas.
+              Penggunaan "rsort" untuk Indexing Array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-12"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-12" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-12"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr10.jpg" alt="rsort()" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi2 -->
+        <!-- Awal Materi3 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-80 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-60 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$kelompok1 = ['anggota1' => 'Bagas', 'Anggota2' => 'Radit',</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>              'anggota3' => 'Toni', 'anggota4' => 'Adam', </code></pre>
+            <pre
+              data-prefix="3"
+            ><code>              'anggota5' => 'Rezky', 'anggota6' => 'Razzaq'];</code></pre>
+            <pre data-prefix="4"><code>}</code></pre>
+            <pre data-prefix="5">rsort($kelompok1);<code></code></pre>
+            <pre data-prefix="6"><code>print_r($kelompok1);</code></pre>
+            <pre data-prefix="7"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan "asort()"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan "asort()" untuk mengurutkan nilai dari atas ke bawah
+              berdasarkan nilai di dalamnya. Penggunaan "asort()" untuk
+              Associative Array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-13"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-13" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-13"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr11.jpg" alt="asort()" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi3 -->
+        <!-- Awal Materi4 -->
+        <div
+          class="card w-80 bg-base-300 shadow-xl my-8 lg:w-80 hover:bg-teal-50 transition duration-500"
+        >
+          <div
+            class="mockup-code m-4 sm:h-60 text-sm sm:text-base bg-slate-500"
+          >
+            <pre
+              data-prefix="1"
+            ><code>$$kelompok1 = ['anggota1' => 'Bagas', 'Anggota2' => 'Radit',</code></pre>
+            <pre
+              data-prefix="2"
+            ><code>              'anggota3' => 'Toni', 'anggota4' => 'Adam', </code></pre>
+            <pre
+              data-prefix="3"
+            ><code>              'anggota5' => 'Rezky', 'anggota6' => 'Razzaq'];</code></pre>
+            <pre data-prefix="4"><code>}</code></pre>
+            <pre data-prefix="5">arsort($kelompok1);<code></code></pre>
+            <pre data-prefix="6"><code>print_r($kelompok1);</code></pre>
+            <pre data-prefix="7"><code></code></pre>
+          </div>
+          <div class="card-body text-slate-700">
+            <h2 class="card-title mt-0 text-lg sm:text-xl">
+              Penggunaan "arsort()"
+            </h2>
+            <p class="text-sm sm:text-base">
+              Penggunaan "arsort()" untuk mengurutkan nilai dari bawah ke atas
+              berdasarkan nilai di dalamnya. Penggunaan "arsort()" untuk
+              Associative Array.
+            </p>
+            <div class="mt-4">
+              <label
+                for="my-modal-14"
+                class="btn modal-button center bg-teal-400 border-none hover:bg-teal-500"
+                >Output</label
+              >
+              <input type="checkbox" id="my-modal-14" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box relative">
+                  <label
+                    for="my-modal-14"
+                    class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >✕</label
+                  >
+                  <img src="../src/assets/arr12.jpg" alt="arsort()" />
+                  <!-- <p class="py-4 text-center">
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Materi4 -->
+      </div>
+    </div>
+    <!-- Akhir Konten5 -->
+    <!-- Pagination -->
+    <div class="btn-group mb-10 mx-10 flex flex-wrap justify-between pt-8">
+      <a class="btn btn-outline" href="halaman52-59.html">&lt&lt PHP Basic</a>
+      <a class="btn btn-outline" href="if_else.html">Flow Control &gt&gt</a>
+    </div>
+    <!-- Akhir Pagination -->
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+  </body>
+</html>

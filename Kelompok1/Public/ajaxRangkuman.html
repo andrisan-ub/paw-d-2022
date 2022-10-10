@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uji Coba AJAX Chat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      #penting {
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Awal Navbar -->
+    <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
+                  >
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li> <a href="FileHandling.html" class="active:bg-teal-500"
+                  >Login, AJAX Chat, <br />File Handling</a
+                ></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+
+    <!--Judul-->
+    <div
+      class="judul text-black p-6 text-center text-2xl border-b-4 border-teal-500 font-bold m-20">
+      <h1 class="judul">Asynchronous JavaScript and XMLHTTP (AJAX)</h1>
+    </div>
+
+    <!-- Akhir Judul -->
+
+    <!-- Materi -->
+    <!-- Pembukaan -->
+
+    <div class="pt-0">
+      <!-- Hero -->
+      <div class="hero min-h-screen rounded-lg">
+        <div class="hero-content flex-col lg:flex-row gap-4">
+          <!-- Handphhone -->
+          <div class="mockup-phone flex-initial w-75">
+            <div class="camera"></div>
+            <div class="display">
+              <div
+                class="artboard artboard-demo phone-1 grow"
+                style="background-image: url('../src/assets/wallpaper.jpg')">
+                <!-- Chat 1 -->
+                <div
+                  tabindex="0"
+                  class="collapse collapse-open border border-base-300 bg-base-100 rounded-box collapse collapse-close border border-base-400 mr-14 ml-3 bg-base-100 rounded-box p-4 bg-gray-500 text-white ...hover:bg-base-10 duration-200 transform transition-all hover:scale-95 mt-14">
+                  <div class="collapse-title pl-0 pt-1 pb-0 text-xl font-bold">
+                    Browser
+                  </div>
+                  <div class="nama-chat collapse text-sm font-medium">
+                    Duh... capek euy, reload halaman website mulu! Mana server
+                    kalau ditanya lama jawabnya..
+                  </div>
+                </div>
+
+                <!-- Chat 2 -->
+                <div
+                  tabindex="0"
+                  class="collapse collapse-open border border-base-300 bg-base-100 rounded-box collapse collapse-close border border-base-400 mr-3 ml-14 bg-base-100 rounded-box p-4 bg-green-500 text-white ...hover:bg-base-10 duration-200 transform transition-all hover:scale-95 mt-3 mb-28">
+                  <div class="collapse-title pl-0 pt-1 pb-0 text-xl font-bold">
+                    AJAX
+                  </div>
+                  <div class="nama-chat collapse text-sm font-medium">
+                    Salah sendiri ga minta bantuan aku..
+                  </div>
+                </div>
+
+                <!-- Chat 3 -->
+                <div class="form-control">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      placeholder="Masukkan pesan..."
+                      class="input input-bordered" />
+                    <button class="btn btn-square bg-gray-100">
+                      <img
+                        src="../src/assets/icon-kirim.png"
+                        style="width: 35px" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Batas Handphone -->
+          <div class="basis-1/2">
+            <h1 class="text-5xl font-bold">Apa itu AJAX?</h1>
+            <p class="py-6">
+              Teknik yang digunakan untuk membuat website yang dinamis yang
+              berarti website mampu melakukan update dan menampilkan data
+              terbaru dari server tanpa harus melakukan reload.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Batas Hero -->
+      <!-- Materi 2 -->
+      <h1 class="Materi2"></h1>
+
+      <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse gap-24">
+          <div class="flex-col">
+            <img
+              src="../src/assets/diagram.jpg"
+              class="max-w-sm rounded-lg shadow-2xl flex-initial w-96 ... hover:bg-base-10 duration-200 transform transition-all hover:scale-150" />
+            <div class="flex flex-row gap-16 mt-6">
+              <!-- Button Konsep Konvensional -->
+              <!-- The button to open modal -->
+              <label for="my-modal-5" class="btn modal-button btn-accent"
+                ><span style="color: white">Konsep Konvensional</span></label
+              >
+
+              <!-- Put this part before-->
+              <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Konsep Konvensional</h3>
+                  <ol class="list-decimal py-4 list-inside">
+                    <li>
+                      Pemintaan HTTP req dikirimkan dari web browser ke server,
+                    </li>
+                    <li>Server menerima dan megambil data,</li>
+                    <li>Server mengirim data yang diminta ke browser,</li>
+                    <li>
+                      Web browser menerima data dan mereload halaman untuk
+                      menampilkan data. Pada kasus ini, User harus menunggu.
+                    </li>
+                    <!-- ... -->
+                  </ol>
+                  <div class="modal-action">
+                    <label for="my-modal-5" class="btn modal-button btn-accent"
+                      ><span style="color: white">Tutup</span></label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Button Konsep AJAX -->
+              <!-- The button to open modal -->
+              <label for="my-modal-1" class="btn modal-button btn-accent"
+                ><span style="color: white">Konsep AJAX</span></label
+              >
+
+              <!-- Put this part before-->
+              <input type="checkbox" id="my-modal-1" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Konsep AJAX</h3>
+                  <ol class="list-decimal py-4 list-inside">
+                    <li>
+                      Browser membuat JS call, kemudian mengaktifkan
+                      XMLHttpRequest,
+                    </li>
+                    <li>
+                      Di Background, web browser mengirim request HTTP ke server,
+                    </li>
+                    <li>
+                      Server menerima, mengambil, dan mengirimkan data ke web
+                      browser,
+                    </li>
+                    <li>
+                      Web browser menerima data yang diminta dan akan
+                      ditampilkan di halaman tanpa Reload.
+                    </li>
+                    <!-- ... -->
+                  </ol>
+                  <div class="modal-action">
+                    <label for="my-modal-1" class="btn modal-button btn-accent"
+                      ><span style="color: white">Tutup</span></label
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Selesai Button -->
+            </div>
+          </div>
+          <!-- Flex Baru -->
+          <div class="basis-1/2">
+            <h1 class="text-5xl font-bold">Cara Kerja AJAX</h1>
+            <p class="py-6">
+              AJAX merupakan sekumpulan teknik pengembangan web yang sistemnya
+              terdiri atas:
+            </p>
+            <ol class="list-disc p-6">
+              <li>
+                <span id="penting">HTML/XHTML</span> digunakan sebagai bahasa
+                utama dan CSS untuk menampilkan data,
+              </li>
+              <li>
+                <span id="penting">The Document Object Model(DOM)</span>
+                digunakan untuk menampilkan data yang dinamis dan interaksinya,
+              </li>
+              <li>
+                <span id="penting">XML</span> untuk pertukaran data. Sekarang
+                diganti oleh <span id="penting">JSON</span> karena bentuknya
+                mendekati Javascript,
+              </li>
+              <li>
+                <span id="penting">XMLHttpRequest</span> untuk komunikasi tidak
+                langsung (Asynchronous),
+              </li>
+              <li>
+                <span id="penting">Javascript</span> digunakan untukmenyatukan
+                semua teknologi ini.
+              </li>
+              <!-- ... -->
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Batas Materi 2 -->
+      <!-- Materi 3 -->
+      <h1 class="text-5xl font-bold text-center mb-11">Penggunaan AJAX</h1>
+
+      <div class="container flex flex-row flex-wrap justify-around px-24">
+        <div
+          class="card w-96 bg-base-100 shadow-2xl mb-8 ... hover:bg-slate-100 transition-color duration-200 transform transition-all hover:scale-105">
+          <figure><img src="../src/assets/search.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Google Autocomplete</h2>
+            <p>
+              AJAX membantu pertukaran data dan layar yang menampilkan data akan
+              bekerja secara bersamaan tanpa mengganggu fungsi masing-masing.
+            </p>
+            <div class="card-actions justify-end"></div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-100 shadow-2xl mb-8 ... hover:bg-slate-100
+        transition-color duration-200 transform transition-all
+        hover:scale-105">
+        <div class="rating p-16 justify-around">
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400" />
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400"
+            checked />
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400" />
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400" />
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400" />
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Rating</h2>
+          <p>
+            Setelah klik opsi rating, website akan memperbarui kalkulasi tapi
+            tampilan halaman tetap sama.
+          </p>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+
+      <div
+        class="card w-96 bg-base-100 shadow-2xl mb-8 ... hover:bg-slate-100 transition-color duration-200 transform transition-all hover:scale-105">
+        <figure><img src="../src/assets/chat.jpg" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Chat Room</h2>
+          <p>
+            AJAX tidak akan mereload halaman setiap anda mengirimkan dan
+            menerima pesan baru.
+          </p>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Batas Materi 3 -->
+
+    <!-- Contoh Penerapannya -->
+
+    <div
+      class="judul text-black p-6 text-center text-2xl border-b-4 border-teal-500 font-bold m-20 mb-8">
+      <h1 class="judul">Uji Coba AJAX</h1>
+    </div>
+    <!-- Batas Body -->
+
+    <form action="AJAX/ajaxTest.html">
+      <div class="container flex flex-row flex-wrap justify-around px-24 mb-10">
+        <button class="btn btn-accent py-10 w-full">
+          <span class="tombol-uji text-blue-50 text-xl font-bold"
+            >Klik Disini Untuk Uji Coba Source Code</span
+          >
+        </button>
+      </div>
+    </form>
+
+
+
+     <!-- Pagination -->
+     <div class="btn-group flex flex-wrap justify-between pt-8 mx-10 mb-12">
+      <a class="btn btn-outline" href="FileHandling.html">&lt&lt File Handling</a>
+    </div>
+    <!-- Akhir Pagination -->
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+  </body>
+</html>

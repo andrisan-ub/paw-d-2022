@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Basic PHP Halaman 52-59</title>
+  </head>
+
+  <body>
+    <!-- Awal Navbar -->
+    <div class="container mx-auto shadow-md bg-teal fixed top-0 z-50">
+      <div class="navbar bg-teal-500">
+        <div class="flex-1">
+          <a
+            href=" ../index.html"
+            class="btn btn-ghost normal-case text-xl active:bg-slate-300 text-slate-100"
+            >Kelompok 1</a
+          >
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal p-0">
+            <li>
+              <a
+                href=" ../index.html"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Home</a
+              >
+            </li>
+            <li tabindex="0">
+              <a class="text-slate-100 font-medium active:bg-teal-500">
+                Soal
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  />
+                </svg>
+              </a>
+              <ul class="p-2 bg-base-100">
+                <li>
+                  <a href="resume-client-server.html" class="active:bg-teal-500"
+                    >Client Server</a
+                  >
+                </li>
+                <li>
+                  <a href="resume-14-22-26.html" class="active:bg-teal-500"
+                    >PHP Basics</a
+                  >
+                </li>
+                <li>
+                  <a href="array.html" class="active:bg-teal-500 text-base"
+                    >Array, Flow Control, <br />Looping</a
+                  >
+                </li>
+                <li>
+                  <a href="No4/no4.php" class="active:bg-teal-500"
+                    >Nilai Mahasiswa</a
+                  >
+                </li>
+                <li><a href="FileHandling.html" class="active:bg-teal-500">Login, AJAX Chat, <br />File Handling</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href=" ../index.html#ourTeam"
+                class="text-slate-100 font-medium active:bg-teal-500"
+                >Our Team</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Navbar -->
+
+    <div class="container p-10 mt-10">
+      <!-- Judul -->
+      <div
+        class="container text-center p-8 text-2xl border-slate-600 border-b-4 text-black border-teal-500"
+      >
+        <h1 class="font-bold text-3xl">PHP Basic Halaman 52-59</h1>
+      </div>
+
+      <!-- Isi konten -->
+      <div class="container">
+        <div class="flex flex-wrap justify-around">
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">strlen()</h2>
+              <p>
+                Fungi dari strlen()adalah untuk menghitung Panjang dari string.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon1.png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">strtolower()</h2>
+              <p>
+                Fungsi dari strtolower() adalah untuk mengkonversi semua
+                karakter menjadi huruf kecil.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (2).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">strtoupper()</h2>
+              <p>
+                Fungsi dari strtoupper() adalah untuk mengkonversi semua
+                karakter menjadi huruf kapital/besar.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (3).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">trim()</h2>
+              <p>
+                Fungsi dari trim() adalah untuk menghapus ruang kosong yang ada
+                pada string.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (7).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">unset()</h2>
+              <p>Gunakan unset() untuk menghapus variabel.</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (6).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">is_bool()</h2>
+              <p>
+                Gunakan fungsi is_bool() untuk menguji apakah suatu nilai adalah
+                Boolean atau tidak.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (8).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">isset()</h2>
+              <p>
+                Gunakan isset() untuk melihat apakah suatu variabel telah diset
+                ke sesuatu.
+              </p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+
+          <div
+            class="card w-96 bg-base-300 shadow-xl my-8"
+            data-aos="zoom-in-up"
+          >
+            <figure class="px-12 pt-12 m-4">
+              <img
+                src=" ../src/assets/carbon (5).png"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">(.)</h2>
+              <p>Untuk menggabungkan string, bisa menggunakan operator (.).</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="btn-group flex flex-wrap justify-between pt-8 mx-10 mb-12">
+      <a class="btn btn-outline" href="resume47-50.html">&lt&lt Back</a>
+      <a class="btn btn-outline" href="array.html">Array &gt&gt</a>
+    </div>
+    <!-- Akhir Pagination -->
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-slate-600 text-base-content">
+      <div>
+        <p class="text-slate-100 font-medium tracking-wider">
+          Copyright © 2022 - Kelompok 1 PAW
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
