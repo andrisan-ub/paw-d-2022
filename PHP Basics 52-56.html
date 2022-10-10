@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Materi PHP Basics Slide 52-56</title>
+  </head>
+ 
+    <div class="flex flex-wrap">
+        <div class="p-10 grid grid-cols-10 grid-flow-row gap-5 justify-items-auto">
+            <div class="card-actions justify-end">
+                <button class="bg-violet-900 btn btn-primary"><a href="landing-page.html">Back</a></button>
+            </div>
+        </div>
+    <div class="p-10 grid grid-cols-2 grid-flow-row gap-5 justify-items-auto">
+        <h1 class="font-bold text-slate-700 text-3xl text-center tracking-wider pt-10">strlen(), strtolower(), strtoupper(), trim(), concatenate</h1>
+        </br>
+    </div>
+    </div>
+
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+        <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+        <br>
+        <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'Hello'; </code></p>
+            <p><code>echo strlen($kata);</code></p>
+            <p class="text-success"><code>//5</code></p>
+        </div>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-violet-500 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+          
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="" alt="strlen" /></figure>
+        </div>
+      </div>
+    </div>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strtolower()</h3>
+        <p>Fungsi ini digunakan ketika ingin mengubah seluruh karakter pada sebuah variabel menjadi huruf kecil (lowercase).</p>
+        <br>
+        <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'HELLO'; </code></p>
+            <p><code>echo strtolower($kata);</code></p>
+            <p class="text-success"><code>//hello</code></p>
+        </div>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-violet-500 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+         
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="" alt="strtolower" /></figure>
+        </div>
+      </div>
+    </div>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strtoupper()</h3>
+        <p>Fungsi ini digunakan ketika ingin mengubah seluruh karakter pada sebuah variabel menjadi huruf besar (uppercase).</p>
+        <br>
+        <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'besar'; </code></p>
+            <p><code>echo strtoupper($kata);</code></p>
+            <p class="text-success"><code>//BESAR</code></p>
+          </div>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-violet-500 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+          
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="" alt="strtoupper" /></figure>
+        </div>
+      </div>
+    </div>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi trim()</h3>
+        <p>Fungsi dari trim() yakni untuk menghapus spasi yang berada di depan dan belakang string (spasi yang ada diantara string tidak termasuk).</p>
+        <br>
+        <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = ' Tanpa spasi '; </code></p>
+            <p><code>echo trim($kata);</code></p>
+            <p class="text-success"><code>//Tanpa spasi</code></p>
+          </div>
+    </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-violet-500 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+          
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="" alt="trim" /></figure>
+        </div>
+      </div>
+    </div>
+    
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Operator titik(".")</h3>
+        <p>Operator titik digunakan untuk menggabungkan dua variabel yang berupa string.</p>
+        <br>
+        <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata1 = 'satu '; </code></p>
+            <p><code>$kata2 ='dua';</code></p>
+            <p><code>$gabung = $kata1.$kata2; </code></p>
+            <p><code>echo $gabung;</code></p>
+            <p class="text-success"><code>//satu dua</code></p>
+          </div>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-violet-500 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh:/h3>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="" alt="operator titik" /></figure>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
