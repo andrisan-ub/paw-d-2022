@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Materi Slide 52-56</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-3xl text-center tracking-wider pt-10">strlen(), strtolower(), strtoupper(), trim(), concatenate</h1>
+    <br />
+    <!--Fungsi PHP strlen()-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+        <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'Hello'; </code></p>
+            <p><code>echo strlen($kata);</code></p>
+            <p class="text-success"><code>//5</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page52.jpeg" alt="strlen" /></figure>
+        </div>
+      </div>
+    </div>
+    <!--Fungsi PHP strtolower()-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strtolower()</h3>
+        <p>Fungsi ini digunakan untuk mengubah seluruh karakter pada sebuah variabel menjadi huruf kecil (lowercase).</p>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'HELLO'; </code></p>
+            <p><code>echo strtolower($kata);</code></p>
+            <p class="text-success"><code>//hello</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page53.jpeg" alt="strtolower" /></figure>
+        </div>
+      </div>
+    </div>
+    <!--Fungsi PHP strtoupper()-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi strtoupper()</h3>
+        <p>Fungsi ini digunakan untuk mengubah seluruh karakter pada sebuah variabel menjadi huruf besar (uppercase).</p>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = 'besar'; </code></p>
+            <p><code>echo strtoupper($kata);</code></p>
+            <p class="text-success"><code>//BESAR</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page54.jpeg" alt="strtoupper" /></figure>
+        </div>
+      </div>
+    </div>
+    <!--Fungsi PHP trim()-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Fungsi trim()</h3>
+        <p>Fungsi trim() berfungsi untuk menghapus spasi yang berada di depan dan belakang string (spasi yang ada diantara string tidak termasuk).</p>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata = ' Tanpa spasi '; </code></p>
+            <p><code>echo trim($kata);</code></p>
+            <p class="text-success"><code>//Tanpa spasi</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page55.jpeg" alt="trim" /></figure>
+        </div>
+      </div>
+    </div>
+    <!--Operator dot(".")-->
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Operator titik(".")</h3>
+        <p>Operator ini digunakan untuk menggabungkan dua variabel yang berupa string.</p>
+      </div>
+      <div>
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Contoh</h3>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+            <p><code>$kata1 = 'satu '; </code></p>
+            <p><code>$kata2 ='dua';</code></p>
+            <p><code>$gabung = $kata1.$kata2; </code></p>
+            <p><code>echo $gabung;</code></p>
+            <p class="text-success"><code>//satu dua</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page56.jpeg" alt="operator titik" /></figure>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2">
+      <a href="review47_50.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+      <a href="review58_59.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </div>
+  </body>
+</html>

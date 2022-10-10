@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Materi Slide 26</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Reference</h1>
+    <br />
+    <!--Card pertama-->
+    <div class="grid gap-5 justify-items-center">
+      <div class="card w-150 bg-base-200 shadow-x1 card-bordered text-center">
+        <div class="card-body">
+          <h3 class="card-title pb-4 justify-center">Variabel Mana yang Bernilai 100?</h3>
+          <div class="mockup-code p-6 justify-items-auto">
+            <pre data-prefix=">"><code>$foo = 'bar'; </code></pre>
+            <pre data-prefix=">"><code>$$foo='world';</code></pre>
+            <pre data-prefix=">"><code>$$$foo = 100; </code></pre>
+            <code class="text-error">echo?</code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <!--Card bawah kiri-->
+      <div class="card col-span-2 px-8 bg-base-300 shadow-xl card bordered justify-center">
+        <h3 class="card-title pb-5 justify-items-auto">Konsep Dasar</h3>
+        <div class="mockup-code p-6 justify-center">
+          <p><code>$foo = 'dollar'; </code></p>
+          <p><code>$$foo='duaDollar';</code></p>
+          <p class="text-warning"><code>//maka $dollar = 'duaDollar'; </code></p>
+        </div>
+      </div>
+      <div>
+        <!--Card bawah kanan-->
+        <div class="card col-span-1 p-8 bg-base-300 justify-items-auto">
+          <h3 class="card-title pb-5 justify-items-auto">Jawaban</h3>
+          <div class="mockup-code p-6 w-fit justify-center">
+            <p><code>$foo = 'bar'; </code></p>
+            <p><code>$$foo='world';</code></p>
+            <p><code>$$$foo = 100; </code></p>
+            <p class="text-success"><code>echo $world;</code></p>
+          </div>
+          <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src="img/page26_1.jpeg" alt="page26_1" /></figure>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2">
+      <a href="review22.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+      <a href="review34_36.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </div>
+  </body>
+</html>

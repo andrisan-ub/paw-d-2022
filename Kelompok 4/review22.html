@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <title>Review slide 22</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Variable</h1>
+    <br />
+    <div class="grid gap-5 justify-items-center">
+      <div class="card w-150 bg-base-300 shadow-xl card-bordered text-center">
+        <div class="card-body">
+          <div class="mockup-code p-4">
+            <h1 class="card-title pb-4 justify-center">PHP Variable</h1>
+            <p>Fungsi variable adalah untuk menyimpan sebuah nilai/value tertentu.</p>
+            <p>Tipe data yang dapat disimpan dalam variable bisa bermacam-macam.</p>
+            <p>Contoh tipe data Integer, String, Array, dan lain-lain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Aturan penulisan variable</h2>
+        <div>
+          <p>1. Tipe data variable tidak perlu dideklarasikan</p>
+          <p>2. Sebelum menuliskan nama variable, perlu diawali dengan notasi dollar " $ "</p>
+          <p>3. Nama variabel dilarang untuk diawali dengan angka</p>
+          <p>4. Nama variable harus diawali dengan huruf atau underscore " _ "</p>
+          <p>5. Variable hanya dapat menyimpan karakter alpha-numeric (A-z, 0-9) dan underscore " _ "</p>
+          <p>6. Nama variable Case-Sensitive ($var dengan $VAR adalah 2 variable yang berbeda)</p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Variable_Example</code></pre>
+          <pre data-prefix="$"><code>name;</code></pre>
+          <pre data-prefix="$"><code>my_name;</code></pre>
+          <pre data-prefix="$"><code>NAME;</code></pre>
+          <pre data-prefix="$"><code>Your_Name;</code></pre>
+          <pre data-prefix="$"><code>TESTING_PHP;</code></pre>
+          <pre data-prefix="$"><code>_tes2;</code></pre>
+          <pre data-prefix="$"><code>TES3;</code></pre>
+          <pre data-prefix="$"><code>etc;</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2">
+      <a href="review14.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+      <a href="review26.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </div>
+  </body>
+</html>

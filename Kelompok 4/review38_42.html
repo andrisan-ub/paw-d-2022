@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Slide 38-42</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Slide 38 comparison operators-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Comparison Operator</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/n38.png" alt="ppt38" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Slide page 38</h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Penjelasan</h2>
+        <div>
+          <p>
+            Code diatas menggunakan fungsi var_dump dimana outputnya akan berupa tipe data dari output hasil operasi. Pada line 3 hasil operasi adalah true dimana 2 less than 3 sehingga output berupa boolean/bool(true) begitupun pada operasi
+            line selanjutnya.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Code</code></pre>
+          <pre data-prefix="1"><code> < ?php </code></pre>
+          <pre data-prefix="2"><code> </code></pre>
+          <pre data-prefix="3"><code>   var_dump(2 < 3);</code></pre>
+          <pre data-prefix="4"><code>   var_dump(3 < 3);</code></pre>
+          <pre data-prefix="5"><code>   var_dump(3 <= 3);</code></pre>
+          <pre data-prefix="6"><code>   var_dump(4 <= 3);</code></pre>
+          <pre data-prefix="7"><code>   var_dump(2 > 3);</code></pre>
+          <pre data-prefix="8"><code>   var_dump(3 >= 3);</code></pre>
+          <pre data-prefix="9"><code>   var_dump(3 > 3);</code></pre>
+          <pre data-prefix="10"><code></code></pre>
+          <pre data-prefix="11"><code></code></pre>
+          <pre data-prefix="12"><code> ?> </code></pre>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--Slide 39 logical operator-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Logical Operator</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/n39.png" alt="ppt39" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Slide page 39</h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Penjelasan</h2>
+        <div>
+          <p>
+            Code program menerapkan konsep fungsi var_dump yang digabungkan dengan gerbang logika dimana outputnya akan bertipe data boolean. Pada contoh gambar line 3 output dari konsep gerbang logika AND jika keduanya benar maka output juga
+            benar/TRUE. Contoh selanjutnya adalah pada gambar line 6 yang menggunakan konsep gerbang logika OR dimana jika keduanya salah maka output berupa salah/FALSE.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Code</code></pre>
+          <pre data-prefix="1"><code> < ?php </code></pre>
+          <pre data-prefix="2"><code> </code></pre>
+          <pre data-prefix="3"><code> var_dump(true && true);   </code></pre>
+          <pre data-prefix="4"><code> var_dump(true && false);   </code></pre>
+          <pre data-prefix="5"><code> var_dump(true || false);   </code></pre>
+          <pre data-prefix="6"><code> var_dump(false || false);   </code></pre>
+          <pre data-prefix="7"><code> var_dump(!false);  </code></pre>
+          <pre data-prefix="8"><code></code></pre>
+          <pre data-prefix="9"><code> ?></code></pre>
+        </div>
+      </div>
+    </div>
+
+    
+    <!--Slide 40 spaceship operator-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Spaceship Operator</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/n40.png" alt="ppt40" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Slide page 40</h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+
+    
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Penjelasan</h2>
+        <div>
+          <p>
+            Code diatas menggunakan operator spaceship dimana ia akan melihat pada value sebelah kiri dari operator. Jika nilainya < (less than) sebelah kanan maka output berupa angka -1. Jika nilainya > (greater than) sebelah kanan maka
+        output berupa 1. Jika nilai keduanya = (equals to) maka output berupa 0. Fungsi var_dump akan mencetak hasil operasi beserta dengan tipe datanya. Sehingga output berupa tipe data dari hasil operasi diikuti dengan output dari
+        spaceship operator. Pada contoh gambar line 3 misalnya maka program akan mengecek apakah 1 kurang dari 5? jika iya maka cetak -1. Pada gambar line 4 program akan mengecek apakah 1 kurang dari 1? jika sama maka cetak 0. Begitupun
+        pada line selanjutnya.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Code</code></pre>
+          <pre data-prefix="1"><code> < ?php </code></pre>
+          <pre data-prefix="2"><code> </code></pre>
+          <pre data-prefix="3"><code>   var_dump(1 <=> 5); </code></pre>
+          <pre data-prefix="4"><code>   var_dump(1 <=> 1);     </code></pre>
+          <pre data-prefix="5"><code>   var_dump(5 <=> 2);    </code></pre>
+          <pre data-prefix="6"><code>    </code></pre>
+          <pre data-prefix="7"><code> ?></code></pre>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Slide 41 null coalescing operator-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Null Coalescing Operator</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/n41.png" alt="ppt41" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Slide page 41</h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Penjelasan</h2>
+        <div>
+          <p>
+            ($_GET['uname']) line 4 merupakan null oleh karena itu nilai dari line 5 yaitu variable $username adalah guest.
+            ($_GET['uname']) line 7 merupakan null, oleh karena itu nilai variable username adalah guest.
+            ($_GET['uname']) line 10 merupakan admin oleh karena itu nilai varible username adalah admin.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Code</code></pre>
+          <pre data-prefix="1"><code> < ?php </code></pre>
+          <pre data-prefix="2"><code> </code></pre>
+          <pre data-prefix="3"><code></code></pre>
+          <pre data-prefix="4">  $uname = isset($_GET['uname']) ? $_GET['uname'] : 'guest';<code></code></pre>
+          <pre data-prefix="5">  var_dump($uname);<code></code></pre>
+          <pre data-prefix="6"><code>    </code></pre>
+          <pre data-prefix="7">   $uname = $_GET['uname'] ?? 'guest'; <code></code></pre>
+          <pre data-prefix="8">   var_dump($uname);   <code></code></pre>
+          <pre data-prefix="9"><code></code></pre>
+          <pre data-prefix="10">  $_GET['uname'] = 'admin';<code></code></pre>
+          <pre data-prefix="11">  $uname = $_GET['uname'] ?? 'guest';<code></code></pre>
+          <pre data-prefix="12">  var_dump($uname);<code></code></pre>
+          <pre data-prefix="13"><code></code></pre>
+          <pre data-prefix="14">  ?> <code></code></pre>
+        </div>
+      </div>
+    </div>
+    
+   
+    <!--Slide 42 comparing values with type juggling-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Comparing Values with Type Juggling</h1>
+    <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+      <figure><img src="img/n42.png" alt="ppt42" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Slide page 42</h2>
+        <div class="card-actions justify-end"></div>
+      </div>
+    </div>
+
+
+    
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+      <div class="card col-span-2 px-10 bg-base-300 shadow-xl card bordered justify-center">
+        <h2 class="card-title pb-5 justify-center">Penjelasan</h2>
+        <div>
+          <p>
+            $a bertipe int, $b bertipe String, $c bertipe int. <br />
+            Pada contoh gambar line 6 program akan mengecek apakah nilai a dan b sama? iya, jika iya maka print true. <br />
+            Pada line 7 program akan mengecek apakah nilai $a dan $b sama identik(nilai dan tipe datanya)? tidak, jika tidak print false. <br />
+            Pada line 8 apakah nilai $a tidak sama dengan $b? tidak, jika tidak maka cetak false. Pada line 9, apakah nilai $a dan $b tidak sama identik(nilai dan tipe data)?iya, maka cetak true. <br />
+            Pada line 10 apakah nilai $a dan $c sama? iya(sama tipe datanya), maka cetak true. <br />
+            Pada line 11 apakah nilai $a dan $c tidak sama identik? iya, maka cetak true.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mockup-code w-96 items-center">
+          <pre data-prefix=">" class="text-warning"><code>Code</code></pre>
+          <pre data-prefix="1"><code> < ?php </code></pre>
+          <pre data-prefix="2"><code>  </code></pre>
+          <pre data-prefix="3">    $a = 3;<code></code></pre>
+          <pre data-prefix="4">    $b = '3';<code></code></pre>
+          <pre data-prefix="5">    $c = 5;<code></code></pre>
+          <pre data-prefix="6">    var_dump($a == $b); <code>    </code></pre>
+          <pre data-prefix="7">    var_dump($a === $b); <code></code></pre>
+          <pre data-prefix="8">    var_dump($a != $b);    <code></code></pre>
+          <pre data-prefix="9">    var_dump($a !== $b);<code></code></pre>
+          <pre data-prefix="10">   var_dump($a == $c); <code></code></pre>
+          <pre data-prefix="11">   var_dump($a <> $c);  <code></code></pre>
+          <pre data-prefix="12">  <code></code></pre>
+          <pre data-prefix="13"><code>  ?></code></pre>
+        </div>
+      </div>
+    </div>
+   
+    <div class="grid grid-cols-2">
+      <a href="review34_36.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+      <a href="review47_50.html"><button class="btn btn-block btn-success">Next Page</button></a>
+    </div>
+
+
+  </body>
+</html>

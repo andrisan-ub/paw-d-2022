@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <title>Review slide 58-59</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">unset(), isset()</h1>
+    <div class="p-10 grid grid-cols-2 grid-flow-row gap-5 justify-items-center">
+      <div class="row-start-1 row-span 3">
+        <div class="card w-96 bg-base-300 shadow-xl card-bordered justify-center">
+          <div class="card-body items-center">
+            <h1 class="card-title">unset()</h1>
+            <p>unset() digunakan untuk menghapus isi</p>
+            <p>dari sebuah variabel</p>
+            <div class="mockup-code w-94 items-center">
+              <pre data-prefix="$" class="text-warning"><code>unsetTest1</code></pre>
+              <pre data-prefix=">"><code>$name = "James";</code></pre>
+              <pre data-prefix=">"><code>unset($name);</code></pre>
+              <pre data-prefix=">"><code>echo $name;</code></pre>
+              <pre class="bg-error text-warning-content"><code>Error! akan mengeluarkan PHP Notice</code></pre>
+            </div>
+            <figure class="border-dashed border-2 border-sky-500 ... rounded-2xl"><img class="rounded-2xl" src="img/unset1.jpeg" alt="TestingUnset" /></figure>
+          </div>
+        </div>
+        <figure class="w-96 pt-80"><img src="img/Pict4.jpg" alt="form input" /></figure>
+      </div>
+
+      <div class="card w-96 bg-base-300 shadow-xl card-bordered items-start">
+        <div class="card-body items-center">
+          <h1 class="card-title">isset()</h1>
+          <p>isset() digunakan untuk mengetahui apakah</p>
+          <p>sebuah variabel sudah memiliki isi atau belum</p>
+          <p>fungsi ini mengembalikan nilai TRUE dan FALSE</p>
+          <div class="mockup-code w-60 items-center">
+            <pre data-prefix="$" class="text-warning"><code>issetTest2</code></pre>
+            <pre data-prefix=">"><code>$name = "Michael";</code></pre>
+            <pre data-prefix=">"><code>$s1 = isset($name);</code></pre>
+            <pre class="bg-success text-warning-content"><code>akan mengeluarkan TRUE</code></pre>
+          </div>
+          <div class="mockup-code w-60 items-center">
+            <pre data-prefix="$" class="text-warning"><code>issetTest</code></pre>
+            <pre data-prefix=">"><code>$name = null;</code></pre>
+            <pre data-prefix=">"><code>$s1 = isset($name);</code></pre>
+            <pre class="bg-error text-warning-content"><code>akan mengeluarkan FALSE</code></pre>
+          </div>
+          <div class="mockup-code w-100 items-center">
+            <pre data-prefix="$" class="text-success"><code>Testing1</code></pre>
+            <pre data-prefix="<"><code>?php </code></pre>
+            <pre data-prefix=">"><code>$name = null;</code></pre>
+            <pre data-prefix=">"><code>if(!isset(name)){</code></pre>
+            <pre data-prefix=">"><code> echo "Name is not set";</code></pre>
+            <pre data-prefix=">"><code>}</code></pre>
+            <pre data-prefix=">"><code>else{</code></pre>
+            <pre data-prefix=">"><code> echo "Name is set";</code></pre>
+            <pre data-prefix=">"><code>}</code></pre>
+            <pre class="bg-warning text-warning-content"><code>Output = Name is not set</code></pre>
+          </div>
+          <figure class="border-dashed border-2 border-sky-500 ... rounded-2xl"><img class="rounded-2xl" src="img/isset1.jpeg" alt="Testing1" /></figure>
+          <div class="mockup-code w-100 items-center">
+            <pre data-prefix="$" class="text-success"><code>Testing2</code></pre>
+            <pre data-prefix="<"><code>?php </code></pre>
+            <pre data-prefix=">"><code>$name = "James";</code></pre>
+            <pre data-prefix=">"><code>if(!isset(name)){</code></pre>
+            <pre data-prefix=">"><code> echo "Name is not set";</code></pre>
+            <pre data-prefix=">"><code>}</code></pre>
+            <pre data-prefix=">"><code>else{</code></pre>
+            <pre data-prefix=">"><code> echo "Name is set to $name";</code></pre>
+            <pre data-prefix=">"><code>}</code></pre>
+            <pre class="bg-warning text-warning-content"><code>Output = Name is set to James</code></pre>
+          </div>
+          <figure class="border-dashed border-2 border-sky-500 ... rounded-2xl"><img class="rounded-2xl" src="img/isset2.jpeg" alt="Testing1" /></figure>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="review52_56.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+    </footer>
+  </body>
+</html>

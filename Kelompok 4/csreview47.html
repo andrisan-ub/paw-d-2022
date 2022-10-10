@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Client Server</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar bg-success">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl font-bold text-2xl tracking-wide">PHP Basics</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li class="font-semibold"><a href="index.html">Home</a></li>
+          <li tabindex="0">
+            <a href="menu.html">
+              Materials
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="menu.html#cs">Client-server</a></li>
+              <li><a href="menu.html#php">PHP Basic</a></li>
+              <li><a href="menu.html#latsol">Latihan soal</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--content-->
+    <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider p-10">Client Server 2</h1>
+
+    <div class="flex justify-around text-warning gap-4">
+      <div class="flex">
+        <div class="card w-fit bg-base-100 shadow-xl bg-gray-800 p-4">
+          <div class="card-body">
+            <h2 class="card-title text-center">Client-Server</h2>
+            <code
+              ><p>
+                Server-side scripts merupakan bahasa pemrograman yang pengolahannya berada langsung di server yang telah terintegrasi dengan web engine. Sedangkan, client-side scripts merupakan bahasa pemrograman yang proses pengolahannya
+                hanya terdapat di browser yang berperan sebagai client.
+              </p></code
+            >
+          </div>
+          <div class="mockup-code">
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">*server-side scripts</h4>
+            <pre><code>&lt;?php</code></pre>
+            <pre><code> $var1 = 10;</code></pre>
+            <pre><code> $var2 = 20;</code></pre>
+            <pre><code> echo “Server output: “, $var1 * $var2; </code></pre>
+            <pre><code>?&gt;</code></pre>
+            <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">output</h4>
+            <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+              <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/ClientServer47.png" alt="Shoes" /></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center text-error">
+        <div class="card w-fit bg-base-100 shadow-xl bg-gray-800 p-4">
+          <div class="card-body">
+            <div class="mockup-code">
+              <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">*client-side scripts</h4>
+              <pre><code>&lt;div id = "client"&gt;</code></pre>
+              <pre><code>&lt;script&gt;</code></pre>
+              <pre><code> var var1 = 10;</code></pre>
+              <pre><code> var var2 = 30;</code></pre>
+              <pre><code>var hasil = “Client output: ” + var1 * var2;</code></pre>
+              <pre><code>document.querySelector(“#client”).innerHTML = hasil;</code></pre>
+              <pre><code>&lt;/script&gt;</code></pre>
+              <pre><code>&lt;/div&gt;</code></pre>
+
+              <h4 class="card-title pb-3 mx-4 my-4 justify-items-center">output</h4>
+              <div class="card card-compact w-100 bg-base-100 shadow-xl m-12">
+                <figure class="card-body w-4/5 pb-3 mx-4 my-4"><img src="img/ClientServer47_2.png" alt="Shoes" /></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <footer>
+      <a href="csreview43.html"><button class="btn btn-block btn-success">Previous Page</button></a>
+    </footer>
+  </body>
+</html>
