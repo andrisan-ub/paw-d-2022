@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blade Templates</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar bg-neutral text-neutral-content" style="margin-bottom: 2cm;">
+        <div class="dropdown dropdown-hover">
+            <button tabindex="0" class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-5 h-5 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#display">Displaying Data</a></li>
+                <li><a href="#bladir">Blade Directives</a></li>
+                <li><a href="#comp">Components</a></li>
+                <li><a href="#anon">Anonymous Components</a></li>
+                <li><a href="#build">Building Layouts</a></li>
+                <li><a href="#form">Forms</a></li>
+                <li><a href="#st">Stack</a></li>
+                <li><a href="#service">Service Injection</a></li>
+                <li><a href="#render">Rendering Inline Blade Templates</a></li>
+                <li><a href="#extend">Extending Blade</a></li>
+            </ul>
+        </div>
+        <div class="flex-1">
+            <a class="btn btn-ghost normal-case text-xl"
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">REVIEW
+                MATERI</a>
+        </div>
+    </div>
+    <!-- NAVBAR ENDING -->
+
+    <!-- INTRODUCTION -->
+    <span id="intro">
+        <div class="intro mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">INTRODUCTION</p> <br>
+                    <p>Blade merupakan sebuah template sederhana yang terdapat pada Laravel. File template blade
+                        menggunakan
+                        ekstensi file .blade.php dan pada umumnya disimpan di direktori resources/views.</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'anya']);
+                    });</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- DISPLAYING DATA -->
+    <span id="display">
+        <div class="display mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">DISPLAYING DATA</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- BLADE DIRECTIVES -->
+    <span id="bladir">
+        <div class="bladir mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- COMPONENTS -->
+    <span id="comp">
+        <div class="comp mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">COMPONENTS</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- ANONYMOUS COMPONENTS -->
+    <span id="anon">
+        <div class="anon mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">ANONYMOUS COMPONENTS</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- BUILDING LAYOUTS -->
+    <span id="build">
+        <div class="build mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">BUILDING LAYOUTS</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- FORMS -->
+    <span id="form">
+        <div class="form mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">FORMS</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- STACK -->
+    <span id="st">
+        <div class="st mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">STACK</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- SERVICE INJECTION -->
+    <span id="service">
+        <div class="service mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">SERVICE INJECTION</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- RENDERING INLINE BLADE TEMPLATES -->
+    <span id="render">
+        <div class="render mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">RENDERING INLINE BLADE TEMPLATES</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- EXTENDING BLADE -->
+    <span id="extend">
+        <div class="extend mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">EXTENDING BLADE</p> <br>
+
+
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- FOOTER -->
+    <footer class="footer footer-center p-10 bg-base-200 mt-10 text-base-content rounded">
+        <p>-PRESENTED BY GROUP 3-</p>
+        <div>
+            <p>1. MAERSYIFAA MACIRA BALQIS A.G - 215150700111031</p>
+            <p>2. SHAFA AULIYA FARADINA - 215150700111057</p>
+            <p>3. DESWITA MARSYA NADIA - 215150701111001</p>
+            <p>4. GHIFARI ADIL RUCHIYAT - 215150701111003</p>
+            <p>5. FAIRUZ NANDHITA PUTRI - 215150701111023</p>
+            <p>6. AULIA SEPTY ANGGRAINI - 215150701111045</p>
+        </div>
+        <div>
+            <p>Copyright © 2022 - All right reserved by Laravel LLC</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
