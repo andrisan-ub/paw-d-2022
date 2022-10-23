@@ -54,8 +54,8 @@
                         ekstensi file .blade.php dan pada umumnya disimpan di direktori resources/views.</p> <br>
                     <div class="mockup-code">
                         <pre data-prefix="$"><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'anya']);
-                    });</code></pre>
+        return view('greeting', ['name' => 'anya']);
+      });</code></pre>
                     </div>
                 </div>
             </div>
@@ -69,6 +69,86 @@
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">DISPLAYING DATA</p> <br>
 
+                    <p>#The Loop Variable</p>
+                    <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
+                        fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
+                        statement, lalu diakhiri dengan @endforeach.</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@foreach ($users as $user)
+        @if ($loop->first)
+            This is the first iteration.
+        @endif
+                         
+        @if ($loop->last)
+            This is the last iteration.
+        @endif        
+     This is user {{ $user->id }}
+     @endforeach</code></pre>
+                    </div> <br>
+
+                    <p>#Conditional Classes</p>
+                    <p>Direktif @class mengkompilasi sebuah string class CSS secara kondisional. Direktif menerima class
+                        array di mana array key berisi sebuah class atau atau class baru dengan menggunakan ekspresi
+                        boolean untuk mendapatkan nilai.</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@php
+        $isActive = false;
+        $hasError = true;
+     @endphp
+                         
+     &lt;span @class(['p-4', 'font-bold' =&gt; $isActive, 'text-gray-500' =&gt; ! $isActive, 'bg-red' =&gt; $hasError,])&gt;&lt;/span&gt;
+     &lt;span class="p-4 text-gray-500 bg-red"&gt;&lt;/span&gt;
+                    </code></pre>
+                    </div> <br>
+
+                    <p>#Additional Attributes</p>
+                    <p>Direktif @checked dapat digunakan untuk menunjukkan apakah input pada chechbox HTML telah diperiksa. Direktif tersbeut akan mengeluarkan output jika kondisi bernilai "true". </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>&lt;input type="checkbox"
+        name="active"
+        value="active"
+     @checked(old('active', $user-&gt;active)) /&gt;
+    
+     &lt;select name="version"&gt;
+        @foreach ($product-&gt;versions as $version)
+            &lt;option value="{{ $version }}" @selected(old('version') == $version)&gt;
+                {{ $version }}
+            &lt;/option&gt;
+        @endforeach
+    &lt;/select&gt;</code></pre>
+                    </div> <br>
+
+                    <p>#Including Subviews</p>
+                    <p>Direktif @include memungkinkan untuk menyisipkan sebuah blade's view ke blade's view yang lain. Semua variabel yang terdapat pada blade's view parent akan tersedia juga pada blade's view child. Atau dalam istilah lain, biasa disebut inheritance. </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>&lt;div&gt;
+        @include('shared.errors')
+                         
+     &lt;form&gt;
+        // Konten
+     &lt;/form&gt;
+    &lt;/div&gt;</code></pre>
+                    </div> <br>
+
+                    <p>#The @Once Directive</p>
+                    <p>Direktif @once memungkinkan untuk menentukan bagian dari template yang akan dievaluasi dalam
+                        sekali rendering. Hal tersbeut berguna untuk melakukan push JavaScript ke header halaman
+                        menggunakan stack. </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@once
+        @push('scripts')
+            &lt;script&gt;
+                // KODE
+            &lt;/script&gt;
+        @endpush
+     @endonce
+                            
+     @pushOnce('scripts')
+        &lt;script&gt;
+            // KODE
+        &lt;/script&gt;
+     @endPushOnce</code></pre>
+                    </div>
 
                 </div>
             </div>
@@ -81,6 +161,7 @@
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
+
 
 
                 </div>
