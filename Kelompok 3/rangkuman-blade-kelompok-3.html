@@ -202,6 +202,44 @@
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">BUILDING LAYOUTS</p> <br>
 
+                    <p>#Layout Using Template Inheritance</p>
+                    <p>Layout dapat dibuat dengan template inheritance dimana layout dapat diturunkan ke childnya.
+                        Agar child dapat menampilkan template yang diturunkan dari parentnya dapat menggunkana notasi @extends. 
+                        Notasi @yield digunakan untuk mendefinisikan baris pada parent agar di child dapat disesuaikan.
+                        Notasi @section digunakan untuk mendefinisikan baris yang memiliki notasi @yield pada parentnya. </p> <br>
+
+                    <p> Syntax Parent Layout</p>
+                    <div class="mockup-code">
+                        <pre><code>&lt;html&gt;</code></pre>
+                            <pre><code>&lt;head&gt;</code></pre>
+                                <pre><code>&lt;title&gt;App Name - @yield('title')&lt;/title&gt;</code></pre>
+                            <pre><code>&lt;/head&gt;</code></pre>
+                            <pre><code>&lt;body&gt;</code></pre>
+                                <pre><code>@section('sidebar')</code></pre>
+                                    <pre><code>This is the master sidebar.</code></pre>
+                                <pre><code>@show</code></pre>
+                         
+                                <pre><code>&lt;div class="container"&gt;</code></pre>
+                                    <pre><code>@yield('content')</code></pre>
+                                <pre><code>&lt;/div&gt;</code></pre>
+                            <pre><code>&lt;/body&gt;</code></pre>
+                        <pre><code>&lt;/html&gt;</code></pre>
+                    </div> <br>
+
+                    <p> Syntax Child Layout</p> 
+                    <div class="mockup-code">
+                        <pre><code>@extends('layouts.app')</code></pre>
+ 
+                            <pre><code>@section('title', 'Page Title')</code></pre>
+                             
+                            <pre><code>@section('sidebar')</code></pre>
+                                <pre><code>@parent</code></pre>
+                             
+                                <pre><code>&lt;p&gt;This is appended to the master sidebar.&lt;/p&gt;</code></pre>
+                            <pre><code>@endsection</code></pre>
+                             
+                            <pre><code>@section('content')</code></pre>
+                    </div> <br>
 
                 </div>
             </div>
@@ -215,7 +253,39 @@
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">FORMS</p> <br>
 
+                    <p>#CSRF Field</p>
+                    <p>CSRF token ini dibuat secara otomatis untuk setiap pengguna. Token ini berupa string acak yang dikelola 
+                        oleh Laravel untuk memverifikasi permintaan user agar user terlindungi dari serangan CSRF (Cross-Site Request Forgery).</p> <br>
+                    <div class="mockup-code">
+                        <pre><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
+                           <pre><code>@csrf</code></pre> 
+                         
+                            <pre><code>...</code></pre>
+                        <pre><code>&lt;/form&gt;</code></pre>
+                    </div> <br>
 
+                    <p>#Method Field</p>
+                    <p>HTML ini tidak dapat membuat request PUT, PATCH, atau DELETE sehingga perlu untuk menambahkan notasi @method. </p> <br>
+                    <div class="mockup-code">
+                        <pre><code>&lt;form action="/foo/bar" method="POST"&gt;</code></pre>
+                            <pre><code>@method('PUT')</code></pre>
+                         
+                            <pre><code>...</code></pre>
+                        <pre><code>&lt;/form&gt;</code></pre>
+                    </div> <br>
+
+                    <p>#Validation Error</p>
+                    <p>Notasi @error berfungsi untuk mengecek suatu atribut apabila terjadi error dapat menampilkan pesan error tersebut.
+                        Selain itu juga dapat menambahkan notasi @else yang memberikan tampilan jika tidak error dan diakhiri dengan notasi @enderror</p> <br>
+                    <div class="mockup-code">
+                        <pre><code>&lt;label for="title"&gt;Post Title&lt;/label&gt;</code></pre>
+ 
+                            <pre><code>&lt;input id="title" type="text" class="@error('title') is-invalid @enderror"&gt;</code></pre>
+                             
+                            <pre><code>@error('title')</code></pre>
+                                <pre><code>&lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;</code></pre>
+                            <pre><code>@enderror</code></pre>
+                    </div> <br>
                 </div>
             </div>
         </div>
