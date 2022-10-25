@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konversi Nilai Mahasiswa</title>
+</head>
+
+<body>
+
+<!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="2-buttonpage.html">Client-Server</a></li>
+              <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+              <li><a href="2-buttonpage.html">Penerapan</a></li>
+              <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+              <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+    <a href="1-landingpage.html">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+      </button>
+    </a>
+  </div>
+</div>
+
+<br>
+
+<!--  Ini card konversi nilai -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure></figure>
+    <div class="card-body">
+      <h2 class="card-title">Konversi nilai mahasiswa</h2>
+      <p>Berikut adalah isi dari file konversinilai.html. Disini, pengguna memasukkan banyaknya nilai yang akan
+        dimasukkan.</p>
+      <div class="mockup-code">
+        <pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Konversi nilai mahasiswa&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Konversi nilai mahasiswa&lt;/h1&gt;
+
+      &lt;form action="konversi.php" method="POST"&gt;
+        Jumlah data:
+        &lt;input type="number" name="jumlah" required&gt;&lt;br&gt;
+        &lt;input type="submit" value="Konversi nilai"&gt;
+      &lt;/form&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+        </code></pre>
+      </div>
+      <figure><img class="border-1 rounded-2xl mt-4"src="img/konversinilai1.png" /></figure>
+      <p>Pada file konversi.php berisi kode setelah tombol "lanjut" ditekan. Jika variable <code>$jumlah</code> telah
+        dibuat, maka akan dibuat form untuk mengisi nilai mutu. Setelah dimasukkan, akan dilakukan konversi nilai.</p>
+      <div class="mockup-code">
+        <pre><code>&lt;?php
+  if ($_SERVER['REQUEST_METHOD'] == 'POST'):
+    if (isset($_POST['jumlah'])):
+      $jumlah = $_POST['jumlah'];
+        
+      for ($i=0; $i&lt;$jumlah; $i++):
+        echo
+          '&lt;form method="POST"&gt;
+            Nilai ke-'.($i+1).':
+            &lt;input type="number" name="'."nilai$i".'" min="0" max="4" step="0.01" required&gt;&lt;br&gt;
+          ';
+      endfor;
+      echo '&lt;input type="submit" value="Konversi nilai"&gt;&lt;/form&gt;';
+    else:
+      foreach($_POST as $nilai):
+        $out = "Konversi nilai $nilai ke huruf adalah ";
+
+        if ($nilai &gt;= 3.75):
+          $out .= "A";
+        elseif ($nilai &gt;= 3.25):
+          $out .= "B+";
+        elseif ($nilai &gt;= 2.75):
+          $out .= "B";
+        elseif ($nilai &gt;= 2.25):
+          $out .= "C+";
+        elseif ($nilai &gt;= 1.75):
+          $out .= "C";
+        elseif ($nilai &gt;= 1.25):
+          $out .= "D";
+        else:
+          $out .= "E";
+        endif;
+        
+        echo "&lt;p&gt;$out&lt;/p&gt;";
+      endforeach;
+    endif;
+        
+  endif;
+  ?&gt;
+        </code></pre>
+      </div>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/konversinilai2.png" /></figure>
+      <p>Berikut adalah hasil konversinya</p>
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/konversinilai3.png" /></figure>
+      <div class="card-actions justify-end">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+</body>
+
+</html>

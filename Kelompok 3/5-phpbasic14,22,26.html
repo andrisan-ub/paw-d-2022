@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Basic Slide 14,22,26</title>
+</head>
+
+<body>
+    
+<!--navbar-->
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+            </label>
+            <ul tabindex="0"
+                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="2-buttonpage.html">Client-Server</a></li>
+                <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+                <li><a href="2-buttonpage.html">Penerapan</a></li>
+                <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+                <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar-center">
+        <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+    </div>
+    <div class="navbar-end">
+        <a href="1-landingpage.html">
+            <button class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+            </button>
+        </a>
+    </div>
+</div>
+
+<!--Ini card slide 14-->
+    <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+            <figure><img class="border-1 rounded-2xl mt-4" src="img/php14.PNG" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Semicolon berfungsi untuk mengakhiri sebuah statement. Semicolon merupakan salah satu elemen penting,
+                    karena kode akan mengalami error jika lupa menyisipkan semicolon<br>
+                </p>
+                <div class="mockup-code">
+                    <pre><code>  echo “Good Morning!”;
+                    myFunction(30, “Cinderella”);
+                    $x = 5;
+                    $name = “Kazuha”;
+                    $b = $a / 25.0;
+                    if ($a == $b) {
+                        echo “Rhyme? And Reason?”;
+                    }
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+<!--Ini card slide 22-->
+    <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+            <figure><img class="border-1 rounded-2xl mt-4" src="img/php22.PNG" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Dalam pemberian nama variabel pada PHP, ada beberapa peraturan yang harus diperhatikan, yaitu : <br>
+                    1. diawali tanda $ <br>
+                    2. diawali huruf atau underscore (_) <br>
+                    3. case sensitive (membedakan huruf besar dan kecil) <br>
+                    4. hanya berupa huruf dan angka <br>
+                    5. inisiasi variabel menggunakan tanda sama dengan (=)
+                </p>
+                <div class="mockup-code">
+                    <pre><code>  $paw;
+                        $IniSeptember;
+                        $I_LOVE_PHP;
+                        $_filkom;
+                        $nama = "jang wonyoung";
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+<!--Ini card slide 26-->
+    <div class="flex justify-center">
+        <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+            <figure><img class="border-1 rounded-2xl mt-4" src="img/page26.png" alt="Shoes" /></figure>
+            <div class="card-body">
+                <h2 class="card-title">PHP Basics</h2>
+                <p>Pada source code di bawah ini, variabel yang mengandung 100 adalah variabel <code>$world</code></p>
+                <div class="mockup-code">
+                    <pre><code>$foo = 'bar';</code></pre>
+                    <pre><code>$$foo = 'world';</code></pre>
+                    <pre><code>$$$foo = 100;</code></pre>
+                </div>
+                <p>Variabel <code>$foo</code> diatas berisi string 'bar', sehingga <code>$$foo</code> adalah variabel
+                    <code>$bar</code>, yang berisi string 'world'.
+                </p>
+                <p>Karena variabel <code>$$foo</code> berisi 'world', maka variabel <code>$$$foo</code> adalah variabel
+                    <code>$world</code>, yang berisi 100.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<br>
+<br>
+
+</body>
+
+</html>

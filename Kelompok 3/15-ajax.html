@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>POP-UP</title>
+</head>
+
+<body>
+
+        <!--navbar-->
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+            </label>
+            <ul tabindex="0"
+                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="2-buttonpage.html">Client-Server</a></li>
+                <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+                <li><a href="2-buttonpage.html">Penerapan</a></li>
+                <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+                <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar-center">
+        <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+    </div>
+    <div class="navbar-end">
+      <a href="1-landingpage.html">
+        <button class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+  <br>
+  <div class="flex justify-center">
+
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/ajax.PNG" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">AJAX POP-UP</h2>
+            <p>AJAX merupakan singkatan dari Asynchronous JavaScript and XML yang memungkinkan adanya komunikasi dengan
+                server tanpa harus memuat halaman. <br>
+                <br> Berikut ini adalah contoh kode untuk membuat AJAX POP-UP. <br>
+            </p>
+            <p>Ajax.html</p>
+            <div class="mockup-code">
+                <pre><code>
+    &lt;label&gt;
+        Name: &lt;input type="text" id="name"&gt;
+    &lt;/label&gt;
+    &lt;button id="greet"&gt;Greet&lt;/button&gt;
+    &lt;script src="Ajax.js"&gt;&lt;/script&gt;
+            </code></pre>
+            </div>
+
+            <p>Ajax.js</p>
+            <div class="mockup-code">
+                <pre><code>
+    const button = document.querySelector('#greet');
+
+    button.addEventListener('click', () => {
+                    
+        const name = document.querySelector('#name').value;
+        const url = 'http://localhost/AJAX/Ajax.php';
+                    
+        fetch(url, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+                body: `name=${name}`
+            })
+                .then(res => res.text())
+                .then(res => {
+                    alert(res);
+                });
+        });
+            </code></pre>
+            </div>
+
+            <p>Ajax.php</p>
+            <div class="mockup-code">
+                <pre><code>
+    &lt;?php
+    sleep(1);
+    $name = $_POST['name'];
+    echo "Hello $name!";
+            </code></pre>
+            </div>
+
+            <div class="card-actions justify-end">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

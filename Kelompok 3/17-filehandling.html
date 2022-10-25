@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Handling</title>
+</head>
+
+<body>
+
+  <!--navbar-->
+  <div class="navbar bg-base-100">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="2-buttonpage.html">Client-Server</a></li>
+          <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+          <li><a href="2-buttonpage.html">Penerapan</a></li>
+          <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+          <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+    </div>
+    <div class="navbar-end">
+      <a href="1-landingpage.html">
+        <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- File handling slide 2-11 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">Fungsi fopen( )</h2>
+        <p>Fungsi fopen( ) dapat digunakan untuk membaca suatu file dan juga dapat membuat sebuah file</p>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/file_handling_mode_r.png" alt="fopen() mode r" /></figure>
+        <h2 class="card-title">Mode r</h2>
+        <p> fopen( ) mode r digunakan hanya untuk di read dan pointer berada di awal</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("filehandling.html", "r") or die("Unable to open file!");</code></pre>
+          <pre><code>echo fread($myfile,filesize("filehandling.html"));</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_w.png" alt="fopen() mode w" /></figure>
+        <h2 class="card-title">Mode w</h2>
+        <p> fopen( ) mode w digunakan hanya untuk melakukan write, ketika file sudah ada maka dapat menghapus file
+          tersebut.
+          Sedangkan jika file tidak ada maka dapat membuat file baru dan pointer dimulai di awal file</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("fileBaru.txt", "w") or die("Unable to open file!");</code></pre>
+          <pre><code>$text = "Kelompok 6";</code></pre>
+          <pre><code>fwrite($myfile, $text);</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_a.png" alt="fopen() mode a" /></figure>
+        <h2 class="card-title">Mode a</h2>
+        <p> fopen( ) mode a digunakan hanya untuk melakukan write, data pada file yang sudah ada ini akan dipertahankan
+          dan jika file tidak ada maka dapat membuat file baru dan pointer dimulai di akhir file</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("fileBaru.txt", "a") or die("Unable to open file!");</code></pre>
+          <pre><code>$txt = "\nKelas PAW-D\n";</code></pre>
+          <pre><code>fwrite($myfile, $txt);</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_x.png" alt="fopen() mode x" /></figure>
+        <h2 class="card-title">Mode x</h2>
+        <p> fopen( ) mode x digunakan hanya untuk melakukan write, jika file sudah ada maka returnsnya akan FALSE atau
+          error</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("newFile.txt", "x") or die("Unable to open file!");</code></pre>
+          <pre><code>$text = "Review file handling\n";</code></pre>
+          <pre><code>fwrite($myfile, $text);</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_r+.png" alt="fopen() mode r+" /></figure>
+        <h2 class="card-title">Mode r+</h2>
+        <p> fopen( ) mode r+ digunakan untuk dapat melakukan read atau write, pointer berada di awal file</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("fileBaru.txt", "r+") or die("Unable to open file!");</code></pre>
+          <pre><code>$text = "Fairuz Nandhita\n";</code></pre>
+          <pre><code>fwrite($myfile, $text);</code></pre>
+          <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_w+.png" alt="fopen() mode w+" /></figure>
+        <h2 class="card-title">Mode w+</h2>
+        <p> fopen( ) mode w+ digunakan untuk dapat melakukan read atau write, ketika file sudah ada dapat menghapus file
+          tersebut jika file tidak ada
+          maka dibuat file baru dan pointer dimulai di awal file</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("fileBaru.txt", "w+") or die("Unable to open file!");</code></pre>
+          <pre><code>$text = "Teknologi Informasi\n";</code></pre>
+          <pre><code>fwrite($myfile, $text);</code></pre>
+          <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_a+.png" alt="fopen() mode a+" /></figure>
+        <h2 class="card-title">Mode a+</h2>
+        <p> fopen( ) mode a+ digunakan untuk dapat melakukan read atau write, data pada file yang sudah ada ini akan
+          dipertahankan
+          dan jika file tidak ada maka dibuat file baru dan pointer dimulai di akhir file</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("fileBaru.txt", "a+") or die("Unable to open file!");</code></pre>
+          <pre><code>$txt = "Universitas Brawijaya\n";</code></pre>
+          <pre><code>fwrite($myfile, $txt);</code></pre>
+          <pre><code>echo fread($myfile, filesize("fileBaru.txt"));</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/mode_x+.png" alt="fopen() mode x+" /></figure>
+        <h2 class="card-title">Mode x+</h2>
+        <p> fopen( ) mode x+ digunakan untuk dapat melakukan read atau write, jika file sudah ada maka returnnya akan
+          FALSE atau error</p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$myfile = fopen("xFile.txt", "x+") or die("Unable to open file!");</code></pre>
+          <pre><code>$text = "Review file handling\n";</code></pre>
+          <pre><code>fwrite($myfile, $text);</code></pre>
+          <pre><code>fclose($myfile);</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+  <!--  Ini card slide 12-14 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">fread()</h2>
+        <p>fread() function digunakan untuk membaca konten dari sebuah file yang terbuka.
+          Menerima dua parameter yang pertama berisi nama file yang dibaca dan parameter kedua menentukan byte maksimum
+          untuk dibaca.</p>
+
+        <div class="mockup-code">
+          <pre><code>$file_handle = fopen('article.txt', 'r');</code></pre>
+          <pre><code>$contents = fread($file_handle, 1024);</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+  <!--  Ini card slide 15-16 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">filesize()</h2>
+        <p>Fungsi filesize() untuk mengembalikan ukuran file.</p>
+
+        <div class="mockup-code">
+          <pre><code>Syntax:</code></pre>
+          <br>
+          <pre><code>$file_name = ‘article.txt’;</code></pre>
+          <pre><code>$file_handle = fopen($file_name, ‘r’);</code></pre>
+          <pre><code>$file_size = filesize($file_name);</code></pre>
+          <pre><code>$contents = fread($file_handle, $file_size);</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+  <!-- file handling slide 17-18 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/file_exist.png" alt="file_exists()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">file_exists( )</h2>
+        <p>Fungsi file_exists( ) untuk melakukan pengecekan apakah file tersebut ada atau mengecek apakah file tersebut
+          berada pada direktori </p>
+        <br>
+        <div class="mockup-code">
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$file_name = 'article.txt';</code></pre>
+          <pre><code>if (file_exists($file_name)) {</code></pre>
+          <pre><code>$file_handle = fopen($file_name, 'r');</code></pre>
+          <pre><code>$file_size = filesize($file_name);</code></pre>
+          <pre><code>$contents = fread($file_handle, $file_size);</code></pre>
+          <pre><code>echo $contents;</code></pre>
+          <pre><code> } else {</code></pre>
+          <pre><code> echo 'File not found';</code></pre>
+          <pre><code> }</code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 19-20 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4"src="" alt="File handling file_get_contents()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">file_get_contents()</h2>
+        <p>file_get_contents merupakan shorcut php yang berfungsi untuk membaca isi konten dari suatu file <br>
+        </p>
+
+        <div class="mockup-code">
+          <pre><code>&lt;php?
+  $contents = file_get_contents(‘article.txt’);            
+            </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Ini card slide 21-26 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">fwrite()</h2>
+        <p>Penggunaan fwrite() digunakan untuk menulis string ke file</p>
+        <p>Fungsi fwrite() dapat digunakan juga untuk menulis ke file yang terbuka</p>
+
+        <div class="mockup-code">
+          <pre><code>$file_handle = fopen(‘article.txt’, ‘r+’);</code></pre>
+          <pre><code>fwrite($file_handle, ‘Enam’);</code></pre>
+        </div>
+
+        <div class="mockup-code">
+          <pre><code>$file_handle = fopen(‘article.txt’, ‘a’);</code></pre>
+          <pre><code>fwrite($file_handle, ‘, satu jiwa’);</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 27-28 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="" alt="File handling file_put_contents()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">file_put_contents()</h2>
+        <p>file_put_contents merupakan shorcut php yang berfungsi untuk menulis isi konten dari suatu file <br>
+        </p>
+
+        <div class="mockup-code">
+          <pre><code>&lt;php?
+  $contents = file_put_contents(‘article.txt’,	‘A string’);            
+            </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 29-30 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <div class="card-body">
+        <h2 class="card-title">fclose()</h2>
+        <p>fclose() function digunakan untuk menutup pointer file yang terbuka. Untuk menggunakan fclose(), file harus
+          sudah dibuka oleh fungsi fopen() atau fsockopen(). </p>
+
+        <div class="mockup-code">
+          <pre><code>Syntax:</code></pre>
+          <pre><code>fclose(filepointer);</code></pre>
+          <br>
+          <pre><code>Parameter filepointer dibutuhkan untuk menentukan file yang ingin ditutup. </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 31-32 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/filemtime.png" alt="File handling filemtime()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">fileatime()</h2>
+        <p>Fungsi filemtime() mengembalikan waktu akses terakhir dari file yang ditentukan.
+          <br>
+          <br>
+          Syntax: filemtime(filename). Parameter filemtime dibutuhkan untuk menentukan jalur ke file yang akan
+          diperiksa.
+        </p>
+
+        <div class="mockup-code">
+          <pre><code>
+              &lt;?php
+              echo fileatime("webdictionary.txt");
+              echo "&lt;br&gt;";
+              echo "Last access: ".date("F d Y H:i:s.", fileatime("webdictionary.txt"));
+              ?&gt;
+
+              Output: 
+              1664455310
+              Last access: September 29 2022 12:41:50.
+            </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 33 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4"src="img/fileatime.png" alt="File handling fileatime()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">filemtime()</h2>
+        <p>Fungsi filemtime() mengembalikan terakhir kali konten file diubah.
+          Catatan: Hasil dari fungsi ini di-cache. Gunakan clearstatcache() untuk menghapus cache.
+          <br>
+          <br>
+          Syntax: filemtime(filename). Parameter filemtime dibutuhkan untuk menentukan jalur ke file yang akan
+          diperiksa.
+        </p>
+
+        <div class="mockup-code">
+          <pre><code>
+                &lt;?php
+                echo filemtime("webdictionary.txt");
+                echo "&lt;br&gt;";
+                echo "Content last changed: ".date("F d Y H:i:s.", filemtime("webdictionary.txt"));
+                ?&gt;
+
+                Output: 
+                1540211788
+                Content last changed: October 22 2018 12:36:28.
+              </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 34 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/fileowner.png" alt="File handling fileowner()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">fileowner()</h2>
+        <p>Syntax: fileowner(filename) <br>
+          fungsi fileowner() mengembalikan ID pengguna (pemilik) dari file yang ditentukan.
+          Tip: Gunakan posix_getpwuid() untuk mengonversi ID pengguna menjadi nama pengguna.</p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        echo fileowner("test.txt");
+        ?&gt;
+
+        Output: 0
+                         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!--  Ini card slide 35 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/filesperms.png" alt="File handling fileperms()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">fileperms()</h2>
+        <p> Syntax: fileperms(filename) <br>
+          Fungsi fileperms() mengembalikan informasi izin untuk file.</p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        echo fileperms("test.txt");
+        ?&gt;
+
+        Output: 33188
+                         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 36 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/filetype.png" alt="File handling filetype()" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">filetype()</h2>
+        <p> Syntax: filetype(filename) <br>
+          Fungsi filetype() mengembalikan tipe file dari sebuah file.
+
+          Nilai pengembalian yang mungkin:
+          <br> <br>
+          fifo <br>
+          char <br>
+          dir <br>
+          block <br>
+          link <br>
+          file <br>
+          socket <br>
+          unknown
+        </p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        echo filetype("test.txt");
+        ?&gt;
+
+        Output: file
+                         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!--  Ini card slide 37 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">unlink()</h2>
+        <p> Syntax: unlink(filename, context) <br>
+          Fungsi unlink() mberguna unutk menghapus sebuah file. Parameter context berdifat opsional. Context menentukan
+          file handle secara spesifik.
+        </p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        $file = fopen("test.txt","w");
+        echo fwrite($file,"Hello World. Testing!");
+        fclose($file);
+                
+        unlink("test.txt");
+        ?&gt;
+
+         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--  Ini card slide 38 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">rename()</h2>
+        <p> Syntax: rename(sting_old, string_new). <br>
+          Fungsi rename() yaitu untuk mengubah sebuah nama file atau directory.
+        </p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        rename("images","pictures");
+        rename("/test/file1.txt","/home/docs/my_file.txt");
+        ?&gt;
+
+         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 39 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">copy()</h2>
+        <p> Syntax: copy(from_file, to_file). <br>
+          Fungsi copy() yaitu untuk melakukan copy pada sebuah file.
+        </p>
+
+        <div class="mockup-code">
+
+          <pre><code> &lt;?php
+        rename("images","pictures");
+        rename("/test/file1.txt","/home/docs/my_file.txt");
+        ?&gt;
+
+         </code></pre>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+<br>
+
+  <!--  Ini card slide 58-60 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">$_FILES</h2>
+        <p>Variable <code>$_FILES</code> adalah array asosiatif. <br>
+          Digunakan untuk menghandle file upload</p>
+
+        <div class="mockup-code">
+          <pre><code>&lt;form enctype="multipart/form-data" action="upload.php" method="post"&gt;
+    File name: &lt;input name="file" type="file"&gt;
+    &lt;input type="submit" value="Upload"&gt;
+  &lt;/form&gt;</code></pre>
+        </div>
+
+        <div class="mockup-code">
+          <pre><code>&lt;?php
+    echo $_FILES['file']['name']; // nama file
+    echo $_FILES['file']['type']; // jenis file
+    echo $_FILES['file']['size']; // ukuran file dalam bytes
+    echo $_FILES['file']['tmp_name']; // nama file temporary di server
+  ?&gt;</code></pre>
+        </div>
+
+        <figure><img class="border-1 rounded-2xl mt-4"src="img/filesvar.png" alt="$_FILES"></figure>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--  Ini card slide 61 -->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+
+      <div class="card-body">
+        <h2 class="card-title">move_uploaded_file()</h2>
+        <p> Syntax: <code>move_uploaded_file($_FILES['file']['tmp_name'], "direktori/baru/{$variable_nama_file}");</code></p>
+        <p>Digunkaan untuk memindah file ke direktori baru</p>
+        <div class="mockup-code">
+          <pre><code>$file = $_FILES['file']['name'];
+
+  move_uploaded_file(
+    $_FILES['file']['tmp_name'], "uploads/{$file}"
+  );</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+<br>
+</body>
+
+</html>

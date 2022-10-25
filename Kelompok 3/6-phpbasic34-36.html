@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Basic Slide 34-36</title>
+</head>
+
+<body>
+
+<!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="2-buttonpage.html">Client-Server</a></li>
+              <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+              <li><a href="2-buttonpage.html">Penerapan</a></li>
+              <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+              <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+    <a href="1-landingpage.html">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+      </button>
+    </a>
+  </div>
+</div>
+
+<br>
+
+<!--Ini card 34-->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+        <figure><img class="border-1 rounded-2xl mt-4" src="img/34.png" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Operator Arithmetic</h2>
+          <p>Operator arithmetic digunakan untuk nilai numerik sehingga menghasilkan suatu value berupa numerik juga.</p>
+          <br>
+
+          <div class="mockup-code">
+            <pre><code>&lt;?php</code></pre>
+            <pre><code>$a = 10;</code></pre>
+            <pre><code>$b = 3;</code></pre>
+            <pre><code>echo "Pertambahan : " , $a + $b; </code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "Pengurangan : " , $a - $b;</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "Perkalian   : " , $a * $b;</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "Pembaian    : " , $a / $b;</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "Modulus     : " , $a % $b;</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>echo "Exponent    : " , $a ** $b;</code></pre>
+            <pre><code>print("&lt;br&gt;");</code></pre>
+            <pre><code>?&gt;</code></pre>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+<!--Ini card 35-->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/35.png" alt="Shoes" /></figure>
+      
+      <div class="card-body">
+        <h2 class="card-title">Operator Assignment</h2>
+        <p>Operator assignment digunakan untuk nilai numerik yang ditambahkan pada variabelnya, variabel yang mendapatkan value adalah variabel sebelah kiri.</p>
+        <br>
+
+        <div class="mockup-code">            
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$c = 3 + 4 + 5 - 2;</code></pre>
+          <pre><code>echo "c = $c";</code></pre>
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>$c = 13;</code></pre>
+          <pre><code>$c += 14;</code></pre>
+          <pre><code>echo "c += 14 maka c = $c";</code></pre> 
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>$c -= 2;</code></pre>
+          <pre><code>echo "c -=2 maka c =  $c";</code></pre> 
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>$c *= 4;</code></pre>
+          <pre><code>echo "c *= 4 maka c = $c";</code></pre> 
+          <pre><code>?&gt;</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+<!--Ini card 36-->
+  <div class="flex justify-center">
+    <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+      <figure><img class="border-1 rounded-2xl mt-4" src="img/36.png" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Hal Penting!!!</h2>
+        <p>Hal-hal yang harus diperhatikan ketikan menggunakan operator di PHP</p>
+        <br>
+
+        <div class="mockup-code">         
+          <pre><code>&lt;?php</code></pre>
+          <pre><code>$d = "1";</code></pre>
+          <pre><code>$e = 2;</code></pre>
+          <pre><code>echo "d = $d ---&gt; String";</code></pre>
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>echo "e = $e ---&gt; Integer";</code></pre>
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>echo "d + e = ", $d + b; // error</code></pre>
+          <pre><code>print("&lt;br&gt;");</code></pre>
+          <pre><code>echo "d + e = ", $d . $e; </code></pre>
+          <pre><code>?&gt;</code></pre>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+</body>
+</html>

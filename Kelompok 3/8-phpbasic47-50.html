@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Basic Slide 47-50</title>
+</head>
+
+<body>
+
+<!--navbar-->
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+      <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+          </label>
+          <ul tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="2-buttonpage.html">Client-Server</a></li>
+              <li><a href="2-buttonpage.html">PHP-Basic</a></li>
+              <li><a href="2-buttonpage.html">Penerapan</a></li>
+              <li><a href="2-buttonpage.html">Nilai Konverensi Mahasiswa</a></li>
+              <li><a href="2-buttonpage.html">Uji Coba Source Code</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="navbar-center">
+      <a class="btn btn-ghost normal-case text-xl font-medium" href="2-buttonpage.html">Review Materi</a>
+  </div>
+  <div class="navbar-end">
+    <a href="1-landingpage.html">
+      <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+      </button>
+    </a>
+  </div>
+</div>
+
+<br>
+
+<!--  Ini card slide 47  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/php47.png" alt="php47" /></figure>
+    <div class="card-body">
+      <h2 class="card-title text-center">PHP Basics</h2>
+      <p>Interpolation adalah proses mengganti nama variabel dalam string dengan nilai-nilai dari variabel tersebut.
+        Untuk menginterpolasi, variabel berada didalam tanda kutip ganda.
+        Cara lain dai itu adalah dengan mengurung variabel dengan kurung kurawal</p>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$n = 12;</code></pre>
+        <pre><code>echo "You are the $nth person"; // You are the person</code></pre>
+        <pre><code>echo "You are the {$n}th person"; // You are the 12th person</code></pre>
+        <pre><code>?&gt</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!--  Ini card slide 48  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/php 48.png" alt="php 48" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>untuk mengambil variabel terdapat cara lain juga yaitu dengan tanda petik tunggal ('') atau petik ganda ("")</p>
+      <p>double dollar ($$x, di mana x adalah nama variabel) dalah variabel referensi yang digunakan untuk menyimpan nilai
+        variabel dolar tunggal ($x) di dalamnya. </p>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$var = 'world';</code></pre>
+        <pre><code>$$var = 100;</code></pre>
+        <pre><code>echo 'Hello $var&lt;br&gt;'; // Hello $var</code></pre>
+        <pre><code>echo "Hello $var&lt;br&gt;"; // Hello world</code></pre>
+        <pre><code>echo 'Hello $world&lt;br&gt;'; // Hello $world</code></pre>
+        <pre><code>echo "Hello $world&lt;br&gt;"; // Hello 100</code></pre>
+        <pre><code>?&gt</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!--  Ini card slide 49  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/php49.png" alt="php49" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>String memiliki index pada setiap karakter seperti array</p>
+      <p>digunakan untuk mengambil index dari variable</p>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$s = 'Hello';</code></pre>
+        <pre><code>echo $s[0]; // H</code></pre>
+        <pre><code>echo $s[-1]; // o</code></pre>
+        <pre><code>?&gt</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!--  Ini card slide 50  -->
+<div class="flex justify-center">
+  <div class="card card-compact w-4/5 bg-base-100 shadow-xl bg-gray-800 flex-wrap p-4">
+    <figure><img class="border-1 rounded-2xl mt-4" src="img/php50.png" alt="php50" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">PHP Basics</h2>
+      <p>Untuk menguji apakah dua string sama, dapat menggunakan operator ==</p>
+
+      <div class="mockup-code">
+        <pre><code>&lt;?php</code></pre>
+        <pre><code>$a = "nama"</code></pre>
+        <pre><code>$b = "nama"</code></pre>
+        <br>
+        <pre><code>if ($a == $b) {</code></pre>
+        <pre><code>    echo "a and b are equal"</code></pre>
+        <pre><code>}</code></pre>
+        <pre><code>?&gt</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+</body>
+
+</html>
