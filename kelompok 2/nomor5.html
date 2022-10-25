@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--daisy.ui-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com">
+    </script> 
+    
+    <title>Nomor 5</title>
+</head>
+<body>
+    <!--navbar-->
+    <div class="navbar bg-neutral text-primary-content">
+        <a class="btn btn-ghost normal-case text-xl" href="homepage.html">PAW - KELOMPOK 2</a>
+        <button class="btn rounded-full"><a href="nomor4.html">Nomor 4</a></button>
+        <button class="btn rounded-full"><a href="homepage.html">Homepage</a></button>
+      </div>
+    <!--selesai navbar-->
+      <!--clara-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="foto/fr4.jpeg" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Form Registrasi</h2>
+              <p>Membuat form registrasi dengan syntax seperti diatas
+              </div>
+            </div>
+            <div class="mockup-code">
+                <pre><code>Syntax disamping disimpan dengan nama "register.php"</code></pre>
+                </div>
+              </div>
+              </p>
+            </div>
+          </div>
+          <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="foto/fr3.jpeg" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                  <h2 class="card-title">Langkah selanjutnya</h2>
+                  <p>Membuat file "register_process.php" dengan isi seperti diatas
+                  </div>
+                </div>
+                <div class="mockup-code">
+                    <pre><code>Web browser akan menampilkan form registrasi dari file "register.php" 
+                      dengan 2 field yaitu Username dan Password. Ketika sudah mengisi kedua field 
+                      tersebut dan memencet tombol "register", maka kita akan diarahkan ke tampilan 
+                      file "register_process.php" dan diperlihatkan pesan jika berhasil register. 
+                      Peralihan halaman dapat terjadi karena terdapat atribut "action" dengan nilai
+                      "register_process.php" yang akan berfungsi ketika pengguna memencet tombol "register" 
+                      dan nilai-nilai yang diinputkan di halaman sebelumnya akan ikut ditampilkan di halaman 
+                      baru berkat adanya variabel $username = $_POST['username']; $password = $_POST['password'];</code></pre>
+                    <br>
+                    </div>
+    </div>
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img src="foto/fr2.jpeg" alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">Form Login</h2>
+            <p>Membuat form registrasi dengan syntax seperti diatas
+            </div>
+          </div>
+          <div class="mockup-code">
+              <pre><code>Syntax disamping disimpan dengan nama "login.php"</code></pre>
+              </div>
+            </div>
+            </p>
+          </div>
+        </div>
+        <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+          <div class="card w-96 bg-base-100 shadow-xl">
+              <figure class="px-10 pt-10">
+                <img src="foto/fr1.jpeg" alt="Shoes" class="rounded-xl" />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">Langkah selanjutnya</h2>
+                <p>Membuat file "login_process.php" dengan isi seperti diatas
+                </div>
+              </div>
+              <div class="mockup-code">
+                  <pre><code>Web browser akan menampilkan form Login dari file "login.php" dengan 
+                    2 field yaitu, username dan password. Kita diminta membuat username "admin" dan 
+                    password "123456". Jika memasukkan username dan password sesuai yang diminta, maka 
+                    kita diarahkan ke halaman dari file "login_process.php" dengan pesan "Login succeeds". 
+                    Jika memasukkan data yang salah, maka akan ditampilkan pesan "Login fail". Hal tersebut 
+                    dikarenakan adanya perkondisian if-else.</code></pre>
+                  <br>
+                  </div>
+  </div>
+    <!-- selesai clara-->
+
+    <!--charisa-->
+    <!--FOPEN-->
+ <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-96 bg-base-300 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="foto/F OPEN.jpeg" alt="slide 34" class="rounded-xl">
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">File Handling</h2>
+          <p>Fungsi fopen() adalah fungsi yang digunakan untuk membuka file atau URL.
+            Jika fungsi ini gagal, ia akan mengembalikan FALSE dan kesalahan yang ada pada kegagalan program PHP.
+            Fungsi ini bekerja dengan dua parameter.
+            Pada parameter pertama, kita memasukkan path file yang akan kita akses,
+            dan pada parameter kedua, kita memasuki mode yang akan menunjukkan untuk apa kita mengakses file tersebut. 
+        </p>
+        
+          <div class="card-actions">
+            <button class="btn btn-accent">FOPEN()</button>
+          </div>
+        </div>
+        <div class="mockup-code">
+            <pre><code>Jika path URL diawali dengan 
+              http:// maka koneksi HTTP akan dimunculkan.
+              Jika path URL diawali dengan 
+              ftp:// maka koneksi FTP akan dimunculkan.</code></pre>
+          </div>
+      </div>
+</div>
+<!--selesai f open-->
+
+<!--F READ-->
+<div class="container flex items-center justify-center p-3 mx-auto gap-3">
+  <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">File Read</h2>
+        <p>Fungsi fread() ini memungkinkan Anda membaca file PHP, tetapi hanya menampilkan jumlah 
+          byte maksimum yang dipilih dalam file yang dibuka.
+        </div>
+      </div>
+      <div class="mockup-code">
+          <pre><code>Contoh:
+          <pre><code>&lt;?php
+            $file_handle = fopen(&quot;contoh.txt&quot;, &quot;r&quot;);
+            $contents = fread($file_handle, 1024);  
+          ?&gt;</code></pre>
+            </code></pre>
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+    <!--selesai F READ-->
+    <!--FILE SIZE-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img src="foto/FILE SIZE.jpeg" alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">File Size</h2>
+            <p>Fungsi filesize() digunakan untuk mengembalikan ukuran file.
+            </div>
+          </div>
+              </div>
+            </div>
+            </p>
+          </div>
+        </div>
+        <!--selesai file size-->
+        <!-- File Exist-->
+        <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+          <div class="card w-96 bg-base-100 shadow-xl">
+              <figure class="px-10 pt-10">
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">File Exist</h2>
+                <p>Pastikan untuk selalu memeriksa eksistensi file sebelum membaca isi didalamnya.
+                </div>
+              </div>
+                </div>
+                </p>
+              </div>
+            </div>
+            <!--selesai file exist-->
+<!--File get content-->
+<div class="container flex items-center justify-center p-3 mx-auto gap-3">
+  <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="foto/FILE GET CONTENT.jpeg" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">File Get Content dan File Put Content</h2>
+        <p>Ada beberapa fungsi shortcut untuk membaca sebuah file yaitu menggunakan file get contents.
+          Fungsi ini bisa digunakan untuk membaca file menjadi string.          
+        </div>
+      </div>
+      <div class="mockup-code">
+          <pre><code>Contoh:</code></pre>
+          <pre><code>&lt;?php
+            echo file_get_contents(&quot;contoh.txt&quot;, &quot;a string&quot;); 
+            ?&gt;</code></pre>
+            <pre><code>Atau:</code></pre>
+            <pre><code>&lt;?php
+              echo file_put_contents(&quot;contoh.txt&quot;);
+              ?&gt;</code></pre>
+          <br>
+          </div>
+</div>
+<!--selesai f get content-->
+<!--F WRITE-->
+<div class="container flex items-center justify-center p-3 mx-auto gap-3">
+  <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="foto/FWRITE.jpeg" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">File Write</h2>
+        <p>Fungsi ini dapat digunakan untuk menulis ke file yang terbuka.
+        </div>
+      </div>
+      <div class="mockup-code">
+          <pre><code>Fungsi ini akan berhenti di akhir file (EOF)
+            atau saat mencapai panjang yang ditentukan,
+            mana saja yang lebih dulu.</code></pre>
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+    <!--selesai f write-->
+    <!--F CLOSE-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">File Close</h2>
+            <p>File PHP ditutup menggunakan fungsi fclose().
+            </div>
+          </div>
+          <div class="mockup-code">
+              <pre><code>Contoh:
+              <pre><code>&lt;?php
+                $file = fopen(&quot;contoh.txt&quot;, &quot;r&quot;);
+                fclose($file);
+              ?&gt;</code></pre>
+                </code></pre>
+              </div>
+            </div>
+            </p>
+          </div>
+        </div>
+        <!--selesai f close-->
+<!-- selesai charisa-->
+    <!--ppt-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-96 bg-neutral-focus text-neutral-content">
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Ajax Chat</h2>
+              <p>AJAX (Asynchronous Javascript And XML) merupakan sebuah teknik interaktif
+                yang digunakan untuk membuat aplikasi web.<br>
+                Aplikasi web dapat mengambil data dari server secara Asynchronousdi belakang tanpa perlu merefresh halaman. 
+                <br>
+                AJAX menggunakan asynchronous data transfer (HTTP request) antara browser dan web server,
+                 yang memperbolehkan halaman web memanggil bit yang kecil atau seluruh informasi dari server.
+                 Teknik AJAX membuat aplikasi web menjadi kecil, cepat dan lebih user-friendly. 
+                 <br>
+                 Adapun contoh code untuk membuat AJAX POP-UP, yaitu:
+              </p>
+            </div>
+          </div>
+    </div>
+    <figure class="px-10 pt-10">
+    <div class="carousel w-full">
+        <div id="1" class="carousel-item w-full">
+          <img src="foto/ajax1.png" class="w-full" />
+        </div> 
+        <div id="2" class="carousel-item w-full">
+          <img src="foto/ajax2.png" class="w-full" />
+        </div> 
+        <div id="3" class="carousel-item w-full">
+          <img src="foto/ajax3.png" class="w-full" />
+        </div> 
+        <div id="4" class="carousel-item w-full">
+          <img src="foto/ajax4.png" class="w-full" />
+        </div>
+        <div id="5" class="carousel-item w-full">
+            <img src="foto/ajax5.png" class="w-full" />
+          </div>
+          <div id="6" class="carousel-item w-full">
+            <img src="foto/ajax6.png" class="w-full" />
+          </div>
+          <div id="7" class="carousel-item w-full">
+            <img src="foto/ajax7.png" class="w-full" />
+          </div>
+          <div id="8" class="carousel-item w-full">
+            <img src="foto/ajax8.png" class="w-full" />
+          </div>
+          <div id="9" class="carousel-item w-full">
+            <img src="foto/ajax9.png" class="w-full" />
+          </div>
+          <div id="10" class="carousel-item w-full">
+            <img src="foto/ajax10.png" class="w-full" />
+          </div>
+      </div> 
+      <div class="flex justify-center w-full py-2 gap-2">
+        <a href="#1" class="btn btn-xs">1</a> 
+        <a href="#2" class="btn btn-xs">2</a> 
+        <a href="#3" class="btn btn-xs">3</a> 
+        <a href="#4" class="btn btn-xs">4</a>
+        <a href="#4" class="btn btn-xs">5</a>
+        <a href="#4" class="btn btn-xs">6</a>
+        <a href="#4" class="btn btn-xs">7</a>
+        <a href="#4" class="btn btn-xs">8</a>
+        <a href="#4" class="btn btn-xs">9</a>
+        <a href="#4" class="btn btn-xs">10</a>
+      </div>
+    </figure>
+    <!-- selesai ppt-->
+</body>
+</html>

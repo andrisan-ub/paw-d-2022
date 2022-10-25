@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--daisy.ui-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com">
+    </script> 
+    
+    <title>Nomor 3</title>
+</head>
+<body>
+    <!--navbar-->
+    <div class="navbar bg-neutral text-primary-content">
+        <a class="btn btn-ghost normal-case text-xl">PAW - KELOMPOK 2 - Nomor 3</a>
+        <button class="btn rounded-full"><a href="nomor2.html">Nomor 2</a></button>
+        <button class="btn rounded-full"><a href="nomor4.html">Nomor 4</a></button>
+      </div>
+    <!--selesai navbar-->
+
+    <!--Kondisi-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-96 bg-base-300 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="foto/Kondisi.jpeg" alt="Selkondiksi" class="rounded-xl">
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Seleksi Kondisi</h2>
+              <p>Pada contoh kami membuat sebuah array yang menampung nama nama mahasiswa, 
+                lalu kami menggunakan looping yang mengakses setiap elemen array, lalu di setiap 
+                elemen array kami menggunakan selection condition dimana jika nama mahasiswa adalah Putri,
+                 Firda, atau Clara maka akan keluar output Nama mahasiswa sudah benar, 
+                dan Jika salah maka akan keluar output nama mahasiswa yang ada di elemen array.</p>
+              <div class="card-actions">
+                <button class="btn btn-accent">Seleksi Kondisi</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--Selesai Kondisi-->
+
+    <!--Looping-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-96 bg-base-300 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="foto/loop.jpg" alt="Selkondiksi" class="rounded-xl">
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Penerapan Looping</h2>
+              <p>
+                Loop digunakan untuk mengeksekusi blok kode yang sama berulang kali, selama kondisi tertentu benar. 
+                Di PHP, terdapat beberapa jenis loop, yaitu:<br>
+
+                - while: loop melalui blok kode selama kondisi yang ditentukan benar<br>
+                - do... while: loop melalui blok kode sekali, dan kemudian mengulangi loop selama kondisi yang ditentukan benar<br>
+                - for: loop melalui blok kode beberapa kali<br>
+                - foreach: loop melalui blok kode untuk setiap elemen dalam array<br>
+                
+                Berdasarkan contoh di atas, telah dibuat dua macam looping php yang menggunakan dua jenis loop, 
+                yakni for loop dan foreach loop array:<br>
+                a. Pada contoh for loop, dibuat variabel x dengan nilai 1 dan x kurang dari sama dengan 10 dengan x increment. 
+                Output yang dihasilkan berupa teks antrian dengan nomor yang terus bertambah mulai dari angka satu sampai dengan angka 10. <br>
+                b. Padabcontoh foreach loop dalam array, dibuat array dengan variabel mahasiswa dan nilai "Jasmine", "Zoro", dan "Luffy". 
+                Kemudian dibuat looping foreach variabel mahasiswa sebagai variabel nama. Output yang akan dihasilkan berupa teks menyapa,  
+                yakni "Halo" dengan diikuti nama dari setiap nilai dalam variabel mahasiswa seperti pada gambar di bawah.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-accent">Loop</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--Selesai Looping-->
+
+    <!--Array-->
+        <figure class="px-10 pt-10">
+            <div class="carousel w-full">
+              <div id="item1" class="carousel-item w-full">
+                <img src="foto/ARRAY 1.jpeg" class="w-full" />
+              </div> 
+              <div id="item2" class="carousel-item w-full">
+                <img src="foto/ARRAY 2.jpeg" class="w-full" />
+              </div> 
+            </div> 
+            <div class="flex justify-center w-full py-2 gap-2">
+              <a href="#item1" class="btn btn-xs">1</a> 
+              <a href="#item2" class="btn btn-xs">2</a> 
+            </div>
+          </figure>
+          <!--array penjelasan 1-->
+            <div class="container flex items-center justify-center p-3 mx-auto gap-3"> 
+            <div class="card w-96 bg-secondary text-primary-content">
+                <div class="card-body">
+                  <h2 class="card-title">Array</h2>
+                  <p>
+                    Array dalam PHP ada 3 jenis <br>
+              Kita dapat mengidentifikasikan array berdasarkan posisinya<br>
+              1. Indexed Array merupakan suatu array dengan index numeric dimana value atau nilainya disimpan secara liniear (GAMBAR ARRAY 1) <br>
+              2. Associative Array merupakan suatu array dengan index string dimana value nya tidak disimpan secara linear, melainkan dengan memberikan key tertentu (GAMBAR ARRAY 2)<br>
+              3. Multidimensional Array merupakan array yang berisi array tunggal atau banyak di dalamnya dan dapat diakses melalui beberapa indeks 
+                  </p>
+                </div>
+              </div>
+
+              <div class="card w-96 bg-secondary text-primary-content">
+                <div class="card-body">
+                  <h2 class="card-title">Array</h2>
+                  <p>
+                    Array juga dapat dibuat lebih singkat dengan cara:<br>
+                    1. Indexed array
+                    </p>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>person = [‘Edison’,‘Wankel’,‘Crapper’];</code></pre>
+                      </div>
+                </div>
+              </div>
+
+              <div class="card w-96 bg-secondary text-primary-content">
+                <div class="card-body">
+                  <h2 class="card-title">Array</h2>
+                  <p>
+                    2. Associative array <br>
+                 </p>
+                 <div class="mockup-code">
+                    <pre data-prefix="$"><code>creator = [‘Light bulb’ => ‘Edison’,‘Rotary Engine’ => ‘Wankel’,‘Toilet’ => ‘Crapper’];</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--SA1-->
+            <!--A2-->
+            <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+                <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure><img src="foto/ARRAY 3.jpeg" alt="Array" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">RANGE</h2>
+                      <p>Fungsi range() membuat larik yang berisi berbagai elemen.<br>
+                        Fungsi ini mengembalikan larik elemen dari rendah ke tinggi.
+                        </p>
+                    </div>
+                  </div>
+            </div>
+            <!--SA2-->
+
+            <!--A3-->
+            <figure class="px-10 pt-10">
+                <div class="carousel w-full">
+                  <div id="item3" class="carousel-item w-full">
+                    <img src="foto/PRINT R.jpeg" class="w-full" />
+                  </div> 
+                  <div id="item4" class="carousel-item w-full">
+                    <img src="foto/VAR DUMP.jpeg" class="w-full" />
+                  </div> 
+                </div> 
+                <div class="flex justify-center w-full py-2 gap-2">
+                  <a href="#item3" class="btn btn-xs">1</a> 
+                  <a href="#item4" class="btn btn-xs">2</a> 
+                </div>
+              </figure>
+
+              <div class="container flex items-center justify-center p-3 mx-auto gap-3"> 
+                <div class="card w-96 bg-secondary text-primary-content">
+                    <div class="card-body">
+                      <h2 class="card-title">Array</h2>
+                      <p>
+                        print_r() adalah sintaks php yang berfungsi untuk mencetak atau menampilkan suatu variabel tanpa menampilkan tipe datanya (gambar1) <br>
+                        sedangkan var_dump() adalah sintaks php yang berfungsi untuk mencetak atau menampilkan suatu variabel beserta dengan tipe data dari masing-masing variabel tersebut. (gambar2)<br>
+                  </p>
+                    </div>
+                  </div>
+            </div>
+
+            <!--SA3-->
+            <!--a4-->
+            <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+                <div class="card w-96 bg-base-300 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="foto/ARRAY 4.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Array</h2>
+                      <p>Untuk memasukkan lebih banyak nilai akhir yang ada, gunakan sintaks [] pada array index. </p>
+                    </div>
+                  </div>
+
+                  <div class="card w-96 bg-base-300 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="foto/ARRAY 5.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Destructuring assignment </h2>
+                      <p>Destructuring assignment adalah sintaks khusus yang memungkinkan kita untuk "membongkar" 
+                        array atau objek ke dalam sekelompok variabel. Destructuring declaration dapat membuat banyak variabel dalam satu waktu.
+                         Kita dapat mendeklarasikan dua variabel baru dan dapat menggunakannya secara mandiri.</p>
+                    </div>
+                  </div>
+
+                  <div class="card w-96 bg-base-300 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="foto/ARRAY 6.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Array</h2>
+                      <p>Sintaks count() dan sizeof() dapat mengembalikan jumlah elemen dalam array.</p>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+                <div class="card w-96 bg-base-300 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="foto/ARRAY 7.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Looping Array</h2>
+                      <p>Ada beberapa cara untuk looping terhadap array</p>
+                      <img src="foto/ARRAY 8.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </div>
+                  </div>
+
+                  <div class="card w-96 bg-base-300 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="foto/ARRAY 9.jpeg" alt="Selkondiksi" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">SORT</h2>
+                      <p>Kita dapat mengurutkan elemen sort dari array dengan berbagai macam fungsi seperti sort, arsort, asort, rsort.</p>
+                    </div>
+                  </div>
+            </div>
+           
+    <!--Selesai Array-->
+     <!--footer-->
+     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
+        <div class="items-center grid-flow-col">
+          <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg> 
+          <p>Copyright © 2022 - PAW - D - Kelompok 2</p>
+        </div> 
+      </footer>
+    <!--selesai fotter-->
+</body>
+</html>

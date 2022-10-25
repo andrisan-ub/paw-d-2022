@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--daisy.ui-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com">
+    </script> 
+
+    <title>Nomor 1</title>
+</head>
+<body>
+    <!--navbar-->
+    <div class="navbar bg-neutral text-primary-content">
+        <a class="btn btn-ghost normal-case text-xl">PAW - KELOMPOK 2 - PHP Client-Server Nomor 1</a>
+        <button class="btn rounded-full"><a href="homepage.html">Back to Homepage</a></button>
+        <button class="btn rounded-full"><a href="nomor2.html">Nomor 2</a></button>
+      </div>
+    <!--selesai navbar-->
+
+    <!--Slide 43-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3"">
+        <div class="card w-96 bg-base-300 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="foto/43.jpeg" alt="Shoes" class="rounded-xl">
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Kode pengenalan pada PHP di materi Client-Server slide 43</h2>
+              <p>Echo adalah sebuah perintah untuk menampilkan teks. <br>
+                ?> adalah kode untuk mengakhiri PHP dan wajib 
+                digunakan saat digabung dengan bahasa pemrograman lain seperti HTML. <br>
+                ketika code dalam slide 43 dijalankan maka,
+                 output yang di dapatkan adalah "helloworld!"  
+                tulisan tertulis tanpa spasi karena variabel world nilainya tidak ada spasi di depan.</p>
+              <div class="card-actions">
+                <button class="btn btn-accent">Slide 43</button>
+              </div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code>hello = "hello";</code></pre> 
+                <pre data-prefix="$"><code>world = "world!";</code></pre> 
+                <pre><code>echo $hello, $world;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <!--selesai 43-->
+
+    <!--Slide 47-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3"">
+        <div class="card w-96 bg-base-300 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="foto/47.jpeg" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Kode pengenalan pada PHP di materi Client-Server slide 47</h2>
+              <p>
+                Client-side scripts ialah bahasa pemrograman yang dalam proses mengelolanya
+                hanya terdapat di browser yang memiliki peran sebagai client.<br>
+                Dari code yang diberikan, [echo "server output: ", $var1 * $var2;] di mana hasilnya
+                akan menjadi Server output: 200 karena variabel $var1 memiliki nilai 10 dan 
+                variabel $var2 memiliki niai 20 dan dari perintah echo memiliki perintah perkalian
+                sehingga, output yang ke luar adalah 200.<br></p>
+              <div class="card-actions">
+                <button class="btn btn-accent">Slide 47</button>
+              </div>
+            </div>
+            <div class="mockup-code">
+                <pre data-prefix="$"><code>var1 = 10;</code></pre> 
+                <pre data-prefix="$"><code>var2 = 20;</code></pre> 
+                <pre><code>echo "Server output: ", $var1 * $var2;</code></pre>
+                <pre><code>var var1 = 10;</code></pre>
+                <pre><code>var var2 = 30;</code></pre>
+                <pre><code>var hasil = "Client output: " + var1 * var2;</code></pre>
+                <pre><code>document.querySelector("#client").innerHTML = hasil;</code></pre>
+                
+            </div>
+          </div>
+    </div>
+    
+    <!--selesai 47-->
+
+      <!--footer-->
+    <footer class="footer items-center p-4 bg-neutral text-neutral-content">
+        <div class="items-center grid-flow-col">
+          <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg> 
+          <p>Copyright © 2022 - PAW - D - Kelompok 2</p>
+        </div> 
+      </footer>
+    <!--selesai fotter-->
+</body>
+</html>
