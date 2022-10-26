@@ -72,8 +72,10 @@
             Selamat Datang <br />
             Di Website Kami
           </h2>
-          <p class="text-md mb-8 md:text-lg lg:text-xl">Kami disini akan menampilkan rangkuman <span class="text-primary-focus">Blade Template</span></p>
-          <a href="Public/" class="font-semibold text-white bg-primary-focus py-3 px-8 rounded-full hover:bg-primary hover:shadow-lg inline-block transition">Klik disini</a>
+          <p class="text-md mb-8 md:text-lg lg:text-xl">
+            Kami disini akan menampilkan rangkuman <a href="#rangkuman"><span class="text-primary-focus">Blade Template</span></a>
+          </p>
+          <a href="#rangkuman" class="font-semibold text-white bg-primary-focus py-3 px-8 rounded-full hover:bg-primary hover:shadow-lg inline-block transition">Klik disini</a>
           <!-- <p class="my-6 text-sm lg:text-base">
             Apakah anda ingin Masuk?
             <a href="Public/signin.html" class="font-semibold none hover:text-teal-500 transition duration-200">Login</a>
@@ -89,7 +91,7 @@
     <!-- Akhir Hero Image -->
 
     <!-- Awal Rangkuman -->
-    <div class="container p-10 flex flex-wrap justify-around">
+    <div id="rangkuman" class="container p-10 flex flex-wrap justify-around">
       <!-- Judul -->
       <div class="container text-center p-8 text-2xl" data-aos="fade-up">
         <h1 class="font-bold text-primary-focus text-3xl">Rangkuman Blade Template</h1>
@@ -175,10 +177,10 @@
       </div>
       <div class="container" data-aos="fade-up">
         <div class="mt-8 px-12">
-          <p class="indent-20 text-justify">Components dan slots memberikan manfaat yang serupa dengan sections, layouts, and includes. Ada dua pendekatan untuk menulis komponen: komponen berbasis kelas dan komponen anonim.</p>
           <p class="indent-20 text-justify">
-            Untuk membuat komponen berbasis kelas, Kita dapat menggunakan perintah <span class="text-red-600">make:component</span>. Perintah <span class="text-red-600">make:component</span> akan menempatkan komponen di direktori
-            <span class="text-red-600">app/View/Components</span>. Tambahkan perintah dibawah di terminal untuk membuat component :
+            Components dan slots memberikan manfaat yang serupa dengan sections, layouts, and includes. Ada dua pendekatan untuk menulis komponen: komponen berbasis kelas dan komponen anonim. Untuk membuat komponen berbasis kelas, Kita
+            dapat menggunakan perintah <span class="text-red-600">make:component</span>. Perintah <span class="text-red-600">make:component</span> akan menempatkan komponen di direktori <span class="text-red-600">app/View/Components</span>.
+            Tambahkan perintah dibawah di terminal untuk membuat component :
           </p>
           <div class="mockup-code bg-zinc-800 text-sm mt-6">
             <pre><code>   php artisan make:component “nama_file”</code></pre>
@@ -194,7 +196,7 @@
           </div>
           <p class="mt-6 text-justify">
             Perintah di atas akan membuat komponen <span class="text-red-600">"nama_file"</span> di direktori <span class="text-red-600">app/View/Components/“nama_folder_subDirektori”</span> dan view akan ditempatkan di direktori
-            <span class="text-red-600">resources/views/components/“nama_folder_subDirektori”</span>.
+            <span class="text-red-600">resources/views/components/“nama_folder_subDirektori</span>.
           </p>
           <p class="indent-20 mt-6 text-justify">
             Jika Anda ingin membuat komponen anonim (komponen dengan hanya menambahkan template Blade di resources dan tanpa menambahkan kelas di direktori <span class="text-red-600">app/View/Components</span>), Anda dapat menggunakan flag
@@ -204,7 +206,7 @@
             <pre><code>   php artisan make:component “nama_folder”.“nama_file” --view</code></pre>
           </div>
           <p class="mt-6 text-justify">
-            Perintah di atas akan membuat file Blade di direktori <span class="text-red-600">“resources/views/components/”nama_folder”/”nama_file”.blade.php”</span> yang dapat dijalankan sebagai komponen dengan perintah
+            Perintah di atas akan membuat file Blade di direktori <span class="text-red-600">resources/views/components/”nama_folder”/”nama_file”.blade.php</span> yang dapat dijalankan sebagai komponen dengan perintah
             <span class="text-red-600">&lt;x-”nama_folder”.”nama_file” /&gt;</span>.
           </p>
         </div>
