@@ -612,7 +612,223 @@
     <!--EndIDA-->
     
     <!--JMN-->
-	
+    <!--AnonymousComponents-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Anonymous Components</div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Index Components</h2>
+            <p>
+              Terkadang, ketika sebuah komponen terdiri dari banyak 
+              template Blade, Anda mungkin ingin mengelompokkan template 
+              komponen yang diberikan dalam satu direktori. Misalnya, 
+              bayangkan komponen "accordion" dengan struktur direktori berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>/resources/views/components/accordion.blade.php</code></pre>
+              <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+            </div>
+            <p>
+              Struktur direktori ini memungkinkan Anda untuk merender komponen 
+              “accordion” dan itemnya seperti ini:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;accordion&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;accordion&#46;item&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#46;&#46;&#46;&#13;&#10;&#160;&#160;&#160;&#60;&#47;x&#45;accordion&#46;item&#62;&#13;&#10;&#60;&#47;x&#45;accordion&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Index Components-2</h2>
+            <p>
+              Namun, untuk merender komponen “accordion” melalui x-accordion, 
+              kami terpaksa menempatkan templat komponen accordion "index" 
+              di direktori resources/views/components alih-alih menumpuknya 
+              di dalam direktori accoridon dengan templat terkait accordion 
+              lainnya. Untungnya, Blade memungkinkan Anda untuk menempatkan
+               file index.blade.php di dalam direktori template komponen. 
+               Ketika template index.blade.php ada untuk komponen, itu akan 
+               dirender sebagai simpul "root" dari komponen. Jadi, kita dapat
+                terus menggunakan sintaks Blade yang sama seperti yang diberikan 
+                pada contoh di atas; namun, kami akan menyesuaikan struktur 
+                direktori kami seperti ini:
+            </p>
+            <div class="mockup-code">
+              <pre><code>/resources/views/components/accordion/index.blade.php</code></pre>
+              <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Data Properties / Attributes</h2>
+            <p>
+              Meskipun komponen anonim tidak memiliki kelas 
+              yang terkait, anda tetap dapat menentukan atribut
+               mana yang harus dianggap sebagai variabel dan 
+               atribut mana yang hharus ditempatkan di tas atribut 
+               komponen menggunakan arahan @props di bagian atas 
+               template Blade komponen Anda untuk membedakan data 
+               mana yag harus di teruskan ke komponen sebagai atirbut.
+                Semua atribut lain pada komponen akan tersedia melalui 
+                tas atribut komponen. Jika Anda ingin memberikan nilai 
+                default pada variabel data, Anda dapat menentukan 
+                nama variabel sebagai kunci array dan nilai default 
+                sebagai nilai array:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;alert&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;props&#40;&#91;&#39;type&#39;&#160;&#61;&#62;&#160;&#39;info&#39;&#44;&#160;&#39;message&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;div&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;alert&#160;alert&#45;&#39;&#46;&#36;type&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;message&#160;&#125;&#125;&#13;&#10;&#60;&#47;div&#62;</code></pre>
+            </div>
+            <p>
+              Berdasarkan pendefinisian komponen di atas, 
+              kita dapat membuat komponen seperti ini:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;alert&#160;type&#61;&#34;error&#34;&#160;&#58;message&#61;&#34;&#36;message&#34;&#160;class&#61;&#34;mb&#45;4&#34;&#47;&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Accessing Parent Data</h2>
+            <p>
+              Untuk mengakses data dari komponen induk di dalam 
+              komponen turunan Anda dapat menggunakan arahan @aware.
+               Misalnya, kita sedang membangun komponen menu kompleks 
+              yang terdiri dari induk &#60;x&#45;menu&#62; dan anak &#60;x&#45;menu&#46;item&#62;, maka:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;menu&#160;color&#61;&#34;purple&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;menu&#46;item&#62;&#46;&#46;&#46;&#60;&#47;x&#45;menu&#46;item&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;menu&#46;item&#62;&#46;&#46;&#46;&#60;&#47;x&#45;menu&#46;item&#62;&#13;&#10;&#60;&#47;x&#45;menu&#62;</code></pre>
+            </div>
+            <p>
+              Komponen &#60;x&#45;menu&#62 dapat memiliki implementasi seperti berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;menu&#47;index&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;props&#40;&#91;&#39;color&#39;&#160;&#61;&#62;&#160;&#39;gray&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;ul&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;bg&#45;&#39;&#46;&#36;color&#46;&#39;&#45;200&#39;&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;ul&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Accessing Parent Data-2</h2>
+            <p>
+              Karena prop warna ('color')  hanya diteruskan ke induk (&#60;x&#45;menu&#62;), 
+                itu tidak akan tersedia di dalam &#60;x&#45;menu&#46;item&#62;. 
+                  Namun, jika kita menggunakan direktif @aware, 
+                kita juga dapat membuatnya tersedia di dalam &#60;x&#45;menu&#46;item&#62;:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;menu&#47;item&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;aware&#40;&#91;&#39;color&#39;&#160;&#61;&#62;&#160;&#39;gray&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;li&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;text&#45;&#39;&#46;&#36;color&#46;&#39;&#45;800&#39;&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;li&#62;</code></pre>
+            </div>
+            <p>
+              @aware tidak dapat mengakses data induk yang tidak
+               secara eksplisit diteruskan ke komponen induk melalui atribut 
+               HTML. Nilai @props default yang tidak secara eksplisit diteruskan 
+              ke komponen induk tidak dapat diakses oleh direktif @aware.
+            </p>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Components Namespaces</h2>
+            <p>
+              Komponen anonim biasanya ditentukan dengan menempatkan 
+              template Blade di dalam direktori resource/views/components Anda. 
+              Namun, terkadang Anda mungkin ingin mendaftarkan jalur komponen 
+              anonim lainnya dengan Laravel selain jalur default. 
+              Untuk memberi tahu Laravel tentang lokasi komponen anonim ini, 
+              Anda dapat menggunakan metode 
+              anonymousComponentNamespace yang disediakan oleh Blade.
+              <br><br>
+              Metode anonymousComponentNamespace menerima "jalur" ke 
+              lokasi komponen anonim sebagai argumen pertama dan "namespace" 
+              yang komponennya harus ditempatkan sebagai argumen kedua. 
+              Seperti yang akan Anda lihat pada contoh di bawah, "namespace" 
+              akan diawali dengan nama komponen saat komponen dirender. 
+              Biasanya, metode ini harus dipanggil 
+              dari metode boot salah satu penyedia layanan aplikasi Anda:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#47;&#42;&#42;&#13;&#10;&#42;&#160;Bootstrap&#160;any&#160;application&#160;services&#46;&#13;&#10;&#42;&#13;&#10;&#42;&#160;&#64;return&#160;void&#13;&#10;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;Blade&#58;&#58;anonymousComponentNamespace&#40;&#39;flights&#46;bookings&#46;components&#39;&#44;&#160;&#39;flights&#39;&#41;;&#13;&#10;&#125;&#13;&#10;</code></pre>
+            </div>
+            <p>Anda dapat merender komponen panel yang ada di dalam 
+              direktori komponen yang baru didaftarkan seperti:</p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;flights&#58;&#58;panel&#160;&#58;flight&#61;&#34;&#36;flight&#34;&#160;&#47;&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+  <!--EndAnonymousComponents-->
+
+  <!--BuildingLayouts-->
+  <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Building Layouts</div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Layouts Using Components</h2>
+            <p>
+              Mendefinisikan komponen tata letak (layout) dengan 
+              satu komponen Blade.
+              Misalnya, kita sedang membangun aplikasi daftar 
+              "todo" dengan tata letak seperti berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;components&#47;layout&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;html&#62;&#13;&#10;&#160;&#160;&#160;&#60;head&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;title&#62;&#123;&#123;&#160;&#36;title&#160;??&#160;&#39;Todo&#160;Manager&#39;&#160;&#125;&#125;&#60;&#47;title&#62;&#13;&#10;&#160;&#160;&#160;&#60;&#47;head&#62;&#13;&#10;&#160;&#160;&#160;&#60;body&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;h1&#62;Todos&#60;&#47;h1&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;hr&#47;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#60;&#47;body&#62;&#13;&#10;&#60;&#47;html&#62;</code></pre>
+            </div>
+            <p>
+              Setelah komponen tata letak ditentukan,buatlah tampilan Blade 
+              yang menggunakan komponen tersebut. Dalam contoh ini, 
+              kita akan mendefinisikan 
+              tampilan sederhana yang menampilkan daftar tugas kita:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;tasks&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;x&#45;layout&#62;&#13;&#10;&#160;&#160;&#160;&#64;foreach&#160;&#40;&#36;tasks&#160;as&#160;&#36;task&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;task&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#64;endforeach&#13;&#10;&#60;&#47;x&#45;layout&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Layouts Using Components-2</h2>
+            <p>
+              Konten yang dimasukkan ke dalam komponen akan diberikan ke 
+              variabel $slot default di dalam komponen layout kita. 
+              Tata letak di atasjuga mengikuti slot $title jika tersedia; 
+              jika tidak, judul default akan ditampilkan. Kami dapat 
+              memasukkan judul khusus dari tampilan daftar tugas kami 
+              menggunakan sintaks slot standar 
+              yang dibahas dalam dokumentasi komponen:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;tasks&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;x&#45;layout&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Custom&#160;Title&#13;&#10;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#64;foreach&#160;&#40;&#36;tasks&#160;as&#160;&#36;task&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;task&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#64;endforeach&#13;&#10;&#60;&#47;x&#45;layout&#62;&#13;&#10;</code></pre>
+            </div>
+            <p>
+              Lalu, kita tinggal mengembalikan tampilan “task” dari sebuah “route”:
+            </p>
+            <div class="mockup-code">
+              <pre><code>use&#160;AppModelsTask;&#13;&#10;&#160;&#13;&#10;Route&#58;&#58;get&#40;&#39;&#47;tasks&#39;&#44;&#160;function&#160;&#40;&#41;&#160;&#123;&#13;&#10;&#160;&#160;&#160;return&#160;view&#40;&#39;tasks&#39;&#44;&#160;&#91;&#39;tasks&#39;&#160;&#61;&#62;&#160;Task&#58;&#58;all&#40;&#41;&#93;&#41;;&#13;&#10;&#125;&#41;;&#13;&#10;&#13;&#10;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
     <!--EndJMN-->
 
     <!--CHR-->
