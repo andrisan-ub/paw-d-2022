@@ -71,15 +71,16 @@
 
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
-                <h3 class="card-title pb-5 justify-items-auto">Apa itu Blade ?</h3>
+                <h3 class="card-title justify-center  pb-5 justify-items-auto">Apa itu Blade ?</h3>
                 <p>Blade adalah template engine yang disediakan Laravel untuk proses templating pada laravel dan sangat bermanfaat dalam proses pengembangan tampilan halaman website. 
                     Tidak seperti fitur templating PHP populer lainnya, Blade tidak membatasi developer untuk menggunakan kode PHP biasa dalam membuat kode untuk tampilan. Semua tampilan Blade dikompilasi ke dalam kode PHP biasa dan kemudian disimpan dalam cache hingga diubah, yang berarti Blade pada dasarnya tidak menambahkan beban atau overhead pada saat aplikasi dijalankan. 
                     Blade pada laravel menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori resources / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>$kata = 'Hello'; </code></p>
-                    <p><code>echo strlen($kata);</code></p>
-                    <p class="text-success"><code>//5</code></p>
+                    <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                </p>
                 </div>
             </div>
             <div>
@@ -94,134 +95,645 @@
     </div>
     <!--=====================================================Displaying Data=============================================-->
     <div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
-        <h2 class="font-bold">Introduction</h2>
-
-        <h3>HTTP Encoding</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
-                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
-                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>$kata = 'Hello'; </code></p>
-                    <p><code>echo strlen($kata);</code></p>
-                    <p class="text-success"><code>//5</code></p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-
-        <h3> Blade</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
-                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
-                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>$kata = 'Hello'; </code></p>
-                    <p><code>echo strlen($kata);</code></p>
-                    <p class="text-success"><code>//5</code></p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-    </div>
+        <h2 class="font-bold">Displaying Data</h2>
     <!--================HTML Entity Encoding=====================-->
-    <div class="h-fit bg-success m-10"></div>
+        <h3>HTML Entity Encoding</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
     <!--==================Blade & JavaScript Frameworks===================-->
-    <div class="h-fit"></div>
+    <h3>Blade & JavaScript Frameworks</h3>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
-    <!--============================================#Blade Directives======================================================-->
-    <div class="h-fit m-10">
-
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
     </div>
+</div>
+<!--============================================#Blade Directives======================================================-->
+<div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+    <h2 class="font-bold">Blade Directives</h2>
     <!--==================If Statements===================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--================Switch =====================-->
-    <div class="h-fit"></div>
-    <!--==================Loops Statements ===================-->
-    <div class="h-fit bg-success m-10"></div>
+    <h3>If Statements</h3>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
+    <!--================Switch Statements=====================-->
+    <h3>Switch Statements</h3>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
+     <!--==================Loops===================-->
+    <h3>Loops</h3>
+    <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
     <!--================ The Loop Variable=====================-->
-    <div class="h-fit"></div>
-    <!--=================Conditional Classes ====================-->
-    <div class="h-fit bg-success m-10"></div>
+    <h3>The Loop Variable</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
+    <!--=================Conditional Classes====================-->
+    <h3>Conditional Classes</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
     <!--=================Additional Attributes ====================-->
-    <div class="h-fit"></div>
+     <h3>Additional Attributes</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+         <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+             <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+             <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+             <br>
+             <div class="mockup-code p-6 w-96 justify-items-auto">
+                 <p><code>$kata = 'Hello'; </code></p>
+                 <p><code>echo strlen($kata);</code></p>
+                 <p class="text-success"><code>//5</code></p>
+             </div>
+         </div>
+         <div>
+             <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                 <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+ 
+                 <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                         src="" alt="strlen" /></figure>
+             </div>
+         </div>
+     </div>
     <!--==================Including Subviews ===================-->
-    <div class="h-fit"></div>
+    <h3>Including Subviews</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+          <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+          <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+          <br>
+          <div class="mockup-code p-6 w-96 justify-items-auto">
+              <p><code>$kata = 'Hello'; </code></p>
+              <p><code>echo strlen($kata);</code></p>
+              <p class="text-success"><code>//5</code></p>
+          </div>
+      </div>
+      <div>
+          <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+              <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+              <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                      src="" alt="strlen" /></figure>
+          </div>
+      </div>
+    </div>
     <!--==================The @once Directive ===================-->
-    <div class="h-fit bg-success m-10"></div>
+    <h3>The @once Directive </h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
+    </div>
     <!--=================Raw PHP ====================-->
-    <div class="h-fit"></div>
+     <h3>Raw PHP</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+         <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+             <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+             <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+             <br>
+             <div class="mockup-code p-6 w-96 justify-items-auto">
+                 <p><code>$kata = 'Hello'; </code></p>
+                 <p><code>echo strlen($kata);</code></p>
+                 <p class="text-success"><code>//5</code></p>
+             </div>
+         </div>
+         <div>
+             <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                 <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+ 
+                 <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                         src="" alt="strlen" /></figure>
+             </div>
+         </div>
+     </div>
     <!--===============Comments ======================-->
-    <div class="h-fit bg-success m-10"></div>
+    <h3>Comments</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+         <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+            <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+            <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+            <br>
+            <div class="mockup-code p-6 w-96 justify-items-auto">
+                <p><code>$kata = 'Hello'; </code></p>
+                <p><code>echo strlen($kata);</code></p>
+                <p class="text-success"><code>//5</code></p>
+            </div>
+        </div>
+        <div>
+            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
-    <!--==================================================#Components=========================================================-->
-    <div class="h-fit m-10">
-
+                <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                        src="" alt="strlen" /></figure>
+            </div>
+        </div>
     </div>
-    <!--=================Rendering Components ====================-->
-    <div class="h-fit"></div>
+</div>
+    
+<div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+    <h2 class="font-bold">Components</h2>
+    <!--==================Rendering Components===================-->
+    <h3>Rendering Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
     <!--==================Passing Data To Components===================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--=================Component Attributes ====================-->
-    <div class="h-fit"></div>
-    <!--==================Reserved Keywords ===================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--=================Slots ====================-->
-    <div class="h-fit"></div>
-    <!--=================Inline Component Views ====================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--=================Dynamic Components ====================-->
-    <div class="h-fit"></div>
-    <!--================Manually Registering Components=====================-->
-    <div class="h-fit bg-success m-10"></div>
-
-    <!--=======================================================#Anonymous Components==============================================-->
-    <div class="h-fit m-10">
-
-    </div>
-    <!--================Anonymous Index Components =====================-->
-    <div class="h-fit"></div>
-    <!--==================Data Properties /Attributes ===================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--=================Accessing Parent Data ====================-->
-    <div class="h-fit"></div>
-    <!--=================Anonymous Components Namespaces ====================-->
-    <div class="h-fit bg-success m-10"></div>
-
-    <!--============================================#Building Layouts ===============================================================-->
-    <div class="h-fit m-10">
-
-    </div>
-    <!--=================Layouts Using Components ====================-->
-    <div class="h-fit"></div>
-    <!--===============Layouts Using Template Inheritance ======================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--======================================================#Forms================================================================-->
-    <div class="h-fit m-10">
-
-    </div>
-    <!--===================CSRF Field ==================-->
-    <div class="h-fit bg-success m-10"></div>
-    <!--==================Method Field ===================-->
-    <div class="h-fit"></div>
+    <h3>Passing Data To Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Component Attributes===================-->    
+    <h3>Component Attributes</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Reserved Keywords===================-->   
+    <h3>Reserved Keywords</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Slots===================-->   
+    <h3>Slots</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Inline Component Views===================-->  
+    <h3>Inline Component Views</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Dynamic Components===================-->  
+    <h3>Dynamic Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Manually Registering Components===================-->  
+    <h3>Manually Registering Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+    <h2 class="font-bold">Anonymous Components</h2>
+    <!--==================Anonymous Index Components===================-->
+    <h3>Anonymous Index Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Data Properties / Attributes===================-->
+    <h3>Data Properties / Attributes</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Accessing Parent Data===================-->    
+    <h3>Accessing Parent Data</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Anonymous Components Namespaces===================-->    
+    <h3>Anonymous Components Namespaces</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+    <h2 class="font-bold">Building Layouts</h2>
+    <!--==================Layouts Using Components===================-->
+    <h3>Layouts Using Components</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Layouts Using Template Inheritance===================-->
+    <h3>Layouts Using Template Inheritance</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+    <h2 class="font-bold">Forms</h2>
+    <!--==================CSRF Field===================-->
+    <h3>CSRF Field</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+    <!--==================Method Field===================-->
+    <h3>Method Field</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
     <!--==================Validation Errors===================-->
-    <div class="h-fit bg-success m-10"></div>
+    <h3>Validation Errors</h3>
+        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered justify-center">
+                <h3 class="card-title pb-5 justify-items-auto">Fungsi strlen()</h3>
+                <p>Berfungsi untuk mengambil panjang sebuah string. Nilai yang dikembalikan bertipe integer.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>$kata = 'Hello'; </code></p>
+                    <p><code>echo strlen($kata);</code></p>
+                    <p class="text-success"><code>//5</code></p>
+                </div>
+            </div>
+            <div>
+                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                            src="" alt="strlen" /></figure>
+                </div>
+            </div>
+        </div>
+</div>
     <!--footer-->
     <footer class="footer footer-center p-6 bg-green-300 text-base-content mt-12">
         <p class="tracking-wider font-bold">Pengembangan Aplikasi Web - Kelompok 5</p>
