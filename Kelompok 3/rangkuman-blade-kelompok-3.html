@@ -239,6 +239,156 @@
 
 <br>
 
+    <p>Kita dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Hard-coded, nilai primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi dan variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter ":" sebagai prefix:
+
+    </p> <br>
+    <div class="mockup-code">
+        <pre data-prefix="$">
+<code>
+    &lt;x-alert type="error" :message="$message"/&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>Kita harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk view komponen. Tidak perlu meneruskan data ke view dari metode render komponen:
+
+
+</p> <br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    &lt;?php
+ 
+    namespace App\View\Components;
+     
+    use Illuminate\View\Component;
+     
+    class Alert extends Component
+    {
+        /**
+         * The alert type.
+         *
+         * @var string
+         */
+        public $type;
+     
+        /**
+         * The alert message.
+         *
+         * @var string
+         */
+        public $message;
+     
+        /**
+         * Create the component instance.
+         *
+         * @param  string  $type
+         * @param  string  $message
+         * @return void
+         */
+        public function __construct($type, $message)
+        {
+            $this-&gt;type = $type;
+            $this-&gt;message = $message;
+        }
+     
+        /**
+         * Get the view / contents that represent the component.
+         *
+         * @return \Illuminate\View\View|\Closure|string
+         */
+        public function render()
+        {
+            return view('components.alert');
+        }
+    }
+    
+</code></pre>
+</div> 
+<br>
+<p>Ketika komponen sudah di-render, kit bisa menampilkan konten dari variabel komponen publik dengan meng-echo nama variable:
+</p> <br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    &lt;div class="alert alert-{{ $type }}"&gt;
+         {{ $message }}
+    &lt;/div&gt;
+</code></pre>
+</div> 
+
+<br>
+<p>#Casing</p> 
+<p>Argumen konstruktor komponen harus ditentukan menggunakan camelCase, sedangkan kebab-case harus digunakan saat mereferensikan nama argumen dalam atribut HTML Anda. Misalnya, diberikan konstruktor komponen berikut:
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    /**
+    * Create the component instance.
+    *
+    * @param  string  $alertType
+    * @return void
+    */
+   public function __construct($alertType)
+   {
+       $this->alertType = $alertType;
+   }
+</code></pre> 
+</div> 
+
+<br>
+
+<p>Argumen $alertType dapat diberikan ke komponen seperti:
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    &lt;x-alert alert-type="danger"/&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>#Short Attribute Syntax
+</p>
+<p>Saat meneruskan atribut ke komponen, kita juga dapat menggunakan sintaks "short attribute":
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    {{-- Short attribute syntax... --}}
+    &lt;x-profile :$userId :$name /&gt;
+     
+    {{-- Is equivalent to... --}}
+    &lt;x-profile :user-id="$userId" :name="$name" /&gt;
+</code></pre>
+</div> 
+<br>
+
+<p>#Escaping Attribute Rendering
+</p>
+<p>Saat meneruskan atribut ke komponen, kita juga dapat menggunakan sintaks "short attribute":
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="$">
+<code>
+    {{-- Short attribute syntax... --}}
+    &lt;x-profile :$userId :$name /&gt;
+     
+    {{-- Is equivalent to... --}}
+    &lt;x-profile :user-id="$userId" :name="$name" /&gt;
+</code></pre>
+</div> 
+<br>
+
                 </div>
             </div>
         </div>
