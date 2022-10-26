@@ -84,7 +84,8 @@
         @endif        
      This is user {{ $user->id }}
      @endforeach</code></pre>
-                    </div> <br>
+                    </div> 
+                    <br>
 
                     <p>#Conditional Classes</p>
                     <p>Direktif @class mengkompilasi sebuah string class CSS secara kondisional. Direktif menerima class
@@ -163,6 +164,31 @@
                     <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
 
 
+                    <p>#Raw PHP</p>
+                    <p>Di beberapa situasi, sangat berguna untuk mengaitkan kode PHP pada views. KIta bisa menggunakan Blade @php direktif untuk mengeksekusi blok PHP biasa:
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$">
+        <code>
+        @php
+            $counter = 1;
+        @endphp
+    </code></pre>
+                    </div> 
+<br>
+                    <p>Cara penulisan satu statement PHP</p> 
+                    <br>
+
+                    <div class="mockup-code">
+                        <pre data-prefix="$">
+        <code>
+        @php($counter = 1)
+    </code></pre>
+                    </div> 
+
+
+                    <br>
+
 
                 </div>
             </div>
@@ -177,6 +203,7 @@
                     <p class="flex justify-center">COMPONENTS</p> <br>
 
 
+
                 </div>
             </div>
         </div>
@@ -188,7 +215,29 @@
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">ANONYMOUS COMPONENTS</p> <br>
+                    <p>#Rendering Components</p>
+                    <p>Untuk menanpilkan komponen, kita bisa menggunakan tag komponen Blade. Tag ini diawali dengan string x-, diikuti dengan kebab case name dari class komponen:
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$">
+        <code>
+        &lt;x-alert/&gt;
+ 
+        &lt;x-user-profile/&gt;
+    </code></pre>
+                    </div> 
+<br>
+                    <p>Jika class komponennya berada pada direktori app/View/Component, maka bisa menggunakan titik "." untuk mengindikasikan direktori bersarang. Sebagai contoh, diasumsikan lokasi komponen berada pada app/View/Components/Inputs/Button.php, maka bisa dituliskan :
+                    </p> <br>
 
+                    <div class="mockup-code">
+                        <pre data-prefix="$">
+        <code>
+        &lt;x-inputs.button&gt;
+     </code></pre>
+                    </div> 
+
+<br>
 
                 </div>
             </div>
