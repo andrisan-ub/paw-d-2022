@@ -42,7 +42,7 @@
                   <a href="#" class="active:bg-primary text-base">Blade Directives</a>
                 </li>
                 <li>
-                  <a href="#" class="active:bg-primary">Components</a>
+                  <a href="#components" class="active:bg-primary">Components</a>
                 </li>
                 <li>
                   <a href="#" class="active:bg-primary">Anonymous Components</a>
@@ -64,7 +64,7 @@
     </div>
     <!-- Akhir Navbar -->
     <!-- Awal Hero Image -->
-    <div class="container mx-auto my-36">
+    <div class="container mx-auto py-36">
       <div class="div flex flex-wrap">
         <div class="w-full self-center px-5 lg:w-1/2 sm:pl-14">
           <h1 class="text-base text-primary-focus font-bold text-3xl md:text-4xl lg:text-5xl">Haloo rek...</h1>
@@ -89,12 +89,13 @@
     <!-- Akhir Hero Image -->
 
     <!-- Awal Rangkuman -->
-    <div class="container p-10 mt-10 flex flex-wrap justify-around">
+    <div class="container p-10 flex flex-wrap justify-around">
       <!-- Judul -->
-      <div class="container text-center p-8 text-2xl border-b border-primary-focus" data-aos="fade-up">
-        <h1 class="font-bold text-3xl">Rangkuman Blade Template</h1>
+      <div class="container text-center p-8 text-2xl" data-aos="fade-up">
+        <h1 class="font-bold text-primary-focus text-3xl">Rangkuman Blade Template</h1>
       </div>
       <!-- Akhir Judul -->
+
       <!-- Rangkuman Toni -->
       <!-- Awal @once -->
       <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
@@ -104,25 +105,29 @@
       <div class="container" data-aos="fade-up">
         <div class="mt-8 px-12">
           <p class="indent-20 text-justify">
-            @once Directive memungkinkan kita untuk menentukan bagian dari template yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk menjalankan dahulu bagian tertentu dari JavaScript ke dalam header halaman
-            menggunakan stacks. Seperti contoh, jika kita merender komponen tertentu ke dalam suatu perulangan, kita mungkin hanya ingin mendorong JavaScript ke header saat pertama kali komponen dirender :
+            <span class="text-red-600">@once</span> Directive memungkinkan kita untuk menentukan bagian dari template yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk menjalankan dahulu bagian tertentu dari
+            JavaScript ke dalam header halaman menggunakan <span class="text-red-600">stacks</span>. Seperti contoh, jika kita merender komponen tertentu ke dalam suatu perulangan, kita mungkin hanya ingin mendorong JavaScript ke header
+            saat pertama kali komponen dirender :
           </p>
-          <div class="mockup-code mt-4">
-            <pre data-prefix="1"><code>@once</code></pre>
-            <pre data-prefix="2"><code>@push('scripts')</code></pre>
-            <pre data-prefix="3"><code>&lt;script&gt;</code></pre>
-            <pre data-prefix="4"><code>// Your custom JavaScript...</code></pre>
-            <pre data-prefix="5"><code>&lt;/script&gt;</code></pre>
-            <pre data-prefix="6"><code>@endpush</code></pre>
-            <pre data-prefix="7"><code>@endonce</code></pre>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   @once</code></pre>
+            <pre><code>       @push('scripts')</code></pre>
+            <pre><code>           &lt;script&gt;</code></pre>
+            <pre><code>               // Your custom JavaScript...</code></pre>
+            <pre><code>           &lt;/script&gt;</code></pre>
+            <pre><code>       @endpush</code></pre>
+            <pre><code>   @endonce</code></pre>
           </div>
-          <p class="mt-4 text-justify">Karena @once Directive sering digunakan bersama dengan direktif @push atau @prepend, direktif @pushOnce dan @prependOnce tersedia untuk kenyamanan Anda:</p>
-          <div class="mockup-code mt-4">
-            <pre data-prefix="1"><code>@pushOnce('scripts')</code></pre>
-            <pre data-prefix="3"><code>&lt;script&gt;</code></pre>
-            <pre data-prefix="4"><code>// Your custom JavaScript...</code></pre>
-            <pre data-prefix="5"><code>&lt;/script&gt;</code></pre>
-            <pre data-prefix="6"><code>@endPushOnce</code></pre>
+          <p class="mt-6 text-justify">
+            Karena <span class="text-red-600">@once</span> Directive sering digunakan bersama dengan direktif <span class="text-red-600">@push</span> atau <span class="text-red-600">@prepend</span>, direktif
+            <span class="text-red-600">@pushOnce</span> dan <span class="text-red-600">@prependOnce</span> tersedia untuk kenyamanan Anda:
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   @pushOnce('scripts')</code></pre>
+            <pre><code>       &lt;script&gt;</code></pre>
+            <pre><code>           // Your custom JavaScript...</code></pre>
+            <pre><code>       &lt;/script&gt;</code></pre>
+            <pre><code>   @endPushOnce</code></pre>
           </div>
         </div>
       </div>
@@ -135,26 +140,184 @@
       <div class="container" data-aos="fade-up">
         <div class="mt-8 px-12">
           <p class="indent-20 text-justify">
-            Raw PHP sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Kita dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template yang kita buat. Contoh penggunaan Raw PHP :
+            Raw PHP sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Kita dapat menggunakan direktif Blade <span class="text-red-600">@php</span> untuk mengeksekusi blok PHP biasa di dalam template yang kita buat. Contoh
+            penggunaan Raw PHP :
           </p>
-          <div class="mockup-code mt-4">
-            <pre data-prefix="1"><code>@php</code></pre>
-            <pre data-prefix="2"><code>$counter = 1;</code></pre>
-            <pre data-prefix="3"><code>@endphp</code></pre>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   @php</code></pre>
+            <pre><code>       $counter = 1;</code></pre>
+            <pre><code>   @endphp</code></pre>
           </div>
-          <p class="mt-4 text-justify">Kita hanya perlu menulis satu pernyataan PHP untuk dapat memanggil statement yang telah kita buat di Raw PHP, seperti contoh code yang ada di bawah :</p>
-          <div class="mockup-code mt-4">
-            <pre data-prefix="1"><code>@php($counter = 1)</code></pre>
+          <p class="mt-6 text-justify">Kita hanya perlu menulis satu pernyataan PHP untuk dapat memanggil statement yang telah kita buat di Raw PHP, seperti contoh code yang ada di bawah :</p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   @php($counter = 1)</code></pre>
           </div>
         </div>
       </div>
       <!-- Akhir Raw PHP -->
+      <!-- Awal Comment -->
+      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <div class=""></div>
+        <p class="font-bold text-3xl text-center text-2xl">Comment</p>
+      </div>
+      <div id="components" class="container" data-aos="fade-up">
+        <div id="components" class="mt-8 px-12">
+          <p class="indent-20 text-justify">Blade juga memungkinkan kita untuk melakukan komentar di dalam code. Komentar di blade juga tidak akan ada dalam html yang akan ditampilkan. Contoh penggunaan code yang akan dikomen :</p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   {{-- This comment will not be present in the rendered HTML --}}</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Comment -->
+      <!-- Awal Components -->
+      <div class="container p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <p class="font-bold text-3xl text-center text-2xl">Components</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="mt-8 px-12">
+          <p class="indent-20 text-justify">Components dan slots memberikan manfaat yang serupa dengan sections, layouts, and includes. Ada dua pendekatan untuk menulis komponen: komponen berbasis kelas dan komponen anonim.</p>
+          <p class="indent-20 text-justify">
+            Untuk membuat komponen berbasis kelas, Kita dapat menggunakan perintah <span class="text-red-600">make:component</span>. Perintah <span class="text-red-600">make:component</span> akan menempatkan komponen di direktori
+            <span class="text-red-600">app/View/Components</span>. Tambahkan perintah dibawah di terminal untuk membuat component :
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   php artisan make:component “nama_file”</code></pre>
+          </div>
+          <p class="mt-6 text-justify">
+            Perintah <span class="text-red-600">make:component</span> juga akan membuat template tampilan untuk komponen. Tampilan akan ditempatkan di direktori <span class="text-red-600">resources/views/components</span>. Saat menulis
+            komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori <span class="text-red-600">app/View/Components</span> dan direktori <span class="text-red-600">resources/views/components</span>, jadi
+            biasanya tidak diperlukan registrasi komponen lebih lanjut.
+          </p>
+          <p class="mt-6 text-justify">Anda juga dapat membuat komponen di dalam subdirektori dengan perintah dibawah :</p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   php artisan make:component “nama_folder_subDirektori”/“nama_file”</code></pre>
+          </div>
+          <p class="mt-6 text-justify">
+            Perintah di atas akan membuat komponen <span class="text-red-600">"nama_file"</span> di direktori <span class="text-red-600">app/View/Components/“nama_folder_subDirektori”</span> dan view akan ditempatkan di direktori
+            <span class="text-red-600">resources/views/components/“nama_folder_subDirektori”</span>.
+          </p>
+          <p class="indent-20 mt-6 text-justify">
+            Jika Anda ingin membuat komponen anonim (komponen dengan hanya menambahkan template Blade di resources dan tanpa menambahkan kelas di direktori <span class="text-red-600">app/View/Components</span>), Anda dapat menggunakan flag
+            <span class="text-red-600">--view</span> saat menjalankan perintah <span class="text-red-600">make:component</span> seperti contoh perintah dibawah :
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   php artisan make:component “nama_folder”.“nama_file” --view</code></pre>
+          </div>
+          <p class="mt-6 text-justify">
+            Perintah di atas akan membuat file Blade di direktori <span class="text-red-600">“resources/views/components/”nama_folder”/”nama_file”.blade.php”</span> yang dapat dijalankan sebagai komponen dengan perintah
+            <span class="text-red-600">&lt;x-”nama_folder”.”nama_file” /&gt;</span>.
+          </p>
+        </div>
+      </div>
+      <!-- Akhir Components -->
+      <!-- Awal Rendering Components -->
+      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <div class=""></div>
+        <p class="font-bold text-3xl text-center text-2xl">Rendering Components</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="mt-8 px-12">
+          <p class="indent-20 text-justify">
+            Untuk menampilkan komponen, Kita dapat menggunakan tag komponen Blade dalam salah satu template Blade kita. Tag komponen blade dimulai dengan string <span class="text-red-600">x-</span> diikuti dengan nama class dari kelas
+            komponen. Contoh perintah :
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   &lt;x-header/&gt;</code></pre>
+          </div>
+          <p class="indent-20 mt-6 text-justify">
+            Jika kelas komponen berada dalam folder lebih dalam di dalam direktori <span class="text-red-600">app/View/Components</span>, Kita dapat menggunakan <span class="text-red-600">.</span> karakter untuk menunjukkan direktori dalam
+            forder tersebut. Misalnya, jika kita mengasumsikan sebuah komponen terletak di <span class="text-red-600">app/View/Components/Inputs/Button.php</span>, kita dapat menjalankannya seperti ini:
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   &lt;x-inputs.button/&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Rendering Components -->
+      <!-- Awal Rendering Passing Data To Components -->
+      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <div class=""></div>
+        <p class="font-bold text-3xl text-center text-2xl">Passing Data To Components</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="mt-8 px-12">
+          <p class="indent-20 text-justify">
+            Anda dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Hard-coded, nilai primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi dan variabel PHP harus diteruskan ke komponen
+            melalui atribut yang menggunakan karakter <span class="text-red-600">:</span> sebagai awalan. Contoh code :
+          </p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   &lt;x-alert type="error" :message="$message"/&gt;</code></pre>
+          </div>
+          <p class="indent-20 mt-6 text-justify">
+            Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak perlu meneruskan data ke tampilan dari metode
+            render komponen:
+          </p>
+          <div class="mockup-code bg-zinc-800 mt-6">
+            <xmp class="text-sm">
+      <?php
+ 
+      namespace App\View\Components;
+      
+      use Illuminate\View\Component;
+      
+      class Alert extends Component
+      {
+        /**
+          * The alert type.
+          *
+          * @var string
+          */
+        public $type;
+      
+        /**
+          * The alert message.
+          *
+          * @var string
+          */
+        public $message;
+      
+        /**
+          * Create the component instance.
+          *
+          * @param  string  $type
+          * @param  string  $message
+          * @return void
+          */
+        public function __construct($type, $message)
+        {
+            $this->type = $type;
+            $this->message = $message;
+        }
+      
+        /**
+          * Get the view / contents that represent the component.
+          *
+          * @return \Illuminate\View\View|\Closure|string
+          */
+        public function render()
+        {
+            return view('components.alert');
+        }
+      }
+
+              </xmp>
+          </div>
+          <p class="mt-6 text-justify">Saat komponen Anda dirender, Anda dapat menampilkan konten variabel publik komponen Anda dengan menggunakan variabel berdasarkan nama. Contoh code :</p>
+          <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <pre><code>   &lt;div class="alert alert-{{ $type }}"&gt;</code></pre>
+            <pre><code>       {{ $message }}</code></pre>
+            <pre><code>   &lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Passing Data To Components -->
+
       <!-- Akhir Rangkuman Toni -->
     </div>
     <!-- Akhir Rangkuman -->
 
     <!-- Awal Our Team -->
-    <div id="ourTeam" class="container mx-auto mb-20 pt-20">
+    <div id="ourTeam" class="container mx-auto mb-20 pt-20" data-aos="fade-up">
       <h1 class="text-center text-4xl mb-10 font-bold text-primary-focus">Our Team</h1>
 
       <div class="w-full sm:flex sm:flex-wrap sm:gap-6 sm:justify-items-center">
