@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Kelompok 1</title>
+    <link href="src/assets/logo.png" rel="shortcut icon" />
   </head>
 
   <body>
@@ -64,7 +68,10 @@
       <div class="div flex flex-wrap">
         <div class="w-full self-center px-5 lg:w-1/2 sm:pl-14">
           <h1 class="text-base text-primary-focus font-bold text-3xl md:text-4xl lg:text-5xl">Haloo rek...</h1>
-          <h2 class="font-bold text-base-content text-4xl mb-4 mt-2 md:text-5xl lg:text-6xl">Selamat Datang <br> Di Website Kami</h2>
+          <h2 class="font-bold text-base-content text-4xl mb-4 mt-2 md:text-5xl lg:text-6xl">
+            Selamat Datang <br />
+            Di Website Kami
+          </h2>
           <p class="text-md mb-8 md:text-lg lg:text-xl">Kami disini akan menampilkan rangkuman <span class="text-primary-focus">Blade Template</span></p>
           <a href="Public/" class="font-semibold text-white bg-primary-focus py-3 px-8 rounded-full hover:bg-primary hover:shadow-lg inline-block transition">Klik disini</a>
           <!-- <p class="my-6 text-sm lg:text-base">
@@ -80,6 +87,72 @@
       </div>
     </div>
     <!-- Akhir Hero Image -->
+
+    <!-- Awal Rangkuman -->
+    <div class="container p-10 mt-10 flex flex-wrap justify-around">
+      <!-- Judul -->
+      <div class="container text-center p-8 text-2xl border-b border-primary-focus" data-aos="fade-up">
+        <h1 class="font-bold text-3xl">Rangkuman Blade Template</h1>
+      </div>
+      <!-- Akhir Judul -->
+      <!-- Rangkuman Toni -->
+      <!-- Awal @once -->
+      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <div class=""></div>
+        <p class="font-bold text-3xl text-center text-2xl">The @once Directive</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="mt-8 px-12">
+          <p class="indent-20 text-justify">
+            @once Directive memungkinkan kita untuk menentukan bagian dari template yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk menjalankan dahulu bagian tertentu dari JavaScript ke dalam header halaman
+            menggunakan stacks. Seperti contoh, jika kita merender komponen tertentu ke dalam suatu perulangan, kita mungkin hanya ingin mendorong JavaScript ke header saat pertama kali komponen dirender :
+          </p>
+          <div class="mockup-code mt-4">
+            <pre data-prefix="1"><code>@once</code></pre>
+            <pre data-prefix="2"><code>@push('scripts')</code></pre>
+            <pre data-prefix="3"><code>&lt;script&gt;</code></pre>
+            <pre data-prefix="4"><code>// Your custom JavaScript...</code></pre>
+            <pre data-prefix="5"><code>&lt;/script&gt;</code></pre>
+            <pre data-prefix="6"><code>@endpush</code></pre>
+            <pre data-prefix="7"><code>@endonce</code></pre>
+          </div>
+          <p class="mt-4 text-justify">Karena @once Directive sering digunakan bersama dengan direktif @push atau @prepend, direktif @pushOnce dan @prependOnce tersedia untuk kenyamanan Anda:</p>
+          <div class="mockup-code mt-4">
+            <pre data-prefix="1"><code>@pushOnce('scripts')</code></pre>
+            <pre data-prefix="3"><code>&lt;script&gt;</code></pre>
+            <pre data-prefix="4"><code>// Your custom JavaScript...</code></pre>
+            <pre data-prefix="5"><code>&lt;/script&gt;</code></pre>
+            <pre data-prefix="6"><code>@endPushOnce</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir @once -->
+      <!-- Awal Raw PHP -->
+      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+        <div class=""></div>
+        <p class="font-bold text-3xl text-center text-2xl">Raw PHP</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="mt-8 px-12">
+          <p class="indent-20 text-justify">
+            Raw PHP sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Kita dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template yang kita buat. Contoh penggunaan Raw PHP :
+          </p>
+          <div class="mockup-code mt-4">
+            <pre data-prefix="1"><code>@php</code></pre>
+            <pre data-prefix="2"><code>$counter = 1;</code></pre>
+            <pre data-prefix="3"><code>@endphp</code></pre>
+          </div>
+          <p class="mt-4 text-justify">Kita hanya perlu menulis satu pernyataan PHP untuk dapat memanggil statement yang telah kita buat di Raw PHP, seperti contoh code yang ada di bawah :</p>
+          <div class="mockup-code mt-4">
+            <pre data-prefix="1"><code>@php($counter = 1)</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Raw PHP -->
+      <!-- Akhir Rangkuman Toni -->
+    </div>
+    <!-- Akhir Rangkuman -->
+
     <!-- Awal Our Team -->
     <div id="ourTeam" class="container mx-auto mb-20 pt-20">
       <h1 class="text-center text-4xl mb-10 font-bold text-primary-focus">Our Team</h1>
@@ -137,5 +210,10 @@
       </div>
     </footer>
     <!-- Akhir Footer -->
+
+    <!-- INITIALIZE AOS -->
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
