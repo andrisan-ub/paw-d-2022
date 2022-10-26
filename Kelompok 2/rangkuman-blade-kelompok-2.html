@@ -101,6 +101,97 @@
               Simbol @ juga dapat digunakan untuk menghindari 
               pengarahan oleh Blade:
             </p>
+            <div class="mockup-code">
+              <pre><code>&#123;&#123;&#45;&#45;&#160;Blade&#160;template&#160;&#45;&#45;&#125;&#125;&#13;&#10;&#64;&#64;if&#40;&#41;&#13;&#10;&#160;&#13;&#10;&#60;&#33;&#45;&#45;&#160;HTML&#160;output&#160;&#45;&#45;&#62;&#13;&#10;&#64;if&#40;&#41;&#13;&#10;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  
+  <!--EndDisplayingData-->
+
+  <!--BladeDirectives-->
+  <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Blade Directives</div> 
+  </div>
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">If Statements</h2>
+            <p>
+              Kita dapat membuat pernyataan if menggunakan @if, @elseif, @else, dan @endif. 
+              Ini memiliki fungsi identik dengan PHP :
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;if&#160;&#40;count&#40;&#36;records&#41;&#160;&#61;&#61;&#61;&#160;1&#41;&#13;&#10;&#160;&#160;&#160;I&#160;have&#160;one&#160;record&#33;&#13;&#10;&#64;elseif&#160;&#40;count&#40;&#36;records&#41;&#160;&#62;&#160;1&#41;&#13;&#10;&#160;&#160;&#160;I&#160;have&#160;multiple&#160;records&#33;&#13;&#10;&#64;else&#13;&#10;&#160;&#160;&#160;I&#160;don&#39;t&#160;have&#160;any&#160;records&#33;&#13;&#10;&#64;endif&#13;&#10;</code></pre>
+            </div>
+            <p>
+              Blade juga menyediakan @unless directive:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;unless&#160;&#40;Auth&#58;&#58;check&#40;&#41;&#41;&#13;&#10;&#160;&#160;&#160;You&#160;are&#160;not&#160;signed&#160;in&#46;&#13;&#10;&#64;endunless&#13;&#10;</code></pre>
+            </div>
+            <p>
+              Selain itu,  @isset dan @empty dapat digunakan sebagai pintasan yang nyaman untuk fungsi PHP:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;isset&#40;&#36;records&#41;&#13;&#10;&#160;&#160;&#160;&#47;&#47;&#160;&#36;records&#160;is&#160;defined&#160;and&#160;is&#160;not&#160;null&#46;&#46;&#46;&#13;&#10;&#64;endisset&#13;&#10;&#160;&#13;&#10;&#64;empty&#40;&#36;records&#41;&#13;&#10;&#160;&#160;&#160;&#47;&#47;&#160;&#36;records&#160;is&#160;&#34;empty&#34;&#46;&#46;&#46;&#13;&#10;&#64;endempty&#13;&#10;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Switch Statements</h2>
+            <p>
+              Switch statement dapat dibuat menggunakan @switch, @case, @break, @default dan @endswitch.Contoh:  
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;isset&#40;&#36;records&#41;&#13;&#10;&#160;&#160;&#160;&#47;&#47;&#160;&#36;records&#160;is&#160;defined&#160;and&#160;is&#160;not&#160;null&#46;&#46;&#46;&#13;&#10;&#64;endisset&#13;&#10;&#160;&#13;&#10;&#64;empty&#40;&#36;records&#41;&#13;&#10;&#160;&#160;&#160;&#47;&#47;&#160;&#36;records&#160;is&#160;&#34;empty&#34;&#46;&#46;&#46;&#13;&#10;&#64;endempty&#13;&#10;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Loops</h2>
+            <p>
+              Selain pernyataan bersyarat, Blade menyediakan arahan 
+              sederhana untuk bekerja dengan struktur loop PHP. 
+              Masing-masing berfungsi identik dengan counterpart PHP. Contoh:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;for&#160;&#40;&#36;i&#160;&#61;&#160;0;&#160;&#36;i&#160;&#60;&#160;10;&#160;&#36;i&#43;&#43;&#41;&#13;&#10;&#160;&#160;&#160;The&#160;current&#160;value&#160;is&#160;&#123;&#123;&#160;&#36;i&#160;&#125;&#125;&#13;&#10;&#64;endfor&#13;&#10;&#160;&#13;&#10;&#64;foreach&#160;&#40;&#36;users&#160;as&#160;&#36;user&#41;&#13;&#10;&#160;&#160;&#160;&#60;p&#62;This&#160;is&#160;user&#160;&#123;&#123;&#160;&#36;user&#45;&#62;id&#160;&#125;&#125;&#60;&#47;p&#62;&#13;&#10;&#64;endforeach&#13;&#10;&#160;&#13;&#10;&#64;forelse&#160;&#40;&#36;users&#160;as&#160;&#36;user&#41;&#13;&#10;&#160;&#160;&#160;&#60;li&#62;&#123;&#123;&#160;&#36;user&#45;&#62;name&#160;&#125;&#125;&#60;&#47;li&#62;&#13;&#10;&#64;empty&#13;&#10;&#160;&#160;&#160;&#60;p&#62;No&#160;users&#60;&#47;p&#62;&#13;&#10;&#64;endforelse&#13;&#10;&#160;&#13;&#10;&#64;while&#160;&#40;true&#41;&#13;&#10;&#160;&#160;&#160;&#60;p&#62;I&#39;m&#160;looping&#160;forever&#46;&#60;&#47;p&#62;&#13;&#10;&#64;endwhile&#13;&#10;</code></pre>
+            </div>
+            <p>
+              Catatan:<br>
+              Saat melakukan iterasi melalui loop foreach, 
+              kita dapat menggunakan variabel loop untuk
+               mendapatkan informasi berharga tentang loop, 
+               seperti apakah kita berada di iterasi pertama
+                atau terakhir melalui loop.
+              <br><br>
+              Saat menggunakan loop, kita juga dapat melewati 
+              iterasi saat ini atau mengakhiri loop menggunakan 
+              @continue dan @break:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;foreach&#160;&#40;&#36;users&#160;as&#160;&#36;user&#41;&#13;&#10;&#160;&#160;&#160;&#64;if&#160;&#40;&#36;user&#45;&#62;type&#160;&#61;&#61;&#160;1&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#64;continue&#13;&#10;&#160;&#160;&#160;&#64;endif&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#60;li&#62;&#123;&#123;&#160;&#36;user&#45;&#62;name&#160;&#125;&#125;&#60;&#47;li&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#64;if&#160;&#40;&#36;user&#45;&#62;number&#160;&#61;&#61;&#160;5&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#64;break&#13;&#10;&#160;&#160;&#160;&#64;endif&#13;&#10;&#64;endforeach&#13;&#10;</code></pre>
+            </div>
+            <p>
+              Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan. Contoh:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#64;foreach&#160;&#40;&#36;users&#160;as&#160;&#36;user&#41;&#13;&#10;&#160;&#160;&#160;&#64;continue&#40;&#36;user&#45;&#62;type&#160;&#61;&#61;&#160;1&#41;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#60;li&#62;&#123;&#123;&#160;&#36;user&#45;&#62;name&#160;&#125;&#125;&#60;&#47;li&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#64;break&#40;&#36;user&#45;&#62;number&#160;&#61;&#61;&#160;5&#41;&#13;&#10;&#64;endforeach&#13;&#10;&#13;&#10;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
 	<!--EndCLR-->
 
 	<!--PTR-->
