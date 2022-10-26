@@ -168,7 +168,7 @@
                     <p>Di beberapa situasi, sangat berguna untuk mengaitkan kode PHP pada views. KIta bisa menggunakan Blade @php direktif untuk mengeksekusi blok PHP biasa:
                     </p> <br>
                     <div class="mockup-code">
-                        <pre data-prefix="$">
+                        <pre data-prefix="">
         <code>
         @php
             $counter = 1;
@@ -180,7 +180,7 @@
                     <br>
 
                     <div class="mockup-code">
-                        <pre data-prefix="$">
+                        <pre data-prefix="">
         <code>
         @php($counter = 1)
     </code></pre>
@@ -226,7 +226,7 @@
                     <p>Untuk menanpilkan komponen, kita bisa menggunakan tag komponen Blade. Tag ini diawali dengan string x-, diikuti dengan kebab case name dari class komponen:
                     </p> <br>
                     <div class="mockup-code">
-                        <pre data-prefix="$">
+                        <pre data-prefix="">
         <code>
         &lt;x-alert/&gt;
  
@@ -238,7 +238,7 @@
                     </p> <br>
 
                     <div class="mockup-code">
-                        <pre data-prefix="$">
+                        <pre data-prefix="">
         <code>
         &lt;x-inputs.button&gt;
      </code></pre>
@@ -250,7 +250,7 @@
 
     </p> <br>
     <div class="mockup-code">
-        <pre data-prefix="$">
+        <pre data-prefix="">
 <code>
     &lt;x-alert type="error" :message="$message"/&gt;
 
@@ -258,12 +258,12 @@
 </div> 
 <br>
 
-<p>Kita harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk view komponen. Tidak perlu meneruskan data ke view dari metode render komponen:
+<p>Kita harus mendefinisikan semua atribut data komponen dalam konstruktor classnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk view komponen. Tidak perlu meneruskan data ke view dari metode render komponen:
 
 
 </p> <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
     &lt;?php
  
@@ -317,7 +317,7 @@
 <p>Ketika komponen sudah di-render, kit bisa menampilkan konten dari variabel komponen publik dengan meng-echo nama variable:
 </p> <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
     &lt;div class="alert alert-{{ $type }}"&gt;
          {{ $message }}
@@ -327,11 +327,12 @@
 
 <br>
 <p>#Casing</p> 
+<br>
 <p>Argumen konstruktor komponen harus ditentukan menggunakan camelCase, sedangkan kebab-case harus digunakan saat mereferensikan nama argumen dalam atribut HTML Anda. Misalnya, diberikan konstruktor komponen berikut:
 </p>
 <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
     /**
     * Create the component instance.
@@ -352,7 +353,7 @@
 </p>
 <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
     &lt;x-alert alert-type="danger"/&gt;
 
@@ -361,13 +362,13 @@
 <br>
 
 <p>#Short Attribute Syntax
-</p>
+</p><br>
 <p>Saat meneruskan atribut ke komponen, kita juga dapat menggunakan sintaks "short attribute":
 
 </p>
 <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
     {{-- Short attribute syntax... --}}
     &lt;x-profile :$userId :$name /&gt;
@@ -379,21 +380,499 @@
 <br>
 
 <p>#Escaping Attribute Rendering
-</p>
-<p>Saat meneruskan atribut ke komponen, kita juga dapat menggunakan sintaks "short attribute":
+</p> <br>
+<p>
+    Karena beberapa framework JavaScript seperti Alpine.js juga menggunakan atribut awalan titik dua, kita dapat menggunakan awalan titik dua (::) untuk memberi tahu Blade bahwa atribut tersebut bukan PHP. Misalnya, diberikan komponen berikut:
 
 </p>
 <br>
 <div class="mockup-code">
-    <pre data-prefix="$">
+    <pre data-prefix="">
 <code>
-    {{-- Short attribute syntax... --}}
-    &lt;x-profile :$userId :$name /&gt;
-     
-    {{-- Is equivalent to... --}}
-    &lt;x-profile :user-id="$userId" :name="$name" /&gt;
+    &lt;x-button ::class="{ danger: isDeleting }"&gt;
+          Submit
+    &lt;/x-button&gt;
+
 </code></pre>
 </div> 
+<br>
+
+<p>
+    HTML berikut akan dirender oleh Blade:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;button :class="{ danger: isDeleting }"&gt;
+            Submit
+    &lt;/button&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>#Component Methods
+</p> <br>
+<p>Selain variabel publik yang tersedia untuk template komponen Anda, metode publik apa pun pada komponen dapat dipanggil. Misalnya, terdapat sebuah komponen yang memiliki method isSelected:
+
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    /**
+    * Determine if the given option is the currently selected option.
+    *
+    * @param  string  $option
+    * @return bool
+    */
+    public function isSelected($option)
+    {
+        return $option === $this->selected;
+    }
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Kita dapat menjalankan method ini dari template komponen kita dengan memanggil variabel yang cocok dengan nama method:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;option {{ $isSelected($value) ? 'selected' : '' }}
+    value="{{ $value }}"&gt;
+        {{ $label }}
+    &lt;/option&gt;
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>#Accessing Attributes & Slots Within Component Classes
+</p> <br>
+<p>
+    Komponen blade juga memungkinkan kita mengakses nama komponen, atribut, dan slot di dalam metode render class. Namun, untuk mengakses data ini, kita harus mengembalikan penutup dari metode render komponen kita. Penutup akan menerima array $data sebagai satu-satunya argumennya. Array ini akan berisi beberapa elemen yang memberikan informasi tentang komponen:
+
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+   public function render()
+   {
+       return function (array $data) {
+           // $data['componentName'];
+           // $data['attributes'];
+           // $data['slot'];
+    
+           return '&lt;div&gt;Components content&lt;/div&gt;';
+       };
+   }
+   
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    componentName sama dengan nama yang digunakan dalam tag HTML setelah awalan x-. Jadi &lt;x-alert /&gt; pada componentName akan diberi tanda. Elemen atribut akan berisi semua atribut yang ada pada tag HTML. Elemen slot adalah instance Illuminate\Support\HtmlString dengan konten slot komponen.
+
+    <br>
+    <br>
+
+    Penutup harus mengembalikan sebuah string. Jika string yang di-return sesuai dengan view yang ada, view tersebut akan dirender; jika tidak, string yang dikembalikan akan dievaluasi sebagai view Blade sebaris (inline).
+
+</p>
+
+<br>
+
+<p>#Additional Dependencies
+
+</p> <br>
+<p>
+    Jika komponen kita memerlukan dependensi dari Laravel, maka dapat dicantumkan sebelum atribut data komponen mana pun dan secara otomatis akan dimasukkan oleh container:
+
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    use App\Services\AlertCreator;
+ 
+    /**
+     * Create the component instance.
+     *
+     * @param  \App\Services\AlertCreator  $creator
+     * @param  string  $type
+     * @param  string  $message
+     * @return void
+     */
+    public function __construct(AlertCreator $creator, $type, $message)
+    {
+        $this->creator = $creator;
+        $this->type = $type;
+        $this->message = $message;
+    }
+   
+</code></pre>
+</div> 
+<br>
+
+<p>#Hiding Attributes / Methods
+
+
+</p> <br>
+<p>
+    Jika ingin mencegah beberapa metode atau properti publik diekspos sebagai variabel ke template komponen, kita dapat menambahkannya ke properti array $except pada komponen :
+
+
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;?php
+ 
+    namespace App\View\Components;
+     
+    use Illuminate\View\Component;
+     
+    class Alert extends Component
+    {
+        /**
+         * The alert type.
+         *
+         * @var string
+         */
+        public $type;
+     
+        /**
+         * The properties / methods that should not be exposed to the component template.
+         *
+         * @var array
+         */
+        protected $except = ['type'];
+    }
+   
+</code></pre>
+</div> 
+<br>
+
+
+
+<p>#Component Attributes
+</p> <br>
+<p>
+    Laravel telah memeriksa cara meneruskan atribut data ke komponen; namun, terkadang kita mungkin perlu menentukan atribut HTML tambahan, seperti class, yang bukan merupakan bagian dari data yang diperlukan agar komponen berfungsi. Biasanya, kita ingin meneruskan atribut tambahan ini ke elemen root template komponen. Misalnya, bayangkan kita ingin merender komponen alert seperti ini:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;x-alert type="error" :message="$message" class="mt-4"/&gt;
+    <br>
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan ke "attribute bag" komponen. Attribute bag ini secara otomatis tersedia untuk komponen melalui variabel $attributes. Semua atribut dapat dirender dalam komponen dengan meng-echo variabel ini:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;div {{ $attributes }}&gt;
+         &lt;!-- Component content --&gt;
+
+    &lt;/div&gt;
+</code></pre>
+</div> 
+<br>
+
+<p>#Default / Merged Attributes
+
+</p> <br>
+<p>
+    Terkadang kita mungkin perlu menentukan nilai default untuk atribut atau menggabungkan nilai tambahan ke dalam beberapa atribut komponen. Untuk mencapai ini, kita dapat menggunakan metode penggabungan attribute bag. Method ini sangat berguna untuk mendefinisikan satu set CSS default yang harus selalu ada pada komponen:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;div {{ $attributes-&gt;merge(['class' =&gt; 'alert alert-'.$type]) }}&gt;
+         {{ $message }}
+    &lt;/div&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Jika kita menganggap komponen ini digunakan seperti ini:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;x-alert type="error" :message="$message" class="mb-4"/&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Laravel telah memeriksa cara meneruskan atribut data ke komponen; namun, terkadang kita mungkin perlu menentukan atribut HTML tambahan, seperti class, yang bukan merupakan bagian dari data yang diperlukan agar komponen berfungsi. Biasanya, kita ingin meneruskan atribut tambahan ini ke elemen root template komponen. Misalnya, bayangkan kita ingin merender komponen alert seperti ini:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;div class="alert alert-error mb-4"&gt;
+          &lt;!-- Contents of the $message variable --&gt;
+    &lt;/div&gt;
+
+</code></pre>
+</div> 
+<br>
+
+
+<p>#Conditionally Merge Classes
+
+</p> <br>
+<p>
+    Terkadang kita mungkin ingin menggabungkan class jika kondisi yang diberikan benar. Kita dapat melakukannya melalui metode class, yang menerima array class di mana kunci array berisi class atau class yang ingin kita tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar class yang dirender:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;div {{ $attributes-&gt;class(['p-4', 'bg-red' =&gt; $hasError]) }}&gt;
+            {{ $message }}
+    &lt;/div&gt;
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Jika kita perlu menggabungkan atribut lain ke komponen kita, maka dapat menghubungkan metode penggabungan ke metode class:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;button {{ $attributes-&gt;class(['p-4'])-&gt;merge(['type' =&gt; 'button']) }}&gt;
+         {{ $slot }}
+    &lt;/button&gt;
+
+</code></pre>
+</div> 
+<br>
+
+
+<p>#Non-Class Attribute Merging
+
+</p> <br>
+<p>
+    Saat menggabungkan atribut yang bukan atribut class, nilai yang diberikan ke metode gabungan akan dianggap sebagai nilai "default" dari atribut tersebut. Namun, tidak seperti atribut class, atribut ini tidak akan digabungkan dengan nilai atribut yang dimasukkan. Sebaliknya, mereka akan ditimpa. Misalnya, implementasi komponen tombol mungkin terlihat seperti berikut:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;button {{ $attributes-&gt;merge(['type' =&gt; 'button']) }}&gt;
+         {{ $slot }}
+    &lt;/button&gt;
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Untuk merender komponen tombol dengan tipe custom, mungkin ditentukan saat menggunakan komponen. Jika tidak ada tipe yang ditentukan, tipe tombol akan digunakan:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;x-button type="submit"&gt;
+          Submit
+    &lt;/x-button&gt;
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    HTML yang dirender dari komponen tombol dalam contoh ini adalah:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;x-button type="submit"&gt;
+          Submit
+    &lt;/x-button&gt;
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Jika kita ingin atribut selain kelas memiliki nilai default dan nilai yang dimasukkan digabungkan, kita dapat menggunakan metode prepends. Dalam contoh ini, atribut data-controller akan selalu dimulai dengan profile-controller dan nilai data-controller tambahan apa pun yang dimasukkan akan ditempatkan setelah nilai default ini:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    &lt;div {{ $attributes-&gt;merge(['data-controller' =&gt; $attributes-&gt;prepends('profile-controller')]) }}&gt;
+            {{ $slot }}
+    &lt;/div&gt;
+</code></pre>
+</div> 
+<br>
+
+<p>#Retrieving & Filtering Attributes
+
+</p> <br>
+<p>
+    Kita dapat memfilter atribut menggunakan metode filter. Metode ini menerima penutup yang seharusnya mengembalikan nilai true jika kita ingin mempertahankan atribut di tas atribut:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    {{ $attributes->filter(fn ($value, $key) => $key == 'foo') }}
+
+</code></pre>
+</div> 
+<br>
+
+</p> <br>
+<p>
+    Untuk kenyamanan, kita dapat menggunakan metode whereStartsWith untuk mengambil semua atribut yang kuncinya dimulai dengan string yang diberikan:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    {{ $attributes->whereStartsWith('wire:model') }}
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Sebaliknya, metode whereDoesntStartWith dapat digunakan untuk mengecualikan semua atribut yang kuncinya dimulai dengan string yang diberikan:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    {{ $attributes->whereDoesntStartWith('wire:model') }}
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Dengan menggunakan metode first, kita dapat merender atribut pertama dalam tas atribut yang diberikan:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    {{ $attributes->whereStartsWith('wire:model')->first() }}
+
+
+</code></pre>
+</div> 
+<br>
+
+<p>
+    Jika kita ingin memeriksa apakah ada atribut pada komponen, kita dapat menggunakan metode has. Metode ini menerima nama atribut sebagai satu-satunya argumennya dan mengembalikan boolean yang menunjukkan apakah atribut tersebut ada atau tidak:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    @if ($attributes-&gt;has('class'))
+         &lt;div&gt;Class attribute is present&lt;/div&gt;
+    @endif
+</code></pre>
+</div> 
+<br>
+
+<p>
+    kita dapat mengambil nilai atribut tertentu menggunakan metode get:
+
+</p>
+<br>
+<div class="mockup-code">
+    <pre data-prefix="">
+<code>
+    {{ $attributes->get('class') }}
+
+</code></pre>
+</div> 
+<br>
+
+<p>#Reserved Keywords
+
+</p> <br>
+<p>
+    Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk merender komponen. Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode dalam komponen Anda:
+    
+
+</p>
+
+<ul class="ml-5 list-disc">
+    <li>data</li>
+    <li>render</li>
+    <li>resolveView</li>
+    <li>shouldRender</li>
+    <li>view</li>
+    <li>withAttributes</li>
+    <li>withName</li>
+
+  </ul>
+  
 <br>
 
                 </div>
