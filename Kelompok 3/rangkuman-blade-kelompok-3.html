@@ -208,8 +208,115 @@
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">COMPONENTS</p> <br>
+                    
+                    <p>#Scoped Slots</p>
+                    <p>Scoped Slots memungkinkan untuk mengakses data atau metode dari komponen di dalam slot.
+                        Untuk mencapai perilaku serupa di Laravel dapat didefinisikan dengan metode atau properti 
+                        publik pada komponen dan mengakses komponen di dalam slot melalui variabel $component.
+                    </p> <br>
+                    <!--pada contoh ini akan diasumsikan bahwa komponen x-alert memiliki 
+                        metode formatAlery publik yang didefinisikan pada kelas komponennya-->
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-alert&gt;
+        &lt;x-slot:title&gt;
+            {{ $component->formatAlert('Server Error') }}
+        &lt;/x-slot&gt;
+                             
+        &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+    &lt;/x-alert&gt;
+                        </code></pre>
+                    </div> 
+                    <br>
 
+                    <p>#Slot Attributes</p>
+                    <p>Dapat menetapkan atribut tambahan ke slot</p> 
+                    <br>
+                    <!--seperti nama kelas pada CSS-->
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-alert&gt;
+        &lt;x-slot:title&gt;
+            {{ $component->formatAlert('Server Error') }}
+        &lt;/x-slot&gt;
+                             
+        &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+    &lt;/x-alert&gt;
+                        </code></pre>
+                    </div> 
+                    <br>
 
+                    <p>Untuk berinteraksi dengan atribut slot, dapat mengakses properti atribut dari variabel slot</p> 
+                    <br>
+                    <!--seperti nama kelas pada CSS-->
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-card class="shadow-sm"&gt;
+        &lt;x-slot:heading class="font-bold"&gt;
+            Heading
+        &lt;/x-slot&gt;
+
+        Content
+                             
+        &lt;x-slot:footer class="text-sm"&gt;
+            Footer
+        &lt;/x-slot&gt; 
+    &lt;/x-card&gt;
+                        </code></pre>
+                    </div> 
+                    <br>
+
+                    <p>#Inline Component Views</p>
+                    <p>Untuk komponen yang sangat kecil dan rumit untuk mengelola kelas komponen dan template tampilan komponen, 
+                        dapat mengembalikan markup komponen langsung dari render.
+                    </p> 
+                    <br>
+                    
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+    public function render()
+    {
+        return <<<'blade'
+            &lt;div class="alert alert-danger"&gt;
+                {{ $slot }}
+            &lt;/div&gt;
+        blade;
+    }
+                        </code></pre>
+                    </div> 
+                    <br>
+
+                    <p>#Generating Inline View Components</p>
+                    <p>Untuk membuat komponen yang merender tampilan sebaris, 
+                        dapat menggunakan opsi sebaris saat menjalankan perintah make:component.
+                    </p> 
+                    <br>
+                    
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    php artisan make:component Alert --inline
+                        </code></pre>
+                    </div> 
+                    <br>
+
+                    <p>#Dynamic Components</p>
+                    <p>Ketika dalam situasi bingung untuk merender komponen yang mana sehingga terjadi runtime, 
+                        dapat menggunakan komponen-komponen dinamis bawaan Laravel untuk merender komponen 
+                        berdasarkan nilai atau variabel runtime.
+                    </p> 
+                    <br>
+                    
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;
+                        </code></pre>
+                    </div> 
+                    <br>
 
                 </div>
             </div>
