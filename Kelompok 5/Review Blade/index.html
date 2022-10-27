@@ -927,7 +927,7 @@
                         daftar "todo". Kita mungkin mendefinisikan layout komponen yang terlihat seperti berikut:</p>
 
                     <br>
-                    <h3>Defining The Layout Component</h3>
+                    <h3 class="card-title pb-5">Defining The Layout Component</h3>
                     <div class="mockup-code p-6 w-96 justify-items-auto">
                         <p><code>
                         <figure>
@@ -949,7 +949,7 @@
                     </p>
                 </div>
 
-                <h3>Applying The Layout Component</h3>
+                <h3 class="card-title pb-5">Applying The Layout Component</h3>
                 <p class=" text-justify">Setelah layout komponen telah ditentukan, kita dapat membuat tampilan Blade yang menggunakan komponen tersebut. 
                     Seperti contoh di bawah ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:
                 </p>
@@ -1010,14 +1010,51 @@
         <h3>Layouts Using Template Inheritance</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
+                <h3 class="card-title justify-center pb-5">Defining A Layout</h3>
+                <p class=" text-justify">Tata letak juga dapat dibuat melalui "Template Inheritance", 
+                    yang merupakan cara utama membangun aplikasi sebelum pengenalan komponen.
+
+                    Untuk memulai, mari kita lihat contoh sederhana. Pertama, kita akan memeriksa layout halaman. 
+                    Karena sebagian besar aplikasi web mempertahankan layout umum yang sama di berbagai halaman, 
+                    akan lebih mudah jika kita mendefinisikan layout sebagai single blade view :</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
                     <p><code>
-
+                        <pre><code>&lt;html&gt;</code></pre>
+                        <pre><code>&lt;head&gt;</code></pre>
+                        <pre><code>&lt;title>App Name - @yield('title')</title&gt;</code></pre>
+                        <pre><code>&lt;/head&gt;</code></pre>
+                        <pre><code>&lt;body&gt;</code></pre>
+                        <pre><code>@section('sidebar')</code></pre>
+                        <pre><code>This is the master sidebar.</code></pre>
+                        <pre><code>@show</code></pre>
+                        <pre><code>&lt;div class="container"&gt;</code></pre>
+                        <pre><code> @yield('content')</code></pre>
+                        <pre><code>&lt;/div&gt;</code></pre>
+                        <pre><code>&lt;/body&gt;</code></pre>
+                        <pre><code>&lt;/html&gt;</code></pre>
                     </code>
+                    </p>
+                </div>
+
+                <h3 class="card-title pb-5">Extending A Layout</h3>
+                <p class=" text-justify">Saat mendefinisikan child view, gunakan @extend Blade directive untuk menentukan layout mana yang harus "diinherit" oleh child view. 
+                    Tampilan yang memperluas layout Blade dapat menyuntikkan konten ke bagian tata letak menggunakan @section. 
+                    Ingat, seperti yang terlihat pada contoh di atas, isi dari bagian-bagian ini akan ditampilkan dalam tata letak menggunakan @yield:
+                </p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>
+                        <pre><code>@extends('layouts.app')</code></pre>
+                        <pre><code>@section('title', 'Page Title')</code></pre>
+                        <pre><code>@section('sidebar')</code></pre>
+                        <pre><code>@parent</code></pre>
+                        <pre><code>&lt;p>This is appended to the master sidebar.&gt;</p</code></pre>
+                        <pre><code>@endsection</code></pre>
+                        <pre><code>@section('content')</code></pre>
+                        <pre><code>&lt;p>This is my body content.&lt;/p&gt;</code></pre>
+                        <pre><code>@endsection</code></pre>
+                        </code>
                     </p>
                 </div>
             </div>
