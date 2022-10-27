@@ -1814,6 +1814,164 @@ data-aos="fade-up">
       </div>
       <!-- Akhir Rezky-Anonymous Component Namespaces -->
 
+          <!-- Awal Rangkuman Bagas -->
+    <!-- Awal Building Layout -->
+    <div
+    class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus"
+    data-aos="fade-up"
+  >
+    <div class=""></div>
+    <p class="font-bold text-3xl text-center text-2xl">Building Layout</p>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="mt-8 px-12">
+      <p class="mt-6 text-2xl font-semibold text-primary-focus">
+        Layout Using Component
+      </p>
+      <p class="indent-20 text-justify">
+        Aplikasi web umumnya memiliki layout atau tata letak yang sama di
+        berbagai halaman. Dengan adanya components blade sangat memudahkan
+        untuk mengatur layout di aplikasi web kita.
+      </p>
+      <p class="mt-6 text-xl"># Defining the Layout Component</p>
+      <p class="indent-20 text-justify">
+        Contohnya kita membuat aplikasi daftar todo dengan layout komponen
+        seperti kode dibawah :
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< html > </code></pre>
+        <pre><code>     < head > </code></pre>
+        <pre><code>        < title >{{ $title ?? 'Todo Manager' }}< / title ></code></pre>
+        <pre><code>    < / head></code></pre>
+        <pre><code>    < body ></code></pre>
+        <pre><code>        < h1 >Todos< / h1 ></code></pre>
+        <pre><code>        < hr / ></code></pre>
+        <pre><code>        {{ $slot }}</code></pre>
+        <pre><code>    < / body ></code></pre>
+        <pre><code>< / html ></code></pre>
+      </div>
+      <p class="mt-6 text-xl"># Applying the Layout Components</p>
+      <p class="indent-20 text-justify">
+        Setelah menentukan layout components, kita dapat membuat tampilan
+        blade yang menggunakan komponen tersebut
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< x-layout ></code></pre>
+        <pre><code>     < li >Makan< / li ></code></pre>
+        <pre><code>     < li >Belajar< / li ></code></pre>
+        <pre><code>< / x-layout ></code></pre>
+      </div>
+    </div>
+    <div class="mt-8 px-12">
+      <p class="mt-6 text-2xl font-semibold text-primary-focus">
+        Layout Using Template Inheritence
+      </p>
+      <p class="mt-6 text-xl"># Defining the Layout Component</p>
+      <p class="indent-20 text-justify">
+        Layout juga dapat dibuat melalui “template inheritance”. Pada layout
+        jenis ini menggunakan @section untuk mendefinisikan bagian konten dan
+        @yield untuk menampilkan konten bagian tertentu. Contoh layout ini
+        seperti kode dibawah :
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< html > </code></pre>
+        <pre><code>     < head > </code></pre>
+        <pre><code>        < title >App Name - @yield('title')< / title ></code></pre>
+        <pre><code>    < / head></code></pre>
+        <pre><code>    < body ></code></pre>
+        <pre><code>        @section('sidebar')</code></pre>
+        <pre><code>           This is the master sidebar.</code></pre>
+        <pre><code>        @show</code></pre>
+        <pre><code>        < div class = " container " ></code></pre>
+        <pre><code>        @yield('content')</code></pre>
+        <pre><code>        < /div></code></pre>
+        <pre><code>    < /body ></code></pre>
+        <pre><code>< /html > </code></pre>
+      </div>
+      <p class="mt-6 text-xl"># Extending a layout</p>
+      <p class="indent-20 text-justify">
+        Untuk mendefinisikan tampilan childnya, kita bisa menggunakan @extends
+        parentnya untuk menentukan layout yang diwarisi oleh tampilan
+        childnya. Kita juga dapat menggunakan @section untuk menambahkan
+        konten ke bagian layout. Selanjutnya, akan ditampilkan ke layout
+        dengan menggunakan @yield. Contoh kodenya :
+      </p>
+
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>@extends('layouts.app')</code></pre>
+        <pre><code>@section('title', 'Page Title')</code></pre>
+        <pre><code>@section('sidebar')</code></pre>
+        <pre><code>   @parent</code></pre>
+        <pre><code>   < p >This is appended to the master sidebar.< / p ></code></pre>
+        <pre><code>@endsection</code></pre>
+        <pre><code>@section('content')</code></pre>
+        <pre><code>   < p >This is my body content.< / p ></code></pre>
+        <pre><code>@endsection</code></pre>
+      </div>
+    </div>
+  </div>
+  <!-- Akhir Layout -->
+
+  <!-- Awal Form -->
+  <div
+    class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus"
+    data-aos="fade-up"
+  >
+    <div class=""></div>
+    <p class="font-bold text-3xl text-center text-2xl">Form</p>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="mt-8 px-12">
+      <p class="mt-6 text-2xl font-semibold text-primary-focus">CSRF field</p>
+      <p class="indent-20 text-justify">
+        Kita bisa menggunakan directive @csrf untuk generate hidden field
+        token pada form HTML.
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< form method="POST" action="/profile"></code></pre>
+        <pre><code>  @csrf </code></pre>
+        <pre><code>  .....</code></pre>
+        <pre><code>< /form></code></pre>
+      </div>
+      <p class="mt-6 text-2xl font-semibold text-primary-focus">
+        Method Field
+      </p>
+      <p class="indent-20 text-justify">
+        Agar HTML dapat membuat PUT, PATCH, atau DELETE request, Kita perlu
+        menambahkan @method seperti kode dibawah :
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< form action="/foo/bar" method="POST"></code></pre>
+        <pre><code>  @method('PUT') </code></pre>
+        <pre><code>  .....</code></pre>
+        <pre><code>< /form></code></pre>
+      </div>
+    </div>
+    <div class="mt-8 px-12">
+      <p class="mt-6 text-2xl font-semibold text-primary-focus">
+        Validation Error
+      </p>
+      <p class="indent-20 text-justify">
+        Kita dapat menggunakan @error untuk memeriksa dengan cepat apakah ada
+        pesan kesalahan validasi untuk atribut tertentu. Dalam @erorr arahan,
+        Kita dapat menggunakan $message untuk menampilkan pesan kesalahan.
+      </p>
+      <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <pre><code>< label for="email">Email address < /label> </code></pre>
+        <pre><code>< input id="email"</code></pre>
+        <pre><code>  type="email"</code></pre>
+        <pre><code>   class="@error('email', 'login') is-invalid @enderror"></code></pre>
+        <pre><code></code></pre>
+        <pre><code>@error('email', 'login')</code></pre>
+        <pre><code>    < div class="alert alert-danger">{{ $message }}< /div></code></pre>
+        <pre><code>@enderror</code></pre>
+      </div>
+    </div>
+  </div>
+  <!-- Akhir Form -->
+
+  <!-- Akhir Rangkuman Bagas -->
+
     <!-- Akhir Rangkuman -->
 
     <!-- Awal Our Team -->
