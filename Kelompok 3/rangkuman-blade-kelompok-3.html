@@ -116,6 +116,28 @@
   @endempty</code></pre>
                     </div> <br>
 
+                    <p>@auth digunakan untuk mengecek jika pengguna sudah terautentikasi, sedangkan @guest mengecek jika pengguna
+                        belum terautentikasi. Jika perlu dapat dilakukan pengecekan pengguna terautentikasi sebagai apa.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@auth
+    Pengguna teruatentikasi
+  @endauth
+
+  @guest
+    Pengguna belum terautentikasi
+  @endguest
+  
+  @auth('guest')
+    Terautentikasi sebagai admin
+  @endauth
+
+  @guest('admin')
+    Pengguna bukan admin
+  @endguest</code></pre>
+                    </div> <br>                    
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
