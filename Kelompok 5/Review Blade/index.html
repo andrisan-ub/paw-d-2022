@@ -738,13 +738,14 @@
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
                 <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
+                <p class=" text-justify">Kita bisa menggunakan directive @csrf untuk generate hidden field token pada form HTML</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                    <p><code><xmp><form method="POST" action="/profile">
+                        @csrf
+                     
+                        ...
+                    </form></xmp></code>
                     </p>
                 </div>
             </div>
