@@ -324,6 +324,69 @@
                     </div>
                     <br>
 
+                    <p>#Manually Registering Components</p>
+                    <p>Ketika menulis komponen, akan secara otomatis ditemukan dalam direkori app/View/Components dan direktori resources/views/components.
+                        Namun jika membuat paket dengan komponen Blade atau memenempatkan komponen di direktori non-konvensional,
+                        perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut,
+                        untuk itu biasanya harus mendaftarkan komponen dalam metode boot dari penyedia layanan paket.
+                    </p> 
+                    <br>
+                    
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    use Illuminate\Support\Facades\Blade;
+    use VendorPackage\View\Components\AlertComponent;
+    
+    /**
+    * Bootstrap your package's services.
+    *
+    * @return void
+    */
+    public function boot()
+    {
+        Blade::component('package-alert', AlertComponent::class);
+    }
+                        </code></pre>
+                    </div> 
+                    <br>
+                    
+                    <p>Setelah komponen terdaftar, dapat dirender menggunakan tag alias
+
+                    </p> 
+                    <br>
+                    
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-package-alert/&gt;
+                        </code></pre>
+                    </div> 
+                    <br>
+
+                    <p>#Autoloading Package Components</p>
+                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas komponen secara otomatis berdasarkan konvensi.
+                    </p> 
+                    <br>
+                    <!--Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan 
+                        ColorPicker yang berada di dalam namespace Package\Views\Components:-->
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+    public function render()
+    {
+        return <<<'blade'
+            &lt;div class="alert alert-danger"&gt;
+                {{ $slot }}
+            &lt;/div&gt;
+        blade;
+    }
+                        </code></pre>
+                    </div> 
+                    <br>
+
                 </div>
             </div>
         </div>
@@ -1338,7 +1401,7 @@
         </div>
     </span>
 
-    <!-- STACK -->
+    <!-- STACK
     <span id="st">
         <div class="st mb-10">
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
@@ -1351,7 +1414,7 @@
         </div>
     </span>
 
-    <!-- SERVICE INJECTION -->
+    SERVICE INJECTION
     <span id="service">
         <div class="service mb-10">
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
@@ -1364,7 +1427,7 @@
         </div>
     </span>
 
-    <!-- RENDERING INLINE BLADE TEMPLATES -->
+    RENDERING INLINE BLADE TEMPLATES
     <span id="render">
         <div class="render mb-10">
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
@@ -1377,7 +1440,7 @@
         </div>
     </span>
 
-    <!-- EXTENDING BLADE -->
+    EXTENDING BLADE
     <span id="extend">
         <div class="extend mb-10">
             <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
@@ -1388,11 +1451,11 @@
                 </div>
             </div>
         </div>
-    </span>
+    </span> -->
 
     <!-- FOOTER -->
     <footer class="footer footer-center p-10 bg-base-200 mt-10 text-base-content rounded">
-        <p>-PRESENTED BY GROUP 3-</p>
+        <p>- PRESENTED BY GROUP 3 -</p>
         <div>
             <p>1. MAERSYIFAA MACIRA BALQIS A.G - 215150700111031</p>
             <p>2. SHAFA AULIYA FARADINA - 215150700111057</p>
