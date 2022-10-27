@@ -187,7 +187,79 @@
       </div>
     </div>
     <!--================ The Loop Variable=====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit bg-success my-10 p-5">
+      <h1 class="font-bold text-xl pb-3 text-center">
+        The Loop Variable
+    </h1>
+    <!--Awal The Loop-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Penjelasan The Loop Variable
+                </h2>
+                <p class="justify-items-auto">
+                  Saat melakukan perulangan melalui “loop foreach”, variabel $loop akan tersedia di dalam loop tersebut. 
+                  Variabel ini akan menyediakan akses ke beberapa bit informasi yang berguna 
+                  seperti indeks loop saat ini dan apakah saat ini literasi pertama atau terakhir pada loop.
+                </p><br>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="col-start-2">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                        <pre><code>@foreach ($users as $user)</code></pre>
+                        <pre><code>@if ($loop->first)</code></pre>
+                        <pre><code>    Ini adalah kalimat pertama</code></pre>
+                        <pre><code>@endif</code></pre>
+                        <pre><code>@if ($loop->last)</code></pre><br> 
+                        <pre><code>    Ini adalah kalimat terakhir</code></pre>
+                        <pre><code>@endif</code></pre>
+                        <pre><code>    <p>Ini adalah user {{ $user->id }}</p></code></pre><br>
+                        <pre><code> @endforeach</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+    <div class="col-start-1">
+      <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto p-5">
+            Dan jika Anda berada di dalam loop bersarang,
+          Anda dapat mengakses 
+          variabel $loop loop induk melalui properti inangnya
+          </p><br>
+      </div>
+  </div>    
+  <div>
+      <!--Card bawah kanan-->
+      <div class="col-start-2">
+          <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+          <h2 class="card-title pb-5 justify-items-auto">
+              Contoh Syntax
+          </h2>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                <pre><code>@foreach ($users as $user)</code></pre>
+                <pre><code>    @foreach ($user->posts as $post)</code></pre>
+                <pre><code>     @if ($loop->parent->first)</code></pre>
+                <pre><code>       Ini adalah kalimat pertama</code></pre>
+                <pre><code>     @endif</code></pre>
+                <pre><code>    @endforeach</code></pre>
+                <pre><code>@endforeach</code></pre>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <!--Akhir The Loop Variable-->
+    </div>
     <!--=================Conditional Classes ====================-->
     <div class="h-fit bg-success my-10"></div>
     <!--=================Additional Attributes ====================-->
