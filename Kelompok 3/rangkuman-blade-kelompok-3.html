@@ -113,9 +113,30 @@
                     </p> <br>
 
                     <div class="mockup-code">
-                        <pre><code>{!! $name !!}.</code></pre>
+                        <pre><code>{!! $var !!}.</code></pre>
                     </div> <br>
 
+                    <p>#Blade & JavaScript Frameworks</p>
+                    <p>Beberapa framework JavaScript juga menggunakan sintaks kurung kurawal. Untuk mencegah Blade melakukan
+                        interpret, dapat menggunakan tanda @ di depan kurung. Blade tidak akan menyentuh bagian kode tersebut
+                        sehingga hasil outputnya dapat digunakan pada framework lain.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>Halo, @{{ $nama }}.</code></pre>
+                    </div> <br>
+
+                    <p>Tanda @ juga dapat digunakan pada directive.</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>{{-- Blade template --}}
+  @@if()
+  @@for()
+                             
+  &lt;!-- HTML output --&gt;
+  @if()
+  @for()</code></pre>
+                    </div> <br>
                 </div>
             </div>
         </div>
