@@ -564,7 +564,82 @@
     <!--=================Accessing Parent Data ====================-->
     <div class="h-fit"></div>
     <!--=================Anonymous Components Namespaces ====================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10 p-5">
+      <h1 class="font-bold text-xl pb-3 text-center">
+        Anonymous Components Namespaces
+    </h1>
+    <!--Anonymous Components Namespaces-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Penjelasan Anonymous Components Namespaces
+                </h2>
+                <p class="justify-items-auto">
+                  Komponen anonim biasanya ditentukan dengan menempatkan 
+            template Blade di dalam direktori resource/views/components Anda. 
+            Namun, terkadang Anda mungkin ingin mendaftarkan jalur komponen 
+            anonim lainnya dengan Laravel selain jalur default. 
+            Untuk memberi tahu Laravel tentang lokasi komponen anonim ini, 
+            Anda dapat menggunakan metode 
+            anonymousComponentNamespace yang disediakan oleh Blade.
+                </p><br>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="col-start-2">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                        <pre><code>/**</code></pre>
+                        <pre><code>* Bootstrap any application services.</code></pre>
+                        <pre><code>*</code></pre>
+                        <pre><code>* @return void</code></pre>
+                        <pre><code>*/</code></pre><br> 
+                        <pre><code>public function boot() {</code></pre>
+                        <pre><code>Blade::anonymousComponentNamespace</code></pre>
+                        <pre><code>    ('flights.bookings.components'</code></pre>
+                        <pre><code>     'flights') }</code></pre>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+    <div class="col-start-1">
+      <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto p-5">
+              Metode ini menerima jalur ke 
+              lokasi komponen anonim sebagai argumen pertama dan "namespace" 
+              yang komponennya harus ditempatkan sebagai argumen kedua. 
+              Seperti yang akan Anda lihat pada contoh di bawah, "namespace" 
+              akan diawali dengan nama komponen saat komponen dirender. 
+              Biasanya, metode ini harus dipanggil 
+              dari metode boot salah satu penyedia layanan aplikasi Anda:
+          </p><br>
+      </div>
+  </div>    
+  <div>
+      <!--Card bawah kanan-->
+      <div class="col-start-2">
+          <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="card-title pb-5 justify-items-auto">
+              Kalian bisa merender komponen yang ada didalam direktori komponen yang telah didaftarkan dengan cara :
+          </p>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                  <pre><code>&#60;x&#45;flights&#58;&#58;panel&#160;&#58;flight&#61;&#34;&#36;flight&#34;&#160;&#47;&#62;</code></pre>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <!--Akhir Anonymous Components Namespaces-->
+    </div>
 
     <!--============================================#Building Layouts ===============================================================-->
     <div class="h-fit my-10 pt-10">
