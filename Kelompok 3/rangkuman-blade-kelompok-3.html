@@ -82,7 +82,7 @@
                     <p>Maka data nama dapat ditampilkan sebagai berikut:</p> <br>
 
                     <div class="mockup-code">
-                        <pre><code>Hello, {{ $name }}.</code></pre>
+                        <pre><code>Halo, {{ $nama }}.</code></pre>
                     </div> <br>
 
                     <p>Sintaks {{ }} berfungsi seperti echo pada PHP, sehingga dapat pula diisi dengan fungsi.</p> <br>
@@ -106,6 +106,16 @@
       }
   }</code></pre>
                     </div> <br>
+
+                    <p>#Displaying Unescaped Data</p>
+                    <p>Secara default, sintaks {{ }} akan dikirim secara otomatis ke htmlspecialchars pad PHP untuk mencegah serangan
+                        XSS dan injeksi. Untuk mencegah perlindungan ini, dapat menggunakan sintaks {!! !!}.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>{!! $name !!}.</code></pre>
+                    </div> <br>
+
                 </div>
             </div>
         </div>
