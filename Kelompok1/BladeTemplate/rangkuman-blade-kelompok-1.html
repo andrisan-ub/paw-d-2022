@@ -55,10 +55,10 @@
                 <a href="#anonim" class="active:bg-primary">Anonymous Components</a>
               </li>
               <li>
-                <a href="#" class="active:bg-primary">Building Layouts</a>
+                <a href="#layout" class="active:bg-primary">Building Layouts</a>
               </li>
               <li>
-                <a href="#" class="active:bg-primary">Forms</a>
+                <a href="#form" class="active:bg-primary">Forms</a>
               </li>
             </ul>
           </li>
@@ -1789,7 +1789,7 @@ data-aos="fade-up">
             anonim sebagai argumen pertama dan "ruang nama" tempat komponen harus 
             ditempatkan sebagai argumen kedua.
           </p>
-  
+          
           <div class="mockup-code bg-zinc-800 text-sm mt-6">
             <pre><code>   /**</code></pre>
             <pre><code>   * Bootstrap any application services.</code></pre>
@@ -1798,15 +1798,15 @@ data-aos="fade-up">
             <pre><code>   */</code></pre>
             <pre><code>   public function boot()</code></pre>
             <pre><code>   {</code></pre>
-            <pre><code>       Blade::anonymousComponentNamespace('flights.bookings.components', 'flights');</code></pre>
-            <pre><code>   }</code></pre>
-          </div>
-  
+              <pre><code>       Blade::anonymousComponentNamespace('flights.bookings.components', 'flights');</code></pre>
+              <pre><code>   }</code></pre>
+              <div id="layout"></div>
+            </div>
           <p class="indent-20 mt-6 text-justify">
             Dengan contoh di atas, kita dapat merender panel komponen yang ada di dalam 
             direktori komponen yang baru didaftarkan seperti:
           </p>
-  
+          
           <div class="mockup-code bg-zinc-800 text-sm mt-6">
             <pre><code>   &lt;x-flights::panel :flight="$flight" /&gt;</code></pre>
           </div>
@@ -1896,6 +1896,7 @@ data-aos="fade-up">
         konten ke bagian layout. Selanjutnya, akan ditampilkan ke layout
         dengan menggunakan @yield. Contoh kodenya :
       </p>
+      <div id="form"></div>
 
       <div class="mockup-code bg-zinc-800 text-sm mt-6">
         <pre><code>@extends('layouts.app')</code></pre>
