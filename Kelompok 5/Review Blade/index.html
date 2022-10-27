@@ -83,7 +83,8 @@
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl bordered">
                 <h3 class="card-title justify-center pb-5">Menampilkan Data</h3>
-                <p class=" text-justify">Kita dapat menampilkan data yang diteruskan ke tampilan Blade dengan membungkus variabel dalam kurung kurawal.</p>
+                <p class=" text-justify">Kita dapat menampilkan data yang diteruskan ke tampilan Blade dengan membungkus
+                    variabel dalam kurung kurawal.</p>
                 <p>Misal, terdapat router sebagai berikut</p>
                 <br>
                 <div class="mockup-code p-6">
@@ -102,7 +103,7 @@
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
+            <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -123,14 +124,14 @@
                 <br>
                 <div class="mockup-code p-6">
                     <code>
-                        <pre>&lt?php</pre>
-                        <pre>
-                        namespace App\Providers;</pre>
-                        <pre>
-                        use Illuminate\Support\Facades\Blade;</pre>
-                        <pre>use Illuminate\Support\ServiceProvider;</pre>
-                        <pre>
-                        class AppServiceProvider extends ServiceProvider</pre>
+                        <pre>&lt?php
+                        </pre>
+                        <pre>namespace App\Providers;
+                        </pre>
+                        <pre>use Illuminate\Support\Facades\Blade;</pre>
+                        <pre>use Illuminate\Support\ServiceProvider;
+                        </pre>
+                        <pre>class AppServiceProvider extends ServiceProvider</pre>
                         <pre>{</pre>
                         <pre class="text-gray-500">    /**</pre>
                         <pre class="text-gray-500">   * Bootstrap any application services.</pre>
@@ -145,7 +146,7 @@
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
+            <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -156,7 +157,8 @@
         <div class="p-10 pt-0 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl bordered">
                 <h3 class="card-title justify-center pb-5">Menampilkan Unescaped Data</h3>
-                <p class=" text-justify">Secara default, peryataan blade secara otomatis dikirim melalui fungsi PHP untuk mencegah serangan XXS.
+                <p class=" text-justify">Secara default, peryataan blade secara otomatis dikirim melalui fungsi PHP
+                    untuk mencegah serangan XXS.
                     Jika tidak ingin data lolos, kita dapat menggunakan sintaks
                     <a class="text-red-500">{{ }} htmlspecialchars</a>
                 </p>
@@ -167,7 +169,7 @@
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
+            <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -182,22 +184,24 @@
             <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl bordered">
                 <h3 class="card-title justify-center pb-5">Kerangka Kerja Blade & JavaScript</h3>
                 <p class=" text-justify">Banyak kerangka kerja Javascript menggunakan kurung kurawal, untuk menunjukkan
-                    ekspresi tertentu harus ditampilkan di browser dapat menggunakan simbol untuk memberi tahu mesin Blade bahwa
-                    ekspresi harus tetap tidak tersentuh. Misalnya 
+                    ekspresi tertentu harus ditampilkan di browser dapat menggunakan simbol untuk memberi tahu mesin
+                    Blade bahwa
+                    ekspresi harus tetap tidak tersentuh. Misalnya
                     <a class="text-red-500">@</a>
                 </p>
                 <br>
                 <div class="mockup-code p-6">
                     <code>
-                        <pre>&lth1>Laravel@$lt/h1></pre>
-                        <pre>
-                        Hello, @{{ name }}.
+                        <pre>&lth1>Laravel@$lt/h1>
+                        </pre>
+                        <pre>Hello, @{{ name }}.
                         </pre>
                     </code>
                 </div>
                 <br>
-                <p class=" text-justify">Dalam contoh ini, simbol akan dihapus oleh blade. Namun, ekspresi akan tetap tidak tersentuh
-                    oleh mesin Blade, memungkinkan untuk dirender oleh kerangka JavaScript. 
+                <p class=" text-justify">Dalam contoh ini, simbol akan dihapus oleh blade. Namun, ekspresi akan tetap
+                    tidak tersentuh
+                    oleh mesin Blade, memungkinkan untuk dirender oleh kerangka JavaScript.
                     <a class="text-red-500">@{{ name }}</a>
                 </p>
                 <p class="text-justify">Simbol juga dapat digunakan untuk menghindari arahan Blade</p>
@@ -205,15 +209,14 @@
                 <div class="mockup-code p-6">
                     <code>
                         <pre class="text-gray-500">{{-- Blade template --}}</pre>
-                        <pre>@@if()</pre>
-                        <pre class="text-gray-500">
-                        &lt!-- HTML output -->
+                        <pre>@@if()
                         </pre>
+                        <pre class="text-gray-500">&lt!-- HTML output --></pre>
                         <pre class="text-green-500">@if()</pre>
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
+            <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -224,574 +227,623 @@
 
 
 
-    <!--============================================#Blade Directives======================================================-->
-    <div id="blade" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
-        <h2 class="font-bold text-xl">Blade Directives</h2>
+        <!--============================================#Blade Directives======================================================-->
+        <div id="blade" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+            <h2 class="font-bold text-xl">Blade Directives</h2>
 
-        <!--==================If Statements===================-->
-        <h3>If Statements</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
+            <!--==================If Statements===================-->
+            <h3>If Statements</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
-                    </p>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
+            <!--================Switch Statements=====================-->
+            <h3>Switch Statements</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Loops===================-->
+            <h3>Loops</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--================ The Loop Variable=====================-->
+            <h3>The Loop Variable</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--=================Conditional Classes====================-->
+            <h3>Conditional Classes</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--=================Additional Attributes ====================-->
+            <h3>Additional Attributes</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Including Subviews ===================-->
+            <h3>Including Subviews</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================The @once Directive ===================-->
+            <h3>The @once Directive </h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--=================Raw PHP ====================-->
+            <h3>Raw PHP</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--===============Comments ======================-->
+            <h3>Comments</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!--================Switch Statements=====================-->
-        <h3>Switch Statements</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
+        <div id="component" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+            <h2 class="font-bold text-xl">Components</h2>
+            <!--==================Rendering Components===================-->
+            <h3>Rendering Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
-                    </p>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+            <!--==================Passing Data To Components===================-->
+            <h3>Passing Data To Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Component Attributes===================-->
+            <h3>Component Attributes</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Reserved Keywords===================-->
+            <h3>Reserved Keywords</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Slots===================-->
+            <h3>Slots</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Inline Component Views===================-->
+            <h3>Inline Component Views</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Dynamic Components===================-->
+            <h3>Dynamic Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Manually Registering Components===================-->
+            <h3>Manually Registering Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--==================Loops===================-->
-        <h3>Loops</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
+        <div id="anonymComponent" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+            <h2 class="font-bold text-xl">Anonymous Components</h2>
+            <!--==================Anonymous Index Components===================-->
+            <h3>Anonymous Index Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
-                    </p>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+            <!--==================Data Properties / Attributes===================-->
+            <h3>Data Properties / Attributes</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Accessing Parent Data===================-->
+            <h3>Accessing Parent Data</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
+            <!--==================Anonymous Components Namespaces===================-->
+            <h3>Anonymous Components Namespaces</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
+                        templating
+                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>Route::get('/', function () {
+                        return view('greeting', ['name' => 'Fauzi']);
+                    }); </code>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--================ The Loop Variable=====================-->
-        <h3>The Loop Variable</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+        <div id="layout" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+            <h2 class="font-bold text-xl">Building Layouts</h2>
+            <!--==================Layouts Using Components===================-->
+            <h3>Layouts Using Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify">Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di
+                        berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus
+                        mengulang seluruh tata letak HTML di setiap tampilan yang di buat.
+                        Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu komponen Blade dan
+                        kemudian menggunakannya di seluruh tampilan.Misalnya, bayangkan kita sedang membangun aplikasi
+                        daftar "todo". Kita mungkin mendefinisikan layoutkomponen yang terlihat seperti berikut:</p>
 
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--=================Conditional Classes====================-->
-        <h3>Conditional Classes</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--=================Additional Attributes ====================-->
-        <h3>Additional Attributes</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Including Subviews ===================-->
-        <h3>Including Subviews</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================The @once Directive ===================-->
-        <h3>The @once Directive </h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--=================Raw PHP ====================-->
-        <h3>Raw PHP</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--===============Comments ======================-->
-        <h3>Comments</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="component" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
-        <h2 class="font-bold text-xl">Components</h2>
-        <!--==================Rendering Components===================-->
-        <h3>Rendering Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Passing Data To Components===================-->
-        <h3>Passing Data To Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Component Attributes===================-->
-        <h3>Component Attributes</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Reserved Keywords===================-->
-        <h3>Reserved Keywords</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Slots===================-->
-        <h3>Slots</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Inline Component Views===================-->
-        <h3>Inline Component Views</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Dynamic Components===================-->
-        <h3>Dynamic Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Manually Registering Components===================-->
-        <h3>Manually Registering Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="anonymComponent" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
-        <h2 class="font-bold text-xl">Anonymous Components</h2>
-        <!--==================Anonymous Index Components===================-->
-        <h3>Anonymous Index Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Data Properties / Attributes===================-->
-        <h3>Data Properties / Attributes</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Accessing Parent Data===================-->
-        <h3>Accessing Parent Data</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-        <!--==================Anonymous Components Namespaces===================-->
-        <h3>Anonymous Components Namespaces</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
-                    <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
-                    <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="layout" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
-        <h2 class="font-bold text-xl">Building Layouts</h2>
-        <!--==================Layouts Using Components===================-->
-        <h3>Layouts Using Components</h3>
-        <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus mengulang seluruh tata letak HTML di setiap tampilan yang di buat. 
-                                        Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu komponen Blade dan kemudian menggunakannya di seluruh tampilan.Misalnya, bayangkan kita sedang membangun aplikasi daftar "todo". Kita mungkin mendefinisikan layoutkomponen yang terlihat seperti berikut:</p>
-                                        
-                <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                     <p><code>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
                         <figure>
                             <div class="mockup-code">
                               <pre data-prefix="$" class="text-success">   <code>&lt;html&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">   <code>&lt;head&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">        <code>&lt;title&gt;{{ $title ?? 'Todo Manager' }}&lt;/title&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">   <code>&lt;/head&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">     <code>&lt;body&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">        <code>&lt;h1&gt;Todos&lt;/h1&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">        <code>&lt;/hr&gt;</code></pre>
-                              <pre data-prefix=">" class="text-success">        <code>{{ $slot }}<code></pre>
-                              <pre data-prefix=">" class="text-success">     <code>&lt;/body&gt;</code></pre>
-                              <pre data-prefix="$" class="text-success">   <code>&lt;/html&gt;</code></pre>
-                            </div>
-                          </figure>
+                        <pre data-prefix=">" class="text-success">   <code>&lt;head&gt;</code></pre>
+                        <pre data-prefix=">"
+                            class="text-success">        <code>&lt;title&gt;{{ $title ?? 'Todo Manager' }}&lt;/title&gt;</code></pre>
+                        <pre data-prefix=">" class="text-success">   <code>&lt;/head&gt;</code></pre>
+                        <pre data-prefix=">" class="text-success">     <code>&lt;body&gt;</code></pre>
+                        <pre data-prefix=">" class="text-success">        <code>&lt;h1&gt;Todos&lt;/h1&gt;</code></pre>
+                        <pre data-prefix=">" class="text-success">        <code>&lt;/hr&gt;</code></pre>
+                        <pre data-prefix=">" class="text-success">        <code>{{ $slot }}<code></pre>
+                        <pre data-prefix=">" class="text-success">     <code>&lt;/body&gt;</code></pre>
+                        <pre data-prefix="$" class="text-success">   <code>&lt;/html&gt;</code></pre>
+                    </div>
+                    </figure>
                     </code>
                     </p>
                 </div>
