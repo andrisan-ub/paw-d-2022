@@ -923,10 +923,11 @@
                         berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus
                         mengulang seluruh tata letak HTML di setiap tampilan yang di buat.
                         Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu komponen Blade dan
-                        kemudian menggunakannya di seluruh tampilan.Misalnya, bayangkan kita sedang membangun aplikasi
-                        daftar "todo". Kita mungkin mendefinisikan layoutkomponen yang terlihat seperti berikut:</p>
+                        kemudian menggunakannya di seluruh tampilan. Misalnya, bayangkan kita sedang membangun aplikasi
+                        daftar "todo". Kita mungkin mendefinisikan layout komponen yang terlihat seperti berikut:</p>
 
                     <br>
+                    <h3>Defining The Layout Component</h3>
                     <div class="mockup-code p-6 w-96 justify-items-auto">
                         <p><code>
                         <figure>
@@ -947,7 +948,55 @@
                     </code>
                     </p>
                 </div>
+
+                <h3>Applying The Layout Component</h3>
+                <p class=" text-justify">Setelah layout komponen telah ditentukan, kita dapat membuat tampilan Blade yang menggunakan komponen tersebut. 
+                    Seperti contoh di bawah ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:
+                </p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>
+                        <pre><code>&lt;x-layout&gt;</code></pre>
+                        <pre><code>@foreach ($tasks as $task)</code></pre>
+                        <pre><code>{{ $task }}</code></pre>
+                        <pre><code>@endforeach</code></pre>
+                        <pre><code>&lt;/x-layout&gt;</code></pre>
+                        </code>
+                    </p>
+                </div>
+                <p class=" text-justify">Ingat, konten yang disuntikkan ke dalam komponen akan diberikan ke variabel $slot default di dalam layout komponen kita. 
+                    Seperti yang mungkin kita perhatikan, layout kita juga menghargai $titleslot jika tersedia; jika tidak, judul default akan ditampilkan.
+                </p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>
+                        <pre><code>&lt;x-layout&gt;</code></pre>
+                        <pre><code>&lt;x-slot:title&gt;</code></pre>
+                        <pre><code>  Custom Title</code></pre>
+                        <pre><code>&lt;/x-layout&gt;</code></pre>
+                        <pre><code>@foreach ($tasks as $task)</code></pre>
+                        <pre><code>{{ $task }}</code></pre>
+                        <pre><code>@endforeach</code></pre>
+                        <pre><code>&lt;/x-layout&gt;</code></pre>
+                        </code>
+                    </p>
+                </div>
+                <p class=" text-justify">Setelah kita mendefinisikan tampilan tata letak dan daftar tugas, 
+                    kita hanya perlu mengembalikan tasktampilan dari rute:
+                </p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>
+                        <pre><code>use App\Models\Task;</code></pre>
+                        <pre><code>Route::get('/tasks', function () {</code></pre>
+                        <pre><code>return view('tasks', ['tasks' => Task::all()]);</code></pre>
+                        <pre><code>});</code></pre>
+                        </code>
+                    </p>
+                </div>
             </div>
+
+            
             <div>
                 <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
@@ -966,9 +1015,9 @@
                     / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                    <p><code>
+
+                    </code>
                     </p>
                 </div>
             </div>
