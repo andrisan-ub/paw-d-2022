@@ -154,6 +154,24 @@
           ...
   @endswitch</code></pre> </div> <br>
 
+                    <p>#Loops</p>
+                    <p>Perulangan pada blade menggunakan @for, @endfor, @foreach, @endforeach, @while, dan @endwhile. Directive @continue
+                        dan @break dapat digunakan pada perulangan sebagai mana pada PHP.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@for ($i = 0; $i < 10; $i++)
+      i: {{ $i }}
+  @endfor
+ 
+  @foreach ($users as $user)
+      Id pengguna: {{ $user->id }}
+  @endforeach
+
+  @while ($i < 10)
+      i: {{ $i }}
+  @endwhile</code></pre> </div> <br>
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
