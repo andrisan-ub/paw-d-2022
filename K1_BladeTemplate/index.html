@@ -9,6 +9,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Kelompok 1</title>
     <link href="src/assets/logo.png" rel="shortcut icon" />
+    <style>
+      .code {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
   </head>
 
   <body>
@@ -559,6 +565,508 @@
 
       <!-- Akhir Rangkuman Toni -->
     </div>
+
+    <!-- AWAL RANGKUMAN RAZZAAQ [4]-->
+    <!-- AWAL - COMPONENT ATTRIBUTES -->
+    <div
+      class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus"
+      data-aos="fade-up">
+      <div class=""></div>
+      <p class="font-bold text-3xl text-center text-2xl">
+        COMPONENT ATTRIBUTES
+      </p>
+    </div>
+
+    <div class="hero pt-20 bg-base-200">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="basis-1/3">
+          <img src="src/assets/1cp.png" class="max-w-sm rounded-lg shadow-2xl
+          h-52" style= />
+        </div>
+
+        <div class="basis-2/3">
+          <p class="py-6">
+            Ketika ingin membuat atau menentukan atribut tambahan pada HTML
+            seperti class, Bisa kita ringkas ke dalam elemen root dari template
+            komponen. Contoh:
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- part 2 -->
+
+    <div class="hero pt-20 bg-base-200">
+      <div class="hero-content flex-col lg:flex-row">
+        <div class="basis-1/3">
+          <img src="src/assets/(4)ComponentAttribute.png" class="max-w-sm
+          rounded-lg shadow-2xl" style= />
+        </div>
+
+        <div class="basis-2/3">
+          <p class="py-6">
+            Semua atribut yang bukan dari constructor kompenen akan ditambahkan
+            ke dalam “atribut bag” komponen. Attribute Bag merupakan tempat kita
+            meletakan segala atribut. “Attribute bag” akan tersedia otomatis
+            pada variabel <span class="code">$attributes</span> dan semua
+            atribut dapat di render menggunakan
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- part 3 flex -->
+    <div
+      class="container flex mx-auto justify-center gap-9 flex-row flex-wrap mt-20 "data-aos="fade-up">
+      <div class="card w-96 bg-base-100 shadow-xl" style="width: 40rem">
+        <div class="card-body">
+          <h2 class="card-title">Default / Merged Attributes</h2>
+          <p>
+            Attribute bag’s  <span class="code">merge</span> method digunakan untuk menentukan nilai bawaan
+            atau menggabungkan nilai atribut ke dalam beberapa atribut komponen
+            dan mendefinisikan sebuah set dari class css bawaan yang
+            diaplikasikan menjadi sebuah komponen:
+          </p>
+          <figure>
+            <img
+              src="/K1_BladeTemplate/src/assets/(4.2)CompenentAttribute.png"
+              alt="Shoes" />
+          </figure>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+      <!-- Non-class Attribute Merging -->
+
+      <div class="card w-96 bg-base-100 shadow-xl" style="width: 38rem">
+        <div class="card-body">
+          <h2 class="card-title">Non-class Attribute Merging</h2>
+          <p>
+            Ketika kita ingin menggabungkan sebuah atribut tetapi bukan
+            merupakan class, nilai yang disediakan untuk   <span class="code">merge</span> method akan
+            dianggap sebagai nilai default dari attribut. Attribute ini tidak
+            digabung dengan atribut yang telah dimasukkan sebelumnya, tetapi
+            akan di overwritten. <br />Jika kita ingin memiliki nilai default
+            dan nilainya tergabung selain attribute class, kita bisa menggunakan
+            prepends method.
+          </p>
+          <figure>
+            <img
+              src="/K1_BladeTemplate/src/assets/(4.5)CompenentAttribute.png"
+              alt="Shoes" />
+          </figure>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+      <!-- Conditionally Merge Classes -->
+      <div class="card w-96 bg-base-100 shadow-xl" data-aos="fade-up" style="width: 60rem">
+        <div class="card-body">
+          <h2 class="card-title">Conditionally Merge Classes</h2>
+          <p>
+            <span class="code">Class</span> method digunakan untuk menggabungkan class jika diberikan
+            kondisi true dan bisa menggunakan array dari sebuah class dimana
+            array mengandung sebuah key berisi class yang ingin ditambahkan.
+          </p>
+          <figure>
+            <img
+              src="/K1_BladeTemplate/src/assets/(4.3)CompenentAttribute.png"
+              alt="Shoes" />
+          </figure>
+          <p>
+            Jika ingin menggabungkan atribut lain, bisa mengkombinasikan dengan
+            method   <span class="code">merge</span>, contoh:
+          </p>
+          <figure>
+            <img
+              src="/K1_BladeTemplate/src/assets/(4.4)CompenentAttribute.png"
+              alt="Shoes" />
+          </figure>
+          <div class="card-actions justify-end"></div>
+        </div>
+      </div>
+
+      <!-- Retrieving & Filtering Attributes
+ -->
+      <div class="card w-96 bg-base-100 shadow-xl" style="width: 60rem" data-aos="fade-up">
+        <div class="card-body">
+          <h2 class="card-title">Retrieving & Filtering Attributes</h2>
+          <p>
+            Kita bisa memfilter atribut menggunakan   <span class="code">filter </span>method. Method ini
+            menerima pengakhiran dimana harus me-return   <span class="code">true</span> jika kita ingin
+            mempertahankan atribut di dalam atribut bag.
+          </p>
+          <figure>
+            <img
+              src="/K1_BladeTemplate/src/assets/(4.6)CompenentAttribute.png"
+              alt="Shoes" />
+          </figure>
+          <h2 class="card-title my-3">Beberapa method yang bisa digunakan:</h2>
+          <div class="card-actions justify-end"></div>
+          <!-- awal button -->
+          <div class="flex flex-row flex-wrap justify-center mx-auto gap-6">
+            <!-- The button to open modal -->
+            <label for="my-modal-1" class="btn modal-button"
+              >whereStartsWith</label
+            >
+            <!-- image 4.7 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-1" class="modal-toggle" />
+            <label for="my-modal-1" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.7)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">whereStartsWith</h3>
+                <p class="py-4">
+                  Method   <span class="code">whereStartsWith</span> untuk menerima semua attributes yang
+                  kuncinya dimulai dari string yang berikan.
+                </p>
+              </label>
+            </label>
+
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-2" class="btn modal-button"
+              >whereDoesntStartWith</label
+            >
+            <!-- image 4.8 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-2" class="modal-toggle" />
+            <label for="my-modal-2" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.8)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">whereDoesntStartWith</h3>
+                <p class="py-4">
+                  MMethod   <span class="code">whereDoesntStartWith</span> digunakan untuk mengecualikan
+                  semua atribut yang dimulai dari string yang diberikan.
+                </p>
+              </label>
+            </label>
+
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-3" class="btn modal-button">First</label>
+            <!-- image 4.9 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <label for="my-modal-3" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.9)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">First</h3>
+                <p class="py-4">
+                  Method   <span class="code">First</span> digunakan untuk merender atribut pertama yang
+                  diberikan attribute bag.
+                </p>
+              </label>
+            </label>
+
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-4" class="btn modal-button">has</label>
+            <!-- image 4.10 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+            <label for="my-modal-4" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.10)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">Has</h3>
+                <p class="py-4">
+                  Method   <span class="code">has</span> digunakan untuk mengecek sebuah attribut ada atau
+                  tidak.
+                </p>
+              </label>
+            </label>
+
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-5" class="btn modal-button">get</label>
+            <!-- image 4.11 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+            <label for="my-modal-5" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.11)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">get</h3>
+                <p class="py-4">
+                  Method   <span class="code">get</span> digunakan untuk mengambil nilai atribut yang
+                  ditentukan
+                </p>
+              </label>
+            </label>
+
+            <!-- akhir button -->
+          </div>
+
+          <!-- Batas button -->
+        </div>
+      </div>
+      <!-- Batas div part 3 -->
+    </div>
+
+    <!-- AKHIT - COMPONENT ATTRIBUTES -->
+
+    <!-- AWAL Reserved Keywords
+ -->
+    <div
+      class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus"
+      data-aos="fade-up">
+      <div class=""></div>
+      <p class="font-bold text-3xl text-center text-2xl"></p>
+    </div>
+
+    <div class="hero bg-base-200" data-aos="fade-up">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Reserved Keywords</h1>
+          <p class="py-6">
+            Secara default, beberapa keywords disimpan untuk penggunaan internal
+            Blade untuk merender komponen. Berikut merupakan keywords yang tidak
+            bisa digunakan sebagai public properties atau nama method di dalam
+            komponen kita:
+          </p>
+          <div class="flex flex-row flex-wrap gap-10 justify-center">
+            <ul class="list-disc text-left">
+              <li>data</li>
+              <li>render</li>
+              <li>resolveView</li>
+              <li>shouldRender</li>
+            </ul>
+            <ul class="list-disc text-left">
+              <li>View</li>
+              <li>withAttributes</li>
+              <li>withName</li>
+              <!-- ... -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-3 p-0 mt-0 border-b border-primary-focus"
+      data-aos="fade-up">
+      <div class=""></div>
+      <p class="font-bold text-3xl text-center text-2xl"></p>
+    </div>
+
+    <!-- AKHIR Reserved Keywords
+ -->
+
+    <!-- Awal SLOT
+ -->
+    <div
+      class="grid grid-cols-3 p-2 mt-4 border-b border-primary-focus"
+      data-aos="fade-up">
+      <div class=""></div>
+      <p class="font-bold text-3xl text-center text-2xl"></p>
+    </div>
+    <div class="hero bg-base-200 min-h-screen " data-aos="fade-up">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Slot</h1>
+          <p class="py-6">
+            Slots akan digunakan untuk pass konten tambahan ke dalam komponen
+            kita. Slot komponen dirender dengan meng-echo variabel<span class="code"> $slot</span>
+          </p>
+          <div class="flex flex-row flex-wrap gap-10 justify-center">
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-6" class="btn modal-button"
+              >Scoped Slots
+            </label>
+            <!-- image 4.12 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+            <label for="my-modal-6" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.12)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+                <h3 class="text-lg font-bold">Scoped Slots</h3>
+                <p class="py-4">
+                  Memberikan akses data atau method dari komponen di dalam slot kita melalui variabel   <span class="code">$compenent</span>. Contoh:
+
+                </p>
+              </label>
+            </label>
+
+            <!-- Awal The button to open modal -->
+            <label for="my-modal-7" class="btn modal-button"
+              >Slot Attributes
+            </label>
+            <!-- image 4.13 start -->
+            <!-- Put this part before  -->
+            <input type="checkbox" id="my-modal-7" class="modal-toggle" />
+            <label for="my-modal-7" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                
+                <h3 class="text-lg font-bold">Slot Attributes</h3>
+                <p class="py-4">
+                  Kita dapat menetapkan atribut tambahan ke slot seperti nama kelas CSS
+
+                </p><figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.13)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure> <p class="py-4">
+                  Untuk berinteraksi dengan atribut   <span class="code">slot</span>, Kita dapat mengakses properti atribut dari variabel   <span class="code">slot</span>.
+
+
+                </p></p><figure>
+                  <img
+                    src="/K1_BladeTemplate/src/assets/(4.14)CompenentAttribute.png"
+                    alt="Shoes" />
+                </figure>
+              </label>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- batas -->
+    </div>
+    <div
+    class="grid grid-cols-3 p-0 mt-0 border-b border-primary-focus"
+    data-aos="fade-up">
+    <div class=""></div>
+    <p class="font-bold text-3xl text-center text-2xl"></p>
+  </div>
+    <!-- AKHIR SLOT
+ -->
+
+  <!-- AWAL Inline Component Views
+
+ -->
+ <div
+ class="grid grid-cols-3 p-2 mt-4 border-b border-primary-focus"
+ data-aos="fade-up">
+ <div class=""></div>
+ <p class="font-bold text-3xl text-center text-2xl"></p>
+</div>
+
+
+<div class="hero  bg-base-200 p-6" data-aos="fade-up">
+  <div class="hero-content flex-col lg:flex-row gap-12">
+    <img src="/K1_BladeTemplate/src/assets/(4.15)CompenentAttribute.png" class="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 class="text-5xl font-bold">Inline Component Views</h1>
+      <p class="py-6">Untuk komponen yang sangat kecil, akan rumit untuk mengelola class komponen dan component view template. Oleh karenanya kita harus me-return markup langsung dari method <span class="code">render</span>
+      </p>
+
+      <h2 class="text-1xl font-bold">Generating Inline View Components</h2>
+      <p class="py-6">Untuk membuat komponen yang merender sebaris view, kita bisa menggunakan <span class="code">inline</span> ketika mengeksekusi perintah <span class="code">make:component</span>
+
+      </p>
+      <p class="py-6 bg-slate-500 p-8 rounded-xl text-red-50">php artisan make:component Alert --inline
+      </p>
+
+    
+    </div>
+  </div>
+</div>
+<div
+class="grid grid-cols-3 p-0 mt-0 border-b border-primary-focus"
+data-aos="fade-up">
+<div class=""></div>
+<p class="font-bold text-3xl text-center text-2xl"></p>
+</div>
+
+   <!-- AKHIR Inline Component Views
+
+ -->
+ <!-- AWAL Dynamic Components -->
+ <div
+ class="grid grid-cols-3 p-2 mt-4 border-b border-primary-focus"
+ data-aos="fade-up">
+ <div class=""></div>
+ <p class="font-bold text-3xl text-center text-2xl"></p>
+</div>
+
+
+<div class="hero  bg-base-200 p-6 " data-aos="fade-up">
+  <div class="hero-content flex-col lg:flex-row-reverse gap-12">
+    <img src="/K1_BladeTemplate/src/assets/(4.16)CompenentAttribute.png" class="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 class="text-5xl font-bold">Dynamic Components
+      </h1>
+      <p class="py-6">Terkadang kita mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus di render hingga runtime. Dalam situasi ini, kita dapat menggunakan  <span class="code">dynamic-component</span> komponen bawaan Laravel untuk merender komponen berdasarkan nilai atau variabel runtime:
+
+      </p>
+
+    
+    </div>
+  </div>
+</div>
+
+  <!-- AKHIR Dynamic Components -->
+
+    <!-- AWAL Manually Registering Components
+ -->
+ <div
+ class="grid grid-cols-3 p-2 mt-4 border-b border-primary-focus"
+ data-aos="fade-up">
+ <div class=""></div>
+ <p class="font-bold text-3xl text-center text-2xl"></p>
+</div>
+
+
+<div class="hero  bg-base-200 p-6 " data-aos="fade-up">
+  <div class="hero-content flex-col lg:flex-row gap-12">
+    <div class="flex flex-col">
+         <img src="/K1_BladeTemplate/src/assets/(4.17)CompenentAttribute.png" class="rounded-lg shadow-2xl" />
+         <img src="/K1_BladeTemplate/src/assets/(4.18)CompenentAttribute.png" class="rounded-lg shadow-2xl" />
+    </div>
+ 
+    <div>
+      <h1 class="text-5xl font-bold">Manually Registering Components</h1>
+      <p class="py-6">Jika kita tidak menulis sebuah package, bagian dari dokumentasi ini tidak relevan bagi kita. Komponen ini berlaku untuk mereka yang menulis packages yang menyertakan view components.
+
+        <br><br>Jika kamu membuat sebuah package yang menggunakan komponen blade atau menempatkan komponen dalam direktori non-konvensional, Kita perlu mendaftarkan kelas komponen dan tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut. Kita biasanya harus mendaftarkan komponen dalam method  <span class="code">boot</span> dari penyedia layanan paket kita
+        
+      </p>
+
+     
+      <p class="py-6">Setelah komponen Anda terdaftar, komponen tersebut dapat di render menggunakan alias tag-nya:
+   <p class="py-6 bg-slate-500 p-8 rounded-xl text-red-50">&lt;x-package-alert/>
+
+      </p>
+ <h2 class="text-1xl font-bold"><br>Autoloading Package Components
+</h2>
+ <p class="py-6">Anda dapat menggunakan metode <span class="code">componentNamespace</span> untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Blade akan secara otomatis mendeteksi kelas yang ditautkan ke komponen ini dengan pascal-casing nama komponen. Subdirektori juga didukung menggunakan notasi "titik".
+
+      </p>
+   
+
+    
+    </div>
+  </div>
+</div>
+<div
+class="grid grid-cols-3 p-0 mt-0 border-b border-primary-focus"
+data-aos="fade-up">
+<div class=""></div>
+<p class="font-bold text-3xl text-center text-2xl"></p>
+</div>
+
+
+
+   <!-- AKHIR Manually Registering Components
+ -->
+
+ <!-- AKHIR RANGKUMAN (4) RAZZAAQ -->
+
+
     <!-- Akhir Rangkuman -->
 
     <!-- Awal Our Team -->
