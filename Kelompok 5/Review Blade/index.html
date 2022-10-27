@@ -1046,7 +1046,7 @@
         <!--==================Layouts Using Components===================-->
         <h3>Layouts Using Components</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+            <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
                 <h3 class="card-title justify-center pb-5">Layouts Using Components</h3>
                 <p class=" text-justify">Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di
                     berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus
@@ -1057,8 +1057,8 @@
 
                     <br>
                     <h3>Defining The Layout Component</h3>
-                    <div class="mockup-code p-6 w-96 justify-items-auto">
-                        <p><code>
+                    <div class="mockup-code p-6">
+                        <code>
                         <figure>
                             <div class="mockup-code">
                               <pre data-prefix="$" class="text-justify">   <code>&lt;html&gt;</code></pre>
@@ -1075,7 +1075,6 @@
                     </div>
                     </figure>
                     </code>
-                    </p>
                 </div>
 
                 <h3>Applying The Layout Component</h3>
@@ -1083,7 +1082,7 @@
                     Seperti contoh di bawah ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:
                 </p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
+                <div class="mockup-code p-6">
                     <p><code>
                         <pre><code>&lt;x-layout&gt;</code></pre>
                         <pre><code>@foreach ($tasks as $task)</code></pre>
@@ -1097,8 +1096,8 @@
                     Seperti yang mungkin kita perhatikan, layout kita juga menghargai $titleslot jika tersedia; jika tidak, judul default akan ditampilkan.
                 </p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                         <pre><code>&lt;x-layout&gt;</code></pre>
                         <pre><code>&lt;x-slot:title&gt;</code></pre>
                         <pre><code>  Custom Title</code></pre>
@@ -1107,27 +1106,25 @@
                         <pre><code>{{ $task }}</code></pre>
                         <pre><code>@endforeach</code></pre>
                         <pre><code>&lt;/x-layout&gt;</code></pre>
-                        </code>
-                    </p>
+                    </code>
                 </div>
                 <p class=" text-justify">Setelah kita mendefinisikan tampilan tata letak dan daftar tugas, 
                     kita hanya perlu mengembalikan tasktampilan dari rute:
                 </p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                         <pre><code>use App\Models\Task;</code></pre>
                         <pre><code>Route::get('/tasks', function () {</code></pre>
                         <pre><code>return view('tasks', ['tasks' => Task::all()]);</code></pre>
                         <pre><code>});</code></pre>
-                        </code>
-                    </p>
+                    </code>
                 </div>
             </div>
 
             
             <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
                 <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src=""
@@ -1138,20 +1135,20 @@
     <!--==================Layouts Using Template Inheritance===================-->
     <h3>Layouts Using Template Inheritance</h3>
     <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-        <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+        <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
             <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
             <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
                 / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
             <br>
-            <div class="mockup-code p-6 w-96 justify-items-auto">
-                <p><code>Route::get('/', function () {
+            <div class="mockup-code p-6">
+                <code>Route::get('/', function () {
                         return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                </p>
+                    });
+                </code>
             </div>
         </div>
         <div>
-            <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+            <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
                 <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl" src=""
@@ -1165,23 +1162,22 @@
         <!--==================CSRF Field===================-->
         <h3>CSRF Field</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+            <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
                 <h3 class="card-title justify-center pb-5">CRSF Field</h3>
                 <p class=" text-justify">Kita bisa menggunakan directive @csrf untuk generate hidden field token pada
                     form HTML</p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                     <pre><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
                     <pre><code>@csrf</code></pre>
                     <pre><code>...</code></pre>
                     <pre><code>&lt;/form&gt;</code></pre>
                     </code>
-                    </p>
                 </div>
             </div>
             <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -1192,23 +1188,22 @@
         <!--==================Method Field===================-->
         <h3>Method Field</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+            <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
                 <h3 class="card-title justify-center pb-5">Method Field</h3>
                 <p class=" text-justify">Karena HTML forms tidak dapat membuat PUT, PATCH, atau DELETE requests, 
                     sehingga kita perlu menambahkan hidden _method field. Notasi @method.</p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                         <pre><code>&lt;form action="/foo/bar" method="POST"&gt;</code></pre>
                         <pre><code>@method('PUT')</code></pre>
                         <pre><code>...</code></pre>
                         <pre><code>&lt;/form&gt;</code></pre>
                     </code>
-                    </p>
                 </div>
             </div>
             <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -1219,14 +1214,14 @@
         <!--==================Validation Errors===================-->
         <h3>Validation Errors</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+            <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
                 <h3 class="card-title justify-center pb-5">Validation Errors</h3>
                 <p class=" text-justify">Notasi @error dapat digunakan untuk memeriksa dengan cepat apakah ada pesan kesalahan validasi untuk atribut tertentu. 
                     Dalam notasi @error, kita dapat menggunakan $message variabel untuk menampilkan pesan kesalahan. 
                     </p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                         <pre><code>&lt;label for="title">Post Title</label&gt;</code></pre>
                         <pre><code>&lt;input id="title"</code></pre>
                         <pre><code>type="text"</code></pre>
@@ -1235,23 +1230,21 @@
                         <pre><code>&lt;div class="alert alert-danger">{{ $message }}</div&gt;</code></pre> 
                         <pre><code>@enderror</code></pre> 
                     </code>
-                    </p>
                 </div>
                 <p class=" text-justify">Kita juga dapat menambahkan notasi @else untuk menampilkan 
                     tampilan jika tidak error dan diakhiri dengan notasi @enderror.</p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>
+                <div class="mockup-code p-6">
+                    <code>
                         <pre><code>&lt;label for="email">Email address</label&gt;</code></pre>
                         <pre><code>&lt;input id="email"</code></pre>
                         <pre><code>type="email"</code></pre>
                         <pre><code>class="@error('email') is-invalid @else is-valid @enderror"&gt;</code></pre>
                         </code>
-                    </p>
                 </div>
             </div>
             <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                <div class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
 
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
