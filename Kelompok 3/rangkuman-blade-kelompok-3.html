@@ -123,7 +123,10 @@
                     </p> <br>
 
                     <div class="mockup-code">
-                        <pre><code>Halo, @{{ $nama }}.</code></pre>
+                        <pre><code>Halo, @{{ $nama }}
+
+  &lt;!-- HTML output --&gt;
+  Halo, {{ $nama }}</code></pre>
                     </div> <br>
 
                     <p>Tanda @ juga dapat digunakan pada directive.</p> <br>
@@ -136,6 +139,19 @@
   &lt;!-- HTML output --&gt;
   @if()
   @for()</code></pre>
+                    </div> <br>
+
+                    <p>#@verbatim Directive</p>
+                    <p>Kode di dalam @verbatim tidak akan diinterpretasi oleh Blade, sehingga tidak perlu menambahkan tanda
+                        @ pada setiap variable.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@verbatim
+      &lt;div class="container"&gt;
+          Hello, {{ name }}.
+      &lt;/div&gt;
+  @endverbatim</code></pre>
                     </div> <br>
                 </div>
             </div>
