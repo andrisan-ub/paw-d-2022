@@ -96,9 +96,6 @@
         @endif        
      This is user {{ $user->id }}
      @endforeach</code></pre>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
                     </div> <br>
                     <p>Jika berada dalam nested loop, kita dapat mengakses parent's loop variabel melalui properti dari
                         parent.</p> <br>
@@ -111,11 +108,6 @@
         @endforeach
      @endforeach</code></pre>
                     </div> <br>
-=======
->>>>>>> Stashed changes
-                    </div>
-                    <br>
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
 
                     <p>#Conditional Classes</p>
                     <p>Direktif @class mengkompilasi sebuah string class CSS secara kondisional. Direktif menerima class
@@ -142,6 +134,7 @@
      @checked(old('active', $user-&gt;active)) /&gt;
     </code></pre>
                     </div> <br>
+
                     <p>Perintah @selected dapat digunakan untuk menunjukkan apakah opsi yang diberikan harus "dipilih"
                     </p> <br>
                     <div class="mockup-code">
@@ -154,6 +147,7 @@
      &lt;/select&gt;
                         </code></pre>
                     </div> <br>
+
                     <p>Perintah @disabled dapat digunakan untuk menunjukkan apakah ada elemen tertentu yang harus
                         "dinonaktifkan"
                     </p> <br>
@@ -164,6 +158,7 @@
                     <p>Perintah @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan hanya dapat
                         dibaca.
                     </p> <br>
+
                     <div class="mockup-code">
                         <pre data-prefix="$"><code>&lt;input type="email"
         name="email"
@@ -171,6 +166,7 @@
         @readonly($user-&gt;isNotAdmin()) /&gt;
     </code></pre>
                     </div> <br>
+
                     <p>Perintah @required dapat digunakan untuk menunjukkan apakah elemen tertentu wajib diisi.
                     </p> <br>
                     <div class="mockup-code">
@@ -180,7 +176,6 @@
         @required($user-&gt;isAdmin()) /&gt;
     </code></pre>
                     </div> <br>
-
 
                     <p>#Including Subviews</p>
                     <p>Direktif @include memungkinkan untuk menyisipkan sebuah blade's view ke blade's view yang lain.
@@ -249,16 +244,8 @@
 
                     <p>#Raw PHP</p>
                     <p>Di beberapa situasi, sangat berguna untuk mengaitkan kode PHP pada views. KIta bisa menggunakan
-<<<<<<< Updated upstream
-                        Blade @php direktif untuk mengeksekusi blok PHP biasa:
-=======
-<<<<<<< HEAD
-                        Blade
-                        @php direktif untuk mengeksekusi blok PHP biasa:
-=======
-                        Blade @php direktif untuk mengeksekusi blok PHP biasa:
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
->>>>>>> Stashed changes
+                        Blade @php direktif untuk
+                        mengeksekusi blok PHP biasa.
                     </p> <br>
                     <div class="mockup-code">
                         <pre data-prefix="">
@@ -283,20 +270,12 @@
 
                     <p>#Comments</p>
                     <p>Pada blade juga menyediakan komentar dalam tampilannya, tetapi komentar tersebut tidak akan
-<<<<<<< Updated upstream
-                        includ pada tampilan HTML return. </p> <br>
-=======
-<<<<<<< HEAD
-                        includ
-                        pada tampilan HTML return. </p> <br>
-=======
-                        includ pada tampilan HTML return. </p> <br>
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
->>>>>>> Stashed changes
-
+                        includ pada tampilan HTML return.
+                    </p> <br>
                     <div class="mockup-code">
-                        <pre><code>{{-- This comment will not be present in the rendered HTML --}}</code></pre>
+                        <pre><code>{{-- This comment will not be present in the rendered HTML --}}
 
+                        </code></pre>
                     </div> <br>
 
 
@@ -373,14 +352,7 @@
                     <p>Untuk komponen yang sangat kecil dan rumit untuk mengelola kelas komponen dan template tampilan
                         komponen,
                         dapat mengembalikan markup komponen langsung dari render.
-                    </p>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-                    <br>
-
+                    </p><br>
                     <div class="mockup-code">
                         <pre data-prefix=""><code>
     /**
@@ -428,15 +400,34 @@
                     <br>
 
                     <p>#Manually Registering Components</p>
-                    <p>Ketika menulis komponen, akan secara otomatis ditemukan dalam direkori app/View/Components dan direktori resources/views/components.
-                        Namun jika membuat paket dengan komponen Blade atau memenempatkan komponen di direktori non-konvensional,
-                        perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut,
-                        untuk itu biasanya harus mendaftarkan komponen dalam metode boot dari penyedia layanan paket.
-<<<<<<< Updated upstream
-=======
-                    </p> 
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
+                    <p>Ketika menulis komponen, akan secara otomatis ditemukan dalam direkori app/View/Components
+                        dan direktori resources/views/components.
+                        Namun jika membuat paket dengan komponen Blade atau memenempatkan komponen di direktori
+                        non-konvensional,
+                        perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu
+                        di mana menemukan komponen tersebut,
+                        untuk itu biasanya harus mendaftarkan komponen dalam metode boot dari penyedia layanan
+                        paket. </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    use Illuminate\Support\Facades\Blade;
+    use VendorPackage\View\Components\AlertComponent;
+    
+    /**
+    * Bootstrap your package's services.
+    *
+    * @return void
+    */
+    public function boot()
+    {
+        Blade::component('package-alert', AlertComponent::class);
+    }
+                        </code></pre>
+                    </div>
                     <br>
+
+                    <p>Setelah komponen terdaftar, dapat dirender menggunakan tag alias
+                    </p><br>
 
                     <div class="mockup-code">
                         <pre data-prefix=""><code>
@@ -453,49 +444,25 @@
         Blade::component('package-alert', AlertComponent::class);
     }
                         </code></pre>
-                    </div> 
+                    </div>
                     <br>
-                    
+
                     <p>Setelah komponen terdaftar, dapat dirender menggunakan tag alias
 
->>>>>>> Stashed changes
-                    </p> 
+                    </p>
                     <br>
-                    
-                    <div class="mockup-code">
-                        <pre data-prefix=""><code>
-<<<<<<< Updated upstream
-    use Illuminate\Support\Facades\Blade;
-    use VendorPackage\View\Components\AlertComponent;
-    
-    /**
-    * Bootstrap your package's services.
-    *
-    * @return void
-    */
-    public function boot()
-    {
-        Blade::component('package-alert', AlertComponent::class);
-    }
-                        </code></pre>
-                    </div> 
-                    <br>
-                    
-                    <p>Setelah komponen terdaftar, dapat dirender menggunakan tag alias
 
-                    </p> 
-                    <br>
-                    
                     <div class="mockup-code">
                         <pre data-prefix=""><code>
     &lt;x-package-alert/&gt;
                         </code></pre>
-                    </div> 
+                    </div>
                     <br>
 
                     <p>#Autoloading Package Components</p>
-                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas komponen secara otomatis berdasarkan konvensi.
-                    </p> 
+                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas
+                        komponen secara otomatis berdasarkan konvensi.
+                    </p>
                     <br>
                     <!--Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan 
                         ColorPicker yang berada di dalam namespace Package\Views\Components:-->
@@ -514,16 +481,15 @@
             &lt;/div&gt;
         blade;
     }
-=======
     &lt;x-package-alert/&gt;
->>>>>>> Stashed changes
                         </code></pre>
-                    </div> 
+                    </div>
                     <br>
 
                     <p>#Autoloading Package Components</p>
-                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas komponen secara otomatis berdasarkan konvensi.
-                    </p> 
+                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas
+                        komponen secara otomatis berdasarkan konvensi.
+                    </p>
                     <br>
                     <!--Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan 
                         ColorPicker yang berada di dalam namespace Package\Views\Components:-->
@@ -545,9 +511,8 @@
                         </code></pre>
                     </div>
                     <br>
-
-<<<<<<< HEAD
-                    <p>#Generating Inline View Components</p>
+                    <p>#Generating Inline View Components
+                    </p>
                     <p>Untuk membuat komponen yang merender tampilan sebaris,
                         dapat menggunakan opsi sebaris saat menjalankan perintah make:component.
                     </p>
@@ -573,9 +538,6 @@
                         </code></pre>
                     </div>
                     <br>
-
-=======
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
                 </div>
             </div>
         </div>
@@ -1280,11 +1242,7 @@
                     <p>
                         Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk merender
                         komponen. Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode
-                        dalam komponen Anda:
-<<<<<<< Updated upstream
-
-
-                    </p>
+                        dalam komponen Anda</p>
 
                     <ul class="ml-5 list-disc">
                         <li>data</li>
@@ -1298,7 +1256,7 @@
                     </ul>
 
                     <br>
-=======
+                    =======
 
 
                     </p>
@@ -1311,13 +1269,9 @@
                         <li>view</li>
                         <li>withAttributes</li>
                         <li>withName</li>
-<<<<<<< HEAD
-
                     </ul>
 
                     <br>
-=======
->>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
 
                     </ul>
 
@@ -1411,7 +1365,7 @@
                         <pre><code> {{ $slot }}</code></pre>
                         <pre><code>&lt;/ul&gt;</code></pre>
                     </div> <br>
->>>>>>> Stashed changes
+                    >>>>>>> Stashed changes
 
                     <p>Karena prop warna hanya diteruskan ke parent x-menu, itu tidak akan tersedia di dalam
                         x-menu.item. Namun, jika kita
@@ -1597,10 +1551,13 @@
                     <p class="flex justify-center">BUILDING LAYOUTS</p> <br>
 
                     <p>#Layouts Using Components</p>
-                    <p>Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman. Akan sangat 
-                       merepotkan dan sulit untuk memelihara aplikasi kita jika kita harus mengulang seluruh tata letak HTML di
-                       setiap tampilan yang kita buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu 
-                       komponen Blade dan kemudian menggunakannya di seluruh aplikasi kita.
+                    <p>Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman. Akan
+                        sangat
+                        merepotkan dan sulit untuk memelihara aplikasi kita jika kita harus mengulang seluruh tata letak
+                        HTML di
+                        setiap tampilan yang kita buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini
+                        sebagai satu
+                        komponen Blade dan kemudian menggunakannya di seluruh aplikasi kita.
                     </p> <br>
                     <p>#Defining The Layout Component</p>
                     <div class="mockup-code">
@@ -1617,8 +1574,10 @@
                     </div> <br>
 
                     <p>#Applying The Layout Component</p>
-                    <p>Setelah komponen tata letak ditentukan, kami dapat membuat tampilan Blade yang menggunakan komponen tersebut. 
-                       Dalam contoh ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:</p>
+                    <p>Setelah komponen tata letak ditentukan, kami dapat membuat tampilan Blade yang menggunakan
+                        komponen tersebut.
+                        Dalam contoh ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas
+                        kita:</p>
                     <div class="mockup-code">
                         <pre><code>&lt;x-layout&gt;</code></pre>
                         <pre><code>@foreach ($tasks as $task)</code></pre>
@@ -1627,28 +1586,32 @@
                         <pre><code>&lt;/x-layout&gt;</code></pre>
                     </div> <br>
 
-                    <p>Ingat, konten yang disuntikkan ke dalam komponen akan diberikan ke variabel $slot default di dalam komponen 
-                       layout kita. Seperti yang mungkin telah Anda perhatikan, tata letak kami juga mengikuti slot $title jika tersedia. 
-                       Jika tidak, judul default akan ditampilkan. Kami dapat menyuntikkan judul khusus dari tampilan daftar tugas kami menggunakan 
-                       sintaks slot standar yang dibahas dalam dokumentasi komponen:</p>
-                     <div class="mockup-code">
-                         <pre><code>&lt;x-layout&gt;</code></pre>
-                         <pre><code>&lt;x-slot:title&gt;</code></pre>
-                         <pre><code>Custom Title</code></pre>
-                         <pre><code>&lt;/x-slot&gt;</code></pre>
-                         <pre><code>@foreach ($tasks as $task)</code></pre>
-                         <pre><code>{{ $task }}</code></pre>
-                         <pre><code>@endforeach</code></pre>
-                         <pre><code>&lt;/x-layout&gt;</code></pre>
-                     </div> <br>
+                    <p>Ingat, konten yang disuntikkan ke dalam komponen akan diberikan ke variabel $slot default di
+                        dalam komponen
+                        layout kita. Seperti yang mungkin telah Anda perhatikan, tata letak kami juga mengikuti slot
+                        $title jika tersedia.
+                        Jika tidak, judul default akan ditampilkan. Kami dapat menyuntikkan judul khusus dari tampilan
+                        daftar tugas kami menggunakan
+                        sintaks slot standar yang dibahas dalam dokumentasi komponen:</p>
+                    <div class="mockup-code">
+                        <pre><code>&lt;x-layout&gt;</code></pre>
+                        <pre><code>&lt;x-slot:title&gt;</code></pre>
+                        <pre><code>Custom Title</code></pre>
+                        <pre><code>&lt;/x-slot&gt;</code></pre>
+                        <pre><code>@foreach ($tasks as $task)</code></pre>
+                        <pre><code>{{ $task }}</code></pre>
+                        <pre><code>@endforeach</code></pre>
+                        <pre><code>&lt;/x-layout&gt;</code></pre>
+                    </div> <br>
 
-                     <p>Sekarang setelah kita mendefinisikan tampilan tata letak dan daftar tugas, kita hanya perlu mengembalikan tampilan tugas dari rute:</p>
-                     <div class="mockup-code">
-                         <pre><code>use App\Models\Task;</code></pre>
-                         <pre><code>Route::get('/tasks', function () {</code></pre>
-                         <pre><code>return view('tasks', ['tasks' => Task::all()]);</code></pre>
-                         <pre><code>});</code></pre>
-                     </div> <br>
+                    <p>Sekarang setelah kita mendefinisikan tampilan tata letak dan daftar tugas, kita hanya perlu
+                        mengembalikan tampilan tugas dari rute:</p>
+                    <div class="mockup-code">
+                        <pre><code>use App\Models\Task;</code></pre>
+                        <pre><code>Route::get('/tasks', function () {</code></pre>
+                        <pre><code>return view('tasks', ['tasks' => Task::all()]);</code></pre>
+                        <pre><code>});</code></pre>
+                    </div> <br>
 
                     <p>#Layout Using Template Inheritance</p>
                     <p>Layout dapat dibuat dengan template inheritance dimana layout dapat diturunkan ke childnya.
