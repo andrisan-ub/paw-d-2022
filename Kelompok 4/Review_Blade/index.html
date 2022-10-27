@@ -393,7 +393,101 @@
       <!--Akhir Rendering Components-->
     </div>
     <!--==================Passing Data To Components===================-->
-    <div class="h-fit bg-success my-10"></div>
+    <!--==================Passing Data To Components===================-->
+    <div class="h-fit bg-success my-10 p-5">
+      <h1 class="font-bold text-xl pb-3 text-center">
+        Passing Data To Components
+    </h1>
+    <!--Passing Data to Components-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Penjelasan Passing Data To Components
+                </h2>
+                <p class="justify-items-auto">
+                  Kita dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Nilai primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter (:) sebagai awalan atau prefix.
+                  </p>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="col-start-2">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                        <pre><code>&lt;x-alert type="error" :message="$message"/&gt;</code></pre>
+                        <br>
+                        <br>
+                        
+                        <pre><code>&lt;?php</code></pre>
+                        <pre><code>    namespace App\View\Components;</code></pre>
+                        <pre><code>    use Illuminate\View\Component;</code></pre>
+                        <pre><code>    class Alert extends Component {</code></pre><br> 
+                        <pre><code>/**<br>   * The alert type. 
+   *
+   * @var string
+   */
+   public $type;</code></pre> <br> 
+                        <pre><code>/**
+   * The alert message.
+   *
+   * @var string
+   */
+   public $message;</code></pre> <br>
+                        <pre><code>/**
+   * Create the component istance
+   *
+   * @param  string  $type
+   * @param  string  $message
+   * @return void
+   */                  </code></pre>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+    <div class="col-start-1">
+      <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto p-5">
+            Kita harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak perlu meneruskan data ke tampilan dari metode render komponen.
+          </p><br>
+      </div>
+  </div>    
+  <div>
+      <!--Card bawah kanan-->
+      <div class="col-start-2">
+          <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+          <h2 class="card-title pb-5 justify-items-auto">
+              Contoh Syntax
+          </h2>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                <pre><code> public function __construct($type, $message){</code></pre>
+                <pre><code> $this-&gt;type = $type;</code></pre>
+                <pre><code> $this-&gt;message = $message;</code></pre> 
+                <pre><code> }</code></pre>
+                <pre><code> /**
+   * Get the view
+   *
+   * @return \Illuminate\View\View|\Closure|string
+   */               
+                </code></pre>
+                  
+                <pre><code></code>public function() {</pre>
+                <pre><code>return view('components.alert');</code></pre>
+                <pre><code>}</code></pre>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <!--Akhir Passing Data to Components-->
+    </div>
     <!--=================Component Attributes ====================-->
     <div class="h-fit"></div>
     <!--==================Reserved Keywords ===================-->
