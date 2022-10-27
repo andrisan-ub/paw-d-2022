@@ -40,7 +40,41 @@
       <h1 class="font-bold text-slate-700 text-4xl text-center -mt-9 tracking-wider">Displaying Data</h1>
     </div>
     <!--================HTML Entity Encoding=====================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
+        HTML Entity Encoding
+    </h1>
+    <!--Awal HTML Entity Encoding-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Pengertian HTML Entity Encoding
+                </h2>
+                <p class="justify-items-auto">
+                  Secara umum, Blade akan menggandakan encode entitas HTML. 
+                  Jika ingin menonaktifkan penyandian ganda, panggil method “Blade::withoutDoubleEncoding” dari method “boot” pada class 
+                </p><br>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                      <pre><code>&#8220;AppServiceProvider&#8221;&#13;&#10;&#60;?php&#13;&#10;&#160;&#13;&#10;namespace&#160;AppProviders;&#13;&#10;&#160;&#13;&#10;use&#160;IlluminateSupportFacadesBlade;&#13;&#10;use&#160;IlluminateSupportServiceProvider;&#13;&#10;&#160;&#13;&#10;class&#160;AppServiceProvider&#160;extends&#160;ServiceProvider&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#47;&#42;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;Bootstrap&#160;any&#160;application&#160;services&#46;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#47;&#13;&#10;&#160;&#160;&#160;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#160;&#160;&#160;&#123;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Blade&#58;&#58;withoutDoubleEncoding&#40;&#41;;&#13;&#10;&#160;&#160;&#160;&#125;&#13;&#10;&#125;&#13;&#10;</code></pre>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Akhir HTML Entity Encoding-->
+    </div>
     <!--==================Blade & JavaScript Frameworks===================-->
     <div class="b&js bg-success rounded-md m-2">
     <h2 class="h-fit m-16 font-bold text-xl">#Blade & JavaScript Frameworks</h2>
