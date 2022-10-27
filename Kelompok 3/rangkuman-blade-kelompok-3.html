@@ -102,6 +102,20 @@
   @endunless</code></pre>
                     </div> <br>
 
+                    <p>@iseet digunakan untk mengecek apakah variable sudah diinisiasi. @empty akan mengecek jika
+                        variable bernilai kosong.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@isset($records)
+    Variable record tidak null
+  @endisset
+                         
+  @empty($records)
+    Variable record kosong
+  @endempty</code></pre>
+                    </div> <br>
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
