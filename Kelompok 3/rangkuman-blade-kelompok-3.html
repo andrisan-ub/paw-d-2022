@@ -81,6 +81,27 @@
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
 
+                    <p>#If statement</p>
+                    <p>Percabangan dilakukan dengan menggunakan @if, @elseif, @else, dan @endif</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@if ($var > 10)
+    Variable dibawah 10
+@elseif ($var > 100)
+    Variable dibawah 100
+@else
+    Variable berukuran besar
+@endif</code></pre>
+                    </div> <br>
+
+                    <p>Kode pada @unless dijalankan jika kondisi bernilai false.</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@unless (Auth::check())
+    Anda belum login
+  @endunless</code></pre>
+                    </div> <br>
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
