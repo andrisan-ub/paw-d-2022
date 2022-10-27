@@ -94,7 +94,7 @@
                     </code>
                 </div>
                 <br>
-                <p>Isi variabel dapat ditampilkan sebagai berikut</p>
+                <p class=" text-justify">Isi variabel dapat ditampilkan sebagai berikut</p>
                 <br>
                 <div class="mockup-code p-6">
                     <code>
@@ -123,20 +123,20 @@
                 <br>
                 <div class="mockup-code p-6">
                     <code>
-                        <pre>&lt?php
-                        </pre>
-                        <pre>namespace App\Providers;
-                        </pre>
-                        <pre>use Illuminate\Support\Facades\Blade;</pre>
-                        <pre>use Illuminate\Support\ServiceProvider;
-                        </pre>
-                        <pre>class AppServiceProvider extends ServiceProvider</pre>
+                        <pre>&lt?php</pre>
+                        <pre>
+                        namespace App\Providers;</pre>
+                        <pre>
+                        use Illuminate\Support\Facades\Blade;</pre>
+                        <pre>use Illuminate\Support\ServiceProvider;</pre>
+                        <pre>
+                        class AppServiceProvider extends ServiceProvider</pre>
                         <pre>{</pre>
-                        <pre>    /**</pre>
-                        <pre>   * Bootstrap any application services.</pre>
-                        <pre>     *</pre>
-                        <pre>     * @return void</pre>
-                        <pre>     */</pre>
+                        <pre class="text-gray-500">    /**</pre>
+                        <pre class="text-gray-500">   * Bootstrap any application services.</pre>
+                        <pre class="text-gray-500">     *</pre>
+                        <pre class="text-gray-500">     * @return void</pre>
+                        <pre class="text-gray-500">     */</pre>
                         <pre>    public function boot()</pre>
                         <pre>    {</pre>
                         <pre>        Blade::withoutDoubleEncoding();</pre>
@@ -145,7 +145,7 @@
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 bg-slate-300 justify-items-auto">
+            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -167,7 +167,7 @@
                     </code>
                 </div>
             </div>
-            <div  class="card col-span-3 lg:col-span-1 p-8 bg-slate-300 justify-items-auto">
+            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
                 <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
@@ -177,30 +177,51 @@
         </div>
 
         <!--==================Blade & JavaScript Frameworks===================-->
-        <h3>Blade & JavaScript Frameworks</h3>
+        <h2 class="font-bold text-l pt-10 pl-10">Blade & JavaScript Frameworks</h2>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
-            <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
+            <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl bordered">
+                <h3 class="card-title justify-center pb-5">Kerangka Kerja Blade & JavaScript</h3>
+                <p class=" text-justify">Banyak kerangka kerja Javascript menggunakan kurung kurawal, untuk menunjukkan
+                    ekspresi tertentu harus ditampilkan di browser dapat menggunakan simbol untuk memberi tahu mesin Blade bahwa
+                    ekspresi harus tetap tidak tersentuh. Misalnya 
+                    <a class="text-red-500">@</a>
+                </p>
                 <br>
-                <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
-                    </p>
+                <div class="mockup-code p-6">
+                    <code>
+                        <pre>&lth1>Laravel@$lt/h1></pre>
+                        <pre>
+                        Hello, @{{ name }}.
+                        </pre>
+                    </code>
+                </div>
+                <br>
+                <p class=" text-justify">Dalam contoh ini, simbol akan dihapus oleh blade. Namun, ekspresi akan tetap tidak tersentuh
+                    oleh mesin Blade, memungkinkan untuk dirender oleh kerangka JavaScript. 
+                    <a class="text-red-500">@{{ name }}</a>
+                </p>
+                <p class="text-justify">Simbol juga dapat digunakan untuk menghindari arahan Blade</p>
+                <br>
+                <div class="mockup-code p-6">
+                    <code>
+                        <pre class="text-gray-500">{{-- Blade template --}}</pre>
+                        <pre>@@if()</pre>
+                        <pre class="text-gray-500">
+                        &lt!-- HTML output -->
+                        </pre>
+                        <pre class="text-green-500">@if()</pre>
+                    </code>
                 </div>
             </div>
-            <div>
-                <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+            <div  class="card col-span-3 lg:col-span-1 p-8 justify-items-auto">
+                <div>
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
-
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
-                            src="" alt="strlen" /></figure>
+                            src="" alt="blank" /></figure>
                 </div>
             </div>
         </div>
-    </div>
+
 
 
     <!--============================================#Blade Directives======================================================-->
