@@ -993,13 +993,10 @@
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
                     <p><code>
-                <xmp>
-                    <form method="POST" action="/profile">
-                        @csrf
-                     
-                        ...
-                    </form>
-                </xmp>
+                    <pre><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
+                    <pre><code>@csrf</code></pre>
+                    <pre><code>...</code></pre>
+                    <pre><code>&lt;form&gt;</code></pre>
                     </code>
                     </p>
                 </div>
@@ -1017,9 +1014,9 @@
         <h3>Method Field</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
+                <h3 class="card-title justify-center pb-5">Method Field</h3>
+                <p class=" text-justify">Karena HTML forms tidak dapat membuat PUT, PATCH, atau DELETE requests, 
+                    sehingga kita perlu menambahkan hidden _method field. Notasi @method.</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
                     <p><code>Route::get('/', function () {
