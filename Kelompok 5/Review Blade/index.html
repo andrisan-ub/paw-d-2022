@@ -996,7 +996,7 @@
                     <pre><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
                     <pre><code>@csrf</code></pre>
                     <pre><code>...</code></pre>
-                    <pre><code>&lt;form&gt;</code></pre>
+                    <pre><code>&lt;/form&gt;</code></pre>
                     </code>
                     </p>
                 </div>
@@ -1019,9 +1019,12 @@
                     sehingga kita perlu menambahkan hidden _method field. Notasi @method.</p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                    <p><code>
+                        <pre><code>&lt;form action="/foo/bar" method="POST"&gt;</code></pre>
+                        <pre><code>@method('PUT')</code></pre>
+                        <pre><code>...</code></pre>
+                        <pre><code>&lt;/form&gt;</code></pre>
+                    </code>
                     </p>
                 </div>
             </div>
@@ -1038,14 +1041,33 @@
         <h3>Validation Errors</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
             <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses templating
-                    / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.</p>
+                <h3 class="card-title justify-center pb-5">Validation Errors</h3>
+                <p class=" text-justify">Notasi @error dapat digunakan untuk memeriksa dengan cepat apakah ada pesan kesalahan validasi untuk atribut tertentu. 
+                    Dalam notasi @error, kita dapat menggunakan $message variabel untuk menampilkan pesan kesalahan. 
+                    </p>
                 <br>
                 <div class="mockup-code p-6 w-96 justify-items-auto">
-                    <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                    <p><code>
+                        <pre><code>&lt;label for="title">Post Title</label&gt;</code></pre>
+                        <pre><code>&lt;input id="title"</code></pre>
+                        <pre><code>type="text"</code></pre>
+                        <pre><code>class="@error('title') is-invalid @enderror"&gt;</code></pre> 
+                        <pre><code>@error('title')</code></pre> 
+                        <pre><code>&lt;div class="alert alert-danger">{{ $message }}</div&gt;</code></pre> 
+                        <pre><code>@enderror</code></pre> 
+                    </code>
+                    </p>
+                </div>
+                <p class=" text-justify">Kita juga dapat menambahkan notasi @else untuk menampilkan 
+                    tampilan jika tidak error dan diakhiri dengan notasi @enderror.</p>
+                <br>
+                <div class="mockup-code p-6 w-96 justify-items-auto">
+                    <p><code>
+                        <pre><code>&lt;label for="email">Email address</label&gt;</code></pre>
+                        <pre><code>&lt;input id="email"</code></pre>
+                        <pre><code>type="email"</code></pre>
+                        <pre><code>class="@error('email') is-invalid @else is-valid @enderror"&gt;</code></pre>
+                        </code>
                     </p>
                 </div>
             </div>
