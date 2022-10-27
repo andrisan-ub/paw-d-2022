@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>PHP Basics</title>
+    <title>Blade Reviews</title>
   </head>
   <body>
     <!--content-->
@@ -41,40 +41,31 @@
     </div>
     <!--================HTML Entity Encoding=====================-->
     <div class="h-fit bg-success my-10 p-5">
-      <h1 class="font-bold text-xl pb-3 text-center">
-        HTML Entity Encoding
-    </h1>
-    <!--Awal HTML Entity Encoding-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-xl pb-3 text-center">HTML Entity Encoding</h1>
+      <!--Awal HTML Entity Encoding-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Pengertian HTML Entity Encoding
-                </h2>
-                <p class="justify-items-auto">
-                  Secara umum, Blade akan menggandakan encode entitas HTML. 
-                  Jika ingin menonaktifkan penyandian ganda, panggil method “Blade::withoutDoubleEncoding” dari method “boot” pada class 
-                </p><br>
-            </div>
-        </div>    
-        <div>
-            <!--Card bawah kanan-->
-            <div class="">
-                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                    <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                      <pre><code>&#8220;AppServiceProvider&#8221;&#13;&#10;&#60;?php&#13;&#10;&#160;&#13;&#10;namespace&#160;AppProviders;&#13;&#10;&#160;&#13;&#10;use&#160;IlluminateSupportFacadesBlade;&#13;&#10;use&#160;IlluminateSupportServiceProvider;&#13;&#10;&#160;&#13;&#10;class&#160;AppServiceProvider&#160;extends&#160;ServiceProvider&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#47;&#42;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;Bootstrap&#160;any&#160;application&#160;services&#46;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#47;&#13;&#10;&#160;&#160;&#160;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#160;&#160;&#160;&#123;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Blade&#58;&#58;withoutDoubleEncoding&#40;&#41;;&#13;&#10;&#160;&#160;&#160;&#125;&#13;&#10;&#125;&#13;&#10;</code></pre>
-                    </div>
-                    </div>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Pengertian HTML Entity Encoding</h2>
+            <p class="justify-items-auto">Secara umum, Blade akan menggandakan encode entitas HTML. Jika ingin menonaktifkan penyandian ganda, panggil method “Blade::withoutDoubleEncoding” dari method “boot” pada class</p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>&#8220;AppServiceProvider&#8221;&#13;&#10;&#60;?php&#13;&#10;&#160;&#13;&#10;namespace&#160;AppProviders;&#13;&#10;&#160;&#13;&#10;use&#160;IlluminateSupportFacadesBlade;&#13;&#10;use&#160;IlluminateSupportServiceProvider;&#13;&#10;&#160;&#13;&#10;class&#160;AppServiceProvider&#160;extends&#160;ServiceProvider&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#47;&#42;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;Bootstrap&#160;any&#160;application&#160;services&#46;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#160;&#160;&#160;&#42;&#47;&#13;&#10;&#160;&#160;&#160;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#160;&#160;&#160;&#123;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Blade&#58;&#58;withoutDoubleEncoding&#40;&#41;;&#13;&#10;&#160;&#160;&#160;&#125;&#13;&#10;&#125;&#13;&#10;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--Akhir HTML Entity Encoding-->
-    </div>
     <!--==================Blade & JavaScript Frameworks===================-->
     <div class="b&js bg-success rounded-md m-2">
       <h2 class="h-fit m-16 font-bold text-xl">#Blade & JavaScript Frameworks</h2>
@@ -188,63 +179,54 @@
     </div>
     <!--================ The Loop Variable=====================-->
     <div class="h-fit bg-success my-10 p-5">
-      <h1 class="font-bold text-xl pb-3 text-center">
-        The Loop Variable
-    </h1>
-    <!--Awal The Loop-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-xl pb-3 text-center">The Loop Variable</h1>
+      <!--Awal The Loop-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan The Loop Variable
-                </h2>
-                <p class="justify-items-auto">
-                  Saat melakukan perulangan melalui “loop foreach”, variabel $loop akan tersedia di dalam loop tersebut. 
-                  Variabel ini akan menyediakan akses ke beberapa bit informasi yang berguna 
-                  seperti indeks loop saat ini dan apakah saat ini literasi pertama atau terakhir pada loop.
-                </p><br>
-            </div>
-        </div>    
-        <div>
-            <!--Card bawah kanan-->
-            <div class="col-start-2">
-                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
-                        <pre><code>@foreach ($users as $user)</code></pre>
-                        <pre><code>@if ($loop->first)</code></pre>
-                        <pre><code>    Ini adalah kalimat pertama</code></pre>
-                        <pre><code>@endif</code></pre>
-                        <pre><code>@if ($loop->last)</code></pre><br> 
-                        <pre><code>    Ini adalah kalimat terakhir</code></pre>
-                        <pre><code>@endif</code></pre>
-                        <pre><code>    <p>Ini adalah user {{ $user->id }}</p></code></pre><br>
-                        <pre><code> @endforeach</code></pre>
-                    </div>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan The Loop Variable</h2>
+            <p class="justify-items-auto">
+              Saat melakukan perulangan melalui “loop foreach”, variabel $loop akan tersedia di dalam loop tersebut. Variabel ini akan menyediakan akses ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah saat ini
+              literasi pertama atau terakhir pada loop.
+            </p>
+            <br />
+          </div>
         </div>
-    </div>
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
-    <div class="col-start-1">
-      <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-          <p class="justify-items-auto p-5">
-            Dan jika Anda berada di dalam loop bersarang,
-          Anda dapat mengakses 
-          variabel $loop loop induk melalui properti inangnya
-          </p><br>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                <pre><code>@foreach ($users as $user)</code></pre>
+                <pre><code>@if ($loop->first)</code></pre>
+                <pre><code>    Ini adalah kalimat pertama</code></pre>
+                <pre><code>@endif</code></pre>
+                <pre><code>@if ($loop->last)</code></pre>
+                <br />
+                <pre><code>    Ini adalah kalimat terakhir</code></pre>
+                <pre><code>@endif</code></pre>
+                <pre><code>    <p>Ini adalah user {{ $user->id }}</p></code></pre>
+                <br />
+                <pre><code> @endforeach</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>    
-  <div>
-      <!--Card bawah kanan-->
-      <div class="col-start-2">
-          <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-          <h2 class="card-title pb-5 justify-items-auto">
-              Contoh Syntax
-          </h2>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <div class="col-start-1">
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <p class="justify-items-auto p-5">Dan jika Anda berada di dalam loop bersarang, Anda dapat mengakses variabel $loop loop induk melalui properti inangnya</p>
+            <br />
+          </div>
+        </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
               <div class="mockup-code mx-4 p-4 justify-center min-w-full">
                 <pre><code>@foreach ($users as $user)</code></pre>
                 <pre><code>    @foreach ($user->posts as $post)</code></pre>
@@ -254,11 +236,11 @@
                 <pre><code>    @endforeach</code></pre>
                 <pre><code>@endforeach</code></pre>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-</div>
-    <!--Akhir The Loop Variable-->
+      <!--Akhir The Loop Variable-->
     </div>
     <!--=================Conditional Classes ====================-->
     <div class="h-fit bg-success my-10"></div>
@@ -311,7 +293,45 @@
       </div>
     </div>
     <!--==================The @once Directive ===================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10 text-center p-5">
+      <h1 class="font-bold text-xl pb-3">The @once Directive</h1>
+      <div class="flex justify-center">
+        <div class="mockup-code w-fit p-5 justify-center">
+          <p>The @once digunakan untuk menjalankan template yang hanya akan di-render satu kali</p>
+          <p>dalam file itu sendiri. Fungsi ini sangat berguna untuk meringankan loading page.</p>
+          <p>Selain itu, juga digunakan @stack untuk dapat mem-passing piece sebuah template</p>
+          <p>Dengan kata lain, @stack berguna sebagai atomic template yang dapat saling ditumpuk</p>
+          <br />
+        </div>
+      </div>
+      <br />
+      <div class="flex justify-center">
+        <div class="mockup-window border bg-base-300 pt-3 w-fit">
+          <div class="flex p-4 bg-base-200 justify-center">
+            <div class="flex flex-col">
+              <h1 class="font-bold text-2xl pb-3">Contoh penggunaan @once</h1>
+              <img src="../Review_Blade/img/once1.jpeg" alt="once" class="w-fit h-fit" />
+              <p>Public JS</p>
+              <br />
+              <img src="../Review_Blade/img/once2.jpeg" alt="once" class="w-fit h-fit" />
+              <p>Parent</p>
+              <br />
+              <img src="../Review_Blade/img/once3.jpeg" alt="once" class="w-fit h-fit" />
+              <p>Child</p>
+              <br />
+              <h1 class="font-bold text-2xl pb-3">Output</h1>
+              <br />
+              <img src="../Review_Blade/img/once4.jpeg" alt="once" class="w-fit h-fit" />
+              <p>ketika file parent dibuka</p>
+              <br />
+              <img src="../Review_Blade/img/once5.jpeg" alt="once" class="w-fit h-fit" />
+              <p>ketika file child dibuka, akan mewarisi perilaku parent, juga perilaku child itu sendiri</p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--=================Raw PHP ====================-->
     <div class="h-fit bg-success my-10">
       <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Raw PHP</h1>
