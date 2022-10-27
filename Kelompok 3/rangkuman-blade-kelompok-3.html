@@ -69,6 +69,18 @@
                 <div class="px-4 py-4 bg-base-200">
                     <p class="flex justify-center">DISPLAYING DATA</p> <br>
 
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <!-- BLADE DIRECTIVES -->
+    <span id="bladir">
+        <div class="bladir mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
@@ -84,8 +96,26 @@
         @endif        
      This is user {{ $user->id }}
      @endforeach</code></pre>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                    </div> <br>
+                    <p>Jika berada dalam nested loop, kita dapat mengakses parent's loop variabel melalui properti dari
+                        parent.</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@foreach ($users as $user)
+        @foreach ($user->posts as $post)
+            @if ($loop->parent->first)
+                This is the first iteration of the parent loop.
+            @endif
+        @endforeach
+     @endforeach</code></pre>
+                    </div> <br>
+=======
+>>>>>>> Stashed changes
                     </div>
                     <br>
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
 
                     <p>#Conditional Classes</p>
                     <p>Direktif @class mengkompilasi sebuah string class CSS secara kondisional. Direktif menerima class
@@ -110,15 +140,47 @@
         name="active"
         value="active"
      @checked(old('active', $user-&gt;active)) /&gt;
-    
-     &lt;select name="version"&gt;
+    </code></pre>
+                    </div> <br>
+                    <p>Perintah @selected dapat digunakan untuk menunjukkan apakah opsi yang diberikan harus "dipilih"
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>&lt;select name="version"&gt;
         @foreach ($product-&gt;versions as $version)
             &lt;option value="{{ $version }}" @selected(old('version') == $version)&gt;
                 {{ $version }}
             &lt;/option&gt;
         @endforeach
-    &lt;/select&gt;</code></pre>
+     &lt;/select&gt;
+                        </code></pre>
                     </div> <br>
+                    <p>Perintah @disabled dapat digunakan untuk menunjukkan apakah ada elemen tertentu yang harus
+                        "dinonaktifkan"
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre
+                            data-prefix="$"><code>&lt;button type="submit" @disabled($errors-&gt;isNotEmpty())&gt;Submit&lt;/button&gt;</code></pre>
+                    </div> <br>
+                    <p>Perintah @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan hanya dapat
+                        dibaca.
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>&lt;input type="email"
+        name="email"
+        value="email@laravel.com"
+        @readonly($user-&gt;isNotAdmin()) /&gt;
+    </code></pre>
+                    </div> <br>
+                    <p>Perintah @required dapat digunakan untuk menunjukkan apakah elemen tertentu wajib diisi.
+                    </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>&lt;input type="text"
+        name="title"
+        value="title"
+        @required($user-&gt;isAdmin()) /&gt;
+    </code></pre>
+                    </div> <br>
+
 
                     <p>#Including Subviews</p>
                     <p>Direktif @include memungkinkan untuk menyisipkan sebuah blade's view ke blade's view yang lain.
@@ -133,10 +195,36 @@
      &lt;/form&gt;
     &lt;/div&gt;</code></pre>
                     </div> <br>
+                    <p>Meskipun tampilan pada child akan mewarisi semua data pada tampilan parent, kita tetap dapat
+                        menambahkan array yang berisi data tambahan untuk tampilan child.</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@include('view.name', ['status' => 'complete'])
+                        </code></pre>
+                    </div> <br>
+                    <p>Jika menggunakan direktif @include pada view yang tidak ada, maka laravel akan throw an error.
+                        Solusinya adalah menggunakan direktif @includeif </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@includeIf('view.name', ['status' => 'complete'])
+                        </code></pre>
+                    </div> <br>
+                    <p>Jika ingin menggunakan direktif @include pada ekspresi boolean yang manghasilkan nilai salah atau
+                        benar, dapat menggunakan direktif @includeWhen dan @includeUnless </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])
+ 
+      @includeUnless($boolean, 'view.name', ['status' => 'complete'])
+                        </code></pre>
+                    </div> <br>
+                    <p>Jika ingin menyertakan tampilan pertama dari view tertentu, dapat menggunakan perintah
+                        @includefirst </p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])
+                        </code></pre>
+                    </div> <br>
 
                     <p>#The @Once Directive</p>
                     <p>Direktif @once memungkinkan untuk menentukan bagian dari template yang akan dievaluasi dalam
-                        sekali rendering. Hal tersbeut berguna untuk melakukan push JavaScript ke header halaman
+                        sekali rendering. Hal tersebut berguna untuk melakukan push JavaScript ke header halaman
                         menggunakan stack. </p> <br>
                     <div class="mockup-code">
                         <pre data-prefix="$"><code>@once
@@ -145,31 +233,32 @@
                 // KODE
             &lt;/script&gt;
         @endpush
-     @endonce
-                            
-     @pushOnce('scripts')
+      @endonce
+                            </code></pre>
+                    </div> <br>
+                    <p>Karena direktif @once sering digunakan bersama dengan direktif @push atau @prepend, dapat juga
+                        menggunakan @pushOnce dan @prependOnce</p> <br>
+                    <div class="mockup-code">
+                        <pre data-prefix="$"><code>@pushOnce('scripts')
         &lt;script&gt;
             // KODE
         &lt;/script&gt;
-     @endPushOnce</code></pre>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </span>
-
-    <!-- BLADE DIRECTIVES -->
-    <span id="bladir">
-        <div class="bladir mb-10">
-            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
-                <div class="px-4 py-4 bg-base-200">
-                    <p class="flex justify-center">BLADE DIRECTIVES</p> <br>
-
+      @endPushOnce
+                    </code></pre>
+                    </div><br>
 
                     <p>#Raw PHP</p>
                     <p>Di beberapa situasi, sangat berguna untuk mengaitkan kode PHP pada views. KIta bisa menggunakan
+<<<<<<< Updated upstream
                         Blade @php direktif untuk mengeksekusi blok PHP biasa:
+=======
+<<<<<<< HEAD
+                        Blade
+                        @php direktif untuk mengeksekusi blok PHP biasa:
+=======
+                        Blade @php direktif untuk mengeksekusi blok PHP biasa:
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
+>>>>>>> Stashed changes
                     </p> <br>
                     <div class="mockup-code">
                         <pre data-prefix="">
@@ -194,7 +283,16 @@
 
                     <p>#Comments</p>
                     <p>Pada blade juga menyediakan komentar dalam tampilannya, tetapi komentar tersebut tidak akan
+<<<<<<< Updated upstream
                         includ pada tampilan HTML return. </p> <br>
+=======
+<<<<<<< HEAD
+                        includ
+                        pada tampilan HTML return. </p> <br>
+=======
+                        includ pada tampilan HTML return. </p> <br>
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
+>>>>>>> Stashed changes
 
                     <div class="mockup-code">
                         <pre><code>{{-- This comment will not be present in the rendered HTML --}}</code></pre>
@@ -276,6 +374,11 @@
                         komponen,
                         dapat mengembalikan markup komponen langsung dari render.
                     </p>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
                     <br>
 
                     <div class="mockup-code">
@@ -329,11 +432,39 @@
                         Namun jika membuat paket dengan komponen Blade atau memenempatkan komponen di direktori non-konvensional,
                         perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut,
                         untuk itu biasanya harus mendaftarkan komponen dalam metode boot dari penyedia layanan paket.
+<<<<<<< Updated upstream
+=======
+                    </p> 
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
+                    <br>
+
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    use Illuminate\Support\Facades\Blade;
+    use VendorPackage\View\Components\AlertComponent;
+    
+    /**
+    * Bootstrap your package's services.
+    *
+    * @return void
+    */
+    public function boot()
+    {
+        Blade::component('package-alert', AlertComponent::class);
+    }
+                        </code></pre>
+                    </div> 
+                    <br>
+                    
+                    <p>Setelah komponen terdaftar, dapat dirender menggunakan tag alias
+
+>>>>>>> Stashed changes
                     </p> 
                     <br>
                     
                     <div class="mockup-code">
                         <pre data-prefix=""><code>
+<<<<<<< Updated upstream
     use Illuminate\Support\Facades\Blade;
     use VendorPackage\View\Components\AlertComponent;
     
@@ -383,10 +514,68 @@
             &lt;/div&gt;
         blade;
     }
+=======
+    &lt;x-package-alert/&gt;
+>>>>>>> Stashed changes
                         </code></pre>
                     </div> 
                     <br>
 
+                    <p>#Autoloading Package Components</p>
+                    <p>Selain secara manual dapat menggunakan metode componentNamespcace untuk memuat kelas komponen secara otomatis berdasarkan konvensi.
+                    </p> 
+                    <br>
+                    <!--Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan 
+                        ColorPicker yang berada di dalam namespace Package\Views\Components:-->
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+    public function render()
+    {
+        return <<<'blade'
+            &lt;div class="alert alert-danger"&gt;
+                {{ $slot }}
+            &lt;/div&gt;
+        blade;
+    }
+                        </code></pre>
+                    </div>
+                    <br>
+
+<<<<<<< HEAD
+                    <p>#Generating Inline View Components</p>
+                    <p>Untuk membuat komponen yang merender tampilan sebaris,
+                        dapat menggunakan opsi sebaris saat menjalankan perintah make:component.
+                    </p>
+                    <br>
+
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    php artisan make:component Alert --inline
+                        </code></pre>
+                    </div>
+                    <br>
+
+                    <p>#Dynamic Components</p>
+                    <p>Ketika dalam situasi bingung untuk merender komponen yang mana sehingga terjadi runtime,
+                        dapat menggunakan komponen-komponen dinamis bawaan Laravel untuk merender komponen
+                        berdasarkan nilai atau variabel runtime.
+                    </p>
+                    <br>
+
+                    <div class="mockup-code">
+                        <pre data-prefix=""><code>
+    &lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;
+                        </code></pre>
+                    </div>
+                    <br>
+
+=======
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
                 </div>
             </div>
         </div>
@@ -1092,6 +1281,7 @@
                         Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk merender
                         komponen. Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode
                         dalam komponen Anda:
+<<<<<<< Updated upstream
 
 
                     </p>
@@ -1108,7 +1298,162 @@
                     </ul>
 
                     <br>
+=======
 
+
+                    </p>
+
+                    <ul class="ml-5 list-disc">
+                        <li>data</li>
+                        <li>render</li>
+                        <li>resolveView</li>
+                        <li>shouldRender</li>
+                        <li>view</li>
+                        <li>withAttributes</li>
+                        <li>withName</li>
+<<<<<<< HEAD
+
+                    </ul>
+
+                    <br>
+=======
+>>>>>>> 02dcc1ec7e4dc1025e2ed034f0c45c2a7a971f41
+
+                    </ul>
+
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </span>
+    <!-- ANONYMOUS COMPONENTS -->
+    <span id="build">
+        <div class="build mb-10">
+            <div class="mockup-window border bg-base-300" style="width: 90%; margin:auto">
+                <div class="px-4 py-4 bg-base-200">
+                    <p class="flex justify-center">ANONYMOUS COMPONENTS</p> <br>
+                    <p>#Anonymous Index Components</p>
+                    <p>Ketika sebuah komponen terdiri dari banyak template Blade,
+                        saat ingin mengelompokkan template komponen yang diberikan dalam satu direktori.</p> <br>
+
+                    <p>Misalnya, bayangkan komponen "akordeon" dengan struktur direktori berikut:</p>
+                    <div class="mockup-code">
+                        <pre><code>/resources/views/components/accordion.blade.php</code></pre>
+                        <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                    </div> <br>
+                    <p>Struktur direktori ini memungkinkan untuk merender komponen akordeon dan itemnya seperti:</p>
+                    <div class="mockup-code">
+                        <pre><code>&lt;x-accordion&gt;</code></pre>
+                        <pre><code>&lt;x-accordion.item&gt;</code></pre>
+                        <pre><code>&lt;...&gt;</code></pre>
+                        <pre><code>&lt;/x-accordion.item&gt;</code></pre>
+                        <pre><code>&lt;/x-accordion&gt;</code></pre>
+                    </div> <br>
+                    <p>Namun, untuk merender komponen akordeon melalui x-accordion, kami terpaksa menempatkan template
+                        komponen akordeon "indeks" di direktori resources/views/components alih-alih menumpuknya di
+                        dalam
+                        direktori akordeon dengan templat terkait akordeon lainnya. Untungnya, Blade memungkinkan untuk
+                        menempatkan file index.blade.php di dalam direktori template komponen. Ketika template
+                        index.blade.php
+                        ada untuk komponen, itu akan dirender sebagai simpul "root" dari komponen. Jadi, kita dapat
+                        terus
+                        menggunakan sintaks Blade yang sama seperti yang diberikan pada contoh di atas. Namun, akan
+                        disesuaikan
+                        struktur direktori seperti berikut:</p>
+                    <div class="mockup-code">
+                        <pre><code>/resources/views/components/accordion/index.blade.php</code></pre>
+                        <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                    </div> <br>
+
+                    <p>#Data Properties/Attributes</p>
+                    <p>Karena komponen anonim tidak memiliki kelas terkait. Kita dapat menentukan atribut mana yang
+                        harus dianggap
+                        sebagai variabel data menggunakan arahan @props di bagian atas template Blade komponen Anda.
+                        Semua atribut
+                        lain pada komponen akan tersedia melalui tas atribut komponen. Jika ingin memberikan nilai
+                        default pada variabel
+                        data, Anda dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai
+                        array:</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>&lt;!-- /resources/views/components/alert.blade.php --&gt;</code></pre>
+                        <pre><code>@props(['type' => 'info', 'message'])</code></pre>
+                        <pre><code>&lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}&gt;</code></pre>
+                        <pre><code>{{ $message }}</code></pre>
+                        <pre><code>&lt;/div&gt;</code></pre>
+                    </div> <br>
+                    <p>Mengingat definisi komponen di atas, kami dapat membuat komponen seperti ini:</p>
+
+                    <div class="mockup-code">
+                        <pre><code>&lt;x-alert type="error" :message="$message" class="mb-4"/&gt;</code></pre>
+                    </div> <br>
+
+                    <p>#Accessing Parent Data</p>
+                    <p>Terkadang Anda mungkin ingin mengakses data dari komponen induk di dalam komponen turunan. Dalam
+                        kasus ini, dapat
+                        menggunakan arahan @aware. Misalnya, bayangkan kita sedang membangun komponen menu kompleks yang
+                        terdiri dari parent
+                        x-menu dan child x-menu.item:</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>&lt;x-menu color="purple"&gt;</code></pre>
+                        <pre><code>&lt;x-menu.item&gt;...&lt;/x-menu.item&gt;</code></pre>
+                        <pre><code>&lt;x-menu.item&gt;...&lt;/x-menu.item&gt;</code></pre>
+                        <pre><code>&lt;/x-menu&gt;</code></pre>
+                    </div> <br>
+
+                    <p>Komponen x-menu mungkin memiliki implementasi seperti berikut:</p>
+                    <div class="mockup-code">
+                        <pre><code>&lt;!-- /resources/views/components/menu/index.blade.php --&gt;</code></pre>
+                        <pre><code>@props(['color' => 'gray'])</code></pre>
+                        <pre><code>&lt;ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}&gt;</code></pre>
+                        <pre><code> {{ $slot }}</code></pre>
+                        <pre><code>&lt;/ul&gt;</code></pre>
+                    </div> <br>
+>>>>>>> Stashed changes
+
+                    <p>Karena prop warna hanya diteruskan ke parent x-menu, itu tidak akan tersedia di dalam
+                        x-menu.item. Namun, jika kita
+                        menggunakan direktif @aware, kita juga dapat membuatnya tersedia di dalam x-menu.item:</p>
+                    <div class="mockup-code">
+                        <pre><code>&lt;!-- /resources/views/components/menu/item.blade.php --&gt;</code></pre>
+                        <pre><code>@aware(['color' => 'gray'])</code></pre>
+                        <pre><code>&lt;li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}&gt;</code></pre>
+                        <pre><code>{{ $slot }}</code></pre>
+                        <pre><code>&lt;/li&gt;</code></pre>
+                    </div> <br>
+                    <p>Arahan @aware tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke komponen
+                        induk melalui atribut HTML.
+                        Nilai @props default yang tidak secara eksplisit diteruskan ke komponen induk tidak dapat
+                        diakses oleh direktif @aware.</p>
+
+                    <p>#Anonymous Component Namespaces</p>
+                    <p>Metode anonymousComponentNamespace menerima "jalur" ke lokasi komponen anonim sebagai argumen
+                        pertama dan "namespace" yang komponennya
+                        harus ditempatkan sebagai argumen kedua. Seperti yang akan dilihat pada contoh di bawah,
+                        "namespace" akan diawali dengan nama komponen saat komponen dirender.
+                        Biasanya, metode ini harus dipanggil dari metode boot salah satu penyedia layanan aplikasi:</p>
+                    <br>
+
+                    <div class="mockup-code">
+                        <pre><code>/**
+                        * Bootstrap any application services.
+                        *
+                        * @return void
+                        */</code></pre>
+                        <pre><code>public function boot()</code></pre>
+                        <pre><code>{</code></pre>
+                        <pre><code>Blade::anonymousComponentNamespace('flights.bookings.components', 'flights');</code></pre>
+                        <pre><code>}</code></pre>
+                    </div> <br>
+
+                    <p>Dengan contoh di atas, dapat merender komponen panel yang ada di dalam direktori komponen yang
+                        baru didaftarkan seperti:</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>&lt;x-flights::panel :flight="$flight" /&gt;</code></pre>
+                    </div> <br>
                 </div>
             </div>
         </div>
