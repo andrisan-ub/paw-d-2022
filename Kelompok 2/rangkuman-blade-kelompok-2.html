@@ -629,9 +629,18 @@
         <div class="card w-96 bg-accent-focus shadow-xl">
             <div class="card-body">
               <h2 class="card-title">Reserved Keywords</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk merender komponen. 
+                Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode dalam komponen Anda:</p>
               <div class="mockup-code">
-                <pre><code>without prefix</code></pre>
+                <pre><code>
+            - Data 
+            - Render
+            - resolveView
+            - shouldRender
+            - view
+            - withAttributes
+            - withName
+                </code></pre>
               </div>
             </div>
           </div>
@@ -641,21 +650,61 @@
         <div class="card w-96 bg-accent-focus shadow-xl">
             <div class="card-body">
               <h2 class="card-title">Slots</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>Anda sering perlu meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender dengan menggemakan variabel $slot. 
+                Untuk menjelajahi konsep ini, mari kita bayangkan bahwa komponen peringatan memiliki markup berikut:</p>
               <div class="mockup-code">
-                <pre><code>without prefix</code></pre>
+                <pre><code>&lt;div&nbsp;class=&quot;alert&nbsp;alert&#45;danger&quot;&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;&sect;slot&nbsp;}}
+                  &lt;/div&gt;</code></pre>
+              </div>
+              <p>juga dapat meneruskan konten ke slot dengan memasukkan konten ke dalam komponen: </p>
+              <div class="mockup-code">
+                <pre><code> &#160;&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
+              </div>
+              <p>Terkadang komponen mungkin perlu merender beberapa slot berbeda di lokasi yang berbeda dalam komponen. Mari kita ubah komponen peringatan kita untuk memungkinkan injeksi slot "judul":  </p>
+              <div class="mockup-code">
+                <pre><code>&#60;span&#160;class&#61;&#34;alert&#45;title&#34;&#62;&#123;&#123;&#160;&#36;title&#160;&#125;&#125;&#60;&#47;span&#62;&#13;&#10;&#160;&#13;&#10;&#60;div&#160;class&#61;&#34;alert&#160;alert&#45;danger&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;div&#62;</code></pre>
+              </div>
+              <p>Anda dapat menentukan konten slot bernama menggunakan tag x-slot. Konten apa pun yang tidak berada dalam tag x-slot eksplisit akan diteruskan ke komponen dalam variabel $slot:  </p>
+              <div class="mockup-code">
+                <pre><code>&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Server&#160;Error&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
               </div>
             </div>
           </div>
     </div>
 
     <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">#Scooped Slots</h2>
+            <p>  Jika Anda telah menggunakan kerangka kerja JavaScript seperti Vue, Anda mungkin akrab dengan "slot terbatas", yang memungkinkan Anda mengakses data atau metode dari komponen di dalam slot Anda. Anda dapat mencapai perilaku serupa di Laravel dengan mendefinisikan metode publik atau properti pada komponen Anda dan mengakses komponen dalam slot Anda melalui variabel $component. 
+              Dalam contoh ini, kita akan mengasumsikan bahwa komponen x-alert memiliki metode formatAlert publik yang ditentukan pada kelas komponennya: </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;component&#45;&#62;formatAlert&#40;&#39;Server&#160;Error&#39;&#41;&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-96 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">#Slots Atribut</h2>
+          <p>  Seperti komponen Blade, Anda dapat menetapkan atribut tambahan ke slot seperti nama kelas CSS: </p>
+          <div class="mockup-code">
+            <pre><code>&#160;&#60;x&#45;card&#160;class&#61;&#34;shadow&#45;sm&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;heading&#160;class&#61;&#34;font&#45;bold&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Heading&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;Content&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;footer&#160;class&#61;&#34;text&#45;sm&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Footer&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#60;&#47;x&#45;card&#62;</code></pre>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
         <div class="card w-96 bg-accent-focus shadow-xl">
             <div class="card-body">
               <h2 class="card-title">Inline Component Views</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>Untuk komponen yang sangat kecil, mungkin terasa rumit untuk mengelola kelas komponen dan template tampilan komponen. Untuk alasan ini, Anda dapat mengembalikan markup komponen langsung dari metode render:  </p>
               <div class="mockup-code">
-                <pre><code>without prefix</code></pre>
+                <pre><code>public&#160;function&#160;render&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;return&#160;&#60;&#60;&#60;&#39;blade&#39;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;div&#160;class&#61;&#34;alert&#160;alert&#45;danger&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;&#47;div&#62;&#13;&#10;&#160;&#160;&#160;&#160;blade;&#13;&#10;&#125;</code></pre>
               </div>
             </div>
           </div>
@@ -665,9 +714,9 @@
         <div class="card w-96 bg-accent-focus shadow-xl">
             <div class="card-body">
               <h2 class="card-title">Dynamic Components</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>Terkadang Anda mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus dirender hingga runtime. Dalam situasi ini, Anda dapat menggunakan komponen komponen dinamis bawaan Laravel untuk merender komponen berdasarkan nilai runtime atau variabel: </p>
               <div class="mockup-code">
-                <pre><code>without prefix</code></pre>
+                <pre><code>&#60;x&#45;dynamic&#45;component&#160;&#58;component&#61;&#34;&#36;componentName&#34;&#160;class&#61;&#34;mt&#45;4&#34;&#160;&#47;&#62;</code></pre>
               </div>
             </div>
           </div>
@@ -677,13 +726,27 @@
         <div class="card w-96 bg-accent-focus shadow-xl">
             <div class="card-body">
               <h2 class="card-title">Manually Registering Components</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <p>Saat menulis komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components.  
+                 Namun, jika Anda membangun paket yang menggunakan komponen Blade atau menempatkan komponen di direktori non-konvensional, Anda harus mendaftarkan kelas komponen Anda secara manual dan alias tag HTML-nya sehingga Laravel tahu di mana menemukan komponen tersebut. 
+                Anda biasanya harus mendaftarkan komponen Anda dalam metode boot penyedia layanan paket Anda:</p>
               <div class="mockup-code">
-                <pre><code>without prefix</code></pre>
+                <pre><code>use&#160;IlluminateSupportFacadesBlade;&#13;&#10;use&#160;VendorPackageViewComponentsAlertComponent;&#13;&#10;&#160;&#13;&#10;&#47;&#42;&#42;&#13;&#10;&#160;&#42;&#160;Bootstrap&#160;your&#160;package&#39;s&#160;services&#46;&#13;&#10;&#160;&#42;&#13;&#10;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;Blade&#58;&#58;component&#40;&#39;package&#45;alert&#39;&#44;&#160;AlertComponent&#58;&#58;class&#41;;&#13;&#10;&#125;</code></pre>
               </div>
             </div>
           </div>
     </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-96 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Autoloading Package Components</h2>
+            <p>Anda dapat menggunakan metode componentNamespace untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan ColorPicker yang berada dalam namespace PackageViewsComponents:</p>
+            <div class="mockup-code">
+              <pre><code>use&#160;IlluminateSupportFacadesBlade;&#13;&#10;&#160;&#13;&#10;&#47;&#42;&#42;&#13;&#10;&#160;&#42;&#160;Bootstrap&#160;your&#160;package&#39;s&#160;services&#46;&#13;&#10;&#160;&#42;&#13;&#10;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;Blade&#58;&#58;componentNamespace&#40;&#39;Nightshade\Views\Components&#39;&#44;&#160;&#39;nightshade&#39;&#41;;&#13;&#10;&#125;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
     <!--EndComponents-->
     <!--EndIDA-->
     
