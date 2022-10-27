@@ -71,7 +71,7 @@
 
                     <p>Data yang dikirim kepada view blade dapat ditampilkan dengan sintaks {{ }}. Misalnya, jika pada
                         route terdapat kode:
-                    </p>
+                    </p> <br>
 
                     <div class="mockup-code">
                         <pre><code>Route::get('/', function () {
@@ -79,16 +79,32 @@
   });</code></pre>
                     </div> <br>
 
-                    <p>Maka data nama dapat ditampilkan sebagai berikut:</p>
+                    <p>Maka data nama dapat ditampilkan sebagai berikut:</p> <br>
 
                     <div class="mockup-code">
                         <pre><code>Hello, {{ $name }}.</code></pre>
                     </div> <br>
 
-                    <p>Sintaks {{ }} berfungsi seperti echo pada PHP, sehingga dapat pula diisi dengan fungsi.</p>
+                    <p>Sintaks {{ }} berfungsi seperti echo pada PHP, sehingga dapat pula diisi dengan fungsi.</p> <br>
 
                     <div class="mockup-code">
                         <pre><code>Waktu UNIX timestamp sekarang: {{ time() }}.</code></pre>
+                    </div> <br>
+
+                    <p>#HTML Entity Encoding</p>
+                    <p>Secara default, Blade akan melakukan double encoding pada HTML entity. untuk mencegah hal ini, dapat
+                        dilakukan dengan memanggil Blade::withoutDoubleEncoding pada method bott pada file AppServiceProvider.
+                    </p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>class AppServiceProvider extends ServiceProvider
+  {
+      ...
+      public function boot()
+      {
+          Blade::withoutDoubleEncoding();
+      }
+  }</code></pre>
                     </div> <br>
                 </div>
             </div>
