@@ -718,7 +718,83 @@
       <h1 class="font-bold text-slate-700 text-4xl text-center -mt-9 tracking-wider">Building Layouts</h1>
     </div>
     <!--=================Layouts Using Components ====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit bg-success my-10 p-5">
+      <h1 class="font-bold text-xl pb-3 text-center">
+        Layouts Using Components
+    </h1>
+    <!--Awal Layouts Using Components-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Penjelasan Layouts Using Components
+                </h2>
+                <p class="justify-items-auto">
+                  Mendefinisikan komponen tata letak (layout) dengan 
+                  satu komponen Blade.
+                  Misalnya, kita sedang membangun aplikasi daftar 
+                  "todo" dengan tata letak seperti berikut:
+                </p><br>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="col-start-2">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                        <pre><code>&lt;!-resources/views/components/layout.blade.php-&gt;</code></pre>
+                        <pre><code>&lt;html&gt;</code></pre>
+                        <pre><code>  &lt;head&gt;</code></pre>
+                        <pre><code>&lt;tittle&gt;{{ $tittle ?? 'TodoManager'}}</code></pre>
+                        <pre><code>   &lt;/tittle&gt;</code></pre> 
+                        <pre><code>    &lt;/head&gt;</code></pre>
+                        <pre><code>   &lt;body&gt;</code></pre>
+                        <pre><code>   &lt;h1&gt; Todos &lt;/h1&gt;</code></pre>
+                        <pre><code> &lt;/hr&gt;</code></pre>
+                        <pre><code>{{ $slot }}</code></pre>
+                        <pre><code>   &lt;/body&gt;</code></pre>
+                        <pre><code>&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+    <div class="col-start-1">
+      <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto p-5">
+              Setelah komponen tata letak ditentukan,buatlah tampilan Blade 
+              yang menggunakan komponen tersebut. Dalam contoh ini, 
+              kita akan mendefinisikan 
+              tampilan sederhana yang menampilkan daftar tugas:
+          </p><br>
+      </div>
+  </div>    
+  <div>
+      <!--Card bawah kanan-->
+      <div class="col-start-2">
+          <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+          <h2 class="card-title pb-5 justify-items-auto">
+              Contoh Syntax
+          </h2>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                <pre><code>&lt;!--resources/views/taks.blade.php--&gt;</code></pre>
+                <pre><code>&lt;x-layout&gt;</code></pre>
+                <pre><code>     @foreach ($task as $task)</code></pre>
+                <pre><code>       {{$task}}</code></pre>
+                <pre><code>     @endforeach</code></pre>
+                <pre><code>&lt;/x-layout&gt;</code></pre>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    <!--Akhir Layouts Using Components-->
+    </div>
     <!--===============Defining Layouts Using Template Inheritance ======================-->
     <div class="h-fit bg-success py-5 text-center">
       <h1 class="font-bold text-xl pb-3">Mendefinisikan Layout</h1>
