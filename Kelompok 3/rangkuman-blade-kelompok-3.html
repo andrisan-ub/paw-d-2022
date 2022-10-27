@@ -274,6 +274,23 @@
       i: {{ $i }}
   @endwhile</code></pre> </div> <br>
 
+                    <p>Kondisi @continue dan @break dapat dituliskan langsung pada directive</p> <br>
+
+                    <div class="mockup-code">
+                        <pre><code>@for ($i = 0; $i < 10; $i++)
+      @if ($i == 5)
+          @continue
+      @endif
+  @endfor
+
+  @for ($i = 0; $i < 10; $i++)
+      @continue($i == 5)
+  @endfor
+
+  {{-- Hasil kedua kode diatas sama--}}
+</code></pre>
+                    </div> <br>
+
                     <p>#The Loop Variable</p>
                     <p>untuk mendeklarasikan sebuah foreach loop, tidak perlu menggunakan syntax php, hanya menggunakan
                         fungsi @foreach, kemudian menambahkan kurung kurawal {} untuk membuka dan menutup php echo
