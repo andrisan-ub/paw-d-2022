@@ -141,6 +141,23 @@
   @for()</code></pre>
                     </div> <br>
 
+                    <p>#Rendering JSON</p>
+                    <p>Untuk memasukkan data sebagai JSON, dapat menggunakan metode Illuminate\Support\Js::from().
+                        Dapat pula menggunakan facade Js.
+                    </p>
+
+                    <div class="mockup-code">
+                        <pre><code>{{-- Memanggil method --}}
+  &lt;script&gt;
+      var app = {{ Illuminate\Support\Js::from($array) }};
+  &lt;/script&gt;
+
+  {{-- Menggunakan facade --}}
+  &lt;script&gt;
+      var app = {{ Js::from($array) }};
+  &lt;/script&gt;</code></pre>
+                    </div> <br>
+
                     <p>#@verbatim Directive</p>
                     <p>Kode di dalam @verbatim tidak akan diinterpretasi oleh Blade, sehingga tidak perlu menambahkan tanda
                         @ pada setiap variable.
