@@ -506,7 +506,46 @@
       <!--Akhir Passing Data to Components-->
     </div>
     <!--=================Component Attributes ====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit bg-success my-10 p-5">
+      <h1 class="font-bold text-xl pb-3 text-center">
+        Component Atrributes
+    </h1>
+    <!--Awal Component Attributes-->
+    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+        <!--Card bawah kiri-->
+        <div class="col-start-1">
+            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 mt-6 mb-2">
+                    Penjelasan Component Attributes
+                </h2>
+                <p class="justify-items-auto">
+                  Component Attributes adalah menentukan atribut HTML tambahan, seperti kelas, yang bukan merupakan bagian dari data yang diperlukan agar komponen berfungsi. Biasanya, kita ingin meneruskan atribut tambahan ini ke root element template komponen. Misalnya, bayangkan kita ingin merender komponen peringatan.
+                  <br> <br>
+                  Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan ke komponen “attributes bag”. Komponen teersebut secara otomatis tersedia melalui variabel $attributes. Semua atribut dapat dirender dalam komponen dengan menggemakan variabel dibawah.
+                </p><br>
+            </div>
+        </div>    
+        <div>
+            <!--Card bawah kanan-->
+            <div class="col-start-2">
+                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
+                <h2 class="card-title pb-5 justify-items-auto">
+                    Contoh Syntax
+                </h2>
+                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                        <pre><code> &lt;x-alert type="error":message="$message"</code></pre>
+                        <pre><code> class="mt-4")/&gt;</code></pre> <br>
+                        <pre><code>    Variabel untuk merender atribut</code></pre>
+                        <pre><code>&lt;div {{ $attributes }}&gt;</code></pre>
+                        <pre><code>&lt;!-- Component content --&gt;</code></pre> 
+                        <pre><code>&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Akhir Component Attributes-->
+    </div>
     <!--==================Reserved Keywords ===================-->
     <div class="h-fit bg-success my-10"></div>
     <!--=================Slots ====================-->
