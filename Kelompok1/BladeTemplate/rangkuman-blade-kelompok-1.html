@@ -40,13 +40,13 @@
             </a>
             <ul class="p-2 bg-base-100">
               <li>
-                <a href="Public/" class="active:bg-primary">Introduction</a>
+                <a href="#intro" class="active:bg-primary">Introduction</a>
               </li>
               <li>
-                <a href="#" class="active:bg-primary">Displaying Data</a>
+                <a href="#display" class="active:bg-primary">Displaying Data</a>
               </li>
               <li>
-                <a href="#" class="active:bg-primary text-base">Blade Directives</a>
+                <a href="#directive" class="active:bg-primary text-base">Blade Directives</a>
               </li>
               <li>
                 <a href="#components" class="active:bg-primary">Components</a>
@@ -64,7 +64,8 @@
           </li>
 
           <li>
-            <a href="../rangkuman-php-kelompok-1.html" class="text-slate-100 font-medium active:bg-primary hover:bg-primary">PHP</a>
+            <a href="../rangkuman-php-kelompok-1.html"
+              class="text-slate-100 font-medium active:bg-primary hover:bg-primary">PHP</a>
           </li>
           <li>
             <a href="#ourTeam" class="text-slate-100 font-medium active:bg-primary hover:bg-primary">Our Team</a>
@@ -107,7 +108,7 @@
   <!-- Awal Rangkuman -->
   <div id="rangkuman" class="container p-10 flex flex-wrap justify-around">
     <!-- Judul -->
-    <div class="container text-center p-8 text-2xl" data-aos="fade-up">
+    <div id="intro" class="container text-center p-8 text-2xl" data-aos="fade-up">
       <h1 class="font-bold text-primary-focus text-3xl">Rangkuman Blade Template</h1>
     </div>
     <!-- Akhir Judul -->
@@ -132,7 +133,7 @@
           views, data dapat diteruskan ke tampilan
           Blade menggunakan argumen kedua <span class="text-red-600">view</span> helper :
         </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6">
+        <div id="display" class="mockup-code bg-zinc-800 text-sm mt-6">
           <pre><code>   Route::get('/', function () {</code></pre>
           <pre><code>       return view('greeting', ['name' => 'Finn']);</code></pre>
           <pre><code>   });</code></pre>
@@ -263,7 +264,7 @@
               HTML di directive <span class="text-red-600">@verbatim</span> sehingga kita tidak perlu mengawali setiap
               pernyataan echo Blade dengan simbol <span class="text-red-600">@</span> :
             </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
+            <div id="directive" class="mockup-code bg-zinc-800 text-sm mt-6">
               <pre><code>@verbatim</code></pre>
               <pre><code>   &lt;div class="container"&gt;</code></pre>
               <pre><code>       Hello, {{ name }}.</code></pre>
@@ -384,78 +385,84 @@
           </div>
         </div>
         <!-- Akhir If Statement -->
-      <!-- Akhir Rangkuman Adam -->
+        <!-- Akhir Rangkuman Adam -->
 
         <!-- Rangkuman Radit -->
-      <!-- Awal Switch -->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">Switch</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="mt-8 px-12">
-          <p class="indent-20 text-justify">
-            Pernyataan switch dapat dibangun menggunakan direktif <span class="text-red-600">@switch, @case, @break, @default</span> dan <span class="text-red-600">@endswitch</span>
-          </p>
-          <div class="mockup-code bg-zinc-800 text-sm mt-6">
-            <pre><code>   @switch($i)</code></pre>
-            <pre><code>       @case(1)</code></pre>
-            <pre><code>           First case...</code></pre>
-            <pre><code>           @break</code></pre>
-            <br>
-            <pre><code>       @case(2)</code></pre>
-            <pre><code>           Second case...</code></pre>
-            <pre><code>           @break</code></pre>
-            <br>
-            <pre><code>       @default</code></pre>
-            <pre><code>           Default case...</code></pre>
-            <pre><code>   @endswitch</code></pre>
+        <!-- Awal Switch -->
+        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+          <div class=""></div>
+          <p class="font-bold text-3xl text-center text-2xl">Switch</p>
+        </div>
+        <div class="container" data-aos="fade-up">
+          <div class="mt-8 px-12">
+            <p class="indent-20 text-justify">
+              Pernyataan switch dapat dibangun menggunakan direktif <span class="text-red-600">@switch, @case, @break,
+                @default</span> dan <span class="text-red-600">@endswitch</span>
+            </p>
+            <div class="mockup-code bg-zinc-800 text-sm mt-6">
+              <pre><code>   @switch($i)</code></pre>
+              <pre><code>       @case(1)</code></pre>
+              <pre><code>           First case...</code></pre>
+              <pre><code>           @break</code></pre>
+              <br>
+              <pre><code>       @case(2)</code></pre>
+              <pre><code>           Second case...</code></pre>
+              <pre><code>           @break</code></pre>
+              <br>
+              <pre><code>       @default</code></pre>
+              <pre><code>           Default case...</code></pre>
+              <pre><code>   @endswitch</code></pre>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Akhir Switch -->
+        <!-- Akhir Switch -->
 
-      <!-- Awal Loops-->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">Loops</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="mt-8 px-12">
-          <p class="indent-20 text-justify">
-            Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk bekerja dengan struktur loop PHP. Sekali lagi, masing-masing arahan ini berfungsi identik dengan rekan PHP mereka:
-          </p>
-          <div class="mockup-code bg-zinc-800 text-sm mt-6">
-            <pre><code>   @for($i = 0; $i < 10; $i++)</code></pre>
-            <pre><code>       The current value is {{ $i }}</code></pre>
-            <pre><code>   @endfor</code></pre>
-            <br>
-            <pre><code>   @foreach ($users as $user)</code></pre>
-            <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
-            <pre><code>   @endforeach</code></pre>
-            <br>
-            <pre><code>   @forelse ($users as $user)</code></pre>
-            <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
-            <pre><code>   @empty</code></pre>
-            <pre><code>       &lt;p&gt;No users&lt;/p&gt;</code></pre>
-            <pre><code>   @endforelse</code></pre>
-            <br>
-            <pre><code>   @while (true)</code></pre>
-            <pre><code>       &lt;p&gt;I'm looping forever.&lt;/p&gt;</code></pre>
-            <pre><code>   @endwhile</code></pre>
-          </div>
+        <!-- Awal Loops-->
+        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+          <div class=""></div>
+          <p class="font-bold text-3xl text-center text-2xl">Loops</p>
+        </div>
+        <div class="container" data-aos="fade-up">
+          <div class="mt-8 px-12">
+            <p class="indent-20 text-justify">
+              Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk bekerja dengan struktur loop PHP.
+              Sekali lagi, masing-masing arahan ini berfungsi identik dengan rekan PHP mereka:
+            </p>
+            <div class="mockup-code bg-zinc-800 text-sm mt-6">
+              <pre><code>   @for($i = 0; $i < 10; $i++)</code></pre>
+              <pre><code>       The current value is {{ $i }}</code></pre>
+              <pre><code>   @endfor</code></pre>
+              <br>
+              <pre><code>   @foreach ($users as $user)</code></pre>
+              <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
+              <pre><code>   @endforeach</code></pre>
+              <br>
+              <pre><code>   @forelse ($users as $user)</code></pre>
+              <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
+              <pre><code>   @empty</code></pre>
+              <pre><code>       &lt;p&gt;No users&lt;/p&gt;</code></pre>
+              <pre><code>   @endforelse</code></pre>
+              <br>
+              <pre><code>   @while (true)</code></pre>
+              <pre><code>       &lt;p&gt;I'm looping forever.&lt;/p&gt;</code></pre>
+              <pre><code>   @endwhile</code></pre>
+            </div>
 
             <div class="flex flex-wrap justify-around">
-            <div class="card w-96 bg-base-300 shadow-xl, glass my-16" data-aos="zoom-in-up">
+              <div class="card w-96 bg-base-300 shadow-xl, glass my-16" data-aos="zoom-in-up">
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold text-white underline underline-offset-2"><span class="text-yellow-500">Fun Fact</span></h2>
-                <p class="text-white">Saat melakukan iterasi melalui <span class="text-red-600">foreach</span> loop, kita dapat menggunakan variabel loop untuk mendapatkan informasi berharga tentang loop, seperti apakah kita berada di iterasi pertama atau terakhir melalui loop.</p>
+                  <h2 class="card-title font-bold text-white underline underline-offset-2"><span
+                      class="text-yellow-500">Fun Fact</span></h2>
+                  <p class="text-white">Saat melakukan iterasi melalui <span class="text-red-600">foreach</span> loop,
+                    kita dapat menggunakan variabel loop untuk mendapatkan informasi berharga tentang loop, seperti
+                    apakah kita berada di iterasi pertama atau terakhir melalui loop.</p>
                 </div>
-            </div>
+              </div>
             </div>
 
             <p class="mt-6 text-justify" data-aos="fade-up">
-                Saat menggunakan loop, kita juga dapat melewati iterasi saat ini atau mengakhiri loop menggunakan arahan <span class="text-red-600">@continue</span> dan <span class="text-red-600">@break</span>
+              Saat menggunakan loop, kita juga dapat melewati iterasi saat ini atau mengakhiri loop menggunakan arahan
+              <span class="text-red-600">@continue</span> dan <span class="text-red-600">@break</span>
             </p>
             <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
               <pre><code>   @foreach ($users as $user)</code></pre>
@@ -472,47 +479,51 @@
             </div>
 
             <p class="mt-6 text-justify" data-aos="fade-up">
-                Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan dalam deklarasi direktif.
+              Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan dalam deklarasi direktif.
             </p>
             <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-                <pre><code>   @foreach ($users as $user)</code></pre>
-                <pre><code>       @continue($user->type == 1)</code></pre>
-                <br>
-                <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
-                <br>
-                <pre><code>       @break($user->number == 5)</code></pre>
-                <pre><code>   @endforeach</code></pre>
+              <pre><code>   @foreach ($users as $user)</code></pre>
+              <pre><code>       @continue($user->type == 1)</code></pre>
+              <br>
+              <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
+              <br>
+              <pre><code>       @break($user->number == 5)</code></pre>
+              <pre><code>   @endforeach</code></pre>
             </div>
-        </div>
-      </div>
-      <!-- Akhir Loops -->
-
-      <!-- Awal Loop Variable -->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">The Loop Variable</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="mt-8 px-12">
-          <p class="indent-20 text-justify">
-            Saat melakukan iterasi melalui sebuah <span class="text-red-600">foreach</span> loop, sebuah <span class="text-red-600">$loop</span> variabel akan tersedia di dalam loop. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
-          </p>
-          <div class="mockup-code bg-zinc-800 text-sm mt-6">
-            <pre><code>   @foreach ($users as $user)</code></pre>
-            <pre><code>       @if ($loop->first)</code></pre>
-            <pre><code>           This is the first iteration.</code></pre>
-            <pre><code>       @endif</code></pre>
-            <br>
-            <pre><code>       @if ($loop->last)</code></pre>
-            <pre><code>           This is the last iteration.</code></pre>
-            <pre><code>       @endif</code></pre>
-            <br>
-            <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
-            <pre><code>   @endforeach</code></pre>
           </div>
+        </div>
+        <!-- Akhir Loops -->
+
+        <!-- Awal Loop Variable -->
+        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+          <div class=""></div>
+          <p class="font-bold text-3xl text-center text-2xl">The Loop Variable</p>
+        </div>
+        <div class="container" data-aos="fade-up">
+          <div class="mt-8 px-12">
+            <p class="indent-20 text-justify">
+              Saat melakukan iterasi melalui sebuah <span class="text-red-600">foreach</span> loop, sebuah <span
+                class="text-red-600">$loop</span> variabel akan tersedia di dalam loop. Variabel ini menyediakan akses
+              ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah ini adalah iterasi pertama
+              atau terakhir melalui loop:
+            </p>
+            <div class="mockup-code bg-zinc-800 text-sm mt-6">
+              <pre><code>   @foreach ($users as $user)</code></pre>
+              <pre><code>       @if ($loop->first)</code></pre>
+              <pre><code>           This is the first iteration.</code></pre>
+              <pre><code>       @endif</code></pre>
+              <br>
+              <pre><code>       @if ($loop->last)</code></pre>
+              <pre><code>           This is the last iteration.</code></pre>
+              <pre><code>       @endif</code></pre>
+              <br>
+              <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
+              <pre><code>   @endforeach</code></pre>
+            </div>
 
             <p class="mt-6 text-justify" data-aos="fade-up">
-                Jika kita berada dalam loop bersarang, kita dapat mengakses <span class="text-red-600">$loop</span> variable loop induk melalui <span class="text-red-600">parent</span> properti:
+              Jika kita berada dalam loop bersarang, kita dapat mengakses <span class="text-red-600">$loop</span>
+              variable loop induk melalui <span class="text-red-600">parent</span> properti:
             </p>
             <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
               <pre><code>   @foreach ($users as $user)</code></pre>
@@ -525,464 +536,519 @@
             </div>
 
             <p class="mt-6 text-justify" data-aos="fade-up">
-                Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan dalam deklarasi direktif.
+              Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan dalam deklarasi direktif.
             </p>
             <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-                <pre><code>   @foreach ($users as $user)</code></pre>
-                <pre><code>       @continue($user->type == 1)</code></pre>
-                <br>
-                <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
-                <br>
-                <pre><code>       @break($user->number == 5)</code></pre>
-                <pre><code>   @endforeach</code></pre>
+              <pre><code>   @foreach ($users as $user)</code></pre>
+              <pre><code>       @continue($user->type == 1)</code></pre>
+              <br>
+              <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
+              <br>
+              <pre><code>       @break($user->number == 5)</code></pre>
+              <pre><code>   @endforeach</code></pre>
             </div>
 
             <p class="mt-6 text-justify" data-aos="fade-up">
-                Variabel <span class="text-red-600">$loop</span> juga berisi berbagai properti berguna lainnya:
+              Variabel <span class="text-red-600">$loop</span> juga berisi berbagai properti berguna lainnya:
             </p>
             <table class="border-collapse border border-slate-500 mt-8" align="center" data-aos="fade-up">
-                <thead>
-                  <tr>
-                    <th class="border border-slate-600 bg-amber-400 h-7 text-black">Property</th>
-                    <th class="border border-slate-600 bg-amber-400 h-7 text-black">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->index</span></td>
-                    <td class="border border-slate-700 text-center">Indeks dari iterasi loop saat ini (dimulai dari 0).</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->iteration</span></td>
-                    <td class="border border-slate-700 text-center">Iterasi loop saat ini (dimulai dari 1).</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->remaining</span></td>
-                    <td class="border border-slate-700 text-center">Iterasi yang tersisa dalam loop.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->count</span></td>
-                    <td class="border border-slate-700 text-center">Jumlah total item dalam array yang diulang.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->first</span></td>
-                    <td class="border border-slate-700 text-center">Apakah ini adalah iterasi pertama melalui loop.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->last</span></td>
-                    <td class="border border-slate-700 text-center">Apakah ini adalah iterasi terakhir melalui loop.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->even</span></td>
-                    <td class="border border-slate-700 text-center">Apakah ini merupakan iterasi genap melalui loop.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->odd</span></td>
-                    <td class="border border-slate-700 text-center">Apakah ini iterasi ganjil melalui loop.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->depth</span></td>
-                    <td class="border border-slate-700 text-center">Tingkat bersarang dari loop saat ini.</td>
-                  </tr>
-                  <tr>
-                    <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->parent</span></td>
-                    <td class="border border-slate-700 text-center">Saat berada dalam loop bersarang, variabel loop induk.</td>
-                  </tr>
-                </tbody>
-              </table>
+              <thead>
+                <tr>
+                  <th class="border border-slate-600 bg-amber-400 h-7 text-black">Property</th>
+                  <th class="border border-slate-600 bg-amber-400 h-7 text-black">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->index</span></td>
+                  <td class="border border-slate-700 text-center">Indeks dari iterasi loop saat ini (dimulai dari 0).
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->iteration</span></td>
+                  <td class="border border-slate-700 text-center">Iterasi loop saat ini (dimulai dari 1).</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->remaining</span></td>
+                  <td class="border border-slate-700 text-center">Iterasi yang tersisa dalam loop.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->count</span></td>
+                  <td class="border border-slate-700 text-center">Jumlah total item dalam array yang diulang.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->first</span></td>
+                  <td class="border border-slate-700 text-center">Apakah ini adalah iterasi pertama melalui loop.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->last</span></td>
+                  <td class="border border-slate-700 text-center">Apakah ini adalah iterasi terakhir melalui loop.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->even</span></td>
+                  <td class="border border-slate-700 text-center">Apakah ini merupakan iterasi genap melalui loop.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span class="text-red-600">$loop->odd</span>
+                  </td>
+                  <td class="border border-slate-700 text-center">Apakah ini iterasi ganjil melalui loop.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->depth</span></td>
+                  <td class="border border-slate-700 text-center">Tingkat bersarang dari loop saat ini.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-700 text-center w-52 h-10"><span
+                      class="text-red-600">$loop->parent</span></td>
+                  <td class="border border-slate-700 text-center">Saat berada dalam loop bersarang, variabel loop induk.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <!-- Akhir Loop Variable -->
-      
-      <!-- Conditional Classes -->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">Conditional Classes</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="mt-8 px-12">
-          <p class="indent-20 text-justify">
-            Direktif <span class="text-red-600">@class</span> mengkompilasi string kelas CSS secara kondisional. Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar kelas yang dirender:
-          </p>
-          <div class="mockup-code bg-zinc-800 text-sm mt-6">
-            <pre><code>@php</code></pre>
-            <pre><code>    $isActive = false;</code></pre>
-            <pre><code>    $hasError = true;</code></pre>
-            <pre><code>@endphp</code></pre>
-            <br>
-            <pre><code>&lt;span @class([</code></pre>
-            <pre><code>    'p-4',</code></pre>
-            <pre><code>    'font-bold' => $isActive,</code></pre>
-            <pre><code>    'text-gray-500' => ! $isActive,</code></pre>
-            <pre><code>    'bg-red' => $hasError,</code></pre>
-            <pre><code>])&gt;&lt;/span&gt;</code></pre>
-            <br>
-            <pre><code>&lt;span class="p-4 text-gray-500 bg-red"&gt;&lt;/span&gt;</code></pre>
-        </div>
-      </div>
-      <!-- Akhir Conditional Classes -->
+        <!-- Akhir Loop Variable -->
 
-      <!-- Awal Additional Attributes -->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">Additional Attributes</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="mt-8 px-12">
-            <p class="indent-20 text-justify" data-aos="fade-up">
-            Untuk kenyamanan, kita dapat menggunakan <span class="text-red-600">@checked</span> direktif untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan bergema <span class="text-red-600">checked</span> jika kondisi yang diberikan mengevaluasi ke <span class="text-red-600">true</span>:
-            </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;input type="checkbox"</code></pre>
-            <pre><code>       name="active"</code></pre>
-            <pre><code>       value="active"</code></pre>
-            <pre><code>       @checked(old('active', $user->active)) /&gt;</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Demikian juga, <span class="text-red-600">@selected</span> arahan dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;select name="version"&gt;</code></pre>
-            <pre><code>    @foreach ($product->versions as $version)</code></pre>
-            <pre><code>        &lt;option value="{{ $version }}" @selected(old('version') == $version)&gt;</code></pre>
-            <pre><code>           {{ $version }}</code></pre>
-            <pre><code>        &lt;/option&gt;</code></pre>
-            <pre><code>    @endforeach</code></pre>
-            <pre><code>&lt;/select&gt;</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Selain itu, <span class="text-red-600">@disabled</span> arahan dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "dinonaktifkan":
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;button type="submit" @disabled($errors->isNotEmpty())&gt;Submit&lt;/button&gt;</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Selain itu, <span class="text-red-600">@readonly</span> arahan dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "hanya-baca":
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;input type="email"</code></pre>
-            <pre><code>       name="email"</code></pre>
-            <pre><code>       value="email@laravel.com"</code></pre>
-            <pre><code>       @readonly($user->isNotAdmin()) /&gt;</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Selain itu, <span class="text-red-600">$required</span> arahan dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "diperlukan":
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;input type="text"</code></pre>
-            <pre><code>       name="title"</code></pre>
-            <pre><code>       value="title"</code></pre>
-            <pre><code>       @required($user->isAdmin()) /&gt;</code></pre>
-        </div>
-      </div>
-      </div>
-      <!-- Akhir Additional Attributes -->
-
-      <!-- Awal Including Subviews -->
-      <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-        <div class=""></div>
-        <p class="font-bold text-3xl text-center text-2xl">Including Subviews</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="flex flex-wrap justify-around">
-            <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold text-white underline underline-offset-2"><span class="text-yellow-500">Fun Fact</span></h2>
-                        <p class="text-white">Meskipun kita bebas menggunakan direktif, komponen <span class="text-red-600">@include</span> Blade menyediakan fungsionalitas serupa dan menawarkan beberapa manfaat dibandingkan direktif seperti pengikatan data dan atribut.</p>
-                </div>
-            </div>
-        </div>
-        <div class="mt-8 px-12">
-            <p class="indent-20 text-justify" data-aos="fade-up">
-                Arahan Blade <span class="text-red-600">@include</span> memungkinkan kita untuk menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:
-            </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>&lt;div&gt;</code></pre>
-            <pre><code>    @include('shared.errors')</code></pre>
-            <br>
-            <pre><code>    &lt;form&gt;</code></pre>
-            <pre><code>        &lt;!-- Form Contents --&gt;</code></pre>
-            <pre><code>    &lt;/form&gt;</code></pre>
-            <pre><code>&lt;/div&gt;</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, kita juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@include('view.name', ['status' => 'complete'])</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Jika kita mencoba untuk <span class="text-red-600">@include</span> melihat yang tidak ada, Laravel akan membuat kesalahan. Jika kita ingin menyertakan tampilan yang mungkin ada atau tidak, kita harus menggunakan <span class="text-red-600">@includeIf</span> arahan:
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@includeIf('view.name', ['status' => 'complete'])</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Jika Anda ingin <span class="text-red-600">@include</span> melihat apakah ekspresi boolean yang diberikan dievaluasi ke <span class="text-red-600">true</span> or <span class="text-red-600">false</span>, Anda dapat menggunakan arahan <span class="text-red-600">@includeWhen</span> dan <span class="text-red-600">@includeUnless</span>
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</code></pre>
-            <br>
-            <pre><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</code></pre>
-        </div>
-
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan <span class="text-red-600">includeFirst</span> direktif:
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</code></pre>
-        </div>
-
-        <div class="flex flex-wrap justify-around" data-aos="fade-up">
-            <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold underline underline-offset-2"><span class="text-red-500">But be Careful!</span></h2>
-                        <p class="text-white">Kita harus menghindari penggunaan <span class="text-red-600">__DIR__</span> dan <span class="text-red-600">__FILE__</span> konstanta dalam tampilan Blade, karena mereka akan merujuk ke lokasi tampilan yang di-cache dan dikompilasi.</p>
-                </div>
-            </div>
-        </div>
-
+        <!-- Conditional Classes -->
         <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+          <div class=""></div>
+          <p class="font-bold text-3xl text-center text-2xl">Conditional Classes</p>
+        </div>
+        <div class="container" data-aos="fade-up">
+          <div class="mt-8 px-12">
+            <p class="indent-20 text-justify">
+              Direktif <span class="text-red-600">@class</span> mengkompilasi string kelas CSS secara kondisional.
+              Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan,
+              sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan
+              selalu disertakan dalam daftar kelas yang dirender:
+            </p>
+            <div class="mockup-code bg-zinc-800 text-sm mt-6">
+              <pre><code>@php</code></pre>
+              <pre><code>    $isActive = false;</code></pre>
+              <pre><code>    $hasError = true;</code></pre>
+              <pre><code>@endphp</code></pre>
+              <br>
+              <pre><code>&lt;span @class([</code></pre>
+              <pre><code>    'p-4',</code></pre>
+              <pre><code>    'font-bold' => $isActive,</code></pre>
+              <pre><code>    'text-gray-500' => ! $isActive,</code></pre>
+              <pre><code>    'bg-red' => $hasError,</code></pre>
+              <pre><code>])&gt;&lt;/span&gt;</code></pre>
+              <br>
+              <pre><code>&lt;span class="p-4 text-gray-500 bg-red"&gt;&lt;/span&gt;</code></pre>
+            </div>
+          </div>
+          <!-- Akhir Conditional Classes -->
+
+          <!-- Awal Additional Attributes -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
             <div class=""></div>
-            <p class="font-bold text-3xl text-center text-2xl">Rendering Views for Collection</p>
-        </div>
+            <p class="font-bold text-3xl text-center text-2xl">Additional Attributes</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify" data-aos="fade-up">
+                Untuk kenyamanan, kita dapat menggunakan <span class="text-red-600">@checked</span> direktif untuk
+                dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan
+                bergema <span class="text-red-600">checked</span> jika kondisi yang diberikan mengevaluasi ke <span
+                  class="text-red-600">true</span>:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;input type="checkbox"</code></pre>
+                <pre><code>       name="active"</code></pre>
+                <pre><code>       value="active"</code></pre>
+                <pre><code>       @checked(old('active', $user->active)) /&gt;</code></pre>
+              </div>
 
-        <p class="indent-20 mt-6 text-justify" data-aos="fade-up">
-            Kita dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan <span class="text-red-600">@each</span> arahan Blade:
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@each('view.name', $jobs, 'job')</code></pre>
-        </div>
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Demikian juga, <span class="text-red-600">@selected</span> arahan dapat digunakan untuk menunjukkan
+                apakah opsi pilih yang diberikan harus "dipilih":
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;select name="version"&gt;</code></pre>
+                <pre><code>    @foreach ($product->versions as $version)</code></pre>
+                <pre><code>        &lt;option value="{{ $version }}" @selected(old('version') == $version)&gt;</code></pre>
+                <pre><code>           {{ $version }}</code></pre>
+                <pre><code>        &lt;/option&gt;</code></pre>
+                <pre><code>    @endforeach</code></pre>
+                <pre><code>&lt;/select&gt;</code></pre>
+              </div>
 
-        <p class="indent-20 mt-6 text-justify" data-aos="fade-up">
-            Argumen <span class="text-red-600">@each</span> pertama direktif adalah tampilan untuk di render untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin diulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika kita mengulangi array <span class="text-red-600">jobs</span>, biasanya kita ingin mengakses setiap pekerjaan sebagai <span class="text-red-600">job</span> variabel dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai <span class="text-red-600">key</span> variabel dalam tampilan.
-        </p>
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Selain itu, <span class="text-red-600">@disabled</span> arahan dapat digunakan untuk menunjukkan apakah
+                elemen yang diberikan harus "dinonaktifkan":
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;button type="submit" @disabled($errors->isNotEmpty())&gt;Submit&lt;/button&gt;</code></pre>
+              </div>
 
-        <p class="mt-6 text-justify" data-aos="fade-up">
-            Kita juga dapat memberikan argumen keempat ke <span class="text-red-600">@each</span> direktif. Argumen ini menentukan tampilan yang akan di render jika array yang diberikan kosong.
-        </p>
-        <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
-            <pre><code>@each('view.name', $jobs, 'job', 'view.empty')</code></pre>
-        </div>
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Selain itu, <span class="text-red-600">@readonly</span> arahan dapat digunakan untuk menunjukkan apakah
+                elemen yang diberikan harus "hanya-baca":
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;input type="email"</code></pre>
+                <pre><code>       name="email"</code></pre>
+                <pre><code>       value="email@laravel.com"</code></pre>
+                <pre><code>       @readonly($user->isNotAdmin()) /&gt;</code></pre>
+              </div>
 
-        <div class="flex flex-wrap justify-around" data-aos="fade-up">
-            <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Selain itu, <span class="text-red-600">$required</span> arahan dapat digunakan untuk menunjukkan apakah
+                elemen yang diberikan harus "diperlukan":
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;input type="text"</code></pre>
+                <pre><code>       name="title"</code></pre>
+                <pre><code>       value="title"</code></pre>
+                <pre><code>       @required($user->isAdmin()) /&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Additional Attributes -->
+
+          <!-- Awal Including Subviews -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">Including Subviews</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="flex flex-wrap justify-around">
+              <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
                 <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold underline underline-offset-2"><span class="text-red-500">But be Careful!</span></h2>
-                        <p class="text-white">Tampilan yang dirender melalui <span class="text-red-600">@each</span> tidak mewarisi variabel dari tampilan induk. Jika tampilan anak memerlukan variabel-variabel ini, kita harus menggunakan arahan <span class="text-red-600">@foreach</span> dan sebagai gantinya.</p>
+                  <h2 class="card-title font-bold text-white underline underline-offset-2"><span
+                      class="text-yellow-500">Fun Fact</span></h2>
+                  <p class="text-white">Meskipun kita bebas menggunakan direktif, komponen <span
+                      class="text-red-600">@include</span> Blade menyediakan fungsionalitas serupa dan menawarkan
+                    beberapa manfaat dibandingkan direktif seperti pengikatan data dan atribut.</p>
                 </div>
+              </div>
             </div>
-        </div>
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify" data-aos="fade-up">
+                Arahan Blade <span class="text-red-600">@include</span> memungkinkan kita untuk menyertakan tampilan
+                Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk
+                tampilan yang disertakan:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>&lt;div&gt;</code></pre>
+                <pre><code>    @include('shared.errors')</code></pre>
+                <br>
+                <pre><code>    &lt;form&gt;</code></pre>
+                <pre><code>        &lt;!-- Form Contents --&gt;</code></pre>
+                <pre><code>    &lt;/form&gt;</code></pre>
+                <pre><code>&lt;/div&gt;</code></pre>
+              </div>
 
-        </div>
-      </div>
-      <!-- Akhir Including Subviews -->
-    <!-- Akhir Rangkuman Radit -->
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, kita juga
+                dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@include('view.name', ['status' => 'complete'])</code></pre>
+              </div>
 
-        <!-- Rangkuman Toni -->
-        <!-- Awal @once -->
-        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <div class=""></div>
-          <p class="font-bold text-3xl text-center text-2xl">The @once Directive</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="mt-8 px-12">
-            <p class="indent-20 text-justify">
-              <span class="text-red-600">@once</span> Directive memungkinkan kita untuk menentukan bagian dari template
-              yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk menjalankan dahulu
-              bagian tertentu dari
-              JavaScript ke dalam header halaman menggunakan <span class="text-red-600">stacks</span>. Seperti contoh,
-              jika kita merender komponen tertentu ke dalam suatu perulangan, kita mungkin hanya ingin mendorong
-              JavaScript ke header
-              saat pertama kali komponen dirender :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   @once</code></pre>
-              <pre><code>       @push('scripts')</code></pre>
-              <pre><code>           &lt;script&gt;</code></pre>
-              <pre><code>               // Your custom JavaScript...</code></pre>
-              <pre><code>           &lt;/script&gt;</code></pre>
-              <pre><code>       @endpush</code></pre>
-              <pre><code>   @endonce</code></pre>
-            </div>
-            <p class="mt-6 text-justify">
-              Karena <span class="text-red-600">@once</span> Directive sering digunakan bersama dengan direktif <span
-                class="text-red-600">@push</span> atau <span class="text-red-600">@prepend</span>, direktif
-              <span class="text-red-600">@pushOnce</span> dan <span class="text-red-600">@prependOnce</span> tersedia
-              untuk kenyamanan Anda:
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   @pushOnce('scripts')</code></pre>
-              <pre><code>       &lt;script&gt;</code></pre>
-              <pre><code>           // Your custom JavaScript...</code></pre>
-              <pre><code>       &lt;/script&gt;</code></pre>
-              <pre><code>   @endPushOnce</code></pre>
-            </div>
-          </div>
-        </div>
-        <!-- Akhir @once -->
-        <!-- Awal Raw PHP -->
-        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <div class=""></div>
-          <p class="font-bold text-3xl text-center text-2xl">Raw PHP</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="mt-8 px-12">
-            <p class="indent-20 text-justify">
-              Raw PHP sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Kita dapat menggunakan direktif
-              Blade <span class="text-red-600">@php</span> untuk mengeksekusi blok PHP biasa di dalam template yang kita
-              buat. Contoh
-              penggunaan Raw PHP :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   @php</code></pre>
-              <pre><code>       $counter = 1;</code></pre>
-              <pre><code>   @endphp</code></pre>
-            </div>
-            <p class="mt-6 text-justify">Kita hanya perlu menulis satu pernyataan PHP untuk dapat memanggil statement
-              yang telah kita buat di Raw PHP, seperti contoh code yang ada di bawah :</p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   @php($counter = 1)</code></pre>
-            </div>
-          </div>
-        </div>
-        <!-- Akhir Raw PHP -->
-        <!-- Awal Comment -->
-        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <div class=""></div>
-          <p class="font-bold text-3xl text-center text-2xl">Comment</p>
-        </div>
-        <div id="components" class="container" data-aos="fade-up">
-          <div id="components" class="mt-8 px-12">
-            <p class="indent-20 text-justify">Blade juga memungkinkan kita untuk melakukan komentar di dalam code.
-              Komentar di blade juga tidak akan ada dalam html yang akan ditampilkan. Contoh penggunaan code yang akan
-              dikomen :</p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   {{-- This comment will not be present in the rendered HTML --}}</code></pre>
-            </div>
-          </div>
-        </div>
-        <!-- Akhir Comment -->
-        <!-- Awal Components -->
-        <div class="container p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <p class="font-bold text-3xl text-center text-2xl">Components</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="mt-8 px-12">
-            <p class="indent-20 text-justify">
-              Components dan slots memberikan manfaat yang serupa dengan sections, layouts, and includes. Ada dua
-              pendekatan untuk menulis komponen: komponen berbasis kelas dan komponen anonim. Untuk membuat komponen
-              berbasis kelas, Kita
-              dapat menggunakan perintah <span class="text-red-600">make:component</span>. Perintah <span
-                class="text-red-600">make:component</span> akan menempatkan komponen di direktori <span
-                class="text-red-600">app/View/Components</span>.
-              Tambahkan perintah dibawah di terminal untuk membuat component :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   php artisan make:component “nama_file”</code></pre>
-            </div>
-            <p class="mt-6 text-justify">
-              Perintah <span class="text-red-600">make:component</span> juga akan membuat template tampilan untuk
-              komponen. Tampilan akan ditempatkan di direktori <span
-                class="text-red-600">resources/views/components</span>. Saat menulis
-              komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori <span
-                class="text-red-600">app/View/Components</span> dan direktori <span
-                class="text-red-600">resources/views/components</span>, jadi
-              biasanya tidak diperlukan registrasi komponen lebih lanjut.
-            </p>
-            <p class="mt-6 text-justify">Anda juga dapat membuat komponen di dalam subdirektori dengan perintah dibawah
-              :</p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   php artisan make:component “nama_folder_subDirektori”/“nama_file”</code></pre>
-            </div>
-            <p class="mt-6 text-justify">
-              Perintah di atas akan membuat komponen <span class="text-red-600">"nama_file"</span> di direktori <span
-                class="text-red-600">app/View/Components/“nama_folder_subDirektori”</span> dan view akan ditempatkan di
-              direktori
-              <span class="text-red-600">resources/views/components/“nama_folder_subDirektori</span>.
-            </p>
-            <p class="indent-20 mt-6 text-justify">
-              Jika Anda ingin membuat komponen anonim (komponen dengan hanya menambahkan template Blade di resources dan
-              tanpa menambahkan kelas di direktori <span class="text-red-600">app/View/Components</span>), Anda dapat
-              menggunakan flag
-              <span class="text-red-600">--view</span> saat menjalankan perintah <span
-                class="text-red-600">make:component</span> seperti contoh perintah dibawah :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   php artisan make:component “nama_folder”.“nama_file” --view</code></pre>
-            </div>
-            <p class="mt-6 text-justify">
-              Perintah di atas akan membuat file Blade di direktori <span
-                class="text-red-600">resources/views/components/”nama_folder”/”nama_file”.blade.php</span> yang dapat
-              dijalankan sebagai komponen dengan perintah
-              <span class="text-red-600">&lt;x-”nama_folder”.”nama_file” /&gt;</span>.
-            </p>
-          </div>
-        </div>
-        <!-- Akhir Components -->
-        <!-- Awal Rendering Components -->
-        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <div class=""></div>
-          <p class="font-bold text-3xl text-center text-2xl">Rendering Components</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="mt-8 px-12">
-            <p class="indent-20 text-justify">
-              Untuk menampilkan komponen, Kita dapat menggunakan tag komponen Blade dalam salah satu template Blade
-              kita. Tag komponen blade dimulai dengan string <span class="text-red-600">x-</span> diikuti dengan nama
-              class dari kelas
-              komponen. Contoh perintah :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   &lt;x-header/&gt;</code></pre>
-            </div>
-            <p class="indent-20 mt-6 text-justify">
-              Jika kelas komponen berada dalam folder lebih dalam di dalam direktori <span
-                class="text-red-600">app/View/Components</span>, Kita dapat menggunakan <span
-                class="text-red-600">.</span> karakter untuk menunjukkan direktori dalam
-              forder tersebut. Misalnya, jika kita mengasumsikan sebuah komponen terletak di <span
-                class="text-red-600">app/View/Components/Inputs/Button.php</span>, kita dapat menjalankannya seperti
-              ini:
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   &lt;x-inputs.button/&gt;</code></pre>
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Jika kita mencoba untuk <span class="text-red-600">@include</span> melihat yang tidak ada, Laravel akan
+                membuat kesalahan. Jika kita ingin menyertakan tampilan yang mungkin ada atau tidak, kita harus
+                menggunakan <span class="text-red-600">@includeIf</span> arahan:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@includeIf('view.name', ['status' => 'complete'])</code></pre>
+              </div>
+
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Jika Anda ingin <span class="text-red-600">@include</span> melihat apakah ekspresi boolean yang
+                diberikan dievaluasi ke <span class="text-red-600">true</span> or <span
+                  class="text-red-600">false</span>, Anda dapat menggunakan arahan <span
+                  class="text-red-600">@includeWhen</span> dan <span class="text-red-600">@includeUnless</span>
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</code></pre>
+                <br>
+                <pre><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</code></pre>
+              </div>
+
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan <span
+                  class="text-red-600">includeFirst</span> direktif:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</code></pre>
+              </div>
+
+              <div class="flex flex-wrap justify-around" data-aos="fade-up">
+                <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title font-bold underline underline-offset-2"><span class="text-red-500">But be
+                        Careful!</span></h2>
+                    <p class="text-white">Kita harus menghindari penggunaan <span class="text-red-600">__DIR__</span>
+                      dan <span class="text-red-600">__FILE__</span> konstanta dalam tampilan Blade, karena mereka akan
+                      merujuk ke lokasi tampilan yang di-cache dan dikompilasi.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+                <div class=""></div>
+                <p class="font-bold text-3xl text-center text-2xl">Rendering Views for Collection</p>
+              </div>
+
+              <p class="indent-20 mt-6 text-justify" data-aos="fade-up">
+                Kita dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan <span
+                  class="text-red-600">@each</span> arahan Blade:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@each('view.name', $jobs, 'job')</code></pre>
+              </div>
+
+              <p class="indent-20 mt-6 text-justify" data-aos="fade-up">
+                Argumen <span class="text-red-600">@each</span> pertama direktif adalah tampilan untuk di render untuk
+                setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin diulangi,
+                sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan.
+                Jadi, misalnya, jika kita mengulangi array <span class="text-red-600">jobs</span>, biasanya kita ingin
+                mengakses setiap pekerjaan sebagai <span class="text-red-600">job</span> variabel dalam tampilan. Kunci
+                array untuk iterasi saat ini akan tersedia sebagai <span class="text-red-600">key</span> variabel dalam
+                tampilan.
+              </p>
+
+              <p class="mt-6 text-justify" data-aos="fade-up">
+                Kita juga dapat memberikan argumen keempat ke <span class="text-red-600">@each</span> direktif. Argumen
+                ini menentukan tampilan yang akan di render jika array yang diberikan kosong.
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                <pre><code>@each('view.name', $jobs, 'job', 'view.empty')</code></pre>
+              </div>
+
+              <div class="flex flex-wrap justify-around" data-aos="fade-up">
+                <div class="card w-96 bg-base-300 shadow-xl, glass mt-12" data-aos="zoom-in-up">
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title font-bold underline underline-offset-2"><span class="text-red-500">But be
+                        Careful!</span></h2>
+                    <p class="text-white">Tampilan yang dirender melalui <span class="text-red-600">@each</span> tidak
+                      mewarisi variabel dari tampilan induk. Jika tampilan anak memerlukan variabel-variabel ini, kita
+                      harus menggunakan arahan <span class="text-red-600">@foreach</span> dan sebagai gantinya.</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
-        <!-- Akhir Rendering Components -->
-        <!-- Awal Rendering Passing Data To Components -->
-        <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
-          <div class=""></div>
-          <p class="font-bold text-3xl text-center text-2xl">Passing Data To Components</p>
-        </div>
-        <div class="container" data-aos="fade-up">
-          <div class="mt-8 px-12">
-            <p class="indent-20 text-justify">
-              Anda dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Hard-coded, nilai primitif dapat
-              diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi dan variabel PHP harus
-              diteruskan ke komponen
-              melalui atribut yang menggunakan karakter <span class="text-red-600">:</span> sebagai awalan. Contoh code
-              :
-            </p>
-            <div class="mockup-code bg-zinc-800 text-sm mt-6">
-              <pre><code>   &lt;x-alert type="error" :message="$message"/&gt;</code></pre>
+          <!-- Akhir Including Subviews -->
+          <!-- Akhir Rangkuman Radit -->
+
+          <!-- Rangkuman Toni -->
+          <!-- Awal @once -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">The @once Directive</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify">
+                <span class="text-red-600">@once</span> Directive memungkinkan kita untuk menentukan bagian dari
+                template
+                yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk menjalankan dahulu
+                bagian tertentu dari
+                JavaScript ke dalam header halaman menggunakan <span class="text-red-600">stacks</span>. Seperti contoh,
+                jika kita merender komponen tertentu ke dalam suatu perulangan, kita mungkin hanya ingin mendorong
+                JavaScript ke header
+                saat pertama kali komponen dirender :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   @once</code></pre>
+                <pre><code>       @push('scripts')</code></pre>
+                <pre><code>           &lt;script&gt;</code></pre>
+                <pre><code>               // Your custom JavaScript...</code></pre>
+                <pre><code>           &lt;/script&gt;</code></pre>
+                <pre><code>       @endpush</code></pre>
+                <pre><code>   @endonce</code></pre>
+              </div>
+              <p class="mt-6 text-justify">
+                Karena <span class="text-red-600">@once</span> Directive sering digunakan bersama dengan direktif <span
+                  class="text-red-600">@push</span> atau <span class="text-red-600">@prepend</span>, direktif
+                <span class="text-red-600">@pushOnce</span> dan <span class="text-red-600">@prependOnce</span> tersedia
+                untuk kenyamanan Anda:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   @pushOnce('scripts')</code></pre>
+                <pre><code>       &lt;script&gt;</code></pre>
+                <pre><code>           // Your custom JavaScript...</code></pre>
+                <pre><code>       &lt;/script&gt;</code></pre>
+                <pre><code>   @endPushOnce</code></pre>
+              </div>
             </div>
-            <p class="indent-20 mt-6 text-justify">
-              Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik
-              pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak perlu meneruskan data ke
-              tampilan dari metode
-              render komponen:
-            </p>
-            <div class="mockup-code bg-zinc-800 mt-6">
-              <xmp class="text-sm">
-                <?php
+          </div>
+          <!-- Akhir @once -->
+          <!-- Awal Raw PHP -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">Raw PHP</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify">
+                Raw PHP sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Kita dapat menggunakan
+                direktif
+                Blade <span class="text-red-600">@php</span> untuk mengeksekusi blok PHP biasa di dalam template yang
+                kita
+                buat. Contoh
+                penggunaan Raw PHP :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   @php</code></pre>
+                <pre><code>       $counter = 1;</code></pre>
+                <pre><code>   @endphp</code></pre>
+              </div>
+              <p class="mt-6 text-justify">Kita hanya perlu menulis satu pernyataan PHP untuk dapat memanggil statement
+                yang telah kita buat di Raw PHP, seperti contoh code yang ada di bawah :</p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   @php($counter = 1)</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Raw PHP -->
+          <!-- Awal Comment -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">Comment</p>
+          </div>
+          <div id="components" class="container" data-aos="fade-up">
+            <div id="components" class="mt-8 px-12">
+              <p class="indent-20 text-justify">Blade juga memungkinkan kita untuk melakukan komentar di dalam code.
+                Komentar di blade juga tidak akan ada dalam html yang akan ditampilkan. Contoh penggunaan code yang akan
+                dikomen :</p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   {{-- This comment will not be present in the rendered HTML --}}</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Comment -->
+          <!-- Awal Components -->
+          <div class="container p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <p class="font-bold text-3xl text-center text-2xl">Components</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify">
+                Components dan slots memberikan manfaat yang serupa dengan sections, layouts, and includes. Ada dua
+                pendekatan untuk menulis komponen: komponen berbasis kelas dan komponen anonim. Untuk membuat komponen
+                berbasis kelas, Kita
+                dapat menggunakan perintah <span class="text-red-600">make:component</span>. Perintah <span
+                  class="text-red-600">make:component</span> akan menempatkan komponen di direktori <span
+                  class="text-red-600">app/View/Components</span>.
+                Tambahkan perintah dibawah di terminal untuk membuat component :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   php artisan make:component “nama_file”</code></pre>
+              </div>
+              <p class="mt-6 text-justify">
+                Perintah <span class="text-red-600">make:component</span> juga akan membuat template tampilan untuk
+                komponen. Tampilan akan ditempatkan di direktori <span
+                  class="text-red-600">resources/views/components</span>. Saat menulis
+                komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori <span
+                  class="text-red-600">app/View/Components</span> dan direktori <span
+                  class="text-red-600">resources/views/components</span>, jadi
+                biasanya tidak diperlukan registrasi komponen lebih lanjut.
+              </p>
+              <p class="mt-6 text-justify">Anda juga dapat membuat komponen di dalam subdirektori dengan perintah
+                dibawah
+                :</p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   php artisan make:component “nama_folder_subDirektori”/“nama_file”</code></pre>
+              </div>
+              <p class="mt-6 text-justify">
+                Perintah di atas akan membuat komponen <span class="text-red-600">"nama_file"</span> di direktori <span
+                  class="text-red-600">app/View/Components/“nama_folder_subDirektori”</span> dan view akan ditempatkan
+                di
+                direktori
+                <span class="text-red-600">resources/views/components/“nama_folder_subDirektori</span>.
+              </p>
+              <p class="indent-20 mt-6 text-justify">
+                Jika Anda ingin membuat komponen anonim (komponen dengan hanya menambahkan template Blade di resources
+                dan
+                tanpa menambahkan kelas di direktori <span class="text-red-600">app/View/Components</span>), Anda dapat
+                menggunakan flag
+                <span class="text-red-600">--view</span> saat menjalankan perintah <span
+                  class="text-red-600">make:component</span> seperti contoh perintah dibawah :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   php artisan make:component “nama_folder”.“nama_file” --view</code></pre>
+              </div>
+              <p class="mt-6 text-justify">
+                Perintah di atas akan membuat file Blade di direktori <span
+                  class="text-red-600">resources/views/components/”nama_folder”/”nama_file”.blade.php</span> yang dapat
+                dijalankan sebagai komponen dengan perintah
+                <span class="text-red-600">&lt;x-”nama_folder”.”nama_file” /&gt;</span>.
+              </p>
+            </div>
+          </div>
+          <!-- Akhir Components -->
+          <!-- Awal Rendering Components -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">Rendering Components</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify">
+                Untuk menampilkan komponen, Kita dapat menggunakan tag komponen Blade dalam salah satu template Blade
+                kita. Tag komponen blade dimulai dengan string <span class="text-red-600">x-</span> diikuti dengan nama
+                class dari kelas
+                komponen. Contoh perintah :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   &lt;x-header/&gt;</code></pre>
+              </div>
+              <p class="indent-20 mt-6 text-justify">
+                Jika kelas komponen berada dalam folder lebih dalam di dalam direktori <span
+                  class="text-red-600">app/View/Components</span>, Kita dapat menggunakan <span
+                  class="text-red-600">.</span> karakter untuk menunjukkan direktori dalam
+                forder tersebut. Misalnya, jika kita mengasumsikan sebuah komponen terletak di <span
+                  class="text-red-600">app/View/Components/Inputs/Button.php</span>, kita dapat menjalankannya seperti
+                ini:
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   &lt;x-inputs.button/&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Rendering Components -->
+          <!-- Awal Rendering Passing Data To Components -->
+          <div class="grid grid-cols-3 p-4 mt-8 border-b border-primary-focus" data-aos="fade-up">
+            <div class=""></div>
+            <p class="font-bold text-3xl text-center text-2xl">Passing Data To Components</p>
+          </div>
+          <div class="container" data-aos="fade-up">
+            <div class="mt-8 px-12">
+              <p class="indent-20 text-justify">
+                Anda dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Hard-coded, nilai primitif dapat
+                diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi dan variabel PHP harus
+                diteruskan ke komponen
+                melalui atribut yang menggunakan karakter <span class="text-red-600">:</span> sebagai awalan. Contoh
+                code
+                :
+              </p>
+              <div class="mockup-code bg-zinc-800 text-sm mt-6">
+                <pre><code>   &lt;x-alert type="error" :message="$message"/&gt;</code></pre>
+              </div>
+              <p class="indent-20 mt-6 text-justify">
+                Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik
+                pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak perlu meneruskan data ke
+                tampilan dari metode
+                render komponen:
+              </p>
+              <div class="mockup-code bg-zinc-800 mt-6">
+                <xmp class="text-sm">
+                  <?php
  
       namespace App\View\Components;
       
