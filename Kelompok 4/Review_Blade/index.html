@@ -43,12 +43,9 @@
     <div class="h-fit bg-success my-10"></div>
     <!--==================Blade & JavaScript Frameworks===================-->
     <div class="b&js bg-success rounded-md m-2">
-    <h2 class="h-fit m-16 font-bold text-xl">#Blade & JavaScript Frameworks</h2>
-      <div class="isi flex">
-        
-
-      </div>
-  </div>
+      <h2 class="h-fit m-16 font-bold text-xl">#Blade & JavaScript Frameworks</h2>
+      <div class="isi flex"></div>
+    </div>
 
     <!--============================================#Blade Directives======================================================-->
     <div class="h-fit my-10 pt-10">
@@ -58,50 +55,47 @@
     <div class="h-fit bg-success my-10"></div>
     <!--================Switch =====================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Switch Statements
-    </h1>
-    <!--Awal Switch Statements-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Switch Statements</h1>
+      <!--Awal Switch Statements-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan Switch Statements
-                </h2>
-                <p class="justify-items-auto">
-                    Sama halnya saat kita menggunakan '<b>if</b>', kita dapat menggunakan '<b>@</b>'
-                    saat kita ingin menggunakan '<b>switch</b>'. </br>Contoh penggunaan: <b>@switch</b>, 
-                    <b>@case</b>, <b>@break</b>, <b>@default</b>, dan <b>@endswitch</b>. 
-                </p><br>
-            </div>
-        </div>    
-        <div>
-            <!--Card bawah kanan-->
-            <div class="col-start-2">
-                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                    <div class="mockup-code mx-4 p-4 justify-center min-w-full">
-                        <pre><code>$i = 2;</code></pre>
-                        <pre><code>@switch($i)</code></pre>
-                        <pre><code>    @case(1)</code></pre>
-                        <pre><code>        echo "Ini case pertama";</code></pre>
-                        <pre><code>    @break</code></pre><br> 
-                        <pre><code>    @case(2)</code></pre>
-                        <pre><code>        echo "Ini case kedua";</code></pre>
-                        <pre><code>    @break</code></pre><br>
-                        <pre><code>    @default</code></pre>
-                        <pre><code>        echo "Ini case default";</code></pre>
-                        <pre><code>@endswitch</code></pre><br>
-                        <pre><code class="text-success">Akan tampil "Ini case kedua"</code></pre>
-                    </div>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan Switch Statements</h2>
+            <p class="justify-items-auto">
+              Sama halnya saat kita menggunakan '<b>if</b>', kita dapat menggunakan '<b>@</b>' saat kita ingin menggunakan '<b>switch</b>'. <br />Contoh penggunaan: <b>@switch</b>, <b>@case</b>, <b>@break</b>, <b>@default</b>, dan
+              <b>@endswitch</b>.
+            </p>
+            <br />
+          </div>
         </div>
-    </div>
-    <!--Akhir Switch Statements-->
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code mx-4 p-4 justify-center min-w-full">
+                <pre><code>$i = 2;</code></pre>
+                <pre><code>@switch($i)</code></pre>
+                <pre><code>    @case(1)</code></pre>
+                <pre><code>        echo "Ini case pertama";</code></pre>
+                <pre><code>    @break</code></pre>
+                <br />
+                <pre><code>    @case(2)</code></pre>
+                <pre><code>        echo "Ini case kedua";</code></pre>
+                <pre><code>    @break</code></pre>
+                <br />
+                <pre><code>    @default</code></pre>
+                <pre><code>        echo "Ini case default";</code></pre>
+                <pre><code>@endswitch</code></pre>
+                <br />
+                <pre><code class="text-success">Akan tampil "Ini case kedua"</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Akhir Switch Statements-->
     </div>
     <!--==================Loops Statements ===================-->
     <div class="h-fit bg-success my-10 text-center p-5">
@@ -165,55 +159,90 @@
     <!--=================Additional Attributes ====================-->
     <div class="h-fit"></div>
     <!--==================Including Subviews ===================-->
-    <div class="h-fit"></div>
+    <div class="h-fit w-full bg-success my-10 text-center p-5">
+      <h1 class="font-bold text-xl pb-3">Including Subviews</h1>
+      <div class="flex justify-center">
+        <div class="mockup-code w-fit p-5 justify-center">
+          <p>Including subviews digunakan untuk menggunakan componen view lain</p>
+          <p>Cara memanggil components dengan cara menambahkan @include('dir.namafile') dalam sebuah view</p>
+          <br />
+          <h1 class="font-bold">Contoh penggunaan:</h1>
+          <p>misalkan ada component 'navbar' dalam directory views>layouts>navbar</p>
+          <p>navbar ini akan digunakan di setiap page</p>
+          <p>daripada menyalin navbar di setiap page, lebih baik dilakukan pemanggilan</p>
+          <p>component 'navbar' dengan cara @include('layouts.navbar')</p>
+        </div>
+      </div>
+      <br />
+      <div class="flex justify-center">
+        <div class="mockup-window border bg-base-300 pt-3 w-fit">
+          <div class="flex p-4 bg-base-200 justify-center">
+            <div class="flex flex-col">
+              <h1 class="font-bold text-2xl pb-3">Contoh penggunaan Subviews @include</h1>
+              <img src="../Review_Blade/img/subview1.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>Routing</p>
+              <br />
+              <img src="../Review_Blade/img/subview2.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>Controller</p>
+              <br />
+              <img src="../Review_Blade/img/subview3.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>View login</p>
+              <br />
+              <img src="../Review_Blade/img/subview4.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>View success</p>
+              <br />
+              <h1 class="font-bold text-2xl pb-3">Output</h1>
+              <br />
+              <img src="../Review_Blade/img/subview5.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>login</p>
+              <br />
+              <img src="../Review_Blade/img/subview6.jpeg" alt="subview" class="w-fit h-fit" />
+              <p>success</p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--==================The @once Directive ===================-->
     <div class="h-fit bg-success my-10"></div>
     <!--=================Raw PHP ====================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Raw PHP
-    </h1>
-    <!--Awal Raw PHP-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Raw PHP</h1>
+      <!--Awal Raw PHP-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan Raw PHP
-                </h2>
-                <p class="justify-items-auto">
-                    Dalam beberapa situasi, akan berguna untuk menanamkan kode PHP ke dalam tampilan web. 
-                    Kita dapat menggunakan <b>@php</b> untuk mengeksekusi blok PHP dalam template blade.<br>
-                    Jika kita hanya perlu menulis satu statemen PHP, kita dapat menyertakan statemen 
-                    dalam <b>@php</b>. 
-                </p><br>
-            </div>
-        </div>    
-        <div>
-            <!--Card bawah kanan-->
-            <div class="">
-                <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                    <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                        <pre><code>@php</code></pre>
-                        <pre><code>$counter = 1;</code></pre>
-                        <pre><code>@endphp</code></pre>
-                        <pre class="text-success"><code>Akan menyimpan variabel $counter dengan nilai 1"</code></pre>
-                    </div>
-                    <h3 class="card-title pb-5 justify-items-auto">
-                        <br>Atau
-                    </h3>
-                    <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                        <pre><code>@php($counter = 1)</code></pre>
-                        <pre class="text-success"><code>Juga akan menyimpan variabel $counter dengan nilai 1"</code></pre>
-                    </div>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan Raw PHP</h2>
+            <p class="justify-items-auto">
+              Dalam beberapa situasi, akan berguna untuk menanamkan kode PHP ke dalam tampilan web. Kita dapat menggunakan <b>@php</b> untuk mengeksekusi blok PHP dalam template blade.<br />
+              Jika kita hanya perlu menulis satu statemen PHP, kita dapat menyertakan statemen dalam <b>@php</b>.
+            </p>
+            <br />
+          </div>
         </div>
-    </div>
-    <!--Akhir Raw PHP-->
+        <div>
+          <!--Card bawah kanan-->
+          <div class="">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>@php</code></pre>
+                <pre><code>$counter = 1;</code></pre>
+                <pre><code>@endphp</code></pre>
+                <pre class="text-success"><code>Akan menyimpan variabel $counter dengan nilai 1"</code></pre>
+              </div>
+              <h3 class="card-title pb-5 justify-items-auto"><br />Atau</h3>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>@php($counter = 1)</code></pre>
+                <pre class="text-success"><code>Juga akan menyimpan variabel $counter dengan nilai 1"</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Akhir Raw PHP-->
     </div>
     <!--===============Comments ======================-->
     <div class="h-fit bg-success my-10"></div>
@@ -224,44 +253,38 @@
     </div>
     <!--=================Rendering Components ====================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Rendering Components
-    </h1>
-    <!--Awal Rendering Components-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Rendering Components</h1>
+      <!--Awal Rendering Components-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan Rendering Components
-                </h2>
-                <p class="justify-items-auto">
-                    Untuk menampilkan sebuah komponen, kita dapat menggunakan tag <b>&ltx-..&gt</b> 
-                    dan diikuti dengan nama dari component class, misalnya <b>&ltx-alert/&gt</b>.<br>
-                    Jika component class berada di dalam direktori <b>app/View/Components</b>, maka
-                    kita dapat menggunakan karakter <b>"."</b>, semisal sebuah komponen berlokasi di 
-                    <b>app/View/Components/Inputs/Button.php</b>, kita dapat menggunakan <b>&ltx-inputs.button/&gt</b>. 
-                </p><br>
-            </div>
-        </div>    
-        <div>   
-        <!--Card bawah kanan-->
-        <div class="col-start-2">
-            <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>&ltx-alert/&gt</code></pre>
-                    <pre class="text-success"><code>Menampilkan komponen dengan class "alert"</code></pre><br>
-                    <pre><code>&ltx-inputs.button/&gt</code></pre>
-                    <pre class="text-success"><code>Menampilkan komponen "button" pada app/View/Components</code></pre>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan Rendering Components</h2>
+            <p class="justify-items-auto">
+              Untuk menampilkan sebuah komponen, kita dapat menggunakan tag <b>&ltx-..&gt</b> dan diikuti dengan nama dari component class, misalnya <b>&ltx-alert/&gt</b>.<br />
+              Jika component class berada di dalam direktori <b>app/View/Components</b>, maka kita dapat menggunakan karakter <b>"."</b>, semisal sebuah komponen berlokasi di <b>app/View/Components/Inputs/Button.php</b>, kita dapat
+              menggunakan <b>&ltx-inputs.button/&gt</b>.
+            </p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>&ltx-alert/&gt</code></pre>
+                <pre class="text-success"><code>Menampilkan komponen dengan class "alert"</code></pre>
+                <br />
+                <pre><code>&ltx-inputs.button/&gt</code></pre>
+                <pre class="text-success"><code>Menampilkan komponen "button" pada app/View/Components</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--Akhir Rendering Components-->
+      </div>
+      <!--Akhir Rendering Components-->
     </div>
     <!--==================Passing Data To Components===================-->
     <div class="h-fit bg-success my-10"></div>
@@ -273,45 +296,40 @@
     <div class="h-fit"></div>
     <!--=================Inline Component Views ====================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Inline Components Views
-    </h1>
-    <!--Awal Inline Components Views-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Inline Components Views</h1>
+      <!--Awal Inline Components Views-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan Inline Components Views
-                </h2>
-                <p class="justify-items-auto">
-                    Untuk menampilkan komponen berukuran kecil, kita dapat menggunakan method 
-                    <b>render()</b> untuk mengembalikan markup dari komponen secara langsung. 
-                </p><br>
-            </div>
-        </div>    
-        <div>   
-        <!--Card bawah kanan-->
-        <div class="col-start-2">
-            <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>public function render() {</code></pre>
-                    <pre><code>    return &lt&lt&lt'blade'</code></pre>
-                    <pre><code>        &ltdiv class="alert alert-danger"&gt</code></pre>
-                    <pre><code>            {{ $slot }}</code></pre>
-                    <pre><code>        &lt/div&gt</code></pre>
-                    <pre><code>    blade;</code></pre>
-                    <pre><code>}</code></pre>
-                    <pre class="text-success"><code>Mengembalikan sebuah komponen</code></pre>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan Inline Components Views</h2>
+            <p class="justify-items-auto">
+              Untuk menampilkan komponen berukuran kecil, kita dapat menggunakan method
+              <b>render()</b> untuk mengembalikan markup dari komponen secara langsung.
+            </p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>public function render() {</code></pre>
+                <pre><code>    return &lt&lt&lt'blade'</code></pre>
+                <pre><code>        &ltdiv class="alert alert-danger"&gt</code></pre>
+                <pre><code>            {{ $slot }}</code></pre>
+                <pre><code>        &lt/div&gt</code></pre>
+                <pre><code>    blade;</code></pre>
+                <pre><code>}</code></pre>
+                <pre class="text-success"><code>Mengembalikan sebuah komponen</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--Akhir Inline Components Views-->
+      </div>
+      <!--Akhir Inline Components Views-->
     </div>
     <!--=================Dynamic Components ====================-->
     <div class="h-fit"></div>
@@ -339,105 +357,91 @@
     <div class="h-fit"></div>
     <!--===============Defining Layouts Using Template Inheritance ======================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Mendefinisikan Layout
-    </h1>
-    <!--Awal Defining Layout-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Mendefinisikan Layout</h1>
+      <!--Awal Defining Layout-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Mendefinisikan Layout
-                </h2>
-                <p class="justify-items-auto">
-                    Dalam mendefinisikan layout, kita dapat menggunakan <b>@section</b> untuk 
-                    memilih section tertentu dan <b>@yield</b> untuk menampilkan konten pada 
-                    section yang dipilih.
-                </p><br>
-            </div>
-        </div>    
-        <div>   
-        <!--Card bawah kanan-->
-        <div class="col-start-2">
-            <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>&lthtml&gt</code></pre>
-                    <pre><code>    &lthead&gt</code></pre>
-                    <pre><code>        &lt&gtApp Name - @yield('title')&lt/&gt</code></pre>
-                    <pre><code>    &lt/head&gt</code></pre>
-                    <pre><code>    &ltbody&gt</code></pre>
-                    <pre><code>        @section('sidebar')</code></pre>
-                    <pre><code>            konten sidebar</code></pre>
-                    <pre><code>        @show</code></pre><br>
-                    <pre><code>        &ltdiv class="container"&gt</code></pre>
-                    <pre><code>            @yield('content')</code></pre>
-                    <pre><code>        &lt/div&gt</code></pre>
-                    <pre><code>    &lt/body&gt</code></pre>
-                    <pre><code>&lt/html&gt</code></pre>
-                    <pre class="text-success"><code>Menampilkan konten pada section "sidebar"</code></pre>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Mendefinisikan Layout</h2>
+            <p class="justify-items-auto">Dalam mendefinisikan layout, kita dapat menggunakan <b>@section</b> untuk memilih section tertentu dan <b>@yield</b> untuk menampilkan konten pada section yang dipilih.</p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>&lthtml&gt</code></pre>
+                <pre><code>    &lthead&gt</code></pre>
+                <pre><code>        &lt&gtApp Name - @yield('title')&lt/&gt</code></pre>
+                <pre><code>    &lt/head&gt</code></pre>
+                <pre><code>    &ltbody&gt</code></pre>
+                <pre><code>        @section('sidebar')</code></pre>
+                <pre><code>            konten sidebar</code></pre>
+                <pre><code>        @show</code></pre>
+                <br />
+                <pre><code>        &ltdiv class="container"&gt</code></pre>
+                <pre><code>            @yield('content')</code></pre>
+                <pre><code>        &lt/div&gt</code></pre>
+                <pre><code>    &lt/body&gt</code></pre>
+                <pre><code>&lt/html&gt</code></pre>
+                <pre class="text-success"><code>Menampilkan konten pada section "sidebar"</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--Akhir Defining Layout-->
+      </div>
+      <!--Akhir Defining Layout-->
     </div>
     <!--===============Extending Layouts Using Template Inheritance ======================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        Meng-extends Layout
-    </h1>
-    <!--Awal Extending A Layout-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Meng-extends Layout</h1>
+      <!--Awal Extending A Layout-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Cara Meng-extends Layout
-                </h2>
-                <p class="justify-items-auto">
-                    Setelah kita telah mendefinisikan layout, selanjutnya kita dapat mendefinisikan 
-                    halaman "anak" (child page) yang akan mewarisi layout yang telah ditentukan.<br> 
-                    Untuk melakukannya, kita harus menggunakan <b>@extends</b> untuk menentukan layout 
-                    mana yang akan diwarisi. Halaman yang meng-inherit layout akan menampilkan konten 
-                    pada <b>@section</b> dan akan ditampilkan menggunakan <b>@yield</b>. <br><b>@yield</b> 
-                    juga dapat menerima nilai default sebagai parameter kedua jika section tidak terdefinisi.
-                </p><br>
-            </div>
-        </div>    
-        <div>   
-        <!--Card bawah kanan-->
-        <div class="col-start-2">
-            <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>@extends('layouts.app')</code></pre><br>
-                    <pre><code>@section('title', 'Page Title')</code></pre><br>
-                    <pre><code>@section('sidebar')</code></pre>
-                    <pre><code>    @parent</code></pre>
-                    <pre><code>&ltp&gtparagraf ini akan ditambahkan ke section "sidebar"&lt/p&gt</code></pre>
-                    <pre><code>@endsection</code></pre><br>
-                    <pre><code>@section('content')</code></pre>
-                    <pre><code>&ltp&gtisi konten pada section "content"&lt/p&gt</code></pre>
-                    <pre><code>@endsection</code></pre>
-                </div>
-                <h3 class="card-title pb-5 justify-items-auto">
-                    <br>Dan
-                </h3>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>@yield('content', 'Default content')</code></pre>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Cara Meng-extends Layout</h2>
+            <p class="justify-items-auto">
+              Setelah kita telah mendefinisikan layout, selanjutnya kita dapat mendefinisikan halaman "anak" (child page) yang akan mewarisi layout yang telah ditentukan.<br />
+              Untuk melakukannya, kita harus menggunakan <b>@extends</b> untuk menentukan layout mana yang akan diwarisi. Halaman yang meng-inherit layout akan menampilkan konten pada <b>@section</b> dan akan ditampilkan menggunakan
+              <b>@yield</b>. <br /><b>@yield</b>
+              juga dapat menerima nilai default sebagai parameter kedua jika section tidak terdefinisi.
+            </p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>@extends('layouts.app')</code></pre>
+                <br />
+                <pre><code>@section('title', 'Page Title')</code></pre>
+                <br />
+                <pre><code>@section('sidebar')</code></pre>
+                <pre><code>    @parent</code></pre>
+                <pre><code>&ltp&gtparagraf ini akan ditambahkan ke section "sidebar"&lt/p&gt</code></pre>
+                <pre><code>@endsection</code></pre>
+                <br />
+                <pre><code>@section('content')</code></pre>
+                <pre><code>&ltp&gtisi konten pada section "content"&lt/p&gt</code></pre>
+                <pre><code>@endsection</code></pre>
+              </div>
+              <h3 class="card-title pb-5 justify-items-auto"><br />Dan</h3>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>@yield('content', 'Default content')</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--Akhir Extending A Layout-->
+      </div>
+      <!--Akhir Extending A Layout-->
     </div>
     <!--======================================================#Forms================================================================-->
     <div class="h-fit my-10 pt-10">
@@ -445,43 +449,36 @@
     </div>
     <!--===================CSRF Field ==================-->
     <div class="h-fit bg-success my-10">
-      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">
-        CSRF Field
-    </h1>
-    <!--Awal CSRF Field-->
-    <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">CSRF Field</h1>
+      <!--Awal CSRF Field-->
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
         <!--Card bawah kiri-->
         <div class="col-start-1">
-            <div class="card  px-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 mt-6 mb-2">
-                    Penjelasan CSRF Field
-                </h2>
-                <p class="justify-items-auto">
-                    Saat kita mendefinisikan form HTML, kita harus menambahkan CSRF (Cross-Site
-                    Request Forgery) untuk menjadi middleware dan memastikan keamanan dari request
-                    yang dikirim dengan menggunakan <b>&lt@csrf&gt</b>.
-                </p><br>
-            </div>
-        </div>    
-        <div>   
-        <!--Card bawah kanan-->
-        <div class="col-start-2">
-            <div class="card  p-8 bg-base-300 shadow-xl card bordered items-center">
-                <h2 class="card-title pb-5 justify-items-auto">
-                    Contoh Syntax
-                </h2>
-                <div class="mockup-code p-6 w-fit justify-center min-w-full">
-                    <pre><code>&ltform method="POST" action="/profile"&gt</code></pre>
-                    <pre><code>    @csrf</code></pre>
-                    <pre><code>    (isi form)</code></pre>
-                    <pre><code>&lt/form&gt</code></pre>
-                    <pre class="text-success"><code>Blade template akan memvalidasi request sebelum diproses</code></pre>
-                </div>
-            </div>
+          <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+            <h2 class="card-title pb-5 mt-6 mb-2">Penjelasan CSRF Field</h2>
+            <p class="justify-items-auto">
+              Saat kita mendefinisikan form HTML, kita harus menambahkan CSRF (Cross-Site Request Forgery) untuk menjadi middleware dan memastikan keamanan dari request yang dikirim dengan menggunakan <b>&lt@csrf&gt</b>.
+            </p>
+            <br />
+          </div>
         </div>
+        <div>
+          <!--Card bawah kanan-->
+          <div class="col-start-2">
+            <div class="card p-8 bg-base-300 shadow-xl card bordered items-center">
+              <h2 class="card-title pb-5 justify-items-auto">Contoh Syntax</h2>
+              <div class="mockup-code p-6 w-fit justify-center min-w-full">
+                <pre><code>&ltform method="POST" action="/profile"&gt</code></pre>
+                <pre><code>    @csrf</code></pre>
+                <pre><code>    (isi form)</code></pre>
+                <pre><code>&lt/form&gt</code></pre>
+                <pre class="text-success"><code>Blade template akan memvalidasi request sebelum diproses</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!--Akhir CSRF Field-->
+      </div>
+      <!--Akhir CSRF Field-->
     </div>
     <!--==================Method Field ===================-->
     <div class="h-fit"></div>
