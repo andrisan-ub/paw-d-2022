@@ -311,6 +311,7 @@
     <div id="blade" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
         <h2 class="font-bold text-xl">Blade Directives</h2>
 
+<<<<<<< Updated upstream
         <!--==================If Statements===================-->
         <h3>If Statements</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
@@ -326,6 +327,55 @@
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
                     </p>
+=======
+            <!--==================If Statements===================-->
+            <h3>If Statements</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify"> Kita dapat membuat pernyataan <span class="text-green-600">if</span> menggunakan directive <span
+                        class="text-green-600">@if</span>, <span class="text-green-600">@elseif</span>, <span
+                        class="text-green-600">@else</span> dan <span class="text-green-600">@endif</span>.
+                                            Arahan ini berfungsi identik dengan PHP</p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                            <pre><code>@if (count($records) === 1)</code></pre>
+                            <pre><code>   I have one record!</code></pre>
+                            <pre><code>@elseif (count($records) &gt; 1)</code></pre>
+                            <pre><code>   I have multiple records!</code></pre>
+                            <pre><code>@else</code></pre>
+                            <pre><code>   I don't have any records!</code></pre>
+                            <pre><code>@endif</code></pre> </code>
+                        </p>
+                    </div>
+                    <p class=" text-justify"> Blade juga menyediakan <span class="text-green-600">@unless</span> directive :
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                            <pre><code>@unless (Auth::check())</code></pre>
+                            <pre><code>   You are not signed in.</code></pre>
+                            <pre><code>@endunless</code></pre>
+                        </code>
+                        </p>
+                    </div>
+                    <p class=" text-justify"> Selain itu,  <span class="text-green-600">@isset</span> dan <span class="text-green-600">@empty</span> dapat digunakan sebagai pintasan yang nyaman untuk fungsi PHP:
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                            <pre><code>@isset($records)</code></pre>
+                                <pre><code> // $records is defined and is not null...</code></pre>  
+                            <pre><code>@endisset</code></pre> 
+
+                            <pre><code>@empty($records)</code></pre>
+                                <pre><code> // $records is "empty"...</code></pre>
+                            <pre><code>@endempty</code></pre>
+                        </code>
+                        </p>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div>
@@ -338,6 +388,7 @@
             </div>
         </div>
 
+<<<<<<< Updated upstream
         <!--================Switch Statements=====================-->
         <h3>Switch Statements</h3>
         <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
@@ -353,6 +404,33 @@
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
                     </p>
+=======
+            <!--================Switch Statements=====================-->
+            <h3>Switch Statements</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
+                    <p class=" text-justify"> Switch statement dapat dibuat menggunakan<span class="text-green-600">@switch, @case, @break, @default</span> dan <span class="text-green-600">@endswitch</span>
+                    </p> 
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                        <pre><code>   @switch($i)</code></pre>
+                        <pre><code>       @case(1)</code></pre>
+                        <pre><code>           First case...</code></pre>
+                        <pre><code>           @break</code></pre>
+                        <br>
+                        <pre><code>       @case(2)</code></pre>
+                        <pre><code>           Second case...</code></pre>
+                        <pre><code>           @break</code></pre>
+                        <br>
+                        <pre><code>       @default</code></pre>
+                        <pre><code>           Default case...</code></pre>
+                        <pre><code>   @endswitch</code></pre>
+                        </code>
+                        </p>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div>
@@ -363,6 +441,7 @@
                             src="" alt="strlen" /></figure>
                 </div>
             </div>
+<<<<<<< Updated upstream
         </div>
         <!--==================Loops===================-->
         <h3>Loops</h3>
@@ -378,6 +457,50 @@
                     <p><code>Route::get('/', function () {
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
+=======
+            <!--==================Loops===================-->
+            <h3>Loops</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Loops</h3>
+                    <p class=" text-justify">Selain pernyataan bersyarat, Blade menyediakan arahan 
+                        sederhana untuk bekerja dengan struktur loop PHP. 
+                        Masing-masing berfungsi identik dengan counterpart PHP.
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                        <pre><code>   @for($i = 0; $i < 10; $i++)</code></pre>
+                        <pre><code>       The current value is {{ $i }}</code></pre>
+                        <pre><code>   @endfor</code></pre>
+                        <br>
+                        <pre><code>   @foreach ($users as $user)</code></pre>
+                        <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
+                        <pre><code>   @endforeach</code></pre>
+                        <br>
+                        <pre><code>   @forelse ($users as $user)</code></pre>
+                        <pre><code>       &lt;li&gt;{{ $user->name }}&lt;/li&gt;</code></pre>
+                        <pre><code>   @empty</code></pre>
+                        <pre><code>       &lt;p&gt;No users&lt;/p&gt;</code></pre>
+                        <pre><code>   @endforelse</code></pre>
+                        <br>
+                        <pre><code>   @while (true)</code></pre>
+                        <pre><code>       &lt;p&gt;I'm looping forever.&lt;/p&gt;</code></pre>
+                        <pre><code>   @endwhile</code></pre>
+                        </code>
+                        </p>    
+                    </div>
+                    <p class=" text-justify">Catatan:<br>
+                        Saat melakukan iterasi melalui loop foreach, 
+                        kita dapat menggunakan variabel loop untuk
+                        mendapatkan informasi berharga tentang loop, 
+                        seperti apakah kita berada di iterasi pertama
+                        atau terakhir melalui loop.
+                        <br><br>
+                        Saat menggunakan loop, kita juga dapat melewati 
+                        iterasi saat ini atau mengakhiri loop menggunakan 
+                        @continue dan @break:
+>>>>>>> Stashed changes
                     </p>
                 </div>
             </div>
@@ -389,6 +512,7 @@
                             src="" alt="strlen" /></figure>
                 </div>
             </div>
+<<<<<<< Updated upstream
         </div>
         <!--================ The Loop Variable=====================-->
         <h3>The Loop Variable</h3>
@@ -410,6 +534,48 @@
             <div>
                 <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
                     <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+=======
+            <!--================ The Loop Variable=====================-->
+            <h3>The Loop Variable</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">The Loop Variable</h3>
+                    <p class=" text-justify">Saat melakukan iterasi melalui sebuah <span class="text-green-600">foreach</span> loop, sebuah <span class="text-green-600">$loop</span> variabel akan tersedia di dalam loop. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                            <pre><code>   @foreach ($users as $user)</code></pre>
+                            <pre><code>       @if ($loop->first)</code></pre>
+                            <pre><code>           This is the first iteration.</code></pre>
+                            <pre><code>       @endif</code></pre>
+                            <br>
+                            <pre><code>       @if ($loop->last)</code></pre>
+                            <pre><code>           This is the last iteration.</code></pre>
+                            <pre><code>       @endif</code></pre>
+                            <br>
+                            <pre><code>       &lt;p&gt;This is user {{ $user->id }}&lt;/p&gt;</code></pre>
+                            <pre><code>   @endforeach</code></pre></code>
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">The Loop Variable 2</h3>
+                    <p class=" text-justify"> Jika kita berada dalam loop bersarang, kita dapat mengakses <span class="text-red-600">$loop</span> variable loop induk melalui <span class="text-red-600">parent</span> properti:
+                    </p>
+                    <div class="mockup-code bg-zinc-800 text-sm mt-6" data-aos="fade-up">
+                        <pre><code>   @foreach ($users as $user)</code></pre>
+                        <pre><code>       @foreach ($user->posts as $post)</code></pre>
+                        <pre><code>           @if ($loop->parent->first)</code></pre>
+                        <pre><code>               This is the first iteration of the parent loop.</code></pre>
+                        <pre><code>           @endif</code></pre>
+                        <pre><code>       @endforeach</code></pre>
+                        <pre><code>   @endforeach</code></pre>
+                    </div>
+                <div>
+                    <div class="card col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+>>>>>>> Stashed changes
 
                     <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
                             src="" alt="strlen" /></figure>
@@ -607,6 +773,7 @@
         </div>
     </div>
 
+<<<<<<< Updated upstream
     <div id="component" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
         <h2 class="font-bold text-xl">Components</h2>
         <!--==================Rendering Components===================-->
@@ -621,6 +788,27 @@
                         return view('greeting', ['name' => 'Fauzi']);
                     }); </code>
                     </p>
+=======
+        <div id="component" class="h-fit m-10 card p-10 bg-gray-50 shadow-xl card bordered justify-center">
+            <h2 class="font-bold text-xl">Components</h2>
+            <!--==================Rendering Components===================-->
+            <h3>Rendering Components</h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5"></h3>
+                    <p class=" text-justify">Untuk menampilkan komponen, kita dapat menggunakan tag komponen Blade dalam salah satu template Blade Anda. 
+                                             Tag komponen blade dimulai dengan string (x-) diikuti dengan nama case dari kelas komponen. Jika kelas komponen terletak lebih dalam di dalam direktori app/View/Components, kita dapat menggunakan karakter (.) untuk menunjukkan direktori. 
+                                             Misalnya, jika kita mengasumsikan sebuah komponen berlokasi di app/View/Components/Inputs/Button.php, kita dapat merendernya seperti pada contoh :</p>
+                    <br>
+                    <div class="mockup-code p-6 w-96 justify-items-auto">
+                        <p><code>
+                            <x-alert/>
+ 
+                            <x-user-profile/>
+                         </code>
+                        </p>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div>
