@@ -68,8 +68,31 @@
     <!--Akhir HTML Entity Encoding-->
     <!--==================Blade & JavaScript Frameworks===================-->
     <div class="bg-success h-fit my-10 text-center">
-      <h1 class="text-xl font-bold py-3">Blade & JavaScript Frameworks</h1>
-      <div class="isi flex"></div>
+      
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Blade & JavaScript Frameworks</h1>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+
+      <div class="col-start-2">
+        <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto mt-4">
+           Pada frameworks javascriptt kode diletakkan dalam kurung kurawal untuk ditampilkan pada browser. Pada 
+           blade kita dapat menggunakan simbol @ untuk menandai ekspresi mana yang tidak akan dijalankan.
+          </p>
+          <br />
+        </div>
+      </div>
+
+        <div class="col-start-1">
+          <h2 class="card-title pb-5 justify-items-auto">Syntax</h2>
+          <div class="mockup-code p-6 w-fit justify-center min-w-full">
+            
+            <pre><code> < h1>Laravel< /h1></code></pre>
+            <pre><code class="text-success">//dalam syntax dibawah, maka ekspresi name tidak akan dijalankan.</code></pre>
+            <pre><code>Hello, @{{ name }}.</code></pre>
+            
+          </div>
+        </div>
+      
     </div>
 
     <!--============================================#Blade Directives======================================================-->
