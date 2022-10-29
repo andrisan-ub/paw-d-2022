@@ -1042,7 +1042,34 @@
       <!--Akhir CSRF Field-->
     </div>
     <!--==================Method Field ===================-->
-    <div class="h-fit"></div>
+    <div class="h-fit">
+
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Method Field</h1>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+
+      <div class="col-start-1">
+        <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto mt-4">
+            Sejak HTML form tidak dapat menggunakan method PUT, PATCH, dan DELETE maka dibutuhkan
+            penggunaan _method field untuk menggantikannya. Caranya adalah dengan menggunakan syntax @method('...')
+          </p>
+          <br />
+        </div>
+      </div>
+
+        <div class="col-start-2">
+          <h2 class="card-title pb-5 justify-items-auto">Syntax</h2>
+          <div class="mockup-code p-6 w-fit justify-center min-w-full">
+            
+            <pre><code> < form action="/foo/bar" method="POST"></form></code></pre>
+            <pre><code>  @method('PUT')</code></pre>
+            <pre><code> </code></pre>
+            <pre><code> ...</code></pre>
+            <pre><code> < /form> </code></pre>
+            
+          </div>
+        </div>
+    </div>
     <!--==================Validation Errors===================-->
     <div class="h-fit w-full bg-success my-10 text-center p-5">
       <h1 class="font-bold text-xl pb-3">Validation Errors</h1>
