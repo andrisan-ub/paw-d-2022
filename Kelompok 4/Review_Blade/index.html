@@ -245,7 +245,46 @@
       <!--Akhir The Loop Variable-->
     </div>
     <!--=================Conditional Classes ====================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Conditional Classes</h1>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <div class="col-start-1">
+        <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto">
+            penggunaan syntax @class digunaan untuk mendefinisikan class tujuan untuk diterapkan style css.
+          </p>
+          <br />
+        </div>
+      </div>
+      
+    <div class="col-start-2">
+        <h2 class="card-title pb-5 justify-items-auto">Syntax</h2>
+        <div class="mockup-code p-6 w-fit justify-center min-w-full">
+
+          <pre><code> @php</code></pre>
+          <pre><code> $isActive = false;</code></pre>
+          <pre><code>  $hasError = true;</code></pre>
+          <pre><code>   @endphp</code></pre>
+          <pre><code>  </code></pre>
+
+          <pre><code> < span  @class([ </code></pre>
+          <pre><code></code>'p-4',</pre>
+          <pre><code></code> 'font-bold' => $isActive,</pre>
+          <pre><code></code> 'text-gray-500' => ! $isActive,</pre>
+          <pre><code></code>'bg-red' => $hasError,</pre>
+          <pre><code></code>])> < /span> </pre>
+
+            <pre class="text-success"><code></code></pre>
+          <pre><code></code><span class="p-4 text-gray-500 bg-red"></span></pre>
+          <pre><code></code></pre>
+          <pre><code></code></pre>
+          <pre><code></code></pre>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
     <!--=================Additional Attributes ====================-->
     <div class="h-fit"></div>
     <!--==================Including Subviews ===================-->
@@ -548,7 +587,29 @@
     <!--Akhir Component Attributes-->
     </div>
     <!--==================Reserved Keywords ===================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10">
+
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Reserved Keywords</h1>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <div class="col-start-1">
+        <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto">
+            Pada setelan default, beberapa kata dibalik penggunaanya pada blade dengan tujuan untuk memberikan komponen.
+            <br>beberapa kata yang tidak dapat digunakan untuk properti maupun method komponen:
+            <ul>
+              <li>- data</li>
+              <li>- render</li>
+              <li>- resolveView</li>
+              <li>- shouldRender</li>
+              <li>- view</li>
+              <li>- withAttributes</li>
+              <li>- withName</li>
+            </ul>
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
     <!--=================Slots ====================-->
     <div class="h-fit"></div>
     <!--=================Inline Component Views ====================-->
