@@ -100,7 +100,42 @@
       <h1 class="font-bold text-slate-700 text-4xl text-center -mt-9 tracking-wider">Blade Directives</h1>
     </div>
     <!--==================If Statements===================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit w-full bg-success my-10 text-center p-5">
+    <h1 class="font-bold text-xl pb-3">If Statements</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">If Statements</h2>
+            <p>Deklarasi pernyataan if dapat menggunakan perintah @if, @elseif, @else, dan @endif.</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md">
+              <pre><code><span class="text-amber-500">@if</span> (count($records) === 1)</code></pre>
+              <pre data-prefix=""><code>I have one record!</code></pre>
+              <pre><code><span class="text-amber-500">@elseif</span> (count($records) > 1)</code></pre>
+              <pre data-prefix=""><code>I have multiple records!</code></pre>
+              <pre><code><span class="text-amber-500">@else</span></code></pre>
+              <pre data-prefix=""><code>I don't have any records!</code></pre>
+              <pre><code><span class="text-amber-500">@endif</span></code></pre>
+            </div>
+            <p>Blade juga menyediakan perintah @unless</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-amber-500">@unless</a> (Auth::check())</code></pre>
+              <pre data-prefix=""><code>You are not signed in</code></pre>
+              <pre><code><a class="text-amber-500">@endunless</a></code></pre>
+            </div>
+            <p>Perintah @isset dan @empty juga dapat digunakan sebagai pilihan lain untuk deklarasi if statements:</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-amber-500">@isset</a>($records)</code></pre>
+              <pre data-prefix=""><code>// $records is defined and is not null...</code></pre>
+              <pre><code><a class="text-amber-500">@endisset</a></code></pre>
+              <pre data-prefix=""><code></code></pre>
+              <pre><code><a class="text-amber-500">@empty</a>($records)</code></pre>
+              <pre data-prefix=""><code>// $records is "empty"...</code></pre>
+              <pre><code><a class="text-amber-500">@endempty</a></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--================Switch =====================-->
     <div class="h-fit bg-success py-5 text-center">
       <h1 class="font-bold text-xl pb-3">Switch Statements</h1>
@@ -309,7 +344,61 @@
     </div>
 
     <!--=================Additional Attributes ====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit">
+      <h1 class="font-bold text-xl pb-3">Additional Attributes</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">Additional Attributes</h2>
+            <p>
+            Dalam additional attribute dapat menggunakan perintah @checked yang dengan mudah akan menunjukkan apakah checkbox input HTML telah
+            berstatus "checked". Perintah ini akan diperiksa kembali jika kondisi yang diberikan bernilai true.
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>input type="checkbox"</code></pre>
+              <pre data-prefix=""><code>name="active"</code></pre>
+              <pre data-prefix=""><code>value="active"</code></pre>
+              <pre data-prefix=""><code>I have multiple records!</code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500">@checked</a>(old('active', $user->active)) /></code></pre>
+            </div>
+            <p>Demikian juga, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilihan yang diberikan harus "selected"</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>select name="version"></code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500">@foreach</a> ($product->versions as $version)</code></pre>
+              <pre
+                data-prefix=""
+              ><code><span class="token puntuation"><</span>option value="{{ $version }}"<a class="text-amber-500"> @selected</a>(old('version') == $version)></code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500"></a>{{ $version }}</code></pre>
+              <pre data-prefix=""><code>{{ $version }}</code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>/option></code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500">@endforeach</a></code></pre>
+              <pre><code><span class="token puntuation"><</span>/select></code></pre>
+            </div>
+            <p>Sebagai tambahan, perintah @disabled dapat digunakan untuk menunjukkan bahwa elemen yang ditunjuk akan menjadi "disabled"</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>button type="submit" <a class="text-amber-500">@disabled</a>($errors->isNotEmpty())>Submit<span class="token puntuation"><</span>/button></code></pre>
+            </div>
+            <p>
+              Selain itu, perintah @readonly dapat digunakan untuk menunjukkan bahwa elemen tersebut harus bersifat "readonly" atau tidak dapat diubah.
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>input type="email"</code></pre>
+              <pre data-prefix=""><code>name="email"</code></pre>
+              <pre data-prefix=""><code>value="email@laravel.com"</code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500">@readonly</a>($user->isNotAdmin()) /></code></pre>
+            </div>
+            <p>Selain itu, perintah @required dapat digunakan untuk menunjukkan bahwa elemen tertentu bersifat "required"</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>input type="text"</code></pre>
+              <pre data-prefix=""><code>name="title"</code></pre>
+              <pre data-prefix=""><code>value="title"</code></pre>
+              <pre data-prefix=""><code>I have multiple records!</code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500">@required</a>($user->isAdmin()) /></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--==================Including Subviews ===================-->
     <div class="h-fit w-full bg-success my-10 text-center p-5">
       <h1 class="font-bold text-xl pb-3">Including Subviews</h1>
@@ -435,7 +524,29 @@
       <!--Akhir Raw PHP-->
     </div>
     <!--===============Comments ======================-->
-    <div class="h-fit bg-success my-10"></div>
+    <div class="h-fit bg-success my-10">
+      <h1 class="font-bold text-xl pb-3">Comments</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">Comments</h2>
+            <p>
+            Pengguna dapat menetapkan konten slot bernama menggunakan tag x-slot. Setiap konten yang tidak berada dalam tag slot-x secara eksplisit
+            akan diteruskan menuju komponen dalam variabel $slot
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>x-alert></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>x-slot:title></code></pre>
+              <pre data-prefix=""><code>Server Error</code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>/x-slot></code></pre>
+              <pre><code></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>strong>Whoops!<code><span class="token puntuation"><</span>/strong> Something went wrong!</code></pre>
+              <pre><code><span class="token puntuation"><</span>x-alert></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--==================================================#Components=========================================================-->
     <div class="h-fit my-10 pt-10">
@@ -634,7 +745,44 @@
       </div>
     </div>
     <!--=================Slots ====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit">
+      <h1 class="font-bold text-xl pb-3">Slots</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">Slots</h2>
+            <p>
+            Komponen slot dapat digunakan untuk menambahkan atau memasukkan konten dinamis kepada komponen blade milik pengguna. Komponen ini dapat
+            digunakan dengan mendeklarasikan variabel slot ($slot).
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>div class="alert alert-danger"></code></pre>
+              <pre data-prefix=""><code><a class="text-orange-200">{{ $slot }}</a></code></pre>
+              <pre><code><span class="token puntuation"><</span>/div></code></pre>
+            </div>
+            <p>Pengguna dapat meneruskan konten menuju slot dengan memasukkan konten tersebut ke dalam komponen.</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>x-alert></code></pre>
+              <pre
+                data-prefix=""
+                ><code><span class="token puntuation"><</span>strong>Whoops!<span class="token puntuation"><</span>/strong> Something went wrong!</code></pre>
+              <pre><code><span class="token puntuation"><</span>/x-alert></code></pre>
+            </div>
+            <p>
+            Terkadang komponen perlu membuat beberapa slot berbeda pada lokasi berbeda dalam suatu komponen. Dibawah ini diberikan contoh pengubahan
+            komponen peringatan untuk memungkinkan injeksi dari sebuah slot "title"
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>span class="alert-title">{{ $title }}<span class="token puntuation"><</span>/span></code></pre>
+              <pre data-prefix=""><code></code></pre>
+              <pre><code><span class="token puntuation"><</span>div class="alert alert-danger"></code></pre>
+              <pre data-prefix=""><code><a class="text-orange-200">{{ $slot }}</a></code></pre>
+              <pre><code><span class="token puntuation"><</span>/div></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--=================Inline Component Views ====================-->
     <div class="h-fit bg-success py-5 text-center">
       <h1 class="font-bold text-xl pb-3">Inline Components Views</h1>
@@ -739,7 +887,38 @@
       <h1 class="font-bold text-slate-700 text-4xl text-center -mt-9 tracking-wider">Anonymous Components</h1>
     </div>
     <!--================Anonymous Index Components =====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit">
+      <h1 class="font-bold text-xl pb-3">Anonymous Index Components</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Index Components</h2>
+            <p>Ketika ssebuah komponen dibuat dari banyak template blade, pengguna mungkin memiliki keinginan untuk menggabungkan (membuat grup) template-template komponen yang diberikan dengan sebuah single directory.</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-gray-500">/resources/views/components/accordion.blade.php</a></code></pre>
+              <pre><code><a class="text-gray-500">/resources/views/components/accordion/item.blade.php</a></code></pre>
+            </div>
+            <p>Struktur direktori tersebut memungkinkan pengguna untuk menghasilkan komponen accordion dan komponen tersebut akan terlihat seperti</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>x-accordion></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>x-accordion.item></code></pre>
+              <pre><code></code></pre>
+              <pre><code><span class="token puntuation"><</span>/x-accordion></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>/x-accordion.item></code></pre>
+            </div>
+            <p>
+            Untuk menghasilkan suatu komponen accordion menggunakan x-accordion, pengguna diharuskan menempatkan "index" template komponen accordion pada direktori resources/views/components.
+            Blade memungkinkan pengguna untuk menempatkan file index.blade.php di dalam sebuah direktoi template milik komponen. Ketika terdapat template index.blade.php untuk komponen, maka template index tersebut akan dijadikan sebagai node "root" dari komponen.
+            Namun, pengguna perlu mengatur struktur direktori menjadi:
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-gray-500">/resources/views/components/accordion/index.blade.php</a></code></pre>
+              <pre><code><a class="text-gray-500">/resources/views/components/accordion/item.blade.php</a></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--==================Data Properties /Attributes ===================-->
     <div class="h-fit bg-success my-10 text-center p-5">
       <h1 class="font-bold text-xl pb-3">Data Properties / Attributes</h1>
@@ -777,7 +956,44 @@
       </div>
     </div>
     <!--=================Accessing Parent Data ====================-->
-    <div class="h-fit"></div>
+    <div class="h-fit">
+      <h1 class="font-bold text-xl pb-3">Accessing Parent Data</h1>
+      <div class="grid grid-cols-2 gap-1 justify-items-center justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl m-10 text-left">
+          <div class="card-body">
+            <h2 class="card-title">Accessing Parent Data</h2>
+            <p>
+              Ketika pengguna ingin mengakses data dari komponen induk kedalam komponen turunan, pengguna dapat menggunakan perintah @aware. Misalnya, dibuat sebuah komponen menu dengan <span class="token puntuation"><</span>x-menu> sebagai parent dan <span class="token puntuation"><</span>x-menu.item> sebagai turunan/anak.
+            </p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><span class="token puntuation"><</span>x-menu color="purple"></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>x-menu.item>...<span class="token puntuation"><</span>/x-menu.item></code></pre>
+              <pre data-prefix=""><code><span class="token puntuation"><</span>x-menu.item>...<span class="token puntuation"><</span>/x-menu.item></code></pre>
+              <pre><code><span class="token puntuation"><</span>/x-menu></code></pre>
+            </div>
+            <p>Komponen <code><span class="token puntuation"><</span>x-menu></code> dapat memiliki implementasi seperti:</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-gray-500"><span class="token puntuation"><</span>!-- /resources/views/components/menu/index.blade.php --></a></code></pre>
+              <pre><code><a class="text-amber-500">@props</a>(['color' => 'gray'])</code></pre>
+              <pre><code></code></pre>
+              <pre><code><span class="token puntuation"><</span>ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}></code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500"></a>{{ $slot }}</code></pre>
+              <pre><code><span class="token puntuation"><</span>/ul></code></pre>
+            </div>
+            <p>Pada awalnya, color prop hanya terdapat pada parent (<span class="token puntuation"><</span>x-menu>) namun, dengan menggunakan perintah @aware, color prop tersebut juga tersedia pada <span class="token puntuation"><</span>x-menu.item>.</p>
+            <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+              <pre><code><a class="text-gray-500"><span class="token puntuation"><</span>!-- /resources/views/components/menu/item.blade.php --></a></code></pre>
+              <pre><code></code></pre>
+              <pre><code><a class="text-amber-500">@aware</a>(['color' => 'gray'])</code></pre>
+              <pre><code></code></pre>
+              <pre><code><span class="token puntuation"><</span>li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}></code></pre>
+              <pre data-prefix=""><code><a class="text-amber-500"></a>{{ $slot }}</code></pre>
+              <pre><code><span class="token puntuation"><</span>/li></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--=================Anonymous Components Namespaces ====================-->
     <div class="h-fit bg-success my-10 p-5">
       <h1 class="font-bold text-xl pb-3 text-center">
