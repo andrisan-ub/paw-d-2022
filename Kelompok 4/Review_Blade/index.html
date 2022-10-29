@@ -593,6 +593,40 @@
     <!--================Manually Registering Components=====================-->
     <div class="h-fit bg-success my-10"></div>
 
+    <div class="h-fit bg-success my-10">
+      <h1 class="font-bold text-slate-700 text-4xl text-center tracking-wider pt-10">Manually Registering Components</h1>
+      <div class="p-10 grid grid-cols-2 grid-flow gap-5 justify-items-auto">
+      <div class="col-start-1">
+        <div class="card px-8 bg-base-300 shadow-xl card bordered items-center">
+          <p class="justify-items-auto">
+            Penggunaan manually registering components hanya dapat diaplikasikan jika telah menuliskan packages laravel 
+            yang didalamnya sudah include view komponen.
+            Jika memerlukan penggunaan packages yang berhubungan dengan blade componen maka diperlukan manually register komponen class
+        dan tag alias HTML terlebih dahulu dengan tujuan agar laravel tahu letak komponen tersebut.
+          </p>
+          <br />
+        </div>
+      </div>
+      
+    <div class="col-start-2">
+        <h2 class="card-title pb-5 justify-items-auto">Syntax</h2>
+        <div class="mockup-code p-6 w-fit justify-center min-w-full">
+          <pre><code>use Illuminate\Support\Facades\Blade;</code></pre>
+          <pre class="text-success"><code>//tuliskan view components</code></pre>
+          <pre><code>use VendorPackage\View\Components\AlertComponent;   </code></pre>
+          
+          <pre><code></code></pre>
+          <pre><code>@return void</code></pre>
+          <pre><code>public function boot()</code></pre>
+          <pre><code>{</code></pre>
+            <pre class="text-success"><code>//manually register component class dan HTML tag alias</code></pre>
+          <pre><code> Blade::component('package-alert', AlertComponent::class);</code></pre>
+          <pre><code>}</code></pre>
+        </div>
+      </div>
+    </div>
+    </div>
+    
     <!--=======================================================#Anonymous Components==============================================-->
     <div class="h-fit my-10 pt-10">
       <h1 class="font-bold text-slate-700 text-4xl text-center -mt-9 tracking-wider">Anonymous Components</h1>
