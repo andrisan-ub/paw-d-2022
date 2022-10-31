@@ -913,16 +913,26 @@
             <h3>Manually Registering Components</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Manually Registering Components</h3>
+                    <p class=" text-justify"> Penggunaan manually registering components hanya dapat diaplikasikan jika telah menuliskan packages laravel 
+                        yang didalamnya sudah include view komponen. Jika memerlukan penggunaan packages yang berhubungan dengan blade componen maka diperlukan manually register komponen class
+                    dan tag alias HTML terlebih dahulu dengan tujuan agar laravel tahu letak komponen tersebut.
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                        <pre><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                        <pre class="text-success"><code>//tuliskan view components</code></pre>
+                        <pre><code>use VendorPackage\View\Components\AlertComponent;   </code></pre>
+          
+                        <pre><code></code></pre>
+                        <pre><code>@return void</code></pre>
+                        <pre><code>public function boot()</code></pre>
+                        <pre><code>{</code></pre>
+                        <pre class="text-success"><code>//manually register component class dan HTML tag alias</code></pre>
+                        <pre><code> Blade::component('package-alert', AlertComponent::class);</code></pre>
+                        <pre><code>}</code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
