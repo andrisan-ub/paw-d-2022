@@ -836,20 +836,23 @@
             <h3>Rendering Components</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5"></h3>
-                    <p class=" text-justify">Untuk menampilkan komponen, kita dapat menggunakan tag komponen Blade
-                        dalam
-                        salah satu template Blade Anda.
-                        Tag komponen blade dimulai dengan string (x-) diikuti dengan nama case dari kelas komponen.
-                        Jika
-                        kelas komponen terletak lebih dalam di dalam direktori app/View/Components, kita dapat
-                        menggunakan
-                        karakter (.) untuk menunjukkan direktori.
-                        Misalnya, jika kita mengasumsikan sebuah komponen berlokasi di
-                        app/View/Components/Inputs/Button.php, kita dapat merendernya seperti pada contoh :</p>
+                    <h3 class="card-title justify-center pb-5">Rendering Components</h3>
+                    <p class=" text-justify">Untuk menampilkan komponen, Kita dapat menggunakan tag komponen Blade dalam salah satu template Blade kita. 
+                        Tag komponen blade dimulai dengan string x- diikuti dengan nama class dari kelas komponen. Contoh perintah :
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code> &lt;x-header/&gt;</code>
+                        </p>
+                    </div>
+                    <p class=" text-justify">Jika kelas komponen berada dalam folder lebih dalam di dalam direktori app/View/Components, Kita dapat menggunakan. 
+                        karakter untuk menunjukkan direktori dalam forder tersebut. 
+                        Misalnya, jika kita mengasumsikan sebuah komponen terletak di app/View/Components/Inputs/Button.php, 
+                        kita dapat menjalankannya seperti ini :</p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
                         <p><code>
+                            &lt;x-inputs.button/&gt;
                      </code>
                         </p>
                     </div>
@@ -867,16 +870,80 @@
             <h3>Passing Data To Components</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Passing Data To Components</h3>
+                    <p class=" text-justify">Anda dapat meneruskan data ke komponen Blade menggunakan atribut HTML. 
+                        Hard-coded, nilai primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. 
+                        Ekspresi dan variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter : 
+                        sebagai awalan. Contoh code :
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>&lt;x-alert type="error" :message="$message"/&gt;</code>
+                        </p>
+                    </div>
+
+                    <p class=" text-justify">Jika kelas komponen berada dalam folder lebih dalam di dalam direktori app/View/Components, Kita dapat menggunakan. 
+                        karakter untuk menunjukkan direktori dalam forder tersebut. Misalnya, 
+                        jika kita mengasumsikan sebuah komponen terletak di app/View/Components/Inputs/Button.php, kita dapat menjalankannya seperti ini :</p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                        <pre>&lt;?php</pre>
+                        <pre>namespace App\View\Components;</pre>
+                        <pre>use Illuminate\View\Component;</pre>
+                        <pre>class Alert extends Component</pre>
+                        <pre>{</pre>
+                        <pre>**/</pre>
+                        <pre>    * The alert type.</pre>
+                        <pre>    *</pre>
+                        <pre>    * @var string</pre>
+                        <pre>    */</pre>
+                        <pre>public $type;</pre>
+                        <pre></pre>
+                        <pre>  /**</pre>
+                        <pre>    * The alert message.</pre>
+                        <pre>    *</pre>
+                        <pre>    * @var string</pre>
+                        <pre>    */</pre>
+                        <pre> public $message;</pre>
+                        <pre></pre>
+                        <pre>  /**</pre>
+                        <pre>    * Create the component instance.</pre>
+                        <pre>    *</pre>
+                        <pre>    * @param  string  $type</pre>
+                        <pre>    * @param  string  $message</pre>
+                        <pre>    * @return void</pre>
+                        <pre>    */</pre>
+                        <pre> public function __construct($type, $message)</pre>
+                        <pre>{</pre>
+                        <pre>      $this->type = $type;</pre>
+                        <pre>      $this->message = $message;</pre>
+                        <pre>}</pre>
+                        <pre></pre>
+                        <pre>  /**</pre>
+                        <pre>    * Get the view / contents that represent the component.</pre>
+                        <pre>    *</pre>
+                        <pre>    * @return \Illuminate\View\View|\Closure|string</pre>
+                        <pre>    */</pre>
+                        <pre> public function render()</pre>
+                        <pre>{</pre>
+                        <pre>     return view('components.alert');</pre>
+                        <pre>}</pre>
+                        <pre>}</pre>
+                     </code>
+                        </p>
+                    </div>
+                    <p class=" text-justify">Saat komponen Anda dirender, Anda dapat menampilkan konten variabel publik komponen 
+                        Anda dengan menggunakan variabel berdasarkan nama. Contoh code :
+
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                            &lt;div class="alert alert-{{ $type }}"&gt;
+                                {{ $message }}
+                            &lt;/div&gt;
+                     </code>
                         </p>
                     </div>
                 </div>
