@@ -835,16 +835,35 @@
             <h3>Slots</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
-                    </p>
+                    <h3 class="card-title justify-center pb-5">Slots</h3>
+                    <p class=" text-justify"> Komponen slot dapat digunakan untuk menambahkan atau memasukkan konten dinamis kepada komponen blade milik pengguna. Komponen ini dapat
+                        digunakan dengan mendeklarasikan variabel slot ($slot).
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                        <pre><code><span class="token puntuation"><</span>div class="alert alert-danger"></code></pre>
+                        <pre data-prefix=""><code><a class="text-orange-200">{{ $slot }}</a></code></pre>
+                        <pre><code><span class="token puntuation"><</span>/div></code></pre>
+                    </div>
+                        <p>Pengguna dapat meneruskan konten menuju slot dengan memasukkan konten tersebut ke dalam komponen.</p>
+                     <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+                     <pre><code><span class="token puntuation"><</span>x-alert></code></pre>
+                     <pre
+                         data-prefix=""
+                    ><code><span class="token puntuation"><</span>strong>Whoops!<span class="token puntuation"><</span>/strong> Something went wrong!</code></pre>
+                    <pre><code><span class="token puntuation"><</span>/x-alert></code></pre>
+                    </div>
+                     <p>
+                        Terkadang komponen perlu membuat beberapa slot berbeda pada lokasi berbeda dalam suatu komponen. Dibawah ini diberikan contoh pengubahan
+                        komponen peringatan untuk memungkinkan injeksi dari sebuah slot "title"
+                     </p>
+                    <div class="mockup-code mx-auto w-full max-w-xs flex-grow shadow-lg sm:max-w-md place-content-center">
+                    <pre><code><span class="token puntuation"><</span>span class="alert-title">{{ $title }}<span class="token puntuation"><</span>/span></code></pre>
+                    <pre data-prefix=""><code></code></pre>
+                    <pre><code><span class="token puntuation"><</span>div class="alert alert-danger"></code></pre>
+                    <pre data-prefix=""><code><a class="text-orange-200">{{ $slot }}</a></code></pre>
+                    <pre><code><span class="token puntuation"><</span>/div></code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
@@ -861,16 +880,20 @@
             <h3>Inline Component Views</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
-                    </p>
+                    <h3 class="card-title justify-center pb-5">Inline Component Views</h3>
+                    <p class=" text-justify">Untuk komponen yang sangat kecil, akan rumit untuk mengelola class komponen dan component view template. 
+                                             Oleh karenanya kita harus me-return markup langsung dari method <span class="code">render</span>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                            <pre><code>public function render() {</code></pre>
+                            <pre><code>    return &lt&lt&lt'blade'</code></pre>
+                            <pre><code>        &ltdiv class="alert alert-danger"&gt</code></pre>
+                            <pre><code>            {{ $slot }}</code></pre>
+                            <pre><code>        &lt/div&gt</code></pre>
+                            <pre><code>    blade;</code></pre>
+                            <pre><code>}</code></pre>
+                            <pre class="text-success"><code>Mengembalikan sebuah komponen</code></pre> </code>
                         </p>
                     </div>
                 </div>
@@ -887,16 +910,14 @@
             <h3>Dynamic Components</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Dynamic Components</h3>
+                    <p class=" text-justify">Terkadang kita mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus di render hingga runtime. Dalam situasi ini, kita dapat menggunakan  <span class="code">dynamic-component</span> komponen bawaan Laravel untuk merender komponen berdasarkan nilai atau variabel runtime:
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code> 
+                        <pre><code> < x-dynamic-component :component="$componentName" class="mt-4" / > </code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
