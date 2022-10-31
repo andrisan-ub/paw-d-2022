@@ -856,16 +856,22 @@
             <h3>Reserved Keywords</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Reserved Keywords</h3>
+                    <p class=" text-justify">Secara default, beberapa keywords disimpan untuk penggunaan internal
+                        Blade untuk merender komponen. Berikut merupakan keywords yang tidak
+                        bisa digunakan sebagai public properties atau nama method di dalam
+                        komponen kita:
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                            <li>- data</li>
+                            <li>- render</li>
+                            <li>- resolveView</li>
+                            <li>- shouldRender</li>
+                            <li>- view</li>
+                            <li>- withAttributes</li>
+                            <li>- withName</li></code>
                         </p>
                     </div>
                 </div>
