@@ -768,7 +768,70 @@
             </div>
 
             
+        
+            <!--==================Components===================-->
             <h2 class="font-bold text-xl">Components</h2>
+            <h3></h3>
+            <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
+                <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5">Components</h3>
+                    <p class=" text-justify">Untuk menampilkan komponen, kita dapat menggunakan tag komponen Blade
+                        dalam
+                        salah satu template Blade Anda.
+                        Tag komponen blade dimulai dengan string (x-) diikuti dengan nama case dari kelas komponen.
+                        Jika
+                        kelas komponen terletak lebih dalam di dalam direktori app/View/Components, kita dapat
+                        menggunakan
+                        karakter (.) untuk menunjukkan direktori.
+                        Misalnya, jika kita mengasumsikan sebuah komponen berlokasi di
+                        app/View/Components/Inputs/Button.php, kita dapat merendernya seperti pada contoh :</p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                            php artisan make:component “file_name”
+                     </code>
+                        </p>
+                        
+                    </div>
+                    <p class=" text-justify">Perintah make:component juga akan membuat template tampilan untuk komponen. 
+                        Tampilan akan ditempatkan di direktori resources/views/components. Saat menulis komponen untuk aplikasi Anda sendiri, 
+                        komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components, 
+                        jadi biasanya tidak diperlukan registrasi komponen lebih lanjut.
+
+                        Kita juga dapat membuat komponen di dalam subdirektori dengan perintah dibawah :</p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                            php artisan make:component “folder_name_subDirektori”/“file_name”
+                     </code>
+                        </p>
+                        
+                    </div>
+
+                    <p class=" text-justify">Perintah di atas akan membuat komponen "file_name" di direktori app/View/Components/“folder_name_subDirektori” 
+                        dan view akan ditempatkan di direktori resources/views/components/“folder_name_subDirektori.
+
+                        Jika Anda ingin membuat komponen anonim (komponen dengan hanya menambahkan template Blade di resources dan tanpa menambahkan kelas 
+                        di direktori app/View/Components), Anda dapat menggunakan flag --view saat menjalankan perintah make:component seperti contoh perintah dibawah :</p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                            php artisan make:component “folder_name”.“file_name” --view
+                     </code>
+                        </p>
+                    </div>
+                    <p class=" text-justify">Perintah di atas akan membuat file Blade di direktori 
+                        resources/views/components/”nama_folder”/”nama_file”.blade.php yang dapat dijalankan sebagai komponen dengan perintah <x-”nama_folder”.”nama_file” />.</p>
+                </div>
+                <div>
+                    <div class="card col-span-3 lg:col-span-1 p-8 bg-slate-300 justify-items-auto">
+                        <h3 class="card-title pb-5 justify-items-auto">Contoh:</h3>
+
+                        <figure class="border-solid border-2 border-black ... rounded-2xl mt-5"><img class="rounded-2xl"
+                                src="" alt="strlen" /></figure>
+                    </div>
+                </div>
+            </div>
             <!--==================Rendering Components===================-->
             <h3>Rendering Components</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
