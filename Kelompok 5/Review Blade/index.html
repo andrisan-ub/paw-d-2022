@@ -534,16 +534,29 @@
             <h3>Conditional Classes</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Conditional Classes</h3>
+                    <p class=" text-justify">Direktif <span class="text-green-600">@class</span> mengkompilasi string kelas CSS secara kondisional.
+                        Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan,
+                        sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan
+                        selalu disertakan dalam daftar kelas yang dirender:
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                            <pre><code>@php</code></pre>
+                            <pre><code>    $isActive = false;</code></pre>
+                            <pre><code>    $hasError = true;</code></pre>
+                            <pre><code>@endphp</code></pre>
+                            <br>
+                            <pre><code>&lt;span @class([</code></pre>
+                            <pre><code>    'p-4',</code></pre>
+                            <pre><code>    'font-bold' => $isActive,</code></pre>
+                            <pre><code>    'text-gray-500' => ! $isActive,</code></pre>
+                            <pre><code>    'bg-red' => $hasError,</code></pre>
+                            <pre><code>])&gt;&lt;/span&gt;</code></pre>
+                            <br>
+                            <pre><code>&lt;span class="p-4 text-gray-500 bg-red"&gt;&lt;/span&gt;</code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
@@ -560,16 +573,38 @@
             <h3>Additional Attributes</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Additional Attributes</h3>
+                    <p class=" text-justify">Untuk kenyamanan, kita dapat menggunakan <span class="text-green-600">@checked</span> direktif untuk
+                        dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan
+                        bergema <span class="text-green-600">checked</span> jika kondisi yang diberikan mengevaluasi ke <span
+                          class="text-green-600">true</span>:
                     </p>
                     <br>
                     <div class="mockup-code p-6 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                        <pre><code>&lt;input type="checkbox"</code></pre>
+                        <pre><code>       name="active"</code></pre>
+                        <pre><code>       value="active"</code></pre>
+                        <pre><code>       @checked(old('active', $user->active)) /&gt;</code></pre></code>
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
+                    <h3 class="card-title justify-center pb-5"></h3>
+                    <p class=" text-justify">Demikian juga, <span class="text-red-600">@selected</span> arahan dapat digunakan untuk menunjukkan
+                        apakah opsi pilih yang diberikan harus "dipilih":
+                    </p>
+                    <br>
+                    <div class="mockup-code p-6 justify-items-auto">
+                        <p><code>
+                        <pre><code>&lt;select name="version"&gt;</code></pre>
+                        <pre><code>    @foreach ($product->versions as $version)</code></pre>
+                        <pre><code>        &lt;option value="{{ $version }}" @selected(old('version') == $version)&gt;</code></pre>
+                        <pre><code>           {{ $version }}</code></pre>
+                        <pre><code>        &lt;/option&gt;</code></pre>
+                        <pre><code>    @endforeach</code></pre>
+                        <pre><code>&lt;/select&gt;</code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
@@ -586,16 +621,28 @@
             <h3>Including Subviews</h3>
             <div class="p-10 grid grid-cols-3 grid-flow-row gap-5 justify-items-auto">
                 <div class="card col-span-3 lg:col-span-2 p-10 bg-base-300 shadow-xl card bordered">
-                    <h3 class="card-title justify-center pb-5">Apa itu Blade ?</h3>
-                    <p class=" text-justify">Blade adalah template engine yang disediakan Laravel untuk proses
-                        templating
-                        / views. Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                    <h3 class="card-title justify-center pb-5">Including Subviews</h3>
+                    <p class=" text-justify">
+                    <p>Including subviews digunakan untuk menggunakan componen view lain</p>
+                    <p>Cara memanggil components dengan cara menambahkan @include('dir.namafile') dalam sebuah view</p>
+                    <br />
+                    <h1 class="font-bold">Contoh penggunaan:</h1>
+                    <p>misalkan ada component 'navbar' dalam directory views>layouts>navbar</p>
+                    <p>navbar ini akan digunakan di setiap page</p>
+                    <p>daripada menyalin navbar di setiap page, lebih baik dilakukan pemanggilan</p>
+                    <p>component 'navbar' dengan cara @include('layouts.navbar')</p>
                     </p>
                     <br>
                     <div class="mockup-code p-6 w-96 justify-items-auto">
-                        <p><code>Route::get('/', function () {
-                        return view('greeting', ['name' => 'Fauzi']);
-                    }); </code>
+                        <p><code>
+                        <pre><code>&lt;div&gt;</code></pre>
+                        <pre><code>    @include('shared.errors')</code></pre>
+                        <br>
+                        <pre><code>    &lt;form&gt;</code></pre>
+                        <pre><code>        &lt;!-- Form Contents --&gt;</code></pre>
+                        <pre><code>    &lt;/form&gt;</code></pre>
+                        <pre><code>&lt;/div&gt;</code></pre>
+                        </code>
                         </p>
                     </div>
                 </div>
