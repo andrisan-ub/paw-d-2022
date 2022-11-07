@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en"  data-theme="luxury">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Rangkuman Kelompok 2</title>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar bg-base-300">
+        <a class="btn btn-ghost normal-case text-xl">Kelompok 2</a>
+      </div>
+    <!--EndNavbar-->
+
+    <!--PTR-->
+    <!--Introduction-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+        <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Introduction</div> 
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-97 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Introduction</h2>
+              <p>
+                Blade adalah fitur yang disediakan Laravel untuk proses templating sederhana namun sangat bermanfaat 
+                dalam proses pengembangan tampilan halaman web.
+                Tidak seperti fitur templating PHP populer lainnya, 
+                Blade tidak membatasi pemrogram untuk menggunakan kode PHP biasa dalam membuat kode untuk tampilan.
+                <br><br>
+                Semua tampilan Blade dikompilasi ke dalam kode PHP biasa dan kemudian disimpan dalam cache hingga diubah, 
+                yang berarti Blade pada dasarnya tidak menambahkan beban atau overhead pada saat aplikasi dijalankan. 
+                Blade pada laravel menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori resources / views. 
+                Dalam hal ini Blade pada Laravel menggunakan basis template inheritance dan sections.
+                <br><br>
+                Salah satu kegunaan dari Blade Template Engine Laravel adalah penggunaan layout, 
+                agar tampilan yang berulang misalnya header, footer, sidebar dan sebagainya tidak perlu 
+                dibuat berulang kali sehingga rawan inkonsistensi. Pada umumnya layout ditempatkan dalam 
+                sebuah folder yang bernama layout dalam folder views, namun demikian developer tidak dibatasi 
+                apabila ingin menggunakan nama lain. 
+                <br>
+                Data dapat diteruskan ke tampilan Blade menggunakan “view helper’s second argument”:
+                </p>
+              <div class="mockup-code">
+                <pre><code>Route::get('/', function () {
+                  return view('greeting', ['name' =&gt; 'Finn']);
+               });
+               </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--EndIntroduction-->
+
+    <!--CLR-->
+    <!--DisplayingData-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Displaying Data</div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-97 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">HTML Entity Encoding</h2>
+            <p>
+              Secara umum, Blade akan menggandakan encode entitas HTML. 
+              Jika ingin menonaktifkan penyandian ganda, panggil method 
+              “Blade::withoutDoubleEncoding” dari method “boot” pada class 
+            </p>
+            <div class="mockup-code">
+              <pre><code></code>&lt;?php
+ 
+                namespace App\Providers;
+                 
+                use Illuminate\Support\Facades\Blade;
+                use Illuminate\Support\ServiceProvider;
+                 
+                class AppServiceProvider extends ServiceProvider
+                {
+                   /**
+                    * Bootstrap any application services.
+                    *
+                    * @return void
+                    */
+                   public function boot()
+                   {
+                       Blade::withoutDoubleEncoding();
+                   }
+                }
+                </pre>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Blade & JavaScript Frameworks</h2>
+            <p>
+              Karena banyak framework JavaScript juga menggunakan 
+              kurung kurawal untuk menampilkan ekspresi yang 
+              diberikan harus ditampilkan pada web browser, 
+              kita dapat menggunakan simbol @ untuk memberi
+               tahu mesin rendering Blade bahwa ekspresi harus 
+               tetap tidak tersentuh. Contoh:
+            </p>
+            <div class="mockup-code">
+              <pre><code> &lt;h1&gt;Laravel&lt;/h1&gt;
+ 
+                Hello, @{{ name }}.</code></pre>
+            </div>
+            <p>
+              Dalam contoh di atas, simbol @ akan dihapus oleh Blade.
+               Namun, ekspresi {{ name }} akan tetap tidak tersentuh 
+               oleh mesin Blade, memungkinkan dirender oleh framework JavaScript.
+              <br><br>
+              Simbol @ juga dapat digunakan untuk menghindari 
+              pengarahan oleh Blade:
+            </p>
+            <div class="mockup-code">
+              <pre><code>{{-- Blade template --}}
+                @@if()
+                 
+                &lt;!-- HTML output --&gt;
+                @if()</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  
+  <!--EndDisplayingData-->
+
+  <!--BladeDirectives-->
+  <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Blade Directives</div> 
+  </div>
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-97 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">If Statements</h2>
+            <p>
+              Kita dapat membuat pernyataan if menggunakan @if, @elseif, @else, dan @endif. 
+              Ini memiliki fungsi identik dengan PHP :
+            </p>
+            <div class="mockup-code">
+              <pre><code>@if (count($records) === 1)
+                I have one record!
+             @elseif (count($records) &gt; 1)
+                I have multiple records!
+             @else
+                I don't have any records!
+             @endif
+             </code></pre>
+            </div>
+            <p>
+              Blade juga menyediakan @unless directive:
+            </p>
+            <div class="mockup-code">
+              <pre><code>@unless (Auth::check())
+                You are not signed in.
+             @endunless
+             </code></pre>
+            </div>
+            <p>
+              Selain itu,  @isset dan @empty dapat digunakan sebagai pintasan yang nyaman untuk fungsi PHP:
+            </p>
+            <div class="mockup-code">
+              <pre><code>@isset($records)
+                // $records is defined and is not null...
+             @endisset
+              
+             @empty($records)
+                // $records is "empty"...
+             @endempty
+             </code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Switch Statements</h2>
+            <p>
+              Switch statement dapat dibuat menggunakan @switch, @case, @break, @default dan @endswitch.Contoh:  
+            </p>
+            <div class="mockup-code">
+              <pre><code>@switch($i)
+                @case(1)
+                    First case...
+                    @break
+              
+                @case(2)
+                    Second case...
+                    @break
+              
+                @default
+                    Default case...
+             @endswitch
+             </code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Loops</h2>
+            <p>
+              Selain pernyataan bersyarat, Blade menyediakan arahan 
+              sederhana untuk bekerja dengan struktur loop PHP. 
+              Masing-masing berfungsi identik dengan counterpart PHP. Contoh:
+            </p>
+            <div class="mockup-code">
+              <pre><code>@for ($i = 0; $i &lt; 10; $i++)
+                The current value is {{ $i }}
+             @endfor
+              
+             @foreach ($users as $user)
+                &lt;p&gt;This is user {{ $user-&gt;id }}&lt;/p&gt;
+             @endforeach
+              
+             @forelse ($users as $user)
+                &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+             @empty
+                &lt;p&gt;No users&lt;/p&gt;
+             @endforelse
+              
+             @while (true)
+                &lt;p&gt;I'm looping forever.&lt;/p&gt;
+             @endwhile </code></pre>
+            </div>
+            <p>
+              Catatan:<br>
+              Saat melakukan iterasi melalui loop foreach, 
+              kita dapat menggunakan variabel loop untuk
+               mendapatkan informasi berharga tentang loop, 
+               seperti apakah kita berada di iterasi pertama
+                atau terakhir melalui loop.
+              <br><br>
+              Saat menggunakan loop, kita juga dapat melewati 
+              iterasi saat ini atau mengakhiri loop menggunakan 
+              @continue dan @break:
+            </p>
+            <div class="mockup-code">
+              <pre><code> @if ($user-&gt;type == 1)
+                @continue
+            @endif
+          
+            &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+          
+            @if ($user-&gt;number == 5)
+                @break
+            @endif
+         @endforeach</code></pre>
+            </div>
+            <p>
+              Kita juga dapat menyertakan kondisi kelanjutan atau pemutusan. Contoh:
+            </p>
+            <div class="mockup-code">
+              <pre><code>@foreach ($users as $user)
+                @continue($user-&gt;type == 1)
+              
+                &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+              
+                @break($user-&gt;number == 5)
+             @endforeach</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+	<!--EndCLR-->
+
+	<!--PTR-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">The Loop Variable</h2>
+              <p>
+                Saat melakukan perulangan melalui “loop foreach”, 
+                variabel $loop akan tersedia di dalam loop tersebut. 
+                Variabel ini akan menyediakan akses ke beberapa bit informasi 
+                yang berguna seperti indeks loop saat ini dan apakah saat ini 
+                literasi pertama atau terakhir pada loop:
+              </p>
+              <div class="mockup-code">
+                <pre><code>@foreach ($users as $user)
+                  @if ($loop-&gt;first)
+                      This is the first iteration.
+                  @endif
+                  @if ($loop-&gt;last)
+                      This is the last iteration.
+                  @endif
+                  &lt;p&gt;This is user {{ $user-&gt;id }}&lt;/p&gt;
+               @endforeach
+               
+               </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-97 bg-accent-focus shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">The Loop Variable-2</h2>
+        <p>
+          Dan jika Anda berada di dalam loop bersarang,
+          Anda dapat mengakses 
+          variabel $loop loop induk melalui properti inangnya:
+        </p>
+        <div class="mockup-code">
+          <pre><code>@foreach ($users as $user)
+            @foreach ($user-&gt;posts as $post)
+              @if ($loop-&gt;parent-&gt;first)
+                This is the first iteration of the parent loop.
+              @endif
+            @endforeach</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-94 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">The Loop Variable-3</h2>
+          <p>Variabel $loop juga berisikan berbagai properti berguna lainnya:</p>
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <td>$loop->index	</td>
+                  <td>Index iterasi loop saat ini (mulai dari 0).</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                  <td>$loop->iteration</td>
+                  <td>Iterasi loop saat ini (dimulai dari 1).</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                  <td>$loop->remaining</td>
+                  <td>Iterasi yang tersisa di dalam loop.</td>
+                </tr>
+                <!-- row 4 -->
+                <tr>
+                  <td>$loop->count</td>
+                  <td>Jumlah total item di dalam array yang diiterasi.</td>
+                </tr>
+                <!-- row 5 -->
+                <tr>
+                  <td>$loop->first</td>
+                  <td>Apakah ini iterasi pertama melalui loop.</td>
+                </tr>
+                <!-- row 6 -->
+                <tr>
+                  <td>$loop->last</td>
+                  <td>Apakah ini iterasi terakhir melalui loop.</td>
+                </tr>
+                <!-- row 7 -->
+                <tr>
+                  <td>$loop->even</td>
+                  <td>Apakah ini iterasi genap melalui loop.</td>
+                </tr>
+                <!-- row 8 -->
+                <tr>
+                  <td>$loop->odd</td>
+                  <td>Apakah ini iterasi ganjil melalui loop.</td>
+                </tr>
+                <!-- row 9 -->
+                <tr>
+                  <td>$loop->depth</td>
+                  <td>Tingkat bersarang dari loop saat ini.</td>
+                </tr>
+                <!-- row 10 -->
+                <tr>
+                  <td>$loop->parent</td>
+                  <td>Ketika dalam loop bersarang, variabel loop induk.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Conditional Classes</h2>
+              <p>
+                Perintah dari @class secara kondisional mengkompilasi 
+                String kelas CSS. Perintah menerima array kelas di mana kunci
+                array berisi kelas atau kelas yang akan ditambahkan, 
+                sedangkan nilainy merupakan ekspresi boolean.
+                 Jika elemen array memilik kunci numerik tersebut, 
+                maka itu akan selalu dimasukkan ke dalam daftar kelas yang dirender:
+              </p>
+              <div class="mockup-code">
+                <pre><code>
+                  @php
+                  $isActive = false;
+                  $hasError = true;
+               @endphp
+                
+               &lt;span @class([
+                  'p-4',
+                  'font-bold' =&gt; $isActive,
+                  'text-gray-500' =&gt; ! $isActive,
+                  'bg-red' =&gt; $hasError,
+               ])&gt;&lt;/span&gt;
+                
+               &lt;span class="p-4 text-gray-500 bg-red"&gt;&lt;/span&gt;
+               </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Additional Attributes-2</h2>
+          <p>
+            Selain itu, perintah @disabled dapat digunakan untuk 
+            menujukkan apakah elemen yang diberikan harus di “disabled”:
+          </p>
+          <div class="mockup-code">
+            <pre><code>&lt;button&nbsp;type&equals;&quot;submit&quot;&nbsp;&commat;disabled&lpar;&dollar;errors&#45;&gt;isNotEmpty&lpar;&rpar;&rpar;&gt;Submit&lt;&sol;button&gt;</code></pre>
+          </div>
+          <p>
+            Selain itu, perintah @readonly dapat digunakan untuk 
+            menunjukkan apakah elemen yang diberikan harus di “readonly”:
+          </p>
+          <div class="mockup-code">
+            <pre><code>&lt;input&nbsp;type&equals;&quot;email&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&equals;&quot;email&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&equals;&quot;email&commat;laravel&period;com&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&commat;readonly&lpar;&dollar;user&#45;&gt;isNotAdmin&lpar;&rpar;&rpar;&sol;&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Additional Attributes-3</h2>
+          <p>
+            Selain itu, perintah @required dapat digunakan untuk menunjukkan 
+            apakah elemen yang diberikan harus di “required”:
+          </p>
+          <div class="mockup-code">
+            <pre><code>&lt;input&nbsp;type&equals;&quot;text&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&equals;&quot;title&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&equals;&quot;title&quot;&NewLine;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&commat;required&lpar;&dollar;user&#45;&gt;isAdmin&lpar;&rpar;&rpar;&sol;&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Including Subviews</h2>
+              <p>
+                Meskipun Anda bebas menggunakan perintah @include,
+                 komponen Blade menyediakan fungsionalitas serupa dan 
+                 menawarkan beberapa manfaat dibandingkan 
+                perintah @include seperti pengikatan data dan atribut.
+                <br><br>
+                Perintah @include Blade memungkinkan Anda untuk menyertakan 
+                tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk 
+                tampilan induk akan tersedia untuk tampilan yang disertakan:
+              </p>
+              <div class="mockup-code">
+                <pre><code>&#60;div&#62;&#13;&#10;&#160;&#160;&#160;&#64;include&#40;&#39;shared&#46;errors&#39;&#41;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#60;form&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;&#33;&#45;&#45;&#160;Form&#160;Contents&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#160;&#160;&#60;&#47;form&#62;&#13;&#10;&#60;&#47;div&#62;&#13;&#10;</code></pre>
+              </div>
+              <p>
+                Meskipun tampilan yang diikutsertakan akan mewarisi 
+                semua data yang tersedia dalam tampilan induk, 
+                Anda juga dapat meneruskan array 
+                data tambahan yang tersedia untuk tampilan yang disertakan:
+              </p>
+              <div class="mockup-code">
+                <pre><code>@include('view.name', ['status' => 'complete'])</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Including Subviews-2</h2>
+          <p>
+            Jika Anda mencoba @include tampilan yang tidak ada, 
+            Laravel akan menampilkan error. Jika Anda ingin menyertakan 
+            tampilan yang mungkin ada atau mungkin tidak ada, 
+            Anda harus menggunakan perintah @includeIf:
+          </p>
+          <div class="mockup-code">
+            <pre><code>@includeIf('view.name', ['status' => 'complete'])</code></pre>
+          </div>
+          <p>
+            Jika Anda ingin @include tampilan jika ekspresi 
+            boolean yang diberikan dievaluasi menjadi TRUE or FALSE, 
+            Anda dapat menggunakan perintah @includeWhen dan @includeUnless:
+          </p>
+          <div class="mockup-code">
+            <pre><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</code></pre>
+            <pre><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</code></pre>
+          </div>
+          <p>
+            Untuk menyertakan tampilan pertama yang ada di array tampilan tertentu, 
+            Anda dapat mengunakan perintah @includeFirst:
+          </p>
+          <div class="mockup-code">
+            <pre><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="alert alert-warning shadow-lg">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+        <span>Anda harus menghindari penggunaan konstanta __DIR__ dan __FILE__ dalam tampilan Blade karena mereka akan merujuk ke lokasi tampilan yang di-cache dan dikompilasi.</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">The @Once Directive</h2>
+              <p>
+                perintah @once memungkinkan Anda untuk menentukan sebagian 
+                dari template yang hanya akan dievaluasi sekali persiklus 
+                rendering. Hal ini mungkin berguna untuk mendorong bagian 
+                JavaScript tertentu ke header halaman menggunakan stacks. 
+                Contohnya, jika Anda merender komponen tertentu dalam satu loop,
+                 Anda mungkin hanya ingin mendorong
+                 JavaScript ke header saat pertama kali komponen dirender:
+              </p>
+              <div class="mockup-code">
+                <pre><code>&#64;once&#13;&#10;&#160;&#160;&#160;&#64;push&#40;&#39;scripts&#39;&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;script&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;&#160;Your&#160;custom&#160;JavaScript&#46;&#46;&#46;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;&#47;script&#62;&#13;&#10;&#160;&#160;&#160;&#64;endpush&#13;&#10;&#64;endonce</code></pre>
+              </div>
+              <p>
+                Karena perintah @once sering digunakan bersama dengan 
+                perintah @push dan @prepend, perintah @pushOnce dan
+                 @prependOnce tersedia untuk kemudahan penggunaan:
+              </p>
+              <div class="mockup-code">
+                <pre><code>&#64;pushOnce&#40;&#39;scripts&#39;&#41;&#13;&#10;&#160;&#160;&#160;&#60;script&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;&#160;Your&#160;custom&#160;JavaScript&#46;&#46;&#46;&#13;&#10;&#160;&#160;&#160;&#60;&#47;script&#62;&#13;&#10;&#64;endPushOnce</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--EndPTR-->
+
+    <!--CHR-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Raw PHP</h2>
+              <p>Di beberapa situasi, menyematkan kode PHP sangat berguna ke dalam tampilan kita. Kita dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template kita. Jika dalam single statement, statement dapat dimasukkan atau diikutkan didalam direktif @php.
+              </p>
+              <div class="mockup-code">
+                <pre><code> @php
+    $counter = 1;
+    @endphp
+
+    Single statement:
+    @php($counter = 1)
+               </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Comments</h2>
+              <p>Blade juga memungkinkan kita untuk menentukan komentar dalam tampilan. Namun, tidak seperti komentar HTML, komentar dalam Blade tidak disertakan dalam HTML yang dikembalikan oleh aplikasi kita.
+              </p>
+              <div class="mockup-code">
+                <pre><code>{{-- This comment will not be present in the rendered HTML --}}</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--EndBladeDirectives-->
+
+    <!--Components-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+        <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Components</div> 
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Rendering Components</h2>
+              <p>Untuk menampilkan komponen, kita dapat menggunakan tag komponen Blade dalam salah satu template Blade Anda. Tag komponen blade dimulai dengan string (x-) diikuti dengan nama case dari kelas komponen. Jika kelas komponen terletak lebih dalam di dalam direktori app/View/Components, kita dapat menggunakan karakter (.) untuk menunjukkan direktori. Misalnya, jika kita mengasumsikan sebuah komponen berlokasi di app/View/Components/Inputs/Button.php, kita dapat merendernya seperti pada contoh.
+              </p>
+              <div class="mockup-code">
+                <pre><code>Umumnya ditulis:
+        &lt;x-alert/&gt;
+ 
+        &lt;x-user-profile/&gt;
+      
+      Contoh:
+      &lt;x-inputs.button/&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-100 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Passing Data to Components</h2>
+              <p>Kita dapat meneruskan data ke komponen Blade menggunakan atribut HTML. Nilai primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter (:) sebagai awalan atau prefix. 
+                <br>
+                <br>
+                Kita harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak perlu meneruskan data ke tampilan dari metode render komponen.
+              </p>
+              <div class="mockup-code">
+                <pre><code>&lt;x-alert type="error" :message="$message"/&gt;</code></pre>
+              </div>
+              <div class="mockup-code">
+                <pre><code>&lt;?php
+ 
+                  namespace App\View\Components;
+                   
+                  use Illuminate\View\Component;
+                   
+                  class Alert extends Component
+                  {
+                      /**
+                       * The alert type.
+                       *
+                       * @var string
+                       */
+                      public $type;
+                   
+                      /**
+                       * The alert message.
+                       *
+                       * @var string
+                       */
+                      public $message;
+                   
+                      /**
+                       * Create the component instance.
+                       *
+                       * @param  string  $type
+                       * @param  string  $message
+                       * @return void
+                       */
+                      public function __construct($type, $message)
+                      {
+                          $this-&gt;type = $type;
+                          $this-&gt;message = $message;
+                      }
+                   
+                      /**
+                       * Get the view / contents that represent the component.
+                       *
+                       * @return \Illuminate\View\View|\Closure|string
+                       */
+                      public function render()
+                      {
+                          return view('components.alert');
+                      }
+                  }</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Component Attributes</h2>
+              <p>Terkadang kita mungkin perlu menentukan atribut HTML tambahan, seperti kelas, yang bukan merupakan bagian dari data yang diperlukan agar komponen berfungsi. Biasanya, kita ingin meneruskan atribut tambahan ini ke root element template komponen. Misalnya, bayangkan kita ingin merender komponen peringatan seperti pada contoh.
+                <br> 
+                <br>
+                Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan ke komponen “attributes bag”. Komponen teersebut secara otomatis tersedia melalui variabel $attributes. Semua atribut dapat dirender dalam komponen dengan menggemakan variabel dibawah.
+              </p>
+              <div class="mockup-code">
+                <pre><code>Contoh: 
+  &lt;x-alert type="error" :message="$message" class="mt-4"/&gt;
+                
+  Variabel untuk merender atribut:
+    &lt;div {{ $attributes }}&gt;
+    &lt;!-- Component content --&gt;
+    &lt;/div&gt;
+</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--EndCHR-->
+
+    <!--IDA-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Reserved Keywords</h2>
+              <p>Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk merender komponen. 
+                Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode dalam komponen Anda:</p>
+              <div class="mockup-code">
+                <pre><code>
+            - Data 
+            - Render
+            - resolveView
+            - shouldRender
+            - view
+            - withAttributes
+            - withName
+                </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Slots</h2>
+              <p>Anda sering perlu meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender dengan menggemakan variabel $slot. 
+                Untuk menjelajahi konsep ini, mari kita bayangkan bahwa komponen peringatan memiliki markup berikut:</p>
+              <div class="mockup-code">
+                <pre><code>&lt;div&nbsp;class=&quot;alert&nbsp;alert&#45;danger&quot;&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;&sect;slot&nbsp;}}
+                  &lt;/div&gt;</code></pre>
+              </div>
+              <p>juga dapat meneruskan konten ke slot dengan memasukkan konten ke dalam komponen: </p>
+              <div class="mockup-code">
+                <pre><code> &#160;&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
+              </div>
+              <p>Terkadang komponen mungkin perlu merender beberapa slot berbeda di lokasi yang berbeda dalam komponen. Mari kita ubah komponen peringatan kita untuk memungkinkan injeksi slot "judul":  </p>
+              <div class="mockup-code">
+                <pre><code>&#60;span&#160;class&#61;&#34;alert&#45;title&#34;&#62;&#123;&#123;&#160;&#36;title&#160;&#125;&#125;&#60;&#47;span&#62;&#13;&#10;&#160;&#13;&#10;&#60;div&#160;class&#61;&#34;alert&#160;alert&#45;danger&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;div&#62;</code></pre>
+              </div>
+              <p>Anda dapat menentukan konten slot bernama menggunakan tag x-slot. Konten apa pun yang tidak berada dalam tag x-slot eksplisit akan diteruskan ke komponen dalam variabel $slot:  </p>
+              <div class="mockup-code">
+                <pre><code>&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Server&#160;Error&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">#Scooped Slots</h2>
+            <p>  Jika Anda telah menggunakan kerangka kerja JavaScript seperti Vue, Anda mungkin akrab dengan "slot terbatas", yang memungkinkan Anda mengakses data atau metode dari komponen di dalam slot Anda. Anda dapat mencapai perilaku serupa di Laravel dengan mendefinisikan metode publik atau properti pada komponen Anda dan mengakses komponen dalam slot Anda melalui variabel $component. 
+              Dalam contoh ini, kita akan mengasumsikan bahwa komponen x-alert memiliki metode formatAlert publik yang ditentukan pada kelas komponennya: </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;alert&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;component&#45;&#62;formatAlert&#40;&#39;Server&#160;Error&#39;&#41;&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;strong&#62;Whoops&#33;&#60;&#47;strong&#62;&#160;Something&#160;went&#160;wrong&#33;&#13;&#10;&#60;&#47;x&#45;alert&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-97 bg-accent-focus shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">#Slots Atribut</h2>
+          <p>  Seperti komponen Blade, Anda dapat menetapkan atribut tambahan ke slot seperti nama kelas CSS: </p>
+          <div class="mockup-code">
+            <pre><code>&#160;&#60;x&#45;card&#160;class&#61;&#34;shadow&#45;sm&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;heading&#160;class&#61;&#34;font&#45;bold&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Heading&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;Content&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#160;&#60;x&#45;slot&#58;footer&#160;class&#61;&#34;text&#45;sm&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Footer&#13;&#10;&#160;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#60;&#47;x&#45;card&#62;</code></pre>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Inline Component Views</h2>
+              <p>Untuk komponen yang sangat kecil, mungkin terasa rumit untuk mengelola kelas komponen dan template tampilan komponen. Untuk alasan ini, Anda dapat mengembalikan markup komponen langsung dari metode render:  </p>
+              <div class="mockup-code">
+                <pre><code>public&#160;function&#160;render&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;return&#160;&#60;&#60;&#60;&#39;blade&#39;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;div&#160;class&#61;&#34;alert&#160;alert&#45;danger&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;&#47;div&#62;&#13;&#10;&#160;&#160;&#160;&#160;blade;&#13;&#10;&#125;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Dynamic Components</h2>
+              <p>Terkadang Anda mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus dirender hingga runtime. Dalam situasi ini, Anda dapat menggunakan komponen komponen dinamis bawaan Laravel untuk merender komponen berdasarkan nilai runtime atau variabel: </p>
+              <div class="mockup-code">
+                <pre><code>&#60;x&#45;dynamic&#45;component&#160;&#58;component&#61;&#34;&#36;componentName&#34;&#160;class&#61;&#34;mt&#45;4&#34;&#160;&#47;&#62;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Manually Registering Components</h2>
+              <p>Saat menulis komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components.  
+                 Namun, jika Anda membangun paket yang menggunakan komponen Blade atau menempatkan komponen di direktori non-konvensional, Anda harus mendaftarkan kelas komponen Anda secara manual dan alias tag HTML-nya sehingga Laravel tahu di mana menemukan komponen tersebut. 
+                Anda biasanya harus mendaftarkan komponen Anda dalam metode boot penyedia layanan paket Anda:</p>
+              <div class="mockup-code">
+                <pre><code>use&#160;IlluminateSupportFacadesBlade;&#13;&#10;use&#160;VendorPackageViewComponentsAlertComponent;&#13;&#10;&#160;&#13;&#10;&#47;&#42;&#42;&#13;&#10;&#160;&#42;&#160;Bootstrap&#160;your&#160;package&#39;s&#160;services&#46;&#13;&#10;&#160;&#42;&#13;&#10;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;Blade&#58;&#58;component&#40;&#39;package&#45;alert&#39;&#44;&#160;AlertComponent&#58;&#58;class&#41;;&#13;&#10;&#125;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Autoloading Package Components</h2>
+            <p>Anda dapat menggunakan metode componentNamespace untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan ColorPicker yang berada dalam namespace PackageViewsComponents:</p>
+            <div class="mockup-code">
+              <pre><code>use&#160;IlluminateSupportFacadesBlade;&#13;&#10;&#160;&#13;&#10;&#47;&#42;&#42;&#13;&#10;&#160;&#42;&#160;Bootstrap&#160;your&#160;package&#39;s&#160;services&#46;&#13;&#10;&#160;&#42;&#13;&#10;&#160;&#42;&#160;&#64;return&#160;void&#13;&#10;&#160;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;&#160;Blade&#58;&#58;componentNamespace&#40;&#39;Nightshade\Views\Components&#39;&#44;&#160;&#39;nightshade&#39;&#41;;&#13;&#10;&#125;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+    <!--EndComponents-->
+    <!--EndIDA-->
+    
+    <!--JMN-->
+    <!--AnonymousComponents-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Anonymous Components</div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Index Components</h2>
+            <p>
+              Terkadang, ketika sebuah komponen terdiri dari banyak 
+              template Blade, Anda mungkin ingin mengelompokkan template 
+              komponen yang diberikan dalam satu direktori. Misalnya, 
+              bayangkan komponen "accordion" dengan struktur direktori berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>/resources/views/components/accordion.blade.php</code></pre>
+              <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+            </div>
+            <p>
+              Struktur direktori ini memungkinkan Anda untuk merender komponen 
+              “accordion” dan itemnya seperti ini:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;accordion&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;accordion&#46;item&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#46;&#46;&#46;&#13;&#10;&#160;&#160;&#160;&#60;&#47;x&#45;accordion&#46;item&#62;&#13;&#10;&#60;&#47;x&#45;accordion&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-95 bg-accent-focus shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Anonymous Index Components-2</h2>
+        <p>
+          Namun, untuk merender komponen “accordion” melalui x-accordion, 
+          kami terpaksa menempatkan templat komponen accordion "index" 
+          di direktori resources/views/components alih-alih menumpuknya 
+          di dalam direktori accoridon dengan templat terkait accordion 
+          lainnya. Untungnya, Blade memungkinkan Anda untuk menempatkan
+           file index.blade.php di dalam direktori template komponen. 
+           Ketika template index.blade.php ada untuk komponen, itu akan 
+           dirender sebagai simpul "root" dari komponen. Jadi, kita dapat
+            terus menggunakan sintaks Blade yang sama seperti yang diberikan 
+            pada contoh di atas; namun, kami akan menyesuaikan struktur 
+            direktori kami seperti ini:
+        </p>
+        <div class="mockup-code">
+          <pre><code>/resources/views/components/accordion/index.blade.php</code></pre>
+          <pre><code>/resources/views/components/accordion/item.blade.php</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Data Properties / Attributes</h2>
+            <p>
+              Meskipun komponen anonim tidak memiliki kelas 
+              yang terkait, anda tetap dapat menentukan atribut
+               mana yang harus dianggap sebagai variabel dan 
+               atribut mana yang hharus ditempatkan di tas atribut 
+               komponen menggunakan arahan @props di bagian atas 
+               template Blade komponen Anda untuk membedakan data 
+               mana yag harus di teruskan ke komponen sebagai atirbut.
+                Semua atribut lain pada komponen akan tersedia melalui 
+                tas atribut komponen. Jika Anda ingin memberikan nilai 
+                default pada variabel data, Anda dapat menentukan 
+                nama variabel sebagai kunci array dan nilai default 
+                sebagai nilai array:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;alert&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;props&#40;&#91;&#39;type&#39;&#160;&#61;&#62;&#160;&#39;info&#39;&#44;&#160;&#39;message&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;div&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;alert&#160;alert&#45;&#39;&#46;&#36;type&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;message&#160;&#125;&#125;&#13;&#10;&#60;&#47;div&#62;</code></pre>
+            </div>
+            <p>
+              Berdasarkan pendefinisian komponen di atas, 
+              kita dapat membuat komponen seperti ini:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;alert&#160;type&#61;&#34;error&#34;&#160;&#58;message&#61;&#34;&#36;message&#34;&#160;class&#61;&#34;mb&#45;4&#34;&#47;&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Accessing Parent Data</h2>
+            <p>
+              Untuk mengakses data dari komponen induk di dalam 
+              komponen turunan Anda dapat menggunakan arahan @aware.
+               Misalnya, kita sedang membangun komponen menu kompleks 
+              yang terdiri dari induk &#60;x&#45;menu&#62; dan anak &#60;x&#45;menu&#46;item&#62;, maka:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;menu&#160;color&#61;&#34;purple&#34;&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;menu&#46;item&#62;&#46;&#46;&#46;&#60;&#47;x&#45;menu&#46;item&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;menu&#46;item&#62;&#46;&#46;&#46;&#60;&#47;x&#45;menu&#46;item&#62;&#13;&#10;&#60;&#47;x&#45;menu&#62;</code></pre>
+            </div>
+            <p>
+              Komponen &#60;x&#45;menu&#62 dapat memiliki implementasi seperti berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;menu&#47;index&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;props&#40;&#91;&#39;color&#39;&#160;&#61;&#62;&#160;&#39;gray&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;ul&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;bg&#45;&#39;&#46;&#36;color&#46;&#39;&#45;200&#39;&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;ul&#62;</code></pre>
+            </div>
+          </div>
+        </div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-95 bg-accent-focus shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Accessing Parent Data-2</h2>
+        <p>
+          Karena prop warna ('color')  hanya diteruskan ke induk (&#60;x&#45;menu&#62;), 
+            itu tidak akan tersedia di dalam &#60;x&#45;menu&#46;item&#62;. 
+              Namun, jika kita menggunakan direktif @aware, 
+            kita juga dapat membuatnya tersedia di dalam &#60;x&#45;menu&#46;item&#62;:
+        </p>
+        <div class="mockup-code">
+          <pre><code>&#60;&#33;&#45;&#45;&#160;&#47;resources&#47;views&#47;components&#47;menu&#47;item&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#64;aware&#40;&#91;&#39;color&#39;&#160;&#61;&#62;&#160;&#39;gray&#39;&#93;&#41;&#13;&#10;&#160;&#13;&#10;&#60;li&#160;&#123;&#123;&#160;&#36;attributes&#45;&#62;merge&#40;&#91;&#39;class&#39;&#160;&#61;&#62;&#160;&#39;text&#45;&#39;&#46;&#36;color&#46;&#39;&#45;800&#39;&#93;&#41;&#160;&#125;&#125;&#62;&#13;&#10;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#60;&#47;li&#62;</code></pre>
+        </div>
+        <p>
+          @aware tidak dapat mengakses data induk yang tidak
+           secara eksplisit diteruskan ke komponen induk melalui atribut 
+           HTML. Nilai @props default yang tidak secara eksplisit diteruskan 
+          ke komponen induk tidak dapat diakses oleh direktif @aware.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Components Namespaces</h2>
+            <p>
+              Komponen anonim biasanya ditentukan dengan menempatkan 
+              template Blade di dalam direktori resource/views/components Anda. 
+              Namun, terkadang Anda mungkin ingin mendaftarkan jalur komponen 
+              anonim lainnya dengan Laravel selain jalur default. 
+              Untuk memberi tahu Laravel tentang lokasi komponen anonim ini, 
+              Anda dapat menggunakan metode 
+              anonymousComponentNamespace yang disediakan oleh Blade.
+              <br><br>
+              Metode anonymousComponentNamespace menerima "jalur" ke 
+              lokasi komponen anonim sebagai argumen pertama dan "namespace" 
+              yang komponennya harus ditempatkan sebagai argumen kedua. 
+              Seperti yang akan Anda lihat pada contoh di bawah, "namespace" 
+              akan diawali dengan nama komponen saat komponen dirender. 
+              Biasanya, metode ini harus dipanggil 
+              dari metode boot salah satu penyedia layanan aplikasi Anda:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#47;&#42;&#42;&#13;&#10;&#42;&#160;Bootstrap&#160;any&#160;application&#160;services&#46;&#13;&#10;&#42;&#13;&#10;&#42;&#160;&#64;return&#160;void&#13;&#10;&#42;&#47;&#13;&#10;public&#160;function&#160;boot&#40;&#41;&#13;&#10;&#123;&#13;&#10;&#160;&#160;&#160;Blade&#58;&#58;anonymousComponentNamespace&#40;&#39;flights&#46;bookings&#46;components&#39;&#44;&#160;&#39;flights&#39;&#41;;&#13;&#10;&#125;&#13;&#10;</code></pre>
+            </div>
+            <p>Anda dapat merender komponen panel yang ada di dalam 
+              direktori komponen yang baru didaftarkan seperti:</p>
+            <div class="mockup-code">
+              <pre><code>&#60;x&#45;flights&#58;&#58;panel&#160;&#58;flight&#61;&#34;&#36;flight&#34;&#160;&#47;&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+  <!--EndAnonymousComponents-->
+
+  <!--BuildingLayouts-->
+  <div class="flex flex-col w-full p-3 mx-auto gap-3">
+      <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Building Layouts</div> 
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+      <div class="card w-95 bg-accent-focus shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Layouts Using Components</h2>
+            <p>
+              Mendefinisikan komponen tata letak (layout) dengan 
+              satu komponen Blade.
+              Misalnya, kita sedang membangun aplikasi daftar 
+              "todo" dengan tata letak seperti berikut:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;components&#47;layout&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;html&#62;&#13;&#10;&#160;&#160;&#160;&#60;head&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;title&#62;&#123;&#123;&#160;&#36;title&#160;??&#160;&#39;Todo&#160;Manager&#39;&#160;&#125;&#125;&#60;&#47;title&#62;&#13;&#10;&#160;&#160;&#160;&#60;&#47;head&#62;&#13;&#10;&#160;&#160;&#160;&#60;body&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;h1&#62;Todos&#60;&#47;h1&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#60;hr&#47;&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;slot&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#60;&#47;body&#62;&#13;&#10;&#60;&#47;html&#62;</code></pre>
+            </div>
+            <p>
+              Setelah komponen tata letak ditentukan,buatlah tampilan Blade 
+              yang menggunakan komponen tersebut. Dalam contoh ini, 
+              kita akan mendefinisikan 
+              tampilan sederhana yang menampilkan daftar tugas kita:
+            </p>
+            <div class="mockup-code">
+              <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;tasks&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;x&#45;layout&#62;&#13;&#10;&#160;&#160;&#160;&#64;foreach&#160;&#40;&#36;tasks&#160;as&#160;&#36;task&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;task&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#64;endforeach&#13;&#10;&#60;&#47;x&#45;layout&#62;</code></pre>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+    <div class="card w-95 bg-accent-focus shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Layouts Using Components-2</h2>
+        <p>
+          Konten yang dimasukkan ke dalam komponen akan diberikan ke 
+          variabel $slot default di dalam komponen layout kita. 
+          Tata letak di atasjuga mengikuti slot $title jika tersedia; 
+          jika tidak, judul default akan ditampilkan. Kami dapat 
+          memasukkan judul khusus dari tampilan daftar tugas kami 
+          menggunakan sintaks slot standar 
+          yang dibahas dalam dokumentasi komponen:
+        </p>
+        <div class="mockup-code">
+          <pre><code>&#60;&#33;&#45;&#45;&#160;resources&#47;views&#47;tasks&#46;blade&#46;php&#160;&#45;&#45;&#62;&#13;&#10;&#160;&#13;&#10;&#60;x&#45;layout&#62;&#13;&#10;&#160;&#160;&#160;&#60;x&#45;slot&#58;title&#62;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Custom&#160;Title&#13;&#10;&#160;&#160;&#160;&#60;&#47;x&#45;slot&#62;&#13;&#10;&#160;&#13;&#10;&#160;&#160;&#160;&#64;foreach&#160;&#40;&#36;tasks&#160;as&#160;&#36;task&#41;&#13;&#10;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#123;&#123;&#160;&#36;task&#160;&#125;&#125;&#13;&#10;&#160;&#160;&#160;&#64;endforeach&#13;&#10;&#60;&#47;x&#45;layout&#62;&#13;&#10;</code></pre>
+        </div>
+        <p>
+          Lalu, kita tinggal mengembalikan tampilan “task” dari sebuah “route”:
+        </p>
+        <div class="mockup-code">
+          <pre><code>use&#160;AppModelsTask;&#13;&#10;&#160;&#13;&#10;Route&#58;&#58;get&#40;&#39;&#47;tasks&#39;&#44;&#160;function&#160;&#40;&#41;&#160;&#123;&#13;&#10;&#160;&#160;&#160;return&#160;view&#40;&#39;tasks&#39;&#44;&#160;&#91;&#39;tasks&#39;&#160;&#61;&#62;&#160;Task&#58;&#58;all&#40;&#41;&#93;&#41;;&#13;&#10;&#125;&#41;;&#13;&#10;&#13;&#10;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--EndJMN-->
+
+    <!--CHR-->
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-97 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Layouts Using Template Inheritance</h2>
+              <p>Layout juga dapat dibuat melalui "Template Inheritence". Ini adalah cara utama membangun aplikasi sebelum pengenalan components. Untuk memulai, mari kita lihat contoh sederhana. Pertama, kita akan memeriksa layout halaman. Karena sebagian besar aplikasi web mempertahankan layout umum yang sama di berbagai halaman, akan lebih mudah untuk mendefinisikan layout sebagai tampilan Single Blade.
+              </p>
+              <div class="mockup-code">
+                <pre><code>&lt;!-- resources/views/layouts/app.blade.php --&gt;
+ 
+                  &lt;html&gt;
+                      &lt;head&gt;
+                          &lt;title&gt;App Name - @yield('title')&lt;/title&gt;
+                      &lt;/head&gt;
+                      &lt;body&gt;
+                          @section('sidebar')
+                              This is the master sidebar.
+                          @show
+                   
+                          &lt;div class="container"&gt;
+                              @yield('content')
+                          &lt;/div&gt;
+                      &lt;/body&gt;
+                  &lt;/html&gt;
+                  </code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--EndBuildingLayouts-->
+
+    <!--Forms-->
+    <div class="flex flex-col w-full p-3 mx-auto gap-3">
+        <div class="grid h-20 card bg-primary-content rounded-box place-items-center">Forms</div> 
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">CSRF Field</h2>
+              <p>Setiap kali kita mendefinisikan formulir HTML di aplikasi, kita harus menyertakan CSRF token field yang tersembunyi di formulir sehingga CSRF protection middleware dapat memvalidasi permintaan. Kita juga dapat menggunakan directive Blade @csrf untuk menghasilkan token field.
+              </p>
+              <div class="mockup-code">
+                <pre><code>&lt;form method="POST" action="/profile"&gt;
+              @csrf
+               
+                  ...
+              &lt;/form&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Method Field</h2>
+              <p>Karena formulir HTML tidak dapat membuat permintaan PUT, PATCH, atau DELETE, kita perlu menambahkan  _method yang tersembunyi untuk menyamarkan kata kerja pada HTTP. Arahan direktif Blade @method dapat membuat field ini untuk kita.
+              </p>
+              <div class="mockup-code">
+                <pre><code>&lt;form action="/foo/bar" method="POST"&gt;
+                  @method('PUT')
+               
+                  ...
+              &lt;/form&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container flex items-center justify-center p-3 mx-auto gap-3">
+        <div class="card w-95 bg-accent-focus shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Validation Errors</h2>
+              <p>Direktif @error dapat digunakan untuk memeriksa dengan cepat apakah ada pesan kesalahan validasi untuk atribut tertentu. Dalam direktif @error, kita dapat menggunakan variabel $message untuk menampilkan pesan kesalahan.
+              </p>
+              <div class="mockup-code">
+                <pre><code>!-- /resources/views/post/create.blade.php --&gt;
+ 
+                  &lt;label for="title"&gt;Post Title&lt;/label&gt;
+                   
+                  &lt;input id="title"
+                      type="text"
+                      class="@error('title') is-invalid @enderror"&gt;
+                   
+                  @error('title')
+                      &lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;
+                  @enderror</code></pre>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!--EndForms-->
+    <!--EndCHR-->
+   
+
+    <!--Footer-->
+    <footer class="footer p-10 bg-base-200 text-base-content">
+        <div>
+          <span class="footer-title">Nama Anggota Kelompok</span> 
+          <a class="link link-hover">Diandra Charisa Yefiananda</a> 
+          <a class="link link-hover">Putri Daliana Salsabilla Rais</a> 
+          <a class="link link-hover">Clara Clarita Yung</a> 
+          <a class="link link-hover">Firda Kusumawardhani Hillal</a>
+          <a class="link link-hover">Jasmine Cecilia Putri Effendy</a>
+        </div> 
+        <div>
+          <span class="footer-title">NIM</span> 
+          <a class="link link-hover">215150700111032</a> 
+          <a class="link link-hover">215150700111043</a> 
+          <a class="link link-hover">215150700111051</a> 
+          <a class="link link-hover">215150701111031</a>
+          <a class="link link-hover">215150701111041</a>
+        </div> 
+        <div>
+          <span class="footer-title">Legal</span> 
+          <a class="link link-hover">Terms of use</a> 
+          <a class="link link-hover">Privacy policy</a> 
+          <a class="link link-hover">Cookie policy</a>
+        </div>
+      </footer> 
+      <footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+        <div class="items-center grid-flow-col">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
+          <p>PAW-D <br>Kelompok 2</p>
+        </div> 
+        <div class="md:place-self-center md:justify-self-end">
+          <div class="grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div>
+        </div>
+      </footer>
+    <!--EndFooter-->
+</body>
+</html>
